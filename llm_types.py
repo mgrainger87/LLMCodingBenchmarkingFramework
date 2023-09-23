@@ -273,96 +273,92 @@ class ReturnValue:
 	def __str__(self):
 		return self.type
 
+class Prompt:
+	def __init__(self, data: Dict[str, any]):
+		self.prompt = data["prompt"]
+		self.genericize = data["genericize"]
+		self.sample_inputs_outputs = [
+			{k: {
+				"input": v["input"],
+				"expected_output": v["expected_output"]
+			 } for k, v in data.get("sample_inputs_outputs", {}).items()}
+		]
+		self.input_code = data.get("input_code", None)
+
+	def __str__(self):
+		genericize_str = "Genericize" if self.genericize else "Do not genericize"
+		return f'Prompt: "{self.prompt}", {genericize_str}, Sample Inputs/Outputs: {self.sample_inputs_outputs}, Input Code: {self.input_code}'
+
+	@classmethod
+	def from_json(cls, data: Dict[str, any]) -> 'Prompt':
+		return cls(data)
+
+	def to_json(self) -> Dict[str, any]:
+		return {
+			"prompt": self.prompt,
+			"genericize": self.genericize,
+			"sample_inputs_outputs": self.sample_inputs_outputs,
+			"input_code": self.input_code
+		}
+
 class ProblemDefinition:
 	def __init__(self,
-				 identifier: ProblemID,
+				 identifier: str,
 				 description: str,
+				 prompts: Dict[str, Prompt],
 				 function_prototype: FunctionPrototype,
-				 sample_inputs_outputs: Optional[Dict[str, Any]] = None,
 				 correctness_test_suite: Optional[Dict[str, Any]] = None,
-				 optimal_solution: Optional[Code] = None,
+				 optimal_solution: Optional[str] = None,
 				 additional_instructions: Optional[str] = None,
-				 input_code: Optional[Code] = None,
-				 tags: Optional[List[Tag]] = None):
+				 tags: Optional[List[str]] = None):
 		self.identifier = identifier
 		self.description = description
+		self.prompts = prompts
 		self.function_prototype = function_prototype
-		self.sample_inputs_outputs = sample_inputs_outputs
 		self.correctness_test_suite = correctness_test_suite
 		self.optimal_solution = optimal_solution
 		self.additional_instructions = additional_instructions
-		self.input_code = input_code
 		self.tags = tags
-	
+
 	@classmethod
 	def from_json(cls, data: Dict[str, Any]) -> 'ProblemDefinition':
-		"""Create a ProblemDefinition instance from JSON data."""
 		function_prototype = FunctionPrototype.from_json(data.get('function_prototype', {}))
+		prompts = {key: Prompt.from_json(value) for key, value in data.get("prompts", {}).items()}
 		return cls(
 			identifier=data.get('identifier', ''),
 			description=data.get('description', ''),
+			prompts=prompts,
 			function_prototype=function_prototype,
-			sample_inputs_outputs=data.get('sample_inputs_outputs', None),
 			correctness_test_suite=data.get('correctness_test_suite', None),
 			optimal_solution=data.get('optimal_solution', None),
 			additional_instructions=data.get('additional_instructions', None),
-			input_code=data.get('input_code', None),
 			tags=data.get('tags', None)
 		)
-	
+
 	def to_json(self) -> Dict[str, Any]:
-		"""Convert the ProblemDefinition instance to a JSON-serializable dictionary."""
 		return {
 			'identifier': self.identifier,
 			'description': self.description,
+			'prompts': {key: value.to_json() for key, value in self.prompts.items()},
 			'function_prototype': self.function_prototype.to_json(),
-			'sample_inputs_outputs': self.sample_inputs_outputs,
 			'correctness_test_suite': self.correctness_test_suite,
 			'optimal_solution': self.optimal_solution,
 			'additional_instructions': self.additional_instructions,
-			'input_code': self.input_code,
 			'tags': self.tags
 		}
-	
+
 	def __str__(self) -> str:
-		sample_inputs_outputs_str = (
-			f", sample_inputs_outputs={self.sample_inputs_outputs}"
-			if self.sample_inputs_outputs
-			else ""
-		)
-		correctness_test_suite_str = (
-			f", correctness_test_suite={self.correctness_test_suite}"
-			if self.correctness_test_suite
-			else ""
-		)
-		optimal_solution_str = (
-			f", optimal_solution={self.optimal_solution}"
-			if self.optimal_solution
-			else ""
-		)
-		additional_instructions_str = (
-			f", additional_instructions={self.additional_instructions}"
-			if self.additional_instructions
-			else ""
-		)
-		input_code_str = (
-			f", input_code={self.input_code}"
-			if self.input_code
-			else ""
-		)
-		tags_str = f", tags={self.tags}" if self.tags else ""
-		
+		prompts_str = '\n'.join([f'{key}: {str(value)}' for key, value in self.prompts.items()])
 		return (
 			f"ProblemDefinition("
 			f"identifier={self.identifier}, "
 			f"description={self.description}, "
-			f"function_prototype={str(self.function_prototype)}"
-			f"{sample_inputs_outputs_str}"
-			f"{correctness_test_suite_str}"
-			f"{optimal_solution_str}"
-			f"{additional_instructions_str}"
-			f"{input_code_str}"
-			f"{tags_str}"
+			f"prompts=\n{prompts_str}\n"
+			f"function_prototype={str(self.function_prototype)}, "
+			f"correctness_test_suite={self.correctness_test_suite}, "
+			f"optimal_solution={self.optimal_solution}, "
+			f"additional_instructions={self.additional_instructions}, "
+			f"tags={self.tags}"
 			f")"
 		)
 

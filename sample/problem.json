@@ -1,26 +1,102 @@
 {
-	"identifier": "problem_001",
-	"description": "Implement a function to add two numbers.",
+	"identifier": "problem_1",
+	"description": "Write a function to add two numbers.",
 	"function_prototype": {
 		"function_name": "add",
 		"parameters": [
-			{"name": "a", "type": "int"},
-			{"name": "b", "type": "int"}
+			{
+				"name": "a",
+				"type": "int"
+			},
+			{
+				"name": "b",
+				"type": "int"
+			}
 		],
 		"return_values": [
-			{"type": "int"}
+			{
+				"type": "int"
+			}
 		]
 	},
-	"sample_inputs_outputs": {
-		"inputs": [{"a": 1, "b": 2}, {"a": -1, "b": 2}],
-		"outputs": [3, 1]
-	},
 	"correctness_test_suite": {
-		"test_1": {"input": {"a": 1, "b": 2}, "expected_output": 3},
-		"test_2": {"input": {"a": -1, "b": 2}, "expected_output": 1}
+		"test_1": {
+			"input": {
+				"a": 1,
+				"b": 2
+			},
+			"expected_output": [
+				3,
+				4
+			]
+		},
+		"test_2": {
+			"input": {
+				"a": -1,
+				"b": 2
+			},
+			"expected_output": [
+				1,
+				2
+			]
+		}
 	},
-	"optimal_solution": "def add(a: int, b: int) -> int:\n    return a + b",
-	"additional_instructions": "Please adhere to Python's PEP 8 style guide.",
-	"input_code": "def add(a, b):\n    pass",
-	"tags": ["arithmetic", "easy"]
+	"optimal_solution": null,
+	"additional_instructions": null,
+	"tags": [
+		"Arithmetic",
+		"Easy"
+	],
+	"prompts": {
+		"brief_prompt": {
+			"prompt": "Implement the add function to return the sum of two integers.",
+			"genericize": false,
+			"sample_inputs_outputs": {
+				"sample_1": {
+					"input": {
+						"a": 3,
+						"b": 4
+					},
+					"expected_output": [
+						7
+					]
+				},
+				"sample_2": {
+					"input": {
+						"a": 5,
+						"b": 6
+					},
+					"expected_output": [
+						11
+					]
+				}
+			},
+			"input_code": null
+		},
+		"detailed_prompt": {
+			"prompt": "Write a function named 'add' that takes two integer arguments, 'a' and 'b', and returns their sum as an integer.",
+			"genericize": true,
+			"sample_inputs_outputs": {
+				"sample_1": {
+					"input": {
+						"a": 3,
+						"b": 4
+					},
+					"expected_output": [
+						7
+					]
+				},
+				"sample_2": {
+					"input": {
+						"a": 5,
+						"b": 6
+					},
+					"expected_output": [
+						11
+					]
+				}
+			},
+			"input_code": null
+		}
+	}
 }
