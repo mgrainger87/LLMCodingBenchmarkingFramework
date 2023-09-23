@@ -1,6 +1,7 @@
 from typing import Dict, List, Union, Optional, Any
 from abc import ABC, abstractmethod
 import ast
+import querier
 
 # Define necessary types
 ProblemID = str
@@ -164,6 +165,28 @@ class GradingOutput:
 		
 	def __str__(self) -> str:
 		return f"GradingOutput({self.overall_score}, {[str(x) for x in self.problem_grades]})"
+		
+class TestCase:
+	def __init__(self, data: Dict[str, Any]):
+		print(data)
+		self.parameters = data.get('input', {})
+		self.expected_output = data.get('expected_output', {})
+	
+	@classmethod
+	def from_json(cls, data: Dict[str, Any]) -> 'TestCase':
+		return cls(data)
+	
+	def to_json(self) -> Dict[str, Any]:
+		return {
+			'input': self.parameters,
+			'expected_output': self.expected_output
+		}
+	
+	def __str__(self) -> str:
+		inputs_str = ', '.join(f'{k} = {v}' for k, v in self.parameters.items())
+		expected_output_str = ', '.join(f'{k} = {v}' for k, v in self.expected_output.items())
+		return f'Input: {inputs_str}\nExpected Output: {expected_output_str}'
+
 
 class FunctionPrototype:
 	def __init__(self, data):
@@ -275,39 +298,64 @@ class ReturnValue:
 
 class Prompt:
 	def __init__(self, data: Dict[str, any]):
+		print(data)
+		self.prompt_id = data["prompt_id"]
 		self.prompt = data["prompt"]
 		self.genericize = data["genericize"]
-		self.sample_inputs_outputs = [
-			{k: {
-				"input": v["input"],
-				"expected_output": v["expected_output"]
-			 } for k, v in data.get("sample_inputs_outputs", {}).items()}
-		]
+		self.sample_inputs_outputs = [TestCase(tc) for tc in data.get("sample_inputs_outputs", [])]
 		self.input_code = data.get("input_code", None)
-
+	
 	def __str__(self):
 		genericize_str = "Genericize" if self.genericize else "Do not genericize"
-		return f'Prompt: "{self.prompt}", {genericize_str}, Sample Inputs/Outputs: {self.sample_inputs_outputs}, Input Code: {self.input_code}'
-
+		sample_io_str = ', '.join(str(tc) for tc in self.sample_inputs_outputs)
+		return f'Prompt ID: {self.prompt_id}, Prompt: "{self.prompt}", {genericize_str}, Sample Inputs/Outputs: [{sample_io_str}], Input Code: {self.input_code}'
+	
 	@classmethod
 	def from_json(cls, data: Dict[str, any]) -> 'Prompt':
 		return cls(data)
-
+	
 	def to_json(self) -> Dict[str, any]:
 		return {
+			"prompt_id": self.prompt_id,
 			"prompt": self.prompt,
 			"genericize": self.genericize,
-			"sample_inputs_outputs": self.sample_inputs_outputs,
+			"sample_inputs_outputs": [tc.to_json() for tc in self.sample_inputs_outputs],
 			"input_code": self.input_code
 		}
+
+class LLMProblemInput:
+	def __init__(self, data: Dict[str, Any]):
+		self.problem_id = data.get('problem_id', '')
+		self.prompt_id = data.get('prompt_id', '')
+		self.prompt = data.get('prompt', '')
+		self.sample_inputs_outputs = [TestCase.from_json(tc) for tc in data.get('sample_inputs_outputs', [])]
+		self.input_code = data.get('input_code', '')
+		self.function_prototype = FunctionPrototype.from_json(data.get('function_prototype', {}))
+	
+	@classmethod
+	def from_json(cls, json_data: Dict[str, Any]) -> 'LLMProblemInput':
+		return cls(json_data)
+	
+	def to_json(self) -> Dict[str, Any]:
+		return {
+			'problem_id': self.problem_id,
+			'prompt_id': self.prompt_id,
+			'prompt': self.prompt,
+			'sample_inputs_outputs': [tc.to_json() for tc in self.sample_inputs_outputs],
+			'input_code': self.input_code,
+			'function_prototype': self.function_prototype.to_json()
+		}
+	
+	def __str__(self) -> str:
+		return json.dumps(self.to_json(), indent=2)
 
 class ProblemDefinition:
 	def __init__(self,
 				 identifier: str,
 				 description: str,
-				 prompts: Dict[str, Prompt],
+				 prompts: List[Prompt],
 				 function_prototype: FunctionPrototype,
-				 correctness_test_suite: Optional[Dict[str, Any]] = None,
+				 correctness_test_suite: Optional[List[TestCase]] = None,
 				 optimal_solution: Optional[str] = None,
 				 additional_instructions: Optional[str] = None,
 				 tags: Optional[List[str]] = None):
@@ -319,41 +367,42 @@ class ProblemDefinition:
 		self.optimal_solution = optimal_solution
 		self.additional_instructions = additional_instructions
 		self.tags = tags
-
+	
 	@classmethod
 	def from_json(cls, data: Dict[str, Any]) -> 'ProblemDefinition':
 		function_prototype = FunctionPrototype.from_json(data.get('function_prototype', {}))
-		prompts = {key: Prompt.from_json(value) for key, value in data.get("prompts", {}).items()}
+		prompts = [Prompt.from_json(prompt_data) for prompt_data in data.get("prompts", [])]
+		correctness_test_suite = [TestCase.from_json(test_case) for test_case in data.get('correctness_test_suite', [])]
 		return cls(
 			identifier=data.get('identifier', ''),
 			description=data.get('description', ''),
 			prompts=prompts,
 			function_prototype=function_prototype,
-			correctness_test_suite=data.get('correctness_test_suite', None),
+			correctness_test_suite=correctness_test_suite,
 			optimal_solution=data.get('optimal_solution', None),
 			additional_instructions=data.get('additional_instructions', None),
 			tags=data.get('tags', None)
 		)
-
+	
 	def to_json(self) -> Dict[str, Any]:
 		return {
 			'identifier': self.identifier,
 			'description': self.description,
-			'prompts': {key: value.to_json() for key, value in self.prompts.items()},
+			'prompts': [prompt.to_json() for prompt in self.prompts],
 			'function_prototype': self.function_prototype.to_json(),
-			'correctness_test_suite': self.correctness_test_suite,
+			'correctness_test_suite': [test_case.to_json() for test_case in self.correctness_test_suite],
 			'optimal_solution': self.optimal_solution,
 			'additional_instructions': self.additional_instructions,
 			'tags': self.tags
 		}
-
+	
 	def __str__(self) -> str:
-		prompts_str = '\n'.join([f'{key}: {str(value)}' for key, value in self.prompts.items()])
+		prompts_str = ', '.join(str(prompt) for prompt in self.prompts)
 		return (
 			f"ProblemDefinition("
 			f"identifier={self.identifier}, "
 			f"description={self.description}, "
-			f"prompts=\n{prompts_str}\n"
+			f"prompts=[{prompts_str}]\n"
 			f"function_prototype={str(self.function_prototype)}, "
 			f"correctness_test_suite={self.correctness_test_suite}, "
 			f"optimal_solution={self.optimal_solution}, "
@@ -361,14 +410,54 @@ class ProblemDefinition:
 			f"tags={self.tags}"
 			f")"
 		)
+	
+	def get_llm_problem_inputs(self) -> list[LLMProblemInput]:
+		llm_problem_inputs = []
+		for prompt_id, prompt in enumerate(self.prompts):
+			llm_input_data = {
+				'problem_id': self.identifier,
+				'prompt_id': str(prompt_id),
+				'prompt':  prompt.prompt,
+				'sample_inputs_outputs': [tc.to_json() for tc in prompt.sample_inputs_outputs],
+				'input_code': prompt.input_code,
+				'function_prototype': self.function_prototype.to_json()
+			}
+			llm_problem_input = LLMProblemInput(llm_input_data)
+			llm_problem_inputs.append(llm_problem_input)
+		return llm_problem_inputs
 
 class AIModel(ABC):
 	"""
 	Abstract base class for AI models.
 	"""
 	
+	@staticmethod
+	def construct_textual_prompt(llm_problem_input: LLMProblemInput) -> str:
+		# Start with the textual prompt
+		prompt_text = llm_problem_input.prompt
+	
+		# Add function prototype if available
+		function_prototype = llm_problem_input.function_prototype
+		if function_prototype:
+			prompt_text += f"\n\nFunction Signature:\n{str(function_prototype)}"
+	
+		# Add sample inputs and outputs if available
+		sample_io = llm_problem_input.sample_inputs_outputs
+		if sample_io:
+			sample_io_text = '\n\nSample Inputs and Outputs:\n'
+			for i, test_case in enumerate(sample_io, start=1):
+				sample_io_text += f"\nTest Case {i}:\n{str(test_case)}"
+			prompt_text += sample_io_text
+	
+		# Add input code if available
+		input_code = llm_problem_input.input_code
+		if input_code:
+			prompt_text += f"\n\nInput Code:\n{input_code}"
+	
+		return prompt_text
+	
 	@abstractmethod
-	def generate_solution(self, problem_definition: ProblemDefinition) -> 'LLMSolution':
+	def generate_solution(self, problem_input: LLMProblemInput) -> 'LLMSolution':
 		"""
 		Generates a solution for the given problem definition.
 		
@@ -382,6 +471,12 @@ class AIModel(ABC):
 		
 	def __str__(self) -> str:
 		return f"{self.__class__.__name__}()"
+
+class HumanAIModel(AIModel):
+	def generate_solution(self, problem_input: LLMProblemInput) -> 'LLMSolution':
+		prompt = AIModel.construct_textual_prompt(problem_input)
+		response = querier.HumanQuerier().performQuery(prompt)
+		return LLMSolution(problem_input.problem_id, "Human", response)
 
 class Grader(ABC):
 	"""

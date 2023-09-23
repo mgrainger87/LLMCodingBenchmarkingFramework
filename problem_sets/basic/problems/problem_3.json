@@ -1,0 +1,32 @@
+{
+	"identifier": "problem_3",
+	"description": "Write a function to multiply two numbers.",
+	"function_prototype": {
+		"function_name": "multiply",
+		"parameters": [{"name": "a", "type": "int"}, {"name": "b", "type": "int"}],
+		"return_values": [{"type": "int"}]
+	},
+	"correctness_test_suite": {
+		"test_1": {"input": {"a": 4, "b": 3}, "expected_output": [12]},
+		"test_2": {"input": {"a": 7, "b": 2}, "expected_output": [14]}
+	},
+	"tags": ["Arithmetic", "Easy"],
+	"prompts": {
+		"brief_prompt": {
+			"prompt": "Implement the multiply function to return the product of two integers.",
+			"genericize": False,
+			"sample_inputs_outputs": {
+				"sample_1": {"input": {"a": 5, "b": 6}, "expected_output": [30]},
+				"sample_2": {"input": {"a": 8, "b": 3}, "expected_output": [24]}
+			},
+		},
+		"detailed_prompt": {
+			"prompt": "Write a function named 'multiply' that takes two integer arguments, 'a' and 'b', and returns their product as an integer.",
+			"genericize": True,
+			"sample_inputs_outputs": {
+				"sample_1": {"input": {"a": 5, "b": 6}, "expected_output": [30]},
+				"sample_2": {"input": {"a": 8, "b": 3}, "expected_output": [24]}
+			},
+		}
+	}
+}

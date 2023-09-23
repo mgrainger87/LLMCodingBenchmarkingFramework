@@ -1,102 +1,99 @@
 {
-	"identifier": "problem_1",
-	"description": "Write a function to add two numbers.",
-	"function_prototype": {
-		"function_name": "add",
-		"parameters": [
-			{
-				"name": "a",
-				"type": "int"
-			},
-			{
-				"name": "b",
-				"type": "int"
-			}
-		],
-		"return_values": [
-			{
-				"type": "int"
-			}
-		]
-	},
-	"correctness_test_suite": {
-		"test_1": {
-			"input": {
-				"a": 1,
-				"b": 2
-			},
-			"expected_output": [
-				3,
-				4
-			]
+  "identifier": "example_problem_1",
+  "description": "Write a function to add two numbers.",
+  "prompts": [
+	{
+	  "prompt_id": "brief_prompt",
+	  "prompt": "Add two numbers together.",
+	  "genericize": false,
+	  "sample_inputs_outputs": [
+		{
+		  "input": {
+			"a": 5,
+			"b": 7
+		  },
+		  "expected_output": {
+			"sum": 12
+		  }
 		},
-		"test_2": {
-			"input": {
-				"a": -1,
-				"b": 2
-			},
-			"expected_output": [
-				1,
-				2
-			]
+		{
+		  "input": {
+			"a": -3,
+			"b": 3
+		  },
+		  "expected_output": {
+			"sum": 0
+		  }
 		}
+	  ],
+	  "input_code": ""
 	},
-	"optimal_solution": null,
-	"additional_instructions": null,
-	"tags": [
-		"Arithmetic",
-		"Easy"
-	],
-	"prompts": {
-		"brief_prompt": {
-			"prompt": "Implement the add function to return the sum of two integers.",
-			"genericize": false,
-			"sample_inputs_outputs": {
-				"sample_1": {
-					"input": {
-						"a": 3,
-						"b": 4
-					},
-					"expected_output": [
-						7
-					]
-				},
-				"sample_2": {
-					"input": {
-						"a": 5,
-						"b": 6
-					},
-					"expected_output": [
-						11
-					]
-				}
-			},
-			"input_code": null
+	{
+	  "prompt_id": "verbose_prompt",
+	  "prompt": "Given two integer inputs, calculate and return their sum.",
+	  "genericize": false,
+	  "sample_inputs_outputs": [
+		{
+		  "input": {
+			"a": 5,
+			"b": 7
+		  },
+		  "expected_output": {
+			"sum": 12
+		  }
 		},
-		"detailed_prompt": {
-			"prompt": "Write a function named 'add' that takes two integer arguments, 'a' and 'b', and returns their sum as an integer.",
-			"genericize": true,
-			"sample_inputs_outputs": {
-				"sample_1": {
-					"input": {
-						"a": 3,
-						"b": 4
-					},
-					"expected_output": [
-						7
-					]
-				},
-				"sample_2": {
-					"input": {
-						"a": 5,
-						"b": 6
-					},
-					"expected_output": [
-						11
-					]
-				}
-			},
-			"input_code": null
+		{
+		  "input": {
+			"a": -3,
+			"b": 3
+		  },
+		  "expected_output": {
+			"sum": 0
+		  }
 		}
+	  ],
+	  "input_code": ""
 	}
+  ],
+  "function_prototype": {
+	"function_name": "add_numbers",
+	"parameters": [
+	  {
+		"name": "a",
+		"type": "int"
+	  },
+	  {
+		"name": "b",
+		"type": "int"
+	  }
+	],
+	"return_values": [
+	  {
+		"type": "int"
+	  }
+	]
+  },
+  "correctness_test_suite": [
+	{
+	  "input": {
+		"a": 5,
+		"b": 7
+	  },
+	  "expected_output": {
+		"sum": 12
+	  }
+	},
+	{
+	  "input": {
+		"a": -3,
+		"b": 3
+	  },
+	  "expected_output": {
+		"sum": 0
+	  }
+	}
+  ],
+  "optimal_solution": "",
+  "additional_instructions": "",
+  "tags": []
 }

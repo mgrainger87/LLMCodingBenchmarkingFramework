@@ -1,0 +1,32 @@
+{
+	"identifier": "problem_2",
+	"description": "Write a function to subtract two numbers.",
+	"function_prototype": {
+		"function_name": "subtract",
+		"parameters": [{"name": "a", "type": "int"}, {"name": "b", "type": "int"}],
+		"return_values": [{"type": "int"}]
+	},
+	"correctness_test_suite": {
+		"test_1": {"input": {"a": 4, "b": 2}, "expected_output": [2]},
+		"test_2": {"input": {"a": 3, "b": 4}, "expected_output": [-1]}
+	},
+	"tags": ["Arithmetic", "Easy"],
+	"prompts": {
+		"brief_prompt": {
+			"prompt": "Implement the subtract function to return the difference of two integers.",
+			"genericize": False,
+			"sample_inputs_outputs": {
+				"sample_1": {"input": {"a": 5, "b": 3}, "expected_output": [2]},
+				"sample_2": {"input": {"a": 7, "b": 2}, "expected_output": [5]}
+			},
+		},
+		"detailed_prompt": {
+			"prompt": "Write a function named 'subtract' that takes two integer arguments, 'a' and 'b', and returns their difference as an integer.",
+			"genericize": True,
+			"sample_inputs_outputs": {
+				"sample_1": {"input": {"a": 5, "b": 3}, "expected_output": [2]},
+				"sample_2": {"input": {"a": 7, "b": 2}, "expected_output": [5]}
+			},
+		}
+	}
+}
