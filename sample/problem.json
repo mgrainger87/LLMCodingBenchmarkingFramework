@@ -1,7 +1,16 @@
 {
 	"identifier": "problem_001",
 	"description": "Implement a function to add two numbers.",
-	"function_signature": "def add(a: int, b: int) -> int:",
+	"function_prototype": {
+		"function_name": "add",
+		"parameters": [
+			{"name": "a", "type": "int"},
+			{"name": "b", "type": "int"}
+		],
+		"return_values": [
+			{"type": "int"}
+		]
+	},
 	"sample_inputs_outputs": {
 		"inputs": [{"a": 1, "b": 2}, {"a": -1, "b": 2}],
 		"outputs": [3, 1]

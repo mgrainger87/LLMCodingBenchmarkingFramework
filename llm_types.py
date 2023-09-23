@@ -14,62 +14,6 @@ IssueDescription = str
 Issue = Dict[IssueCategory, IssueDescription]
 Tag = str
 
-class ProblemDefinition:
-	"""
-	Defines the expected inputs/outputs to and from the AI for a problem.
-	"""
-	def __init__(self,
-				 identifier: ProblemID,
-				 description: str,
-				 function_signature: str,
-				 sample_inputs_outputs: Optional[Dict[str, Any]] = None,
-				 correctness_test_suite: Optional[Dict[str, Any]] = None,
-				 optimal_solution: Optional[Code] = None,
-				 additional_instructions: Optional[str] = None,
-				 input_code: Optional[Code] = None,
-				 tags: Optional[List[Tag]] = None):
-		self.identifier = identifier
-		self.description = description
-		self.function_signature = function_signature
-		self.sample_inputs_outputs = sample_inputs_outputs
-		self.correctness_test_suite = correctness_test_suite
-		self.optimal_solution = optimal_solution
-		self.additional_instructions = additional_instructions
-		self.input_code = input_code
-		self.tags = tags
-
-	@classmethod
-	def from_json(cls, data: Dict[str, Any]) -> 'ProblemDefinition':
-		"""Create a ProblemDefinition instance from JSON data."""
-		return cls(
-			identifier=data.get('identifier', ''),
-			description=data.get('description', ''),
-			function_signature=data.get('function_signature', ''),
-			sample_inputs_outputs=data.get('sample_inputs_outputs', None),
-			correctness_test_suite=data.get('correctness_test_suite', None),
-			optimal_solution=data.get('optimal_solution', None),
-			additional_instructions=data.get('additional_instructions', None),
-			input_code=data.get('input_code', None),
-			tags=data.get('tags', None)
-		)
-		
-	def to_json(self) -> Dict[str, Any]:
-		"""Convert the ProblemDefinition instance to a JSON-serializable dictionary."""
-		return {
-			'identifier': self.identifier,
-			'description': self.description,
-			'function_signature': self.function_signature,
-			'sample_inputs_outputs': self.sample_inputs_outputs,
-			'correctness_test_suite': self.correctness_test_suite,
-			'optimal_solution': self.optimal_solution,
-			'additional_instructions': self.additional_instructions,
-			'input_code': self.input_code,
-			'tags': self.tags
-		}
-
-	def __str__(self) -> str:
-		return f"ProblemDefinition({self.identifier}, {self.description}, {self.function_signature})"		
-
 class LLMSolution:
 	"""
 	Represents the solution output from an AI model.
@@ -104,7 +48,15 @@ class LLMSolution:
 		}
 
 	def __str__(self) -> str:
-		return f"LLMSolution({self.problem_identifier}, {self.ai_identifier}, {self.solution_code})"
+		feedback_str = f", feedback={self.feedback}" if self.feedback else ""
+		return (
+			f"AIModelSolution("
+			f"problem_identifier={self.problem_identifier}, "
+			f"ai_identifier={self.ai_identifier}, "
+			f"solution_code={self.solution_code}"
+			f"{feedback_str}"
+			f")"
+		)
 
 class Issue:
 		def __init__(self,
@@ -213,48 +165,22 @@ class GradingOutput:
 	def __str__(self) -> str:
 		return f"GradingOutput({self.overall_score}, {[str(x) for x in self.problem_grades]})"
 
-
-class AIModel(ABC):
-	"""
-	Abstract base class for AI models.
-	"""
-	
-	@abstractmethod
-	def generate_solution(self, problem_definition: ProblemDefinition) -> 'LLMSolution':
-		"""
-		Generates a solution for the given problem definition.
-		
-		Subclasses should override this method to provide the logic for
-		generating solutions.
-		
-		:param problem_definition: The problem definition for which to generate a solution.
-		:return: An LLMSolution object containing the generated solution.
-		"""
-		pass
-		
-	def __str__(self) -> str:
-		return f"{self.__class__.__name__}()"
-
-class Grader(ABC):
-	"""
-	Abstract base class for graders.
-	"""
-	
-	@abstractmethod
-	def grade(self, problems: List[ProblemDefinition], solutions: List[LLMSolution]) -> GradingOutput:
-		"""
-		Grades the provided solutions against the problem definitions.
-		"""
-		pass
-		
-	def __str__(self) -> str:
-		return f"{self.__class__.__name__}()"
-		
 class FunctionPrototype:
 	def __init__(self, data):
 		self.function_name = data["function_name"]
 		self.parameters = [Parameter(p) for p in data["parameters"]]
 		self.return_values = [ReturnValue(r) for r in data["return_values"]]
+
+	@classmethod
+	def from_json(cls, data: Dict[str, Any]) -> 'FunctionPrototype':
+		return cls(data)
+	
+	def to_json(self) -> Dict[str, Any]:
+		return {
+			"function_name": self.function_name,
+			"parameters": [param.to_json() for param in self.parameters],
+			"return_values": [rv.to_json() for rv in self.return_values]
+		}
 
 	def __str__(self):
 		params_str = ", ".join([str(p) for p in self.parameters])
@@ -318,6 +244,16 @@ class Parameter:
 		self.name = data["name"]
 		self.type = data["type"]
 
+	@classmethod
+	def from_json(cls, data: Dict[str, Any]) -> 'Parameter':
+		return cls(data)
+	
+	def to_json(self) -> Dict[str, Any]:
+		return {
+			"name": self.name,
+			"type": self.type
+		}
+
 	def __str__(self):
 		return f"{self.name}: {self.type}"
 
@@ -325,5 +261,144 @@ class ReturnValue:
 	def __init__(self, data):
 		self.type = data["type"]
 
+	@classmethod
+	def from_json(cls, data: Dict[str, Any]) -> 'ReturnValue':
+		return cls(data)
+	
+	def to_json(self) -> Dict[str, Any]:
+		return {
+			"type": self.type
+		}
+
 	def __str__(self):
 		return self.type
+
+class ProblemDefinition:
+	def __init__(self,
+				 identifier: ProblemID,
+				 description: str,
+				 function_prototype: FunctionPrototype,
+				 sample_inputs_outputs: Optional[Dict[str, Any]] = None,
+				 correctness_test_suite: Optional[Dict[str, Any]] = None,
+				 optimal_solution: Optional[Code] = None,
+				 additional_instructions: Optional[str] = None,
+				 input_code: Optional[Code] = None,
+				 tags: Optional[List[Tag]] = None):
+		self.identifier = identifier
+		self.description = description
+		self.function_prototype = function_prototype
+		self.sample_inputs_outputs = sample_inputs_outputs
+		self.correctness_test_suite = correctness_test_suite
+		self.optimal_solution = optimal_solution
+		self.additional_instructions = additional_instructions
+		self.input_code = input_code
+		self.tags = tags
+	
+	@classmethod
+	def from_json(cls, data: Dict[str, Any]) -> 'ProblemDefinition':
+		"""Create a ProblemDefinition instance from JSON data."""
+		function_prototype = FunctionPrototype.from_json(data.get('function_prototype', {}))
+		return cls(
+			identifier=data.get('identifier', ''),
+			description=data.get('description', ''),
+			function_prototype=function_prototype,
+			sample_inputs_outputs=data.get('sample_inputs_outputs', None),
+			correctness_test_suite=data.get('correctness_test_suite', None),
+			optimal_solution=data.get('optimal_solution', None),
+			additional_instructions=data.get('additional_instructions', None),
+			input_code=data.get('input_code', None),
+			tags=data.get('tags', None)
+		)
+	
+	def to_json(self) -> Dict[str, Any]:
+		"""Convert the ProblemDefinition instance to a JSON-serializable dictionary."""
+		return {
+			'identifier': self.identifier,
+			'description': self.description,
+			'function_prototype': self.function_prototype.to_json(),
+			'sample_inputs_outputs': self.sample_inputs_outputs,
+			'correctness_test_suite': self.correctness_test_suite,
+			'optimal_solution': self.optimal_solution,
+			'additional_instructions': self.additional_instructions,
+			'input_code': self.input_code,
+			'tags': self.tags
+		}
+	
+	def __str__(self) -> str:
+		sample_inputs_outputs_str = (
+			f", sample_inputs_outputs={self.sample_inputs_outputs}"
+			if self.sample_inputs_outputs
+			else ""
+		)
+		correctness_test_suite_str = (
+			f", correctness_test_suite={self.correctness_test_suite}"
+			if self.correctness_test_suite
+			else ""
+		)
+		optimal_solution_str = (
+			f", optimal_solution={self.optimal_solution}"
+			if self.optimal_solution
+			else ""
+		)
+		additional_instructions_str = (
+			f", additional_instructions={self.additional_instructions}"
+			if self.additional_instructions
+			else ""
+		)
+		input_code_str = (
+			f", input_code={self.input_code}"
+			if self.input_code
+			else ""
+		)
+		tags_str = f", tags={self.tags}" if self.tags else ""
+		
+		return (
+			f"ProblemDefinition("
+			f"identifier={self.identifier}, "
+			f"description={self.description}, "
+			f"function_prototype={str(self.function_prototype)}"
+			f"{sample_inputs_outputs_str}"
+			f"{correctness_test_suite_str}"
+			f"{optimal_solution_str}"
+			f"{additional_instructions_str}"
+			f"{input_code_str}"
+			f"{tags_str}"
+			f")"
+		)
+
+class AIModel(ABC):
+	"""
+	Abstract base class for AI models.
+	"""
+	
+	@abstractmethod
+	def generate_solution(self, problem_definition: ProblemDefinition) -> 'LLMSolution':
+		"""
+		Generates a solution for the given problem definition.
+		
+		Subclasses should override this method to provide the logic for
+		generating solutions.
+		
+		:param problem_definition: The problem definition for which to generate a solution.
+		:return: An LLMSolution object containing the generated solution.
+		"""
+		pass
+		
+	def __str__(self) -> str:
+		return f"{self.__class__.__name__}()"
+
+class Grader(ABC):
+	"""
+	Abstract base class for graders.
+	"""
+	
+	@abstractmethod
+	def grade(self, problems: List[ProblemDefinition], solutions: List[LLMSolution]) -> GradingOutput:
+		"""
+		Grades the provided solutions against the problem definitions.
+		"""
+		pass
+		
+	def __str__(self) -> str:
+		return f"{self.__class__.__name__}()"
+		
