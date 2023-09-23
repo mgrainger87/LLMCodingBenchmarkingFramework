@@ -1,0 +1,17 @@
+{
+	"identifier": "problem_001",
+	"description": "Implement a function to add two numbers.",
+	"function_signature": "def add(a: int, b: int) -> int:",
+	"sample_inputs_outputs": {
+		"inputs": [{"a": 1, "b": 2}, {"a": -1, "b": 2}],
+		"outputs": [3, 1]
+	},
+	"correctness_test_suite": {
+		"test_1": {"input": {"a": 1, "b": 2}, "expected_output": 3},
+		"test_2": {"input": {"a": -1, "b": 2}, "expected_output": 1}
+	},
+	"optimal_solution": "def add(a: int, b: int) -> int:\n    return a + b",
+	"additional_instructions": "Please adhere to Python's PEP 8 style guide.",
+	"input_code": "def add(a, b):\n    pass",
+	"tags": ["arithmetic", "easy"]
+}
