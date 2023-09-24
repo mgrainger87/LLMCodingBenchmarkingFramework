@@ -2,6 +2,6 @@
     "problem_identifier": "problem_2",
     "model_identifier": "human",
     "prompt_identifier": "detailed_prompt",
-    "solution_code": "def subtract(a: int, b: int) -> int:\n  \"\"\"Subtracts two integers and returns their difference.\n\n  Args:\n    a: The first integer.\n    b: The second integer.\n\n  Returns:\n    The difference of the two integers.\n  \"\"\"\n\n  return a - b\n",
+    "solution_code": "",
     "feedback": null
 }

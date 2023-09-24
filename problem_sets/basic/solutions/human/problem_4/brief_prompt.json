@@ -2,6 +2,6 @@
     "problem_identifier": "problem_4",
     "model_identifier": "human",
     "prompt_identifier": "brief_prompt",
-    "solution_code": "def divide(a: float, b: float) -> float:\n  \"\"\"Returns the result of division of two floats.\n\n  Args:\n    a: The first float.\n    b: The second float.\n\n  Returns:\n    The result of division of a and b.\n  \"\"\"\n\n  return a / b\n",
+    "solution_code": "",
     "feedback": null
 }

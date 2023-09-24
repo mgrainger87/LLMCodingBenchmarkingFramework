@@ -1,6 +1,5 @@
 from typing import Dict, List, Union, Optional, Any
 import ast
-import querier
 import json
 
 # Define necessary types
@@ -55,7 +54,7 @@ class LLMSolution:
 	def __str__(self) -> str:
 		feedback_str = f", feedback={self.feedback}" if self.feedback else ""
 		return (
-			f"AIModelSolution("
+			f"LLMSolution("
 			f"problem_identifier={self.problem_identifier}, "
 			f"model_identifier={self.model_identifier}, "
 			f"prompt_identifier={self.prompt_identifier}"
