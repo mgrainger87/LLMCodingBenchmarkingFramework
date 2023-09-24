@@ -2,18 +2,6 @@
 
 The LLM (Large Language Model) Coding Ability Benchmark Suite is designed to evaluate the problem-solving and code generation capabilities of AI models, particularly in the domain of programming challenges. This suite comprises three main phases: Problem Definition, Solution Generation, and Grading. Each phase is structured to facilitate a robust evaluation of AI models, ensuring that the generated solutions not only solve the problems as required but also adhere to specified criteria and standards.
 
-## Table of Contents
-
-1. [Overview](#overview)
-2. [Installation](#installation)
-3. [Usage](#usage)
-   - [Problem Definition](#problem-definition)
-   - [Solution Generation](#solution-generation)
-   - [Grading](#grading)
-4. [File Structure](#file-structure)
-5. [Contributing](#contributing)
-6. [License](#license)
-
 ## Overview
 
 The benchmark suite takes problem sets in a defined structured format, provides each problem to an LLM, asks for code that solves the problem, then evaluates the solution on a variety of different factors. Separating these phases allows for a standardized approach to evaluating different AI models on a common ground of programming challenges.
@@ -31,6 +19,8 @@ This command provides each problem defined in `problem_sets/basic/problems` to t
 ### Problem Definition
 
 The first phase of the benchmark suite is defining the problems that the AI models will attempt to solve. Problems are defined in a structured JSON format, which encapsulates various details of a problem including a unique identifier, description, function prototype, and correctness test suite among others. Each problem can also have multiple prompts to guide the AI models in generating solutions.
+
+For more details on the problem definition JSON format, see the [full specification](problem_definition.md).
 
 Here is an example of a basic problem definition:
 
@@ -106,6 +96,7 @@ Here is an example of a more complex problem description that asks an LLM to cor
 
 In the Solution Generation phase, AI models generate solutions for the defined problems.
 
+#### Queriers
 The test suite has two built-in queriers:
 
 - `OpenAIModelQuerier`, which uses the OpenAI API to interact with any model supported by the API
@@ -124,12 +115,31 @@ class MyQuerier(AIModelQuerier):
 	def __init__(self, model_identifier: str):
 		super().__init__(model_identifier)
 	
+	@classmethod
+	def supported_model_names(cls):
+		# ... (determine which model names are supported by this querier)
+		pass
+	
 	def generate_solution(self, problem_input: LLMProblemInput) -> 'LLMSolution':
 		# ... (implementation of generate_solution)
 		pass
 
 my_querier = MyQuerier(model_identifier="claude")
 solution = my_querier.generate_solution(problem_input)
+```
+
+#### Solution JSON format
+
+After the querier returns solutions for the provided problems, the resulting `LLMSolution` can be serialized in the following format. For more details on the JSON format, see the [full specification](querier_format.md).
+
+```json
+{
+	"problem_identifier": "problem_1",
+	"model_identifier": "text-davinci-002",
+	"prompt_identifier": "brief_prompt",
+	"solution_code": "\"\"\"\n\ndef add(a, b):\n    # fill in your code here\n    return a + b",
+	"feedback": null
+}
 ```
 
 ### Grading
@@ -152,18 +162,49 @@ my_grader = MyGrader()
 grading_output = my_grader.grade(problem_definitions, solutions)
 ```
 
+### Grader output JSON format
+
+Here is an example grading JSON output. For more details on the JSON format, see the [full specification](grader_format.md).
+
+```json
+{
+"problem_identifier": "problem_1",
+"prompt_identifier": "detailed_prompt",
+"model_identifier": "text-davinci-002",
+"score": 0.8,
+"sub_criteria_scores": null,
+"issues": [
+	"Test failed: Input: a = 1, b = 2\nExpected Output: 3 Result: {'exception': 'EOF while scanning triple-quoted string literal (<string>, line 5)', 'traceback': 'Traceback (most recent call last):\\n  File \"/Users/morgang/code/LLMCodingBenchmarkingFramework/execution.py\", line 27, in executor_script\\n    exec(function_code, exec_globals)\\n  File \"<string>\", line 5\\n    \"\"\"\\n\\ndef add(a, b):\\n    # fill in your code here\\n    return a + b\\n       \\n\\n              \\n                            \\n                ^\\nSyntaxError: EOF while scanning triple-quoted string literal\\n', 'parameters': [1, 2], 'function_code': '\"\"\"\\n\\ndef add(a, b):\\n    # fill in your code here\\n    return a + b'}"
+]
+```
+
+
 ## File Structure
 
-_Describe the file structure of the benchmark suite, explaining where to find key components and data._
+The framework separates different phases, models, and graders into distinct directories and files.
 
-## Contributing
+The directory structure of the Benchmarking Framework is as follows:
 
-_Guidelines for contributing to the benchmark suite._
+- **problem_sets**:
+	- **<problem_set_name>**:
+		- **problems**:
+			- Contains JSON files for each problem (e.g., `problem_1.json`).
+		- **solutions**:
+			- Contains JSON files for solutions to each problem, named the same as the problems (e.g., `problem_1.json`).
+			- **<model_name>**:
+				- Each problem has its own directory (e.g., `problem_1`), within which there is a JSON file for each prompt with the model's solution for that prompt.
+		- **grades**:
+			- **text-davinci-002**:
+				- **<grader**:
+					- Each problem has its own directory (e.g., `problem_1`), within which there is a JSON file for each prompt with the grading information for that prompt.
+	- **bugfixing**:
+		- Similar structure to the `basic` directory but tailored for bugfixing problems.
 
-## License
+Some additional notes:
 
-_License information for the benchmark suite._
+- Each problem set (e.g., `basic`, `bugfixing`) has a similar structure containing directories for grades, problems, and solutions.
+- The `problems` directory holds the problem definition files in JSON format for each problem within the problem set.
+- The `solutions` directory contains sub-directories for different models, with each problem having its own folder containing `brief_prompt.json` and `detailed_prompt.json` files, likely representing different levels of solution details.
+- Within the `grades` directory, different AI models (e.g., `text-davinci-002`) have their own sub-directories, further subdivided by grader (e.g. `correctness` and `performance`). Each problem within these sub-directories has a dedicated folder containing a JSON file for each prompt that holds grading details.
 
----
-
-This README provides a high-level overview of the LLM Coding Ability Benchmark Suite. Detailed documentation, including class definitions, method signatures, and examples, can be found within the codebase.
+This structured setup facilitates the organization of problems, solutions, and grading details, making it easier to manage and navigate the benchmarking framework.
