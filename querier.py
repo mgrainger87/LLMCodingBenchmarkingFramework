@@ -103,6 +103,7 @@ class OpenAIModelQuerier(AIModelQuerier):
 		# Make sure this key is set before trying to interact with the OpenAI API
 		if 'OPENAI_API_KEY' in os.environ:
 			response = openai.Model.list()
+			print(response)
 			return [item['id'] for item in response['data']]
 		else:
 			print("Warning: No OpenAI API key found in environment.")
@@ -120,6 +121,3 @@ class OpenAIModelQuerier(AIModelQuerier):
 		# Extract the generated code
 		response = response.choices[0].text.strip()
 		return LLMSolution(problem_input.problem_id, self.model_identifier, problem_input.prompt_id, response)
-
-
-	

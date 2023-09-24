@@ -368,6 +368,32 @@ class Prompt:
 			"input_code": self.input_code
 		}
 
+class LLMProblemInput:
+	def __init__(self, data: Dict[str, Any]):
+		self.problem_id = data.get('problem_id', '')
+		self.prompt_id = data.get('prompt_id', '')
+		self.prompt = data.get('prompt', '')
+		self.sample_inputs_outputs = [TestCase.from_json(tc) for tc in data.get('sample_inputs_outputs', [])]
+		self.input_code = data.get('input_code', '')
+		self.function_prototype = FunctionPrototype.from_json(data.get('function_prototype', {}))
+	
+	@classmethod
+	def from_json(cls, json_data: Dict[str, Any]) -> 'LLMProblemInput':
+		return cls(json_data)
+	
+	def to_json(self) -> Dict[str, Any]:
+		return {
+			'problem_id': self.problem_id,
+			'prompt_id': self.prompt_id,
+			'prompt': self.prompt,
+			'sample_inputs_outputs': [tc.to_json() for tc in self.sample_inputs_outputs],
+			'input_code': self.input_code,
+			'function_prototype': self.function_prototype.to_json()
+		}
+	
+	def __str__(self) -> str:
+		return json.dumps(self.to_json(), indent=2)
+
 class ProblemDefinition:
 	def __init__(self,
 				 identifier: str,
