@@ -2,6 +2,6 @@
     "problem_identifier": "problem_1",
     "model_identifier": "human",
     "prompt_identifier": "detailed_prompt",
-    "solution_code": "",
+    "solution_code": "def add(a: int, b: int) -> int:\n  \"\"\"Returns the sum of two integers.\n\n  Args:\n    a: The first integer.\n    b: The second integer.\n\n  Returns:\n    The sum of a and b.\n  \"\"\"\n\n  return a + b\n",
     "feedback": null
 }

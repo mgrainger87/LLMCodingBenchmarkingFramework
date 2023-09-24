@@ -19,17 +19,19 @@ if __name__ == "__main__":
 	
 	model = models.HumanAIModel()
 	
-	for problemDefinition in problemDefinitions:
-		inputs = problemDefinition.get_llm_problem_inputs()
-	# print(f"Number of inputs: {len(inputs)}")
+	# for problemDefinition in problemDefinitions:
+	# 	inputs = problemDefinition.get_llm_problem_inputs()
+	# 
+	# 	for problemInput in inputs:
+	# 		solutions.append(model.generate_solution(problemInput))
+	# 	
+	# serialization.save_solutions(base_path, solutions)
 	
-		for problemInput in inputs:
-			# print(f"Generating solution for {problemInput}")
-			solutions.append(model.generate_solution(problemInput))
-		
-	serialization.save_solutions(base_path, solutions)
+# 	solutions = serialization.get_solutions(base_path, "human")
+# 
+# 	grades = grader.CorrectnessGrader().grade(problemDefinitions, solutions)
 
-	grades = grader.CorrectnessGrader().grade(problemDefinitions, solutions)
+	grades = serialization.get_grades(base_path, "human")
 	print(grades)
 	serialization.save_grades(base_path, grades)
 	print("Done")

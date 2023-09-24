@@ -107,16 +107,6 @@ class SolutionGrade:
 		self.issues = issues
 
 	@classmethod
-	def averageSolutionGradeScores(cls, grades: List['SolutionGrade']) -> float:
-		# Ensure the grades list is not empty to avoid division by zero
-		if not grades:
-			raise ValueError("The grades list cannot be empty.")
-		
-		total_score = sum(grade.score for grade in grades)
-		average_score = total_score / len(grades)
-		return average_score
-	
-	@classmethod
 	def from_json(cls, data: Dict[str, Any]) -> 'SolutionGrade':
 		"""Create a SolutionGrade instance from JSON data."""
 		problem_identifier = data.get('problem_identifier', '')
@@ -164,19 +154,26 @@ class GradingOutput:
 	"""
 	Represents the grading output for a set of solutions.
 	"""
-	def __init__(self,
-				 overall_score: float,
-				 solution_grades: List[SolutionGrade]):
-		self.overall_score = overall_score
+	def __init__(self, solution_grades: List[SolutionGrade]):
 		self.solution_grades = solution_grades
-
+	
+	@property
+	def overall_score(self) -> float:
+		"""Calculate and return the overall score as the average of all solution grades."""
+		# Ensure the solution_grades list is not empty to avoid division by zero
+		if not self.solution_grades:
+			raise ValueError("The solution_grades list cannot be empty.")
+	
+		total_score = sum(grade.score for grade in self.solution_grades)
+		average_score = total_score / len(self.solution_grades)
+		return average_score
+	
 	@classmethod
 	def from_json(cls, data: Dict[str, Any]) -> 'GradingOutput':
 		"""Create a GradingOutput instance from JSON data."""
-		overall_score = data.get('overall_score', 0)
 		solution_grades_data = data.get('solution_grades', [])
 		solution_grades = [SolutionGrade.from_json(grade_data) for grade_data in solution_grades_data]
-		return cls(overall_score, solution_grades)
+		return cls(solution_grades)
 	
 	def to_json(self) -> Dict[str, Any]:
 		"""Convert the GradingOutput instance to a JSON-serializable dictionary."""
@@ -185,15 +182,15 @@ class GradingOutput:
 			'overall_score': self.overall_score,
 			'solution_grades': solution_grades_data
 		}
-		
+	
 	def __str__(self) -> str:
 		return (
 			f"GradingOutput("
 			f"overall_score={self.overall_score}, "
-			f"solution_grades={[str(x) for x in self.solution_grades]}, "
+			f"solution_grades={[str(x) for x in self.solution_grades]}"
 			f")"
 		)
-		
+			
 class TestCase:
 	def __init__(self, data: Dict[str, Any]):
 		print(data)

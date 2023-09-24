@@ -28,15 +28,20 @@ class CorrectnessGrader(Grader):
 		SolutionGrades = []
 		for problem in problems:
 			function_prototype = problem.function_prototype
-			score = 0
+			number_correct = 0
+			total_tests = 0
+			issues = []
 			for solution in solutions:
 				if solution.problem_identifier == problem.identifier:
 					for test_case in problem.correctness_test_suite:
 						actual_result = Grader.run_function(solution.solution_code, function_prototype, test_case)
 						expected_result = function_prototype.get_return_values(test_case)
 						print(f"Actual: {actual_result}\nExpected: {expected_result}")
+						total_tests += 1
 						if expected_result == actual_result:
-							score += 1
-			grade = SolutionGrade(problem.identifier, solution.prompt_identifier, solution.model_identifier, score)
+							number_correct += 1
+						else:
+							issues.append([f"Test failed: {test_case} Result: {actual_result}"])
+			grade = SolutionGrade(problem.identifier, solution.prompt_identifier, solution.model_identifier, number_correct/total_tests, None, issues)
 			SolutionGrades.append(grade)
 		return GradingOutput(SolutionGrade.averageSolutionGradeScores(SolutionGrades), SolutionGrades)

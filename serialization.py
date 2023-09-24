@@ -23,7 +23,21 @@ def save_solutions(basePath: str, solutions: List[LLMSolution]):
 		with open(path, 'w') as f:
 			jsonString = json.dumps(solution.to_json(), indent=4)
 			f.write(jsonString)
-	
+
+def get_solutions(basePath: str, model_identifier: str):
+	solutions = []
+	solutionsDirectory = os.path.join(basePath, "solutions", model_identifier)
+
+	for problemName in [file for file in os.listdir(solutionsDirectory) if not file.startswith('.')]:
+		problemDirectory = os.path.join(solutionsDirectory, problemName)
+
+		for solution_file in [file for file in os.listdir(problemDirectory) if not file.startswith('.')]:
+			solutionPath = os.path.join(problemDirectory, solution_file)
+			print(solutionPath)
+			with open(solutionPath) as f:
+				solutionJSON = json.loads(f.read())
+			solutions.append(LLMSolution.from_json(solutionJSON))
+	return solutions		
 	
 def save_grades(basePath: str, grades: GradingOutput):
 	print(grades.solution_grades)
@@ -36,3 +50,18 @@ def save_grades(basePath: str, grades: GradingOutput):
 		with open(path, 'w') as f:
 			jsonString = json.dumps(solutionGrade.to_json(), indent=4)
 			f.write(jsonString)
+			
+def get_grades(basePath: str, model_identifier: str):
+	grades = []
+	gradesDirectory = os.path.join(basePath, "grades", model_identifier)
+	
+	for problemName in [file for file in os.listdir(gradesDirectory) if not file.startswith('.')]:
+		problemDirectory = os.path.join(gradesDirectory, problemName)
+	
+		for grade_file in [file for file in os.listdir(problemDirectory) if not file.startswith('.')]:
+			gradePath = os.path.join(problemDirectory, grade_file)
+			print(gradePath)
+			with open(gradePath) as f:
+				gradeJSON = json.loads(f.read())
+			grades.append(SolutionGrade.from_json(gradeJSON))
+	return GradingOutput(grades)		
