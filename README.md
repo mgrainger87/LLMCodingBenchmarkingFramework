@@ -230,3 +230,7 @@ Some additional notes:
 - Within the `grades` directory, different AI models (e.g., `text-davinci-002`) have their own sub-directories, further subdivided by grader (e.g. `correctness` and `performance`). Each problem within these sub-directories has a dedicated folder containing a JSON file for each prompt that holds grading details.
 
 This structured setup facilitates the organization of problems, solutions, and grading details, making it easier to manage and navigate the benchmarking framework.
+
+## Regenerating the Suite Itself Using LLMs
+
+See [regenerate_framework.py](regenerate_framework.py) for an early look at an attempt to regenerate this testing suite by prompting an LLM!
