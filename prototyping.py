@@ -17,7 +17,7 @@ if __name__ == "__main__":
 		
 	solutions = []
 	
-	for problem in problemDefinitions:
+	for problemDefinition in problemDefinitions:
 		inputs = problemDefinition.get_llm_problem_inputs()
 	# print(f"Number of inputs: {len(inputs)}")
 	

@@ -385,6 +385,7 @@ class ProblemDefinition:
 	
 	@classmethod
 	def from_json(cls, data: Dict[str, Any]) -> 'ProblemDefinition':
+		print(data.get('function_prototype'))
 		function_prototype = FunctionPrototype.from_json(data.get('function_prototype', {}))
 		prompts = [Prompt.from_json(prompt_data) for prompt_data in data.get("prompts", [])]
 		correctness_test_suite = [TestCase.from_json(test_case) for test_case in data.get('correctness_test_suite', [])]

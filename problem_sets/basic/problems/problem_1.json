@@ -6,27 +6,29 @@
 		"parameters": [{"name": "a", "type": "int"}, {"name": "b", "type": "int"}],
 		"return_values": [{"type": "int"}]
 	},
-	"correctness_test_suite": {
-		"test_1": {"input": {"a": 1, "b": 2}, "expected_output": [3]},
-		"test_2": {"input": {"a": -1, "b": 2}, "expected_output": [1]}
-	},
+	"correctness_test_suite": [
+		{"input": {"a": 1, "b": 2}, "expected_output": [3]},
+		{"input": {"a": -1, "b": 2}, "expected_output": [1]}
+	],
 	"tags": ["Arithmetic", "Easy"],
-	"prompts": {
-		"brief_prompt": {
+	"prompts": [
+		{
+			"prompt_id": "brief_prompt",			
 			"prompt": "Implement the add function to return the sum of two integers.",
-			"genericize": False,
-			"sample_inputs_outputs": {
-				"sample_1": {"input": {"a": 3, "b": 4}, "expected_output": [7]},
-				"sample_2": {"input": {"a": 5, "b": 6}, "expected_output": [11]}
-			},
+			"genericize": false,
+			"sample_inputs_outputs": [
+				{"input": {"a": 3, "b": 4}, "expected_output": [7]},
+				{"input": {"a": 5, "b": 6}, "expected_output": [11]}
+			]
 		},
-		"detailed_prompt": {
+		{
+			"prompt_id": "detailed_prompt",
 			"prompt": "Write a function named 'add' that takes two integer arguments, 'a' and 'b', and returns their sum as an integer.",
-			"genericize": True,
-			"sample_inputs_outputs": {
-				"sample_1": {"input": {"a": 3, "b": 4}, "expected_output": [7]},
-				"sample_2": {"input": {"a": 5, "b": 6}, "expected_output": [11]}
-			},
+			"genericize": true,
+			"sample_inputs_outputs": [
+				{"input": {"a": 3, "b": 4}, "expected_output": [7]},
+				{"input": {"a": 5, "b": 6}, "expected_output": [11]}
+			]
 		}
-	}
+	]
 }
