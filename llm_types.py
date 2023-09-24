@@ -2,6 +2,7 @@ from typing import Dict, List, Union, Optional, Any
 from abc import ABC, abstractmethod
 import ast
 import querier
+import json
 
 # Define necessary types
 ProblemID = str
@@ -21,11 +22,11 @@ class LLMSolution:
 	"""
 	def __init__(self,
 				 problem_identifier: ProblemID,
-				 ai_identifier: AIIdentifier,
+				 model_identifier: AIIdentifier,
 				 solution_code: Code,
 				 feedback: Optional[Feedback] = None):
 		self.problem_identifier = problem_identifier
-		self.ai_identifier = ai_identifier
+		self.model_identifier = model_identifier
 		self.solution_code = solution_code
 		self.feedback = feedback
 
@@ -34,7 +35,7 @@ class LLMSolution:
 		"""Create an LLMSolution instance from JSON data."""
 		return cls(
 			problem_identifier=data.get('problem_identifier', ''),
-			ai_identifier=data.get('ai_identifier', ''),
+			model_identifier=data.get('model_identifier', ''),
 			solution_code=data.get('solution_code', ''),
 			feedback=data.get('feedback', None)
 		)
@@ -43,7 +44,7 @@ class LLMSolution:
 		"""Convert the LLMSolution instance to a JSON-serializable dictionary."""
 		return {
 			'problem_identifier': self.problem_identifier,
-			'ai_identifier': self.ai_identifier,
+			'model_identifier': self.model_identifier,
 			'solution_code': self.solution_code,
 			'feedback': self.feedback
 		}
@@ -53,7 +54,7 @@ class LLMSolution:
 		return (
 			f"AIModelSolution("
 			f"problem_identifier={self.problem_identifier}, "
-			f"ai_identifier={self.ai_identifier}, "
+			f"model_identifier={self.model_identifier}, "
 			f"solution_code={self.solution_code}"
 			f"{feedback_str}"
 			f")"
@@ -88,15 +89,25 @@ class ProblemGrade:
 	Represents the grade for a single problem.
 	"""
 	def __init__(self,
-				 problem_identifier: ProblemID,
-				 score: Score,
-				 sub_criteria_scores: Optional[SubCriteriaScores] = None,
-				 issues: Optional[List[Issue]] = None):
+				 problem_identifier: str,
+				 score: float,
+				 sub_criteria_scores: Optional[dict] = None,
+				 issues: Optional[List[str]] = None):
 		self.problem_identifier = problem_identifier
 		self.score = score
 		self.sub_criteria_scores = sub_criteria_scores
 		self.issues = issues
+
+	@classmethod
+	def averageProblemGradeScores(cls, grades: List['ProblemGrade']) -> float:
+		# Ensure the grades list is not empty to avoid division by zero
+		if not grades:
+			raise ValueError("The grades list cannot be empty.")
 		
+		total_score = sum(grade.score for grade in grades)
+		average_score = total_score / len(grades)
+		return average_score
+	
 	@classmethod
 	def from_json(cls, data: Dict[str, Any]) -> 'ProblemGrade':
 		"""Create a ProblemGrade instance from JSON data."""
@@ -184,7 +195,7 @@ class TestCase:
 	
 	def __str__(self) -> str:
 		inputs_str = ', '.join(f'{k} = {v}' for k, v in self.parameters.items())
-		expected_output_str = ', '.join(f'{k} = {v}' for k, v in self.expected_output.items())
+		expected_output_str = ', '.join(f'{v}' for v in self.expected_output)
 		return f'Input: {inputs_str}\nExpected Output: {expected_output_str}'
 
 
@@ -232,11 +243,11 @@ class FunctionPrototype:
 			# Using ast.literal_eval to safely evaluate the string representation
 			return ast.literal_eval(input)
 		
-	def get_parameter_values(self, test_case: Dict[str, str]) -> Dict[str, Any]:
+	def get_parameter_values(self, test_case: TestCase) -> Dict[str, Any]:
 		converted_params = {}
 		
 		for param in self.parameters:
-			converted_params[param.name] = self.get_python_type(param.type, test_case["parameters"][param.name])
+			converted_params[param.name] = self.get_python_type(param.type, test_case.parameters[param.name])
 		return converted_params
 		
 	def get_ordered_parameter_values(self, test_case) -> List[str]:
@@ -248,10 +259,10 @@ class FunctionPrototype:
 			ordered_parameters.append(parameter_values[p.name])
 		return ordered_parameters
 		
-	def get_return_values(self, test_case: Dict[str, str]) -> Dict[str, Any]:
+	def get_return_values(self, test_case: TestCase) -> Dict[str, Any]:
 		converted_retvals = []
 		
-		expectedOutput = test_case["expected_output"]
+		expectedOutput = test_case.expected_output
 		
 		for retval, expected in zip(self.return_values, expectedOutput):
 			# Extract the type of the parameter
@@ -431,8 +442,8 @@ class AIModel(ABC):
 	Abstract base class for AI models.
 	"""
 	
-	@staticmethod
-	def construct_textual_prompt(llm_problem_input: LLMProblemInput) -> str:
+	@classmethod
+	def construct_textual_prompt(cls, llm_problem_input: LLMProblemInput) -> str:
 		# Start with the textual prompt
 		prompt_text = llm_problem_input.prompt
 	
@@ -476,20 +487,6 @@ class HumanAIModel(AIModel):
 	def generate_solution(self, problem_input: LLMProblemInput) -> 'LLMSolution':
 		prompt = AIModel.construct_textual_prompt(problem_input)
 		response = querier.HumanQuerier().performQuery(prompt)
+		print(response)
 		return LLMSolution(problem_input.problem_id, "Human", response)
 
-class Grader(ABC):
-	"""
-	Abstract base class for graders.
-	"""
-	
-	@abstractmethod
-	def grade(self, problems: List[ProblemDefinition], solutions: List[LLMSolution]) -> GradingOutput:
-		"""
-		Grades the provided solutions against the problem definitions.
-		"""
-		pass
-		
-	def __str__(self) -> str:
-		return f"{self.__class__.__name__}()"
-		

@@ -12,18 +12,18 @@
 			"a": 5,
 			"b": 7
 		  },
-		  "expected_output": {
-			"sum": 12
-		  }
+		  "expected_output": [
+			12
+		  ]
 		},
 		{
 		  "input": {
 			"a": -3,
 			"b": 3
 		  },
-		  "expected_output": {
-			"sum": 0
-		  }
+		  "expected_output": [
+			0
+		  ]
 		}
 	  ],
 	  "input_code": ""
@@ -38,18 +38,18 @@
 			"a": 5,
 			"b": 7
 		  },
-		  "expected_output": {
-			"sum": 12
-		  }
+		  "expected_output": [
+			12
+		  ]
 		},
 		{
 		  "input": {
 			"a": -3,
 			"b": 3
 		  },
-		  "expected_output": {
-			"sum": 0
-		  }
+		  "expected_output": [
+		  	0
+		  ]
 		}
 	  ],
 	  "input_code": ""
@@ -79,18 +79,18 @@
 		"a": 5,
 		"b": 7
 	  },
-	  "expected_output": {
-		"sum": 12
-	  }
+	  "expected_output": [
+		12
+	  ]
 	},
 	{
 	  "input": {
 		"a": -3,
 		"b": 3
 	  },
-	  "expected_output": {
-		"sum": 0
-	  }
+	  "expected_output": [
+		0
+	  ]
 	}
   ],
   "optimal_solution": "",
