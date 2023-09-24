@@ -42,7 +42,7 @@ def get_solutions(basePath: str, model_identifier: str):
 def save_grades(basePath: str, grades: GradingOutput):
 	# print(grades.solution_grades)
 	for solutionGrade in grades.solution_grades:
-		directoryPath = os.path.join(basePath, "grades", solutionGrade.model_identifier, solutionGrade.problem_identifier)
+		directoryPath = os.path.join(basePath, "grades", solutionGrade.model_identifier, grades.grader_identifier, solutionGrade.problem_identifier)
 		pathlib.Path(directoryPath).mkdir(parents=True, exist_ok=True)
 		path = os.path.join(directoryPath, solutionGrade.prompt_identifier + ".json")
 
@@ -51,9 +51,9 @@ def save_grades(basePath: str, grades: GradingOutput):
 			jsonString = json.dumps(solutionGrade.to_json(), indent=4)
 			f.write(jsonString)
 			
-def get_grades(basePath: str, model_identifier: str):
+def get_grades(basePath: str, model_identifier: str, grader_identifier: str):
 	grades = []
-	gradesDirectory = os.path.join(basePath, "grades", model_identifier)
+	gradesDirectory = os.path.join(basePath, "grades", model_identifier, grader_identifier)
 	
 	for problemName in [file for file in sorted(os.listdir(gradesDirectory)) if not file.startswith('.')]:
 		problemDirectory = os.path.join(gradesDirectory, problemName)
@@ -64,4 +64,4 @@ def get_grades(basePath: str, model_identifier: str):
 			with open(gradePath) as f:
 				gradeJSON = json.loads(f.read())
 			grades.append(SolutionGrade.from_json(gradeJSON))
-	return GradingOutput(grades)		
+	return GradingOutput(grades, grader_identifier)		

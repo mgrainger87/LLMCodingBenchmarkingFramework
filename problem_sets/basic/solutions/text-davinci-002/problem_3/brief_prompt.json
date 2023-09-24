@@ -2,6 +2,6 @@
     "problem_identifier": "problem_3",
     "model_identifier": "text-davinci-002",
     "prompt_identifier": "brief_prompt",
-    "solution_code": "*/\n\n\n\npublic  class Multiply \n{\n\tpublic static void main(String[] args)\n\t{\n\t\t\n\t\tint m1 =4;\n\t\tint m2 =6;\n\t\tint result = multiply(m1,m2);\n\t\tSystem.out.println(\"Result : \"+ result);\n\n\t}\n\n\tpublic static int multiply(int a, int b) \n\t{\n\t\tif(a==0) \n\t\t\treturn 0;\n\t\tint result =0;\n\t\tresult = multiply(a, b-1);\n\t\tresult = result +a;\n\t\treturn result;\n\t\t\t\n\t\t\n\t\t\n\t}\n\n}",
+    "solution_code": "\"\"\"\ndef multiply(a, b):\n    return a * b",
     "feedback": null
 }
