@@ -1,0 +1,11 @@
+{
+    "problem_identifier": "problem_5",
+    "prompt_identifier": "detailed_prompt",
+    "model_identifier": "text-davinci-002",
+    "score": 0.5,
+    "sub_criteria_scores": null,
+    "issues": [
+        "Test failed: Input: n = 4\nExpected Output: 24 Result: {'exception': \"name 'factorial' is not defined\", 'traceback': 'Traceback (most recent call last):\\n  File \"/Users/morgang/code/LLMCodingBenchmarkingFramework/execution.py\", line 27, in executor_script\\n    exec(function_code, exec_globals)\\n  File \"<string>\", line 1, in <module>\\nNameError: name \\'factorial\\' is not defined\\n', 'parameters': [4], 'function_code': 'factorial(1) == 1\\nfactorial(5) == 120\\n\\n\\ndef factorial(n: int) -> int:\\n    if(n == 1):\\n        return n\\n    else:\\n        return n * factorial(n - 1)\\n\\nfactorial(5) == 120'}",
+        "Test failed: Input: n = 6\nExpected Output: 720 Result: {'exception': \"name 'factorial' is not defined\", 'traceback': 'Traceback (most recent call last):\\n  File \"/Users/morgang/code/LLMCodingBenchmarkingFramework/execution.py\", line 27, in executor_script\\n    exec(function_code, exec_globals)\\n  File \"<string>\", line 1, in <module>\\nNameError: name \\'factorial\\' is not defined\\n', 'parameters': [6], 'function_code': 'factorial(1) == 1\\nfactorial(5) == 120\\n\\n\\ndef factorial(n: int) -> int:\\n    if(n == 1):\\n        return n\\n    else:\\n        return n * factorial(n - 1)\\n\\nfactorial(5) == 120'}"
+    ]
+}

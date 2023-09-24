@@ -1,5 +1,5 @@
 {
-	"identifier": "problem_1",
+	"identifier": "problem_3",
 	"description": "Debug and fix the function to multiply two numbers.",
 	"prompts": [
 		{
@@ -20,7 +20,7 @@
 				{"input": {"a": 5, "b": 6}, "expected_output": [30]},
 				{"input": {"a": 8, "b": 3}, "expected_output": [24]}
 			],
-			"input_code": "def multiply(a: int, b: int) -> int:\n    return a + b"
+			"input_code": "def multiply(a: int, b: int) -> int:\n    return a * b * 2  # bug: incorrect operation"
 		}
 	],
 	"function_prototype": {
