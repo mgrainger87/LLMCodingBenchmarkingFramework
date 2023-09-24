@@ -3,6 +3,8 @@ from typing import Dict, List, Union, Optional, Any
 from llm_types import *
 import openai
 import os
+import sys
+import subprocess
 
 class AIModelQuerier(ABC):
 	"""
@@ -40,7 +42,6 @@ class AIModelQuerier(ABC):
 	def resolve_model_names(cls, model_names: List[str]) -> List['AIModelQuerier']:
 		subclass_mapping = {model_name: subclass for subclass in cls.__subclasses__() 
 							for model_name in subclass.supported_model_names()}
-		
 		instances = []
 		for model_name in model_names:
 			subclass = subclass_mapping.get(model_name, HumanAIModelQuerier)
@@ -78,7 +79,22 @@ class AIModelQuerier(ABC):
 class HumanAIModelQuerier(AIModelQuerier):	
 	def generate_solution(self, problem_input: LLMProblemInput) -> 'LLMSolution':
 		prompt = AIModelQuerier.construct_textual_prompt(problem_input)
-		response = querier.HumanQuerier().performQuery(prompt)
+		print(prompt)
+		
+		# Copy to pasteboard
+		process = subprocess.Popen('pbcopy', universal_newlines=True, stdin=subprocess.PIPE)
+		process.communicate(prompt)
+		process.wait()
+
+		lines = []
+		try:
+			for line in sys.stdin:
+				lines.append(line)
+		except EOFError:
+			pass
+		response = "".join(lines)
+
+		
 		return LLMSolution(problem_input.problem_id, "human", problem_input.prompt_id, response)
 
 class OpenAIModelQuerier(AIModelQuerier):
@@ -86,13 +102,17 @@ class OpenAIModelQuerier(AIModelQuerier):
 	def supported_model_names(cls):
 		# Make sure this key is set before trying to interact with the OpenAI API
 		if 'OPENAI_API_KEY' in os.environ:
-			return openai.Model.list()
+			response = openai.Model.list()
+			return [item['id'] for item in response['data']]
+		else:
+			print("Warning: No OpenAI API key found in environment.")
+			return []
 			
 	def generate_solution(self, problem_input: LLMProblemInput) -> 'LLMSolution':
 		prompt = AIModelQuerier.construct_textual_prompt(problem_input)
 		# Send the prompt to the OpenAI API
 		response = openai.Completion.create(
-			engine=self.__model,
+			engine=self.model_identifier,
 			prompt=prompt,
 			max_tokens=1000
 		)

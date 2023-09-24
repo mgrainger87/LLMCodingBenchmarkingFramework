@@ -1,0 +1,7 @@
+{
+    "problem_identifier": "problem_3",
+    "model_identifier": "text-davinci-002",
+    "prompt_identifier": "detailed_prompt",
+    "solution_code": "Test Case 3:\nInput: a = -2, b = 12\nExpected Output: -24",
+    "feedback": null
+}

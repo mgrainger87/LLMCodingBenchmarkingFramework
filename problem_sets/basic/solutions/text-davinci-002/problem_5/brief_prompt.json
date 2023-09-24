@@ -1,0 +1,7 @@
+{
+    "problem_identifier": "problem_5",
+    "model_identifier": "text-davinci-002",
+    "prompt_identifier": "brief_prompt",
+    "solution_code": "\"\"\"\n\n\n# Solution 1\ndef remainder(a, b):\n    \"\"\"Return the remainder of two integers.\"\"\"\n    return a  % b\n\n\n# Solution 2\ndef remainder(a, b):\n    \"\"\"Return the remainder of two integers.\"\"\"\n    return a - (a // b * b)",
+    "feedback": null
+}

@@ -129,32 +129,35 @@ class SolutionGrade:
 	
 	def __str__(self) -> str:
 		sub_criteria_scores_str = (
-			f", sub_criteria_scores={self.sub_criteria_scores}"
+			f"Sub Criteria Scores: {self.sub_criteria_scores}"
 			if self.sub_criteria_scores
-			else ""
+			else "No Sub Criteria Scores"
 		)
+		
+		issues_separator = "\n\t"
 		issues_str = (
-			f", issues=[{', '.join(str(issue) for issue in self.issues)}]"
+			f"Issues: [\n\t{issues_separator.join(str(issue) for issue in self.issues)}]"
 			if self.issues
-			else ""
+			else "No Issues"
 		)
 		return (
-			f"SolutionGrade("
-			f"problem_identifier={self.problem_identifier}, "
-			f"prompt_identifier={self.prompt_identifier}, "
-			f"model_identifier={self.model_identifier}, "
-			f"score={self.score}"
-			f"{sub_criteria_scores_str}"
-			f"{issues_str}"
-			f")"
+			f"SolutionGrade:\n"
+			f"  Problem Identifier: {self.problem_identifier}\n"
+			f"  Prompt Identifier: {self.prompt_identifier}\n"
+			f"  Model Identifier: {self.model_identifier}\n"
+			f"  Score: {self.score}\n"
+			f"  {sub_criteria_scores_str}\n"
+			f"  {issues_str}"
 		)
 
 class GradingOutput:
 	"""
 	Represents the grading output for a set of solutions.
 	"""
-	def __init__(self, solution_grades: List[SolutionGrade]):
+
+	def __init__(self, solution_grades: List['SolutionGrade'], grader_identifier: str):
 		self.solution_grades = solution_grades
+		self.grader_identifier = grader_identifier
 	
 	@property
 	def overall_score(self) -> float:
@@ -172,27 +175,46 @@ class GradingOutput:
 		"""Create a GradingOutput instance from JSON data."""
 		solution_grades_data = data.get('solution_grades', [])
 		solution_grades = [SolutionGrade.from_json(grade_data) for grade_data in solution_grades_data]
-		return cls(solution_grades)
+		grader_identifier = data.get('grader_identifier', '')  # Assume empty string if not present
+		return cls(solution_grades, grader_identifier)
 	
 	def to_json(self) -> Dict[str, Any]:
 		"""Convert the GradingOutput instance to a JSON-serializable dictionary."""
 		solution_grades_data = [solution_grade.to_json() for solution_grade in self.solution_grades]
 		return {
 			'overall_score': self.overall_score,
-			'solution_grades': solution_grades_data
+			'solution_grades': solution_grades_data,
+			'grader_identifier': self.grader_identifier
 		}
 	
+	def str_including_solutions(self):
+		def add_tab(string):
+			lines = string.split('\n')
+			lines_with_tabs = ['\t' + line for line in lines]
+			result = '\n'.join(lines_with_tabs)
+			return result
+			
+		solution_grades_str = add_tab('\n  '.join(str(grade) for grade in self.solution_grades))
+		return str(self) + "\nSolution grades:\n" + solution_grades_str
+
+	
 	def __str__(self) -> str:
+		def add_tab(string):
+			lines = string.split('\n')
+			lines_with_tabs = ['\t' + line for line in lines]
+			result = '\n'.join(lines_with_tabs)
+			return result
+			
+		solution_grades_str = add_tab('\n  '.join(str(grade) for grade in self.solution_grades))
 		return (
-			f"GradingOutput("
-			f"overall_score={self.overall_score}, "
-			f"solution_grades={[str(x) for x in self.solution_grades]}"
-			f")"
+			f"GradingOutput:\n"
+			f"  Overall Score: {self.overall_score}\n"
+			f"  Grader Identifier: {self.grader_identifier}\n"
+			f"  Solutions Count: {len(self.solution_grades)}"
 		)
 			
 class TestCase:
 	def __init__(self, data: Dict[str, Any]):
-		print(data)
 		self.parameters = data.get('input', {})
 		self.expected_output = data.get('expected_output', {})
 	
@@ -322,7 +344,6 @@ class ReturnValue:
 
 class Prompt:
 	def __init__(self, data: Dict[str, any]):
-		print(data)
 		self.prompt_id = data["prompt_id"]
 		self.prompt = data["prompt"]
 		self.genericize = data["genericize"]
@@ -394,7 +415,6 @@ class ProblemDefinition:
 	
 	@classmethod
 	def from_json(cls, data: Dict[str, Any]) -> 'ProblemDefinition':
-		print(data.get('function_prototype'))
 		function_prototype = FunctionPrototype.from_json(data.get('function_prototype', {}))
 		prompts = [Prompt.from_json(prompt_data) for prompt_data in data.get("prompts", [])]
 		correctness_test_suite = [TestCase.from_json(test_case) for test_case in data.get('correctness_test_suite', [])]
@@ -422,18 +442,19 @@ class ProblemDefinition:
 		}
 	
 	def __str__(self) -> str:
-		prompts_str = ', '.join(str(prompt) for prompt in self.prompts)
+		prompts_str = '\n    '.join(str(prompt) for prompt in self.prompts)
+		correctness_test_suite_str = '\n    '.join(str(test_case) for test_case in self.correctness_test_suite) if self.correctness_test_suite else "No Test Cases"
+		tags_str = ', '.join(self.tags) if self.tags else "No Tags"
 		return (
-			f"ProblemDefinition("
-			f"identifier={self.identifier}, "
-			f"description={self.description}, "
-			f"prompts=[{prompts_str}]\n"
-			f"function_prototype={str(self.function_prototype)}, "
-			f"correctness_test_suite={self.correctness_test_suite}, "
-			f"optimal_solution={self.optimal_solution}, "
-			f"additional_instructions={self.additional_instructions}, "
-			f"tags={self.tags}"
-			f")"
+			f"ProblemDefinition:\n"
+			f"  Identifier: {self.identifier}\n"
+			f"  Description: {self.description}\n"
+			f"  Prompts:\n    {prompts_str}\n"
+			f"  Function Prototype: {self.function_prototype}\n"
+			f"  Correctness Test Suite:\n    {correctness_test_suite_str}\n"
+			f"  Optimal Solution: {self.optimal_solution or 'Not Provided'}\n"
+			f"  Additional Instructions: {self.additional_instructions or 'Not Provided'}\n"
+			f"  Tags: {tags_str}"
 		)
 	
 	def get_llm_problem_inputs(self) -> list[LLMProblemInput]:

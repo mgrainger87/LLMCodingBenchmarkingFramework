@@ -10,20 +10,25 @@ def load_problems(base_path):
 	return serialization.get_problems(base_path)
 
 def generate_solutions(base_path, problem_definitions, models):
+	solutions = []	
 	for model in models:
-		solutions = []
 		for problem_definition in problem_definitions:
 			inputs = problem_definition.get_llm_problem_inputs()
 			for problem_input in inputs:
 				solutions.append(model.generate_solution(problem_input))
-		serialization.save_solutions(base_path, solutions)
+	serialization.save_solutions(base_path, solutions)
+	return solutions
 
-def grade_solutions(base_path, problem_definitions, graders):
+def grade_solutions(base_path, problem_definitions, models, graders):
+	gradingOutputs = []
 	for grader in graders:
-		solutions = serialization.get_solutions(base_path, "human")
-		grades = grader.grade(problem_definitions, solutions)
-		serialization.save_grades(base_path, grades)
-		print(grades)
+		for model in models:
+			solutions = serialization.get_solutions(base_path, model.model_identifier)
+			grades = grader.grade(problem_definitions, solutions)
+			serialization.save_grades(base_path, grades)
+			gradingOutputs.append(grades)
+			
+	return gradingOutputs
 	
 def resolve_graders(grader_names):
 	resolvedGraders = []
@@ -53,18 +58,28 @@ def main():
 	
 	if args.load:
 		problem_definitions = load_problems(args.base_path)
-		print(problem_definitions)
+		for problem_definition in problem_definitions:
+			print(problem_definition)
+			print()
 	
 	if args.generate:
 		if not problem_definitions:
 			problem_definitions = load_problems(args.base_path)
-		generate_solutions(args.base_path, problem_definitions, models)
-		print()
+		solutions = generate_solutions(args.base_path, problem_definitions, models)
+		print(solutions)
 	
 	if args.grade:
 		if not problem_definitions:
 			problem_definitions = load_problems(args.base_path)
-		grade_solutions(args.base_path, problem_definitions, graders)
+		grading_outputs = grade_solutions(args.base_path, problem_definitions, models, graders)
+		
+		for output in grading_outputs:
+			print(output.str_including_solutions())
+
+		print()
+
+		for output in grading_outputs:
+			print(output)
 	
 	print("Done")
 
