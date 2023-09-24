@@ -10,9 +10,9 @@ The benchmark suite takes problem sets in a defined structured format, provides 
 
 Get started by running the `benchmark.py` script. Here is an example using built-in problem sets, AIs, and graders:
 
-`python3 benchmark.py --base_path problem_sets/basic/ --generate --grade --model text-davinci-002 --grader performance correctness`
+`python3 benchmark.py --base_path problem_sets/bugfixing/ --grade --model gpt-4 --grader performance correctness`
 
-This command provides each problem defined in `problem_sets/basic/problems` to the OpenAI model `text-davinci-002` and grades the resulting code on both correctness and performance.
+This command provides each problem defined in `problem_sets/bugfixing/problems` to the OpenAI model `gpt-4` and grades the resulting code on both correctness and performance.
 
 ## Extending the benchmarking suite
 
@@ -95,6 +95,28 @@ Here is an example of a more complex problem description that asks an LLM to cor
 ### Solution Generation
 
 In the Solution Generation phase, AI models generate solutions for the defined problems.
+
+The problem definition is converted to a prompt like the following:
+
+```
+The provided function `add` attempts to return the sum of two integers, but it contains bugs. Debug and fix the function to return the correct sum.
+
+Function Signature:
+add(a: int, b: int) -> int
+
+Sample Inputs and Outputs:
+
+Test Case 1:
+Input: a = 5, b = 6
+Expected Output: 11
+Test Case 2:
+Input: a = 8, b = 3
+Expected Output: 11
+
+Input Code:
+def add(a: int, b: int) -> int:
+	return a - b
+```
 
 #### Queriers
 The test suite has two built-in queriers:
