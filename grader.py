@@ -25,7 +25,7 @@ class Grader(ABC):
 		
 class CorrectnessGrader(Grader):
 	def grade(self, problems: List[ProblemDefinition], solutions: List[LLMSolution]) -> GradingOutput:
-		problemGrades = []
+		SolutionGrades = []
 		for problem in problems:
 			function_prototype = problem.function_prototype
 			score = 0
@@ -37,6 +37,6 @@ class CorrectnessGrader(Grader):
 						print(f"Actual: {actual_result}\nExpected: {expected_result}")
 						if expected_result == actual_result:
 							score += 1
-			grade = ProblemGrade(problem.identifier, score)
-			problemGrades.append(grade)
-		return GradingOutput(ProblemGrade.averageProblemGradeScores(problemGrades), problemGrades)
+			grade = SolutionGrade(problem.identifier, solution.prompt_identifier, solution.model_identifier, score)
+			SolutionGrades.append(grade)
+		return GradingOutput(SolutionGrade.averageSolutionGradeScores(SolutionGrades), SolutionGrades)

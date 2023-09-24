@@ -25,5 +25,14 @@ def save_solutions(basePath: str, solutions: List[LLMSolution]):
 			f.write(jsonString)
 	
 	
-def save_grades(basePath: str, grades: List[GradingOutput]):
-	pass
+def save_grades(basePath: str, grades: GradingOutput):
+	print(grades.solution_grades)
+	for solutionGrade in grades.solution_grades:
+		directoryPath = os.path.join(basePath, "grades", solutionGrade.model_identifier, solutionGrade.problem_identifier)
+		pathlib.Path(directoryPath).mkdir(parents=True, exist_ok=True)
+		path = os.path.join(directoryPath, solutionGrade.prompt_identifier + ".json")
+
+		print(path)
+		with open(path, 'w') as f:
+			jsonString = json.dumps(solutionGrade.to_json(), indent=4)
+			f.write(jsonString)

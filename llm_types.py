@@ -88,22 +88,26 @@ class Issue:
 		def __str__(self) -> str:
 			return f"Issue({self.issue_category}, {self.issue_description})"
 
-class ProblemGrade:
+class SolutionGrade:
 	"""
-	Represents the grade for a single problem.
+	Represents the grade for a single solution.
 	"""
 	def __init__(self,
 				 problem_identifier: str,
+				 prompt_identifier: str,
+				 model_identifier: str,
 				 score: float,
 				 sub_criteria_scores: Optional[dict] = None,
 				 issues: Optional[List[str]] = None):
 		self.problem_identifier = problem_identifier
+		self.prompt_identifier = prompt_identifier
 		self.score = score
+		self.model_identifier = model_identifier
 		self.sub_criteria_scores = sub_criteria_scores
 		self.issues = issues
 
 	@classmethod
-	def averageProblemGradeScores(cls, grades: List['ProblemGrade']) -> float:
+	def averageSolutionGradeScores(cls, grades: List['SolutionGrade']) -> float:
 		# Ensure the grades list is not empty to avoid division by zero
 		if not grades:
 			raise ValueError("The grades list cannot be empty.")
@@ -113,24 +117,26 @@ class ProblemGrade:
 		return average_score
 	
 	@classmethod
-	def from_json(cls, data: Dict[str, Any]) -> 'ProblemGrade':
-		"""Create a ProblemGrade instance from JSON data."""
+	def from_json(cls, data: Dict[str, Any]) -> 'SolutionGrade':
+		"""Create a SolutionGrade instance from JSON data."""
 		problem_identifier = data.get('problem_identifier', '')
+		prompt_identifier = data.get('prompt_identifier', '')
+		model_identifier = data.get('model_identifier', '')
 		score = data.get('score', 0)
 		sub_criteria_scores = data.get('sub_criteria_scores', None)
-		issues_data = data.get('issues', [])
-		issues = [Issue.from_json(issue_data) for issue_data in issues_data]
-		return cls(problem_identifier, score, sub_criteria_scores, issues)
+		issues = data.get('issues', [])
+		return cls(problem_identifier, prompt_identifier, model_identifier, score, sub_criteria_scores, issues)
 	
 	def to_json(self) -> Dict[str, Any]:
-		"""Convert the ProblemGrade instance to a JSON-serializable dictionary."""
-		issues_data = [issue.to_json() for issue in self.issues] if self.issues else []
+		"""Convert the SolutionGrade instance to a JSON-serializable dictionary."""
 		return {
 			'problem_identifier': self.problem_identifier,
+			'prompt_identifier': self.prompt_identifier,
+			'model_identifier': self.model_identifier,
 			'score': self.score,
 			'sub_criteria_scores': self.sub_criteria_scores,
-			'issues': issues_data
-	}
+			'issues': self.issues
+		}
 	
 	def __str__(self) -> str:
 		sub_criteria_scores_str = (
@@ -144,8 +150,10 @@ class ProblemGrade:
 			else ""
 		)
 		return (
-			f"ProblemGrade("
+			f"SolutionGrade("
 			f"problem_identifier={self.problem_identifier}, "
+			f"prompt_identifier={self.prompt_identifier}, "
+			f"model_identifier={self.model_identifier}, "
 			f"score={self.score}"
 			f"{sub_criteria_scores_str}"
 			f"{issues_str}"
@@ -154,32 +162,37 @@ class ProblemGrade:
 
 class GradingOutput:
 	"""
-	Represents the grading output for a set of problems.
+	Represents the grading output for a set of solutions.
 	"""
 	def __init__(self,
-				 overall_score: Score,
-				 problem_grades: List[ProblemGrade]):
+				 overall_score: float,
+				 solution_grades: List[SolutionGrade]):
 		self.overall_score = overall_score
-		self.problem_grades = problem_grades
+		self.solution_grades = solution_grades
 
 	@classmethod
 	def from_json(cls, data: Dict[str, Any]) -> 'GradingOutput':
 		"""Create a GradingOutput instance from JSON data."""
 		overall_score = data.get('overall_score', 0)
-		problem_grades_data = data.get('problem_grades', [])
-		problem_grades = [ProblemGrade.from_json(grade_data) for grade_data in problem_grades_data]
-		return cls(overall_score, problem_grades)
+		solution_grades_data = data.get('solution_grades', [])
+		solution_grades = [SolutionGrade.from_json(grade_data) for grade_data in solution_grades_data]
+		return cls(overall_score, solution_grades)
 	
 	def to_json(self) -> Dict[str, Any]:
 		"""Convert the GradingOutput instance to a JSON-serializable dictionary."""
-		problem_grades_data = [problem_grade.to_json() for problem_grade in self.problem_grades]
+		solution_grades_data = [solution_grade.to_json() for solution_grade in self.solution_grades]
 		return {
 			'overall_score': self.overall_score,
-			'problem_grades': problem_grades_data
+			'solution_grades': solution_grades_data
 		}
 		
 	def __str__(self) -> str:
-		return f"GradingOutput({self.overall_score}, {[str(x) for x in self.problem_grades]})"
+		return (
+			f"GradingOutput("
+			f"overall_score={self.overall_score}, "
+			f"solution_grades={[str(x) for x in self.solution_grades]}, "
+			f")"
+		)
 		
 class TestCase:
 	def __init__(self, data: Dict[str, Any]):
