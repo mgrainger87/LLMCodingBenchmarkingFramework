@@ -1,5 +1,4 @@
 from typing import Dict, List, Union, Optional, Any
-from abc import ABC, abstractmethod
 import ast
 import querier
 import json
@@ -21,12 +20,14 @@ class LLMSolution:
 	Represents the solution output from an AI model.
 	"""
 	def __init__(self,
-				 problem_identifier: ProblemID,
-				 model_identifier: AIIdentifier,
-				 solution_code: Code,
-				 feedback: Optional[Feedback] = None):
+				 problem_identifier: str,
+				 model_identifier: str,
+				 prompt_identifier: str,
+				 solution_code: str,
+				 feedback: Optional[dict] = None):
 		self.problem_identifier = problem_identifier
 		self.model_identifier = model_identifier
+		self.prompt_identifier = prompt_identifier
 		self.solution_code = solution_code
 		self.feedback = feedback
 
@@ -36,6 +37,7 @@ class LLMSolution:
 		return cls(
 			problem_identifier=data.get('problem_identifier', ''),
 			model_identifier=data.get('model_identifier', ''),
+			prompt_identifier=data.get('prompt_identifier', ''),
 			solution_code=data.get('solution_code', ''),
 			feedback=data.get('feedback', None)
 		)
@@ -45,6 +47,7 @@ class LLMSolution:
 		return {
 			'problem_identifier': self.problem_identifier,
 			'model_identifier': self.model_identifier,
+			'prompt_identifier': self.prompt_identifier,
 			'solution_code': self.solution_code,
 			'feedback': self.feedback
 		}
@@ -55,7 +58,8 @@ class LLMSolution:
 			f"AIModelSolution("
 			f"problem_identifier={self.problem_identifier}, "
 			f"model_identifier={self.model_identifier}, "
-			f"solution_code={self.solution_code}"
+			f"prompt_identifier={self.prompt_identifier}"
+			f"solution_code={self.solution_code}, "
 			f"{feedback_str}"
 			f")"
 		)
@@ -424,10 +428,10 @@ class ProblemDefinition:
 	
 	def get_llm_problem_inputs(self) -> list[LLMProblemInput]:
 		llm_problem_inputs = []
-		for prompt_id, prompt in enumerate(self.prompts):
+		for prompt in self.prompts:
 			llm_input_data = {
 				'problem_id': self.identifier,
-				'prompt_id': str(prompt_id),
+				'prompt_id': prompt.prompt_id,
 				'prompt':  prompt.prompt,
 				'sample_inputs_outputs': [tc.to_json() for tc in prompt.sample_inputs_outputs],
 				'input_code': prompt.input_code,
@@ -436,57 +440,3 @@ class ProblemDefinition:
 			llm_problem_input = LLMProblemInput(llm_input_data)
 			llm_problem_inputs.append(llm_problem_input)
 		return llm_problem_inputs
-
-class AIModel(ABC):
-	"""
-	Abstract base class for AI models.
-	"""
-	
-	@classmethod
-	def construct_textual_prompt(cls, llm_problem_input: LLMProblemInput) -> str:
-		# Start with the textual prompt
-		prompt_text = llm_problem_input.prompt
-	
-		# Add function prototype if available
-		function_prototype = llm_problem_input.function_prototype
-		if function_prototype:
-			prompt_text += f"\n\nFunction Signature:\n{str(function_prototype)}"
-	
-		# Add sample inputs and outputs if available
-		sample_io = llm_problem_input.sample_inputs_outputs
-		if sample_io:
-			sample_io_text = '\n\nSample Inputs and Outputs:\n'
-			for i, test_case in enumerate(sample_io, start=1):
-				sample_io_text += f"\nTest Case {i}:\n{str(test_case)}"
-			prompt_text += sample_io_text
-	
-		# Add input code if available
-		input_code = llm_problem_input.input_code
-		if input_code:
-			prompt_text += f"\n\nInput Code:\n{input_code}"
-	
-		return prompt_text
-	
-	@abstractmethod
-	def generate_solution(self, problem_input: LLMProblemInput) -> 'LLMSolution':
-		"""
-		Generates a solution for the given problem definition.
-		
-		Subclasses should override this method to provide the logic for
-		generating solutions.
-		
-		:param problem_definition: The problem definition for which to generate a solution.
-		:return: An LLMSolution object containing the generated solution.
-		"""
-		pass
-		
-	def __str__(self) -> str:
-		return f"{self.__class__.__name__}()"
-
-class HumanAIModel(AIModel):
-	def generate_solution(self, problem_input: LLMProblemInput) -> 'LLMSolution':
-		prompt = AIModel.construct_textual_prompt(problem_input)
-		response = querier.HumanQuerier().performQuery(prompt)
-		print(response)
-		return LLMSolution(problem_input.problem_id, "Human", response)
-
