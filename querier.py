@@ -39,9 +39,11 @@ class AIModelQuerier(ABC):
 		pass
 	
 	@classmethod
-	def resolve_model_names(cls, model_names: List[str]) -> List['AIModelQuerier']:
+	def resolve_queriers(cls, model_names: List[str], force_human: bool = False) -> List['AIModelQuerier']:
 		subclass_mapping = {model_name: subclass for subclass in cls.__subclasses__() 
-							for model_name in subclass.supported_model_names()}
+							for model_name in subclass.supported_model_names()}	
+		if force_human:
+			subclass_mapping = {}
 		instances = []
 		for model_name in model_names:
 			subclass = subclass_mapping.get(model_name, HumanAIModelQuerier)
@@ -95,7 +97,7 @@ class HumanAIModelQuerier(AIModelQuerier):
 		response = "".join(lines)
 
 		
-		return LLMSolution(problem_input.problem_id, "human", problem_input.prompt_id, response)
+		return LLMSolution(problem_input.problem_id, self.model_identifier, problem_input.prompt_id, response)
 
 class OpenAIModelQuerier(AIModelQuerier):
 	@classmethod
@@ -109,15 +111,32 @@ class OpenAIModelQuerier(AIModelQuerier):
 			print("Warning: No OpenAI API key found in environment.")
 			return []
 			
+	def is_chat_based_model(self):
+		return "gpt-3.5" in self.model_identifier or "gpt-4" in self.model_identifier
+	
 	def generate_solution(self, problem_input: LLMProblemInput) -> 'LLMSolution':
 		prompt = AIModelQuerier.construct_textual_prompt(problem_input)
-		# Send the prompt to the OpenAI API
-		response = openai.Completion.create(
-			engine=self.model_identifier,
-			prompt=prompt,
-			max_tokens=1000
-		)
 		
-		# Extract the generated code
-		response = response.choices[0].text.strip()
+		# Send the prompt to the OpenAI API
+		if self.is_chat_based_model():
+			messages = [{"role": "user", "content": prompt}]
+			response = openai.ChatCompletion.create(
+				model="gpt-4",
+				max_tokens=1000,
+				messages = messages)
+			
+			# Extract the generated code
+			response = response.choices[0].message.content.strip()
+		else:		
+			response = openai.Completion.create(
+				engine=self.model_identifier,
+				prompt=prompt,
+				max_tokens=1000
+			)
+			
+			# Extract the generated code
+			response = response.choices[0].text.strip()
+
+		
+		print(response)
 		return LLMSolution(problem_input.problem_id, self.model_identifier, problem_input.prompt_id, response)

@@ -51,11 +51,12 @@ def main():
 	parser.add_argument('--grade', action='store_true', help="Grade the generated solutions.")
 	parser.add_argument('--model', required=True, nargs='+', help="The model(s) to use for generating solutions.")
 	parser.add_argument('--grader', required='--grade' in sys.argv, nargs='+', help="The grader(s) to use for grading solutions.")
+	parser.add_argument('--force-human', action='store_true', help="Always use the interactive human model querier.")
 	args = parser.parse_args()
 	
 	problem_definitions = []
 	
-	models = querier.AIModelQuerier.resolve_model_names(args.model)
+	models = querier.AIModelQuerier.resolve_queriers(args.model, args.force_human)
 	graders = grader.Grader.resolve_graders(args.grader)
 	
 	print("Loading problems…")
