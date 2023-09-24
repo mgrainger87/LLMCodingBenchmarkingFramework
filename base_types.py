@@ -207,9 +207,8 @@ class GradingOutput:
 			
 		solution_grades_str = add_tab('\n  '.join(str(grade) for grade in self.solution_grades))
 		return (
-			f"GradingOutput:\n"
+			f"GradingOutput ({self.grader_identifier}):\n"
 			f"  Overall Score: {self.overall_score}\n"
-			f"  Grader Identifier: {self.grader_identifier}\n"
 			f"  Solutions Count: {len(self.solution_grades)}"
 		)
 			

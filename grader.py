@@ -54,10 +54,10 @@ class CorrectnessGrader(Grader):
 		solutionGrades = []
 		for problem in problems:
 			function_prototype = problem.function_prototype
-			number_correct = 0
-			total_tests = 0
-			issues = []
 			for solution in solutions:
+				number_correct = 0
+				total_tests = 0
+				issues = []
 				if solution.problem_identifier == problem.identifier:
 					for test_case in problem.correctness_test_suite:
 						actual_result = Grader.run_function(solution.solution_code, function_prototype, test_case)
@@ -67,8 +67,12 @@ class CorrectnessGrader(Grader):
 							number_correct += 1
 						else:
 							issues.append(f"Test failed: {test_case} Result: {actual_result}")
-			grade = SolutionGrade(problem.identifier, solution.prompt_identifier, solution.model_identifier, number_correct/total_tests, None, issues)
-			solutionGrades.append(grade)
+							
+					score = 0
+					if total_tests > 0:
+						score = number_correct / total_tests
+					grade = SolutionGrade(problem.identifier, solution.prompt_identifier, solution.model_identifier, score, None, issues)
+					solutionGrades.append(grade)
 		return GradingOutput(solutionGrades, self.identifier)
 
 class PerformanceGrader(Grader):
@@ -78,15 +82,14 @@ class PerformanceGrader(Grader):
 		return "performance"
 		
 	def grade(self, problems: List[ProblemDefinition], solutions: List[LLMSolution]) -> GradingOutput:
-		print("Grading with performance grader")
 		solutionGrades = []
 		for problem in problems:
 			function_prototype = problem.function_prototype
-			total_solution_time = 0
-			total_optimal_time = 0
-			issues = []
 			for solution in solutions:
 				if solution.problem_identifier == problem.identifier:
+					total_solution_time = 0
+					total_optimal_time = 0
+					issues = []
 					for test_case in problem.correctness_test_suite:
 						start_time = time.process_time()
 						Grader.run_function(solution.solution_code, function_prototype, test_case)
@@ -98,8 +101,8 @@ class PerformanceGrader(Grader):
 						end_time = time.process_time()
 						total_optimal_time = end_time - start_time
 						
-			grade = SolutionGrade(problem.identifier, solution.prompt_identifier, solution.model_identifier, total_solution_time/total_optimal_time, None, issues)
-			solutionGrades.append(grade)
+					grade = SolutionGrade(problem.identifier, solution.prompt_identifier, solution.model_identifier, total_solution_time/total_optimal_time, None, issues)
+					solutionGrades.append(grade)
 		return GradingOutput(solutionGrades, self.identifier)
 
 	
