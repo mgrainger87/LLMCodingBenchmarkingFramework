@@ -1,6 +1,0 @@
-{
-	"problem_identifier": "problem_001",
-	"model_identifier": "AIModel_v1",
-	"solution_code": "def add(a: int, b: int) -> int:\n    return a + b",
-	"feedback": "Function implemented correctly with the proper signature."
-}

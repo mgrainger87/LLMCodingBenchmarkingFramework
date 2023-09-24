@@ -1,5 +1,5 @@
 from abc import ABC, abstractmethod
-from llm_types import *
+from base_types import *
 import execution
 import time
 

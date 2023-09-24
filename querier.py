@@ -1,6 +1,6 @@
 from abc import ABC, abstractmethod
 from typing import Dict, List, Union, Optional, Any
-from llm_types import *
+from base_types import *
 import openai
 import os
 import sys

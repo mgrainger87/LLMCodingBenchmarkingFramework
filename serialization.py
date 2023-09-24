@@ -1,4 +1,4 @@
-from llm_types import *
+from base_types import *
 import os
 import pathlib
 

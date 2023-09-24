@@ -1,5 +1,5 @@
 import argparse
-from llm_types import *
+from base_types import *
 import json
 import grader
 import serialization

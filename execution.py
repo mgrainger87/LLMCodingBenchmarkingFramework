@@ -1,6 +1,6 @@
 import sys
 import os
-from llm_types import FunctionPrototype
+from base_types import FunctionPrototype
 from typing import *
 import traceback
 import tempfile
