@@ -30,6 +30,8 @@ def grade_solutions(base_path, problem_definitions, models, graders):
 	for grader in graders:
 		for model in models:
 			solutions = serialization.get_solutions(base_path, model.model_identifier)
+			if not grader.can_grade(problem_definitions):
+				continue
 			grades = grader.grade(problem_definitions, solutions)
 			serialization.save_grades(base_path, grades)
 			gradingOutputs.append(grades)
