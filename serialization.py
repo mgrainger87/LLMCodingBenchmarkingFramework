@@ -28,15 +28,16 @@ def get_solutions(basePath: str, model_identifier: str):
 	solutions = []
 	solutionsDirectory = os.path.join(basePath, "solutions", model_identifier)
 
-	for problemName in [file for file in sorted(os.listdir(solutionsDirectory)) if not file.startswith('.')]:
-		problemDirectory = os.path.join(solutionsDirectory, problemName)
-
-		for solution_file in [file for file in sorted(os.listdir(problemDirectory)) if not file.startswith('.')]:
-			solutionPath = os.path.join(problemDirectory, solution_file)
-			# print(solutionPath)
-			with open(solutionPath) as f:
-				solutionJSON = json.loads(f.read())
-			solutions.append(LLMSolution.from_json(solutionJSON))
+	if os.path.exists(solutionsDirectory):
+		for problemName in [file for file in sorted(os.listdir(solutionsDirectory)) if not file.startswith('.')]:
+			problemDirectory = os.path.join(solutionsDirectory, problemName)
+	
+			for solution_file in [file for file in sorted(os.listdir(problemDirectory)) if not file.startswith('.')]:
+				solutionPath = os.path.join(problemDirectory, solution_file)
+				# print(solutionPath)
+				with open(solutionPath) as f:
+					solutionJSON = json.loads(f.read())
+				solutions.append(LLMSolution.from_json(solutionJSON))
 	return solutions		
 	
 def save_grades(basePath: str, grades: GradingOutput):
