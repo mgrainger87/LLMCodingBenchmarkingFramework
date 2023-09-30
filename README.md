@@ -26,24 +26,31 @@ Here is an example of a basic problem definition:
 
 ```json
 {
-	"identifier": "add_numbers",
-	"description": "Write a function to add two numbers.",
-	"function_prototype": {
-		"function_name": "add",
-		"parameters": [{"name": "a", "type": "int"}, {"name": "b", "type": "int"}],
-		"return_values": [{"type": "int"}]
-	},
-	"correctness_test_suite": [
-		{"input": {"a": 1, "b": 2}, "expected_output": [3]},
-		{"input": {"a": -1, "b": 2}, "expected_output": [1]}
-	],
-	"tags": ["Arithmetic", "Easy"],
+	"identifier": "sum_two_integers",
 	"prompts": [
 		{
-			"prompt_id": "detailed_prompt",
-			"prompt": "Write a function named 'add' that takes two integer arguments, 'a' and 'b', and returns their sum as an integer.",
+			"prompt_id": "simple_prompt",
+			"prompt": "Write a function named 'add' that takes two integer arguments, 'a' and 'b', and returns their sum."
 		}
-	]
+	],
+	"function_prototype": {
+		"function_name": "add",
+		"parameters": [
+			{
+				"name": "a",
+				"type": "int"
+			},
+			{
+				"name": "b",
+				"type": "int"
+			}
+		],
+		"return_values": [
+			{
+				"type": "int"
+			}
+		]
+	}
 }
 ```
 
@@ -53,42 +60,87 @@ Here is an example of a more complex problem description that asks an LLM to cor
 
 ```json
 {
-	"identifier": "multiply_numbers",
-	"description": "Debug and fix the function to multiply two numbers.",
+	"identifier": "fix_multiplication",
 	"prompts": [
 		{
-			"prompt_id": "brief_prompt",
-			"prompt": "The provided function `multiply` attempts to return the product of two integers, but it contains bugs. Debug and fix the function to return the correct product.",
-			"genericize": false,
-			"sample_inputs_outputs": [
-				{"input": {"a": 5, "b": 6}, "expected_output": [30]},
-				{"input": {"a": 8, "b": 3}, "expected_output": [24]}
-			],
-			"input_code": "def multiply(a: int, b: int) -> int:\n    return a + b"
-		},
-		{
 			"prompt_id": "detailed_prompt",
-			"prompt": "The function named 'multiply' is intended to take two integer arguments, 'a' and 'b', and return their product as an integer. However, it contains bugs. Debug and fix the function to ensure it returns the correct product.",
+			"prompt": "The provided function 'multiply' attempts to return the product of two numbers, but it contains bugs. Debug and fix the function to return the correct product.",
 			"genericize": true,
 			"sample_inputs_outputs": [
-				{"input": {"a": 5, "b": 6}, "expected_output": [30]},
-				{"input": {"a": 8, "b": 3}, "expected_output": [24]}
+				{
+					"input": {"a": 3, "b": 4},
+					"expected_output": [12]
+				},
+				{
+					"input": {"a": -2, "b": 7},
+					"expected_output": [-14]
+				}
 			],
-			"input_code": "def multiply(a: int, b: int) -> int:\n    return a * b * 2  # bug: incorrect operation"
+			"input_code": "def multiply(a: int, b: int) -> int:\n    return a + b  # bug: incorrect operation"
+		},
+		{
+			"prompt_id": "brief_prompt",
+			"prompt": "Debug and fix the function 'multiply' to correctly return the product of two numbers.",
+			"genericize": false,
+			"sample_inputs_outputs": [
+				{
+					"input": {"a": 5, "b": 6},
+					"expected_output": [30]
+				},
+				{
+					"input": {"a": -1, "b": -1},
+					"expected_output": [1]
+				}
+			],
+			"input_code": "def multiply(a: int, b: int) -> int:\n    return a / b  # bug: incorrect operation"
 		}
 	],
 	"function_prototype": {
 		"function_name": "multiply",
-		"parameters": [{"name": "a", "type": "int"}, {"name": "b", "type": "int"}],
-		"return_values": [{"type": "int"}]
+		"parameters": [
+			{
+				"name": "a",
+				"type": "int"
+			},
+			{
+				"name": "b",
+				"type": "int"
+			}
+		],
+		"return_values": [
+			{
+				"type": "int"
+			}
+		]
 	},
 	"correctness_test_suite": [
-		{"input": {"a": 4, "b": 3}, "expected_output": [12]},
-		{"input": {"a": 7, "b": 2}, "expected_output": [14]}
+		{
+			"input": {"a": 5, "b": 6},
+			"expected_output": [30]
+		},
+		{
+			"input": {"a": -1, "b": -1},
+			"expected_output": [1]
+		},
+		{
+			"input": {"a": 0, "b": 0},
+			"expected_output": [0]
+		},
+		{
+			"input": {"a": 10, "b": 10},
+			"expected_output": [100]
+		},
+		{
+			"input": {"a": -5, "b": 7},
+			"expected_output": [-35]
+		}
 	],
 	"optimal_solution": "def multiply(a: int, b: int) -> int:\n    return a * b",
-	"additional_instructions": "Ensure that your function handles negative numbers as well.",
-	"tags": ["Debugging", "Easy"]
+	"tags": [
+		"Debugging",
+		"Arithmetic",
+		"Easy"
+	]
 }
 ```
 

@@ -2,16 +2,19 @@ from base_types import *
 import os
 import pathlib
 
-def get_problems(basePath: str):
-	problems = []
+def get_problems_json(basePath: str):
+	problemsJSON = {}
 	problemsDirectory = os.path.join(basePath, "problems")
 	for problem_file in [file for file in sorted(os.listdir(problemsDirectory)) if not file.startswith('.')]:
 		problemPath = os.path.join(problemsDirectory, problem_file)
 		# print(problemPath)
 		with open(problemPath) as f:
 			problemJSON = json.loads(f.read())
-		problems.append(ProblemDefinition.from_json(problemJSON))
-	return problems		
+		problemsJSON[problem_file] = problemJSON
+	return problemsJSON		
+
+def get_problems(basePath: str):
+	return [ProblemDefinition.from_json(x) for x in get_problems_json(basePath).values()]
 
 def save_solutions(basePath: str, solutions: List[LLMSolution]):
 	for solution in solutions:
