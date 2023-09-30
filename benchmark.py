@@ -56,7 +56,22 @@ def load_grades(base_path, models, graders):
 		for model in models:
 			gradingOutputs.append(serialization.get_grades(base_path, model.model_identifier, grader.identifier))
 
-	return gradingOutputs	
+	return gradingOutputs
+	
+def print_header(text, symbol='#'):
+	# Convert text to uppercase
+	text = text.upper()
+	
+	# Get the length of the text, plus 4 to account for spaces and surrounding symbols
+	length = len(text) + 4
+	
+	# Create the decorative line
+	decoration = symbol * length
+	
+	# Combine everything together
+	result = f"{decoration}\n{symbol} {text} {symbol}\n{decoration}"
+	
+	print(f'\n{result}\n')
 
 def main():
 	parser = argparse.ArgumentParser(description="Run specified phases of the grading process.")
@@ -80,6 +95,7 @@ def main():
 		args.base_path = [os.path.join('problem_sets', d) for d in os.listdir('problem_sets') if os.path.isdir(os.path.join('problem_sets', d))]
 		
 	if args.validate:
+		print_header('Validation')
 		print("Validating problems…")
 		all_validation_results = {x: validate_problems(x) for x in args.base_path}
 		print("Validation results:")
@@ -89,20 +105,25 @@ def main():
 				print(f"\t{fileName}: {validation_result}")
 	
 	if args.generate or args.grade:
+		print_header('Problems')
 		print("Loading problems…")
 		problem_sets = {x: load_problems(x) for x in args.base_path}
 	
 		# Run benchmarks on all problem sets sequentially
 		for base_path, problem_definitions in problem_sets.items():
+			print(f"\n***\n*** Problem set {base_path}\n***\n")
 			for problem_definition in problem_definitions:
 				print(problem_definition)
+				print()
 				
 			if args.generate:
+				print_header('Generation')
 				print("Generating solutions…")
 				solutions = generate_solutions(base_path, problem_definitions, models)
 				print(solutions)
 			
 			if args.grade:
+				print_header('Grading')
 				print("Grading solutions…")
 				grading_outputs = grade_solutions(base_path, problem_definitions, models, graders)
 	
@@ -113,8 +134,6 @@ def main():
 	
 				for output in grading_outputs:
 					print(output)
-	
-	print("Done")
 
 if __name__ == "__main__":
 	main()

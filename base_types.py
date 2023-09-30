@@ -230,7 +230,7 @@ class TestCase:
 	def __str__(self) -> str:
 		inputs_str = ', '.join(f'{k} = {v}' for k, v in self.parameters.items())
 		expected_output_str = ', '.join(f'{v}' for v in self.expected_output)
-		return f'Input: {inputs_str}\nExpected Output: {expected_output_str}'
+		return f'Input: {inputs_str}; Expected Output: {expected_output_str}'
 
 
 class FunctionPrototype:
@@ -445,8 +445,7 @@ class ProblemDefinition:
 		correctness_test_suite_str = '\n    '.join(str(test_case) for test_case in self.correctness_test_suite) if self.correctness_test_suite else "No Test Cases"
 		tags_str = ', '.join(self.tags) if self.tags else "No Tags"
 		return (
-			f"ProblemDefinition:\n"
-			f"  Identifier: {self.identifier}\n"
+			f"ProblemDefinition {self.identifier}:\n"
 			f"  Description: {self.description}\n"
 			f"  Prompts:\n    {prompts_str}\n"
 			f"  Function Prototype: {self.function_prototype}\n"
