@@ -64,7 +64,7 @@ def main():
 	parser.add_argument('--validate', action='store_true', help="Validate the problem definition JSON.")
 	parser.add_argument('--generate', action='store_true', help="Generate solutions for problems.")
 	parser.add_argument('--grade', action='store_true', help="Grade the generated solutions.")
-	parser.add_argument('--model', required='--generate' in sys.argv or '--grade' in sys.argv, nargs='+', help="The model(s) to use for generating solutions.")
+	parser.add_argument('--model', required='--generate' in sys.argv or '--grade' in sys.argv, nargs='+', help=f"The model(s) to use for generating solutions The following model names can be queried through the OpenAI API: {querier.OpenAIModelQuerier.supported_model_names()}")
 	parser.add_argument('--grader', required='--grade' in sys.argv, nargs='+', help="The grader(s) to use for grading solutions.")
 	parser.add_argument('--force-human', action='store_true', help="Always use the interactive human model querier.")
 	args = parser.parse_args()

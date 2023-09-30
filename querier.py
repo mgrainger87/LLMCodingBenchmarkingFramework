@@ -109,14 +109,13 @@ class OpenAIModelQuerier(AIModelQuerier):
 		# Make sure this key is set before trying to interact with the OpenAI API
 		if 'OPENAI_API_KEY' in os.environ:
 			response = openai.Model.list()
-			print(response)
 			return [item['id'] for item in response['data']]
 		else:
 			print("Warning: No OpenAI API key found in environment. Set the OPENAI_API_KEY environment variable.")
 			return []
 			
 	def is_chat_based_model(self):
-		return "gpt-3.5-turbo" in self.model_identifier or "gpt-4" in self.model_identifier
+		return "gpt-3.5" in self.model_identifier or "gpt-4" in self.model_identifier
 	
 	def extract_code(self, response: str) -> str:
 		# Try to find the last Python code block
