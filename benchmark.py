@@ -5,6 +5,7 @@ import grader
 import serialization
 import querier
 import sys
+import os
 
 def load_problems(base_path):
 	return serialization.get_problems(base_path)
@@ -28,10 +29,10 @@ def load_solutions(base_path, models):
 def grade_solutions(base_path, problem_definitions, models, graders):
 	gradingOutputs = []
 	for grader in graders:
+		if not grader.can_grade(problem_definitions):
+			continue
 		for model in models:
 			solutions = serialization.get_solutions(base_path, model.model_identifier)
-			if not grader.can_grade(problem_definitions):
-				continue
 			grades = grader.grade(problem_definitions, solutions)
 			serialization.save_grades(base_path, grades)
 			gradingOutputs.append(grades)
@@ -48,7 +49,7 @@ def load_grades(base_path, models, graders):
 
 def main():
 	parser = argparse.ArgumentParser(description="Run specified phases of the grading process.")
-	parser.add_argument('--base_path', required=True, help="The base path for data files.")
+	parser.add_argument('--base_path', nargs='*', default=None, help="The base path(s) for data files. If this arg is not set, run all problem sets in ./problem_sets")
 	parser.add_argument('--generate', action='store_true', help="Generate solutions for problems.")
 	parser.add_argument('--grade', action='store_true', help="Grade the generated solutions.")
 	parser.add_argument('--model', required=True, nargs='+', help="The model(s) to use for generating solutions.")
@@ -62,27 +63,34 @@ def main():
 	graders = grader.Grader.resolve_graders(args.grader)
 	
 	print("Loading problems…")
-	problem_definitions = load_problems(args.base_path)
-	for problem_definition in problem_definitions:
-		print(problem_definition)
-		print()
+	if args.base_path is None:
+		args.base_path = [os.path.join('problem_sets', d) for d in os.listdir('problem_sets') if os.path.isdir(os.path.join('problem_sets', d))]
+		
+	problem_sets = [load_problems(x) for x in args.base_path]
 	
-	if args.generate:
-		print("Generating solutions…")
-		solutions = generate_solutions(args.base_path, problem_definitions, models)
-		print(solutions)
+	# Run benchmarks on all problem sets sequentially
+	for problem_definitions in problem_sets:
 	
-	if args.grade:
-		print("Grading solutions…")
-		grading_outputs = grade_solutions(args.base_path, problem_definitions, models, graders)
+		for problem_definition in problem_definitions:
+			print(problem_definition)
+			print()
+		
+		if args.generate:
+			print("Generating solutions…")
+			solutions = generate_solutions(args.base_path, problem_definitions, models)
+			print(solutions)
+		
+		if args.grade:
+			print("Grading solutions…")
+			grading_outputs = grade_solutions(args.base_path, problem_definitions, models, graders)
 
-		for output in grading_outputs:
-			print(output.str_including_solutions())
+			for output in grading_outputs:
+				print(output.str_including_solutions())
 
-		print()
+			print()
 
-		for output in grading_outputs:
-			print(output)
+			for output in grading_outputs:
+				print(output)
 	
 	print("Done")
 
