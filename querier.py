@@ -5,6 +5,7 @@ import openai
 import os
 import sys
 import subprocess
+import re
 
 class AIModelQuerier(ABC):
 	"""
@@ -108,15 +109,33 @@ class OpenAIModelQuerier(AIModelQuerier):
 			print(response)
 			return [item['id'] for item in response['data']]
 		else:
-			print("Warning: No OpenAI API key found in environment.")
+			print("Warning: No OpenAI API key found in environment. Set the OPENAI_API_KEY environment variable.")
 			return []
 			
 	def is_chat_based_model(self):
 		return "gpt-3.5" in self.model_identifier or "gpt-4" in self.model_identifier
 	
+	def extract_code(self, response: str) -> str:
+		# Try to find the last Python code block
+		python_blocks = re.findall(r'``` ?python\n(.*?)\n```', response, re.DOTALL)
+		if python_blocks:
+			return python_blocks[-1].strip()
+		
+		# If no Python code block is found, try to find the last generic code block
+		generic_blocks = re.findall(r'``` ?\n(.*?)\n```', response, re.DOTALL)
+		if generic_blocks:
+			return generic_blocks[-1].strip()
+		
+		return response
+
 	def generate_solution(self, problem_input: LLMProblemInput) -> 'LLMSolution':
 		prompt = AIModelQuerier.construct_textual_prompt(problem_input)
 		
+		# Add additional instructions for automated prompting
+		prompt += "\n\nAfter analyzing the problem, provide your solution in a Markdown code block. Do not include tests in the Markdown code block. The last Markdown code block in your response will be directly executed for testing."
+		
+		print(f"***Prompt:\n{prompt}")
+
 		# Send the prompt to the OpenAI API
 		if self.is_chat_based_model():
 			messages = [{"role": "user", "content": prompt}]
@@ -126,7 +145,8 @@ class OpenAIModelQuerier(AIModelQuerier):
 				messages = messages)
 			
 			# Extract the generated code
-			response = response.choices[0].message.content.strip()
+			response = response.choices[0].message.content
+			
 		else:		
 			response = openai.Completion.create(
 				engine=self.model_identifier,
@@ -135,8 +155,10 @@ class OpenAIModelQuerier(AIModelQuerier):
 			)
 			
 			# Extract the generated code
-			response = response.choices[0].text.strip()
+			response = response.choices[0].text
 
+		print(f"***Response:\n{response}")
+		solution = self.extract_code(response)
 		
-		print(response)
-		return LLMSolution(problem_input.problem_id, self.model_identifier, problem_input.prompt_id, response)
+		print(f"***Extracted solution:\n{solution}")
+		return LLMSolution(problem_input.problem_id, self.model_identifier, problem_input.prompt_id, solution)

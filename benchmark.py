@@ -26,8 +26,9 @@ def generate_solutions(base_path, problem_definitions, models):
 		for problem_definition in problem_definitions:
 			inputs = problem_definition.get_llm_problem_inputs()
 			for problem_input in inputs:
-				solutions.append(model.generate_solution(problem_input))
-	serialization.save_solutions(base_path, solutions)
+				solution = model.generate_solution(problem_input)
+				solutions.append(solution)
+				serialization.save_solution(base_path, solution)
 	return solutions
 	
 def load_solutions(base_path, models):
@@ -89,22 +90,21 @@ def main():
 	
 	if args.generate or args.grade:
 		print("Loading problems…")
-		problem_sets = [load_problems(x) for x in args.base_path]
+		problem_sets = {x: load_problems(x) for x in args.base_path}
 	
 		# Run benchmarks on all problem sets sequentially
-		for problem_definitions in problem_sets:
+		for base_path, problem_definitions in problem_sets.items():
 			for problem_definition in problem_definitions:
 				print(problem_definition)
-				print()
 				
 			if args.generate:
 				print("Generating solutions…")
-				solutions = generate_solutions(args.base_path, problem_definitions, models)
+				solutions = generate_solutions(base_path, problem_definitions, models)
 				print(solutions)
 			
 			if args.grade:
 				print("Grading solutions…")
-				grading_outputs = grade_solutions(args.base_path, problem_definitions, models, graders)
+				grading_outputs = grade_solutions(base_path, problem_definitions, models, graders)
 	
 				for output in grading_outputs:
 					print(output.str_including_solutions())

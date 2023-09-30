@@ -16,16 +16,15 @@ def get_problems_json(basePath: str):
 def get_problems(basePath: str):
 	return [ProblemDefinition.from_json(x) for x in get_problems_json(basePath).values()]
 
-def save_solutions(basePath: str, solutions: List[LLMSolution]):
-	for solution in solutions:
-		directoryPath = os.path.join(basePath, "solutions", solution.model_identifier, solution.problem_identifier)
-		pathlib.Path(directoryPath).mkdir(parents=True, exist_ok=True)
-		path = os.path.join(directoryPath, solution.prompt_identifier + ".json")
-		
-		# print(path)
-		with open(path, 'w') as f:
-			jsonString = json.dumps(solution.to_json(), indent=4)
-			f.write(jsonString)
+def save_solution(basePath: str, solution: LLMSolution):
+	directoryPath = os.path.join(basePath, "solutions", solution.model_identifier, solution.problem_identifier)
+	pathlib.Path(directoryPath).mkdir(parents=True, exist_ok=True)
+	path = os.path.join(directoryPath, solution.prompt_identifier + ".json")
+	
+	# print(path)
+	with open(path, 'w') as f:
+		jsonString = json.dumps(solution.to_json(), indent=4)
+		f.write(jsonString)
 
 def get_solutions(basePath: str, model_identifier: str):
 	solutions = []

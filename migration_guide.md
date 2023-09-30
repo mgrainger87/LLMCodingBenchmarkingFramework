@@ -2,7 +2,7 @@
 
 Migrating from your current benchmarking suite to the format used in this framework has three main steps:
 
-1. Examine and refine the problem set and evaluation metrics
+1. Examine and refine the problem set and evaluation metrics.
 2. Migrate each of the problems to the standard problem JSON format.
 3. Migrate the evaluation mechanism to the `Grader` class.
 
@@ -14,7 +14,11 @@ Some things to consider:
 
 - Are the problems described consistently and with enough detail that an LLM can reasonably be expected to provide a correct solution?
 - Can the solutions be graded in a quantitative manner?
-	- This may require developing specific test cases, an ideal solution, or other additional information about the problem. (Of course, generative AI is great for this!)
+	- This may require developing specific test cases, an ideal solution, or other additional information about the problem. (Generative AI is great for this!)
+
+#### Sample LLM prompt
+	
+> I plan to provide the coding problems below to an LLM like yourself. For each one, expand on the problem definition so that it provides the following specific information that will enable the LLM to produce a consistent solution: prompt, function signature, example input and output, and a correctness test suite.
 
 #### Example
 
@@ -57,12 +61,6 @@ add(5, 3)
 5. Test Case 5:
    - Function Call: `add(-3, 3)`
    - Expected Output: `0`
-
-#### Sample LLM prompt
-
-> I plan to provide the coding problems below to an LLM like yourself. For each one, expand on the problem definition so that it provides the following specific information that will enable the LLM to produce a consistent solution: prompt, function signature, example input and output, and a correctness test suite.
-
-Use this approach for all of the problems in your problem set.
 
 ## Migrate to the standard problem JSON
 
@@ -144,59 +142,58 @@ find_max(4, 7)
 
 Determine which fields are relevant for your problem type and how the output could be structured. This is a task that can be delegated to an LLM with a prompt like the one below.
 
-```
-I want to convert problems in textual form into JSON that conforms to a specified format. Given example problems below, develop a general approach for converting the data in the problems into valid JSON. Your approach should be applicable to other problems in this general format.
+> I want to convert problems in textual form into JSON that conforms to a specified format. Given example problems below, develop a general approach for converting the data in the problems into valid JSON. Your approach should be applicable to other problems in this general format.
+> 
+> Problems:
+> <problem definition from Step 1>
+> <problem definition from Step 1>
+> 
+> Problem Definition JSON Specification:
+> {
+> 	"identifier": "<string>",
+> 	"prompts": [
+> 		{
+> 			"prompt_id": "<string>",
+> 			"prompt": "<string>",
+> 			"genericize": <boolean> (Optional),
+> 			"sample_inputs_outputs": [
+> 				{
+> 					"input": {"<parameter_name>": "<parameter_value>", ...},
+> 					"expected_output": ["<output_value>", ...]
+> 				},
+> 				...
+> 			],
+> 			"input_code": "<string> (Optional)"
+> 		},
+> 		...
+> 	],
+> 	"function_prototype": {
+> 		"function_name": "<string>",
+> 		"parameters": [
+> 			{
+> 				"name": "<string>",
+> 				"type": "<string>"
+> 			},
+> 			...
+> 		],
+> 		"return_values": [
+> 			{
+> 				"type": "<string>"
+> 			},
+> 			...
+> 		]
+> 	},
+> 	"correctness_test_suite": [
+> 		{
+> 			"input": {"<parameter_name>": "<parameter_value>", ...},
+> 			"expected_output": ["<output_value>", ...]
+> 		},
+> 		...
+> 	],
+> 	"optimal_solution": "<string> (Optional)",
+> 	"tags": ["<string>", ...] (Optional)
+> }
 
-Problems:
-<problem definition from Step 1>
-<problem definition from Step 1>
-
-Problem Definition JSON Specification:
-{
-	"identifier": "<string>",
-	"prompts": [
-		{
-			"prompt_id": "<string>",
-			"prompt": "<string>",
-			"genericize": <boolean> (Optional),
-			"sample_inputs_outputs": [
-				{
-					"input": {"<parameter_name>": "<parameter_value>", ...},
-					"expected_output": ["<output_value>", ...]
-				},
-				...
-			],
-			"input_code": "<string> (Optional)"
-		},
-		...
-	],
-	"function_prototype": {
-		"function_name": "<string>",
-		"parameters": [
-			{
-				"name": "<string>",
-				"type": "<string>"
-			},
-			...
-		],
-		"return_values": [
-			{
-				"type": "<string>"
-			},
-			...
-		]
-	},
-	"correctness_test_suite": [
-		{
-			"input": {"<parameter_name>": "<parameter_value>", ...},
-			"expected_output": ["<output_value>", ...]
-		},
-		...
-	],
-	"optimal_solution": "<string> (Optional)",
-	"tags": ["<string>", ...] (Optional)
-}
-```
 
 ### Step 3: Create a prompt for conversion
 
@@ -214,152 +211,149 @@ For each problem (or possibly a small set of problems), use the prompt generated
 
 #### Example prompt
 
-```
-**Problem Definition:**
+> **Problem Definition:**
+> 
+> **Prompt**:
+> Write a function named `calculate_average` that takes three numbers as arguments and returns their average.
+> 
+> **Function Signature:**
+> def calculate_average(a: float, b: float, c: float) -> float:
+> 
+> **Example Input and Output:**
+> Input: 1.0, 2.0, 3.0
+> Output: 2.0
+> 
+> Input: -1.0, 0.0, 1.0
+> Output: 0.0
+> 
+> #### Correctness Test Suite:
+> assert calculate_average(0.0, 0.0, 0.0) == 0.0
+> assert calculate_average(-1.0, 1.0, 1.0) == 0.3333333333333333
+> assert calculate_average(100.0, 200.0, 300.0) == 200.0
+> assert calculate_average(1.25, 2.5, 3.75) == 2.5
+> 
+> **Task:**
+> Your task is to convert the above problem definition into a valid JSON format based on the following specifications:
+> 
+> {
+> 	"identifier": "<string>",
+> 	"prompts": [
+> 		{
+> 			"prompt_id": "<string>",
+> 			"prompt": "<string>",
+> 			"sample_inputs_outputs": [
+> 				{
+> 					"input": {"<parameter_name>": "<parameter_value>", ...},
+> 					"expected_output": ["<output_value>", ...]
+> 				},
+> 				...
+> 			],
+> 			"input_code": "<string> (Optional)"
+> 		},
+> 		...
+> 	],
+> 	"function_prototype": {
+> 		"function_name": "<string>",
+> 		"parameters": [
+> 			{
+> 				"name": "<string>",
+> 				"type": "<string>"
+> 			},
+> 			...
+> 		],
+> 		"return_values": [
+> 			{
+> 				"type": "<string>"
+> 			},
+> 			...
+> 		]
+> 	},
+> 	"correctness_test_suite": [
+> 		{
+> 			"input": {"<parameter_name>": "<parameter_value>", ...},
+> 			"expected_output": ["<output_value>", ...]
+> 		},
+> 		...
+> 	],
+> 	"optimal_solution": "<string> (Optional)",
+> 	"tags": ["<string>", ...] (Optional)
+> }
+>
+> Please ensure that:
+> - The `identifier` field contains a unique identifier for the problem.
+> - The `prompts` field contains a list with at least one object, representing the problem prompt. Each object in the list should have a unique `prompt_id`.
+> - The `sample_inputs_outputs` field within the `prompts` object contains a list of objects, each representing a pair of example input and expected output.
+> - The `function_prototype` field contains an object representing the function prototype, including the function name, parameters, and return values.
+> - The `correctness_test_suite` field contains a list of objects, each representing a pair of input and expected output for testing the correctness of a solution.
+> 
+> Provide the resulting JSON.
 
-**Prompt**:
-Write a function named `calculate_average` that takes three numbers as arguments and returns their average.
-
-**Function Signature:**
-def calculate_average(a: float, b: float, c: float) -> float:
-
-**Example Input and Output:**
-Input: 1.0, 2.0, 3.0
-Output: 2.0
-
-Input: -1.0, 0.0, 1.0
-Output: 0.0
-
-#### Correctness Test Suite:
-assert calculate_average(0.0, 0.0, 0.0) == 0.0
-assert calculate_average(-1.0, 1.0, 1.0) == 0.3333333333333333
-assert calculate_average(100.0, 200.0, 300.0) == 200.0
-assert calculate_average(1.25, 2.5, 3.75) == 2.5
-
-**Task:**
-Your task is to convert the above problem definition into a valid JSON format based on the following specifications:
-
-{
-	"identifier": "<string>",
-	"prompts": [
-		{
-			"prompt_id": "<string>",
-			"prompt": "<string>",
-			"sample_inputs_outputs": [
-				{
-					"input": {"<parameter_name>": "<parameter_value>", ...},
-					"expected_output": ["<output_value>", ...]
-				},
-				...
-			],
-			"input_code": "<string> (Optional)"
-		},
-		...
-	],
-	"function_prototype": {
-		"function_name": "<string>",
-		"parameters": [
-			{
-				"name": "<string>",
-				"type": "<string>"
-			},
-			...
-		],
-		"return_values": [
-			{
-				"type": "<string>"
-			},
-			...
-		]
-	},
-	"correctness_test_suite": [
-		{
-			"input": {"<parameter_name>": "<parameter_value>", ...},
-			"expected_output": ["<output_value>", ...]
-		},
-		...
-	],
-	"optimal_solution": "<string> (Optional)",
-	"tags": ["<string>", ...] (Optional)
-}
-
-Please ensure that:
-- The `identifier` field contains a unique identifier for the problem.
-- The `prompts` field contains a list with at least one object, representing the problem prompt. Each object in the list should have a unique `prompt_id`.
-- The `sample_inputs_outputs` field within the `prompts` object contains a list of objects, each representing a pair of example input and expected output.
-- The `function_prototype` field contains an object representing the function prototype, including the function name, parameters, and return values.
-- The `correctness_test_suite` field contains a list of objects, each representing a pair of input and expected output for testing the correctness of a solution.
-
-Provide the resulting JSON.
-```
 
 #### Example output
 
-```
-Here's the JSON format for the provided problem definition:
-
-{
-	"identifier": "calculate_average_001",
-	"prompts": [
-		{
-			"prompt_id": "calculate_average_prompt_01",
-			"prompt": "Write a function named `calculate_average` that takes three numbers as arguments and returns their average.",
-			"sample_inputs_outputs": [
-				{
-					"input": {"a": 1.0, "b": 2.0, "c": 3.0},
-					"expected_output": [2.0]
-				},
-				{
-					"input": {"a": -1.0, "b": 0.0, "c": 1.0},
-					"expected_output": [0.0]
-				}
-			]
-		}
-	],
-	"function_prototype": {
-		"function_name": "calculate_average",
-		"parameters": [
-			{
-				"name": "a",
-				"type": "float"
-			},
-			{
-				"name": "b",
-				"type": "float"
-			},
-			{
-				"name": "c",
-				"type": "float"
-			}
-		],
-		"return_values": [
-			{
-				"type": "float"
-			}
-		]
-	},
-	"correctness_test_suite": [
-		{
-			"input": {"a": 0.0, "b": 0.0, "c": 0.0},
-			"expected_output": [0.0]
-		},
-		{
-			"input": {"a": -1.0, "b": 1.0, "c": 1.0},
-			"expected_output": [0.3333333333333333]
-		},
-		{
-			"input": {"a": 100.0, "b": 200.0, "c": 300.0},
-			"expected_output": [200.0]
-		},
-		{
-			"input": {"a": 1.25, "b": 2.5, "c": 3.75},
-			"expected_output": [2.5]
-		}
-	]
-}
-
-Note: I've made up a unique identifier for the problem as "calculate_average_001" and a unique prompt ID as "calculate_average_prompt_01". The `optimal_solution` and `tags` fields are optional and are not included in this JSON. If you have those details, you can add them to the JSON structure.
-```
+> Here's the JSON format for the provided problem definition:
+> 
+> {
+> 	"identifier": "calculate_average_001",
+> 	"prompts": [
+> 		{
+> 			"prompt_id": "calculate_average_prompt_01",
+> 			"prompt": "Write a function named `calculate_average` that takes three numbers as arguments and returns their average.",
+> 			"sample_inputs_outputs": [
+> 				{
+> 					"input": {"a": 1.0, "b": 2.0, "c": 3.0},
+> 					"expected_output": [2.0]
+> 				},
+> 				{
+> 					"input": {"a": -1.0, "b": 0.0, "c": 1.0},
+> 					"expected_output": [0.0]
+> 				}
+> 			]
+> 		}
+> 	],
+> 	"function_prototype": {
+> 		"function_name": "calculate_average",
+> 		"parameters": [
+> 			{
+> 				"name": "a",
+> 				"type": "float"
+> 			},
+> 			{
+> 				"name": "b",
+> 				"type": "float"
+> 			},
+> 			{
+> 				"name": "c",
+> 				"type": "float"
+> 			}
+> 		],
+> 		"return_values": [
+> 			{
+> 				"type": "float"
+> 			}
+> 		]
+> 	},
+> 	"correctness_test_suite": [
+> 		{
+> 			"input": {"a": 0.0, "b": 0.0, "c": 0.0},
+> 			"expected_output": [0.0]
+> 		},
+> 		{
+> 			"input": {"a": -1.0, "b": 1.0, "c": 1.0},
+> 			"expected_output": [0.3333333333333333]
+> 		},
+> 		{
+> 			"input": {"a": 100.0, "b": 200.0, "c": 300.0},
+> 			"expected_output": [200.0]
+> 		},
+> 		{
+> 			"input": {"a": 1.25, "b": 2.5, "c": 3.75},
+> 			"expected_output": [2.5]
+> 		}
+> 	]
+> }
+> 
+> Note: I've made up a unique identifier for the problem as "calculate_average_001" and a unique prompt ID as "calculate_average_prompt_01". The `optimal_solution` and `tags` fields are optional and are not included in this JSON. If you have those details, you can add them to the JSON structure.
 
 ### Step 4: Save each problem JSON to a separate file
 
@@ -392,7 +386,7 @@ Depending on the format of your problems, you may or may not need to implement a
 
 ### Grader interface
 
-Take a look at [grader.py](`grader.py`), which contains the definition of the Grader abstract base class as well as a couple of example concrete subclasses. You will need to implement a new subclass that implements the following methods:
+Take a look at [`grader.py`](grader.py), which contains the definition of the Grader abstract base class as well as a couple of example concrete subclasses. You will need to implement a new subclass that implements the following methods:
 
 ```
 @classmethod

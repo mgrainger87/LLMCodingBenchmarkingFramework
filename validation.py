@@ -165,7 +165,7 @@ def validate_problem_json(problem_json: dict) -> (bool, str):
 	   	The string provides an error message in case of a failure.
 	"""
 	# Check that all required fields are present
-	required_fields = ["identifier", "prompts", "function_prototype"]
+	required_fields = ["identifier", "prompts"]
 	if not all(field in problem_json for field in required_fields):
 		missing_fields = [field for field in required_fields if field not in problem_json]
 		return False, f"Missing required fields: {', '.join(missing_fields)}"
@@ -196,9 +196,10 @@ def validate_problem_json(problem_json: dict) -> (bool, str):
 			if not valid:
 				return False, f"Invalid test case in 'correctness_test_suite' at index {index}: {error_message}"
 	
-	valid, error_message = validate_function_prototype(problem_json["function_prototype"])
-	if not valid:
-		return False, f"Invalid function prototype: {error_message}"
+	if "function_prototype" in problem_json:
+		valid, error_message = validate_function_prototype(problem_json["function_prototype"])
+		if not valid:
+			return False, f"Invalid function prototype: {error_message}"
 	
 	# Check that optional fields, if present, are of the correct type
 	if "optimal_solution" in problem_json and not isinstance(problem_json["optimal_solution"], str):
