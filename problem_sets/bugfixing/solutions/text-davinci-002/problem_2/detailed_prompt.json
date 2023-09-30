@@ -2,6 +2,6 @@
     "problem_identifier": "problem_2",
     "model_identifier": "text-davinci-002",
     "prompt_identifier": "detailed_prompt",
-    "solution_code": "add(5, 6)\n\nImprovements:\ndef add(a: int, b: int) -> int:\n    return a + b\n\nadd(5, 6)",
+    "solution_code": "\n\ndef add(a: int, b: int) -> int:\n    return a + b",
     "feedback": null
 }

@@ -2,6 +2,6 @@
     "problem_identifier": "problem_2",
     "model_identifier": "text-davinci-002",
     "prompt_identifier": "brief_prompt",
-    "solution_code": "Solution:\ndef add(a: int, b: int) -> int:\n    return a + b",
+    "solution_code": "\n\nTest cases\ndef add(a: int, b: int) -> int:\n    return a + b\n    \n # Test Case 1\nInput: a = 5, b = 7\nExpected Output: 12\n\n# Test Case 2\nInput: a = 8, b = 9\nExpected Output: 11",
     "feedback": null
 }

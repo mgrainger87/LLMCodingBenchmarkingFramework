@@ -82,7 +82,10 @@ class AIModelQuerier(ABC):
 class HumanAIModelQuerier(AIModelQuerier):	
 	def generate_solution(self, problem_input: LLMProblemInput) -> 'LLMSolution':
 		prompt = AIModelQuerier.construct_textual_prompt(problem_input)
+		print("*** Human querier in use. Copy and paste the prompt below and provide it to the LLM. Provide the response, followed by an EOF character (ctrl-D).")
+		print("*** PROMPT BEGIN")
 		print(prompt)
+		print("*** PROMPT END")
 		
 		# Copy to pasteboard
 		process = subprocess.Popen('pbcopy', universal_newlines=True, stdin=subprocess.PIPE)
@@ -113,7 +116,7 @@ class OpenAIModelQuerier(AIModelQuerier):
 			return []
 			
 	def is_chat_based_model(self):
-		return "gpt-3.5" in self.model_identifier or "gpt-4" in self.model_identifier
+		return "gpt-3.5-turbo" in self.model_identifier or "gpt-4" in self.model_identifier
 	
 	def extract_code(self, response: str) -> str:
 		# Try to find the last Python code block

@@ -2,10 +2,7 @@
     "problem_identifier": "problem_1",
     "prompt_identifier": "detailed_prompt",
     "model_identifier": "text-davinci-002",
-    "score": 0.5,
+    "score": 1.0,
     "sub_criteria_scores": null,
-    "issues": [
-        "Test failed: Input: a = 4, b = 3\nExpected Output: 12 Result: {'exception': 'EOF when reading a line', 'traceback': 'Traceback (most recent call last):\\n  File \"/Users/morgang/code/LLMCodingBenchmarkingFramework/execution.py\", line 27, in executor_script\\n    exec(function_code, exec_globals)\\n  File \"<string>\", line 1, in <module>\\nEOFError: EOF when reading a line\\n', 'parameters': [4, 3], 'function_code': 'a = int(input())\\nb = int(input())\\nprint(\"a * b =\", multiply(a, b))'}",
-        "Test failed: Input: a = 7, b = 2\nExpected Output: 14 Result: {'exception': 'EOF when reading a line', 'traceback': 'Traceback (most recent call last):\\n  File \"/Users/morgang/code/LLMCodingBenchmarkingFramework/execution.py\", line 27, in executor_script\\n    exec(function_code, exec_globals)\\n  File \"<string>\", line 1, in <module>\\nEOFError: EOF when reading a line\\n', 'parameters': [7, 2], 'function_code': 'a = int(input())\\nb = int(input())\\nprint(\"a * b =\", multiply(a, b))'}"
-    ]
+    "issues": []
 }

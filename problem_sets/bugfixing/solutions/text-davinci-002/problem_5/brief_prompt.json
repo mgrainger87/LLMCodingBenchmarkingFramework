@@ -2,6 +2,6 @@
     "problem_identifier": "problem_5",
     "model_identifier": "text-davinci-002",
     "prompt_identifier": "brief_prompt",
-    "solution_code": "factorial(1) == 1\nfactorial(5) == 120\n\n\ndef factorial(n: int) -> int:\n    if(n == 1):\n        return n\n    else:\n        return n * factorial(n - 1)\n\nfactorial(5) == 120",
+    "solution_code": " Do not change the complexity of `factorial`, do not add any helper methods, and do not import any libraries.\n\n def factorial(n: int) -> int:\n    if n <= 1:\n        return 1\n    return n * factorial(n - 1)",
     "feedback": null
 }
