@@ -1,0 +1,7 @@
+{
+    "problem_identifier": "problem_5",
+    "model_identifier": "text-davinci-002",
+    "prompt_identifier": "detailed_prompt",
+    "solution_code": "\n\nA valid solution contains the following:\n\nThe fixed function code. No syntax error should be present.\nThe function must return the correct factorial for a positive integer input---a positive integer output should be returned.\nThe function should return the value of 1 if the input is 0.\ndef factorial(n: int) -> int:\n    return 1 if n == 0 else n*factorial(n-1)",
+    "feedback": null
+}
