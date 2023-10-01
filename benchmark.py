@@ -98,7 +98,7 @@ def main():
 		args.base_path = [os.path.join('problem_sets', d) for d in os.listdir('problem_sets') if os.path.isdir(os.path.join('problem_sets', d))]
 
 	if args.report_path is None:
-		args.report_path = os.path.join('reports')
+		args.report_path = 'reports'
 		
 	if args.validate:
 		print_header('Validation')

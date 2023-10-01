@@ -283,6 +283,10 @@ Some additional notes:
 
 This structured setup facilitates the organization of problems, solutions, and grading details, making it easier to manage and navigate the benchmarking framework.
 
+## Report Generation
+
+Each time the grading system is evoked, a report will be generated and written to the `reports` folder within the root directory by default. To change the location of the report storage, use the `--report_path` argument. For each model, a report is generated, containing scores from all test cases graded during that particular grading process. Each report also contains average scores for each problem set (for example, "basic" and "bugfixing" represent two sample problem sets currently in this repo) and average scores for each grading criterion (for example, "correctness" or "performance"). The reports are distinguished by timestamp and name of model. 
+
 ## Regenerating the Suite Itself Using LLMs
 
 See [regenerate_framework.py](regenerate_framework.py) for an early look at an attempt to regenerate this testing suite by prompting an LLM!

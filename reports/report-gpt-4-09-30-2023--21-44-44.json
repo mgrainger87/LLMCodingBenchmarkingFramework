@@ -1,0 +1,344 @@
+{
+    "Problem Sets": {
+        "problem_sets/basic": {
+            "performance": [
+                {
+                    "problem_identifier": "problem_1",
+                    "prompt_identifier": "brief_prompt",
+                    "model_identifier": "gpt-4",
+                    "score": 5.358126721764927,
+                    "sub_criteria_scores": null,
+                    "issues": []
+                },
+                {
+                    "problem_identifier": "problem_1",
+                    "prompt_identifier": "detailed_prompt",
+                    "model_identifier": "gpt-4",
+                    "score": 5.229110512130943,
+                    "sub_criteria_scores": null,
+                    "issues": []
+                },
+                {
+                    "problem_identifier": "problem_2",
+                    "prompt_identifier": "brief_prompt",
+                    "model_identifier": "gpt-4",
+                    "score": 4.5749385749381295,
+                    "sub_criteria_scores": null,
+                    "issues": []
+                },
+                {
+                    "problem_identifier": "problem_2",
+                    "prompt_identifier": "detailed_prompt",
+                    "model_identifier": "gpt-4",
+                    "score": 4.601522842639694,
+                    "sub_criteria_scores": null,
+                    "issues": []
+                },
+                {
+                    "problem_identifier": "problem_3",
+                    "prompt_identifier": "brief_prompt",
+                    "model_identifier": "gpt-4",
+                    "score": 4.597911227153523,
+                    "sub_criteria_scores": null,
+                    "issues": []
+                },
+                {
+                    "problem_identifier": "problem_3",
+                    "prompt_identifier": "detailed_prompt",
+                    "model_identifier": "gpt-4",
+                    "score": 6.344370860926734,
+                    "sub_criteria_scores": null,
+                    "issues": []
+                },
+                {
+                    "problem_identifier": "problem_4",
+                    "prompt_identifier": "brief_prompt",
+                    "model_identifier": "gpt-4",
+                    "score": 6.216949152544144,
+                    "sub_criteria_scores": null,
+                    "issues": []
+                },
+                {
+                    "problem_identifier": "problem_4",
+                    "prompt_identifier": "detailed_prompt",
+                    "model_identifier": "gpt-4",
+                    "score": 5.71517027863652,
+                    "sub_criteria_scores": null,
+                    "issues": []
+                },
+                {
+                    "problem_identifier": "problem_5",
+                    "prompt_identifier": "brief_prompt",
+                    "model_identifier": "gpt-4",
+                    "score": 6.1535836177453636,
+                    "sub_criteria_scores": null,
+                    "issues": []
+                },
+                {
+                    "problem_identifier": "problem_5",
+                    "prompt_identifier": "detailed_prompt",
+                    "model_identifier": "gpt-4",
+                    "score": 4.8606557377036745,
+                    "sub_criteria_scores": null,
+                    "issues": []
+                }
+            ],
+            "correctness": [
+                {
+                    "problem_identifier": "problem_1",
+                    "prompt_identifier": "brief_prompt",
+                    "model_identifier": "gpt-4",
+                    "score": 1.0,
+                    "sub_criteria_scores": null,
+                    "issues": []
+                },
+                {
+                    "problem_identifier": "problem_1",
+                    "prompt_identifier": "detailed_prompt",
+                    "model_identifier": "gpt-4",
+                    "score": 1.0,
+                    "sub_criteria_scores": null,
+                    "issues": []
+                },
+                {
+                    "problem_identifier": "problem_2",
+                    "prompt_identifier": "brief_prompt",
+                    "model_identifier": "gpt-4",
+                    "score": 1.0,
+                    "sub_criteria_scores": null,
+                    "issues": []
+                },
+                {
+                    "problem_identifier": "problem_2",
+                    "prompt_identifier": "detailed_prompt",
+                    "model_identifier": "gpt-4",
+                    "score": 1.0,
+                    "sub_criteria_scores": null,
+                    "issues": []
+                },
+                {
+                    "problem_identifier": "problem_3",
+                    "prompt_identifier": "brief_prompt",
+                    "model_identifier": "gpt-4",
+                    "score": 1.0,
+                    "sub_criteria_scores": null,
+                    "issues": []
+                },
+                {
+                    "problem_identifier": "problem_3",
+                    "prompt_identifier": "detailed_prompt",
+                    "model_identifier": "gpt-4",
+                    "score": 1.0,
+                    "sub_criteria_scores": null,
+                    "issues": []
+                },
+                {
+                    "problem_identifier": "problem_4",
+                    "prompt_identifier": "brief_prompt",
+                    "model_identifier": "gpt-4",
+                    "score": 1.0,
+                    "sub_criteria_scores": null,
+                    "issues": []
+                },
+                {
+                    "problem_identifier": "problem_4",
+                    "prompt_identifier": "detailed_prompt",
+                    "model_identifier": "gpt-4",
+                    "score": 1.0,
+                    "sub_criteria_scores": null,
+                    "issues": []
+                },
+                {
+                    "problem_identifier": "problem_5",
+                    "prompt_identifier": "brief_prompt",
+                    "model_identifier": "gpt-4",
+                    "score": 1.0,
+                    "sub_criteria_scores": null,
+                    "issues": []
+                },
+                {
+                    "problem_identifier": "problem_5",
+                    "prompt_identifier": "detailed_prompt",
+                    "model_identifier": "gpt-4",
+                    "score": 1.0,
+                    "sub_criteria_scores": null,
+                    "issues": []
+                }
+            ]
+        },
+        "problem_sets/bugfixing": {
+            "performance": [
+                {
+                    "problem_identifier": "problem_1",
+                    "prompt_identifier": "brief_prompt",
+                    "model_identifier": "gpt-4",
+                    "score": 1.0488683127572946,
+                    "sub_criteria_scores": null,
+                    "issues": []
+                },
+                {
+                    "problem_identifier": "problem_1",
+                    "prompt_identifier": "detailed_prompt",
+                    "model_identifier": "gpt-4",
+                    "score": 0.9654561558902547,
+                    "sub_criteria_scores": null,
+                    "issues": []
+                },
+                {
+                    "problem_identifier": "problem_2",
+                    "prompt_identifier": "brief_prompt",
+                    "model_identifier": "gpt-4",
+                    "score": 1.014801110083271,
+                    "sub_criteria_scores": null,
+                    "issues": []
+                },
+                {
+                    "problem_identifier": "problem_2",
+                    "prompt_identifier": "detailed_prompt",
+                    "model_identifier": "gpt-4",
+                    "score": 1.030275229357751,
+                    "sub_criteria_scores": null,
+                    "issues": []
+                },
+                {
+                    "problem_identifier": "problem_3",
+                    "prompt_identifier": "brief_prompt",
+                    "model_identifier": "gpt-4",
+                    "score": 1.0,
+                    "sub_criteria_scores": null,
+                    "issues": []
+                },
+                {
+                    "problem_identifier": "problem_3",
+                    "prompt_identifier": "detailed_prompt",
+                    "model_identifier": "gpt-4",
+                    "score": 0.9883889695210336,
+                    "sub_criteria_scores": null,
+                    "issues": []
+                },
+                {
+                    "problem_identifier": "problem_4",
+                    "prompt_identifier": "brief_prompt",
+                    "model_identifier": "gpt-4",
+                    "score": 0.9497098646034303,
+                    "sub_criteria_scores": null,
+                    "issues": []
+                },
+                {
+                    "problem_identifier": "problem_4",
+                    "prompt_identifier": "detailed_prompt",
+                    "model_identifier": "gpt-4",
+                    "score": 1.107070707070641,
+                    "sub_criteria_scores": null,
+                    "issues": []
+                },
+                {
+                    "problem_identifier": "problem_5",
+                    "prompt_identifier": "brief_prompt",
+                    "model_identifier": "gpt-4",
+                    "score": 0.929068150208494,
+                    "sub_criteria_scores": null,
+                    "issues": []
+                },
+                {
+                    "problem_identifier": "problem_5",
+                    "prompt_identifier": "detailed_prompt",
+                    "model_identifier": "gpt-4",
+                    "score": 1.0050297210790964,
+                    "sub_criteria_scores": null,
+                    "issues": []
+                }
+            ],
+            "correctness": [
+                {
+                    "problem_identifier": "problem_1",
+                    "prompt_identifier": "brief_prompt",
+                    "model_identifier": "gpt-4",
+                    "score": 1.0,
+                    "sub_criteria_scores": null,
+                    "issues": []
+                },
+                {
+                    "problem_identifier": "problem_1",
+                    "prompt_identifier": "detailed_prompt",
+                    "model_identifier": "gpt-4",
+                    "score": 1.0,
+                    "sub_criteria_scores": null,
+                    "issues": []
+                },
+                {
+                    "problem_identifier": "problem_2",
+                    "prompt_identifier": "brief_prompt",
+                    "model_identifier": "gpt-4",
+                    "score": 1.0,
+                    "sub_criteria_scores": null,
+                    "issues": []
+                },
+                {
+                    "problem_identifier": "problem_2",
+                    "prompt_identifier": "detailed_prompt",
+                    "model_identifier": "gpt-4",
+                    "score": 1.0,
+                    "sub_criteria_scores": null,
+                    "issues": []
+                },
+                {
+                    "problem_identifier": "problem_3",
+                    "prompt_identifier": "brief_prompt",
+                    "model_identifier": "gpt-4",
+                    "score": 1.0,
+                    "sub_criteria_scores": null,
+                    "issues": []
+                },
+                {
+                    "problem_identifier": "problem_3",
+                    "prompt_identifier": "detailed_prompt",
+                    "model_identifier": "gpt-4",
+                    "score": 1.0,
+                    "sub_criteria_scores": null,
+                    "issues": []
+                },
+                {
+                    "problem_identifier": "problem_4",
+                    "prompt_identifier": "brief_prompt",
+                    "model_identifier": "gpt-4",
+                    "score": 1.0,
+                    "sub_criteria_scores": null,
+                    "issues": []
+                },
+                {
+                    "problem_identifier": "problem_4",
+                    "prompt_identifier": "detailed_prompt",
+                    "model_identifier": "gpt-4",
+                    "score": 1.0,
+                    "sub_criteria_scores": null,
+                    "issues": []
+                },
+                {
+                    "problem_identifier": "problem_5",
+                    "prompt_identifier": "brief_prompt",
+                    "model_identifier": "gpt-4",
+                    "score": 1.0,
+                    "sub_criteria_scores": null,
+                    "issues": []
+                },
+                {
+                    "problem_identifier": "problem_5",
+                    "prompt_identifier": "detailed_prompt",
+                    "model_identifier": "gpt-4",
+                    "score": 1.0,
+                    "sub_criteria_scores": null,
+                    "issues": []
+                }
+            ]
+        }
+    },
+    "Average Scores Per Problem Set": {
+        "problem_sets/basic": 3.1826169763091827,
+        "problem_sets/bugfixing": 1.0019334110285634
+    },
+    "Average Scores Per Criterion": {
+        "performance": 3.184550387337745,
+        "correctness": 1.0
+    }
+}
