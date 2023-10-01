@@ -6,7 +6,7 @@ Migrating from your current benchmarking suite to the format used in this framew
 2. Migrate each of the problems to the standard problem JSON format.
 3. Migrate the evaluation mechanism to the `Grader` class.
 
-We will go through each of these in turn below.
+We will go through each of these in turn below. You can also see [an example ChatGPT session](https://chat.openai.com/share/3ee72075-7797-4ccb-905d-f6ad71c8fafa) that goes through these steps.
 
 ## Examine and refine the problem set and evaluation metrics
 
