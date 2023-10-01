@@ -359,10 +359,9 @@ The file name should have the format {problem_id}.json. Save your problem set in
 
 ### Step 5: Validate your problem definitions in the framework
 
-If you have provided correctness test cases, you can use your problem set to generate solutions with gpt-4 and the correctness grader with the following command:
+The following command will examine the JSON for each problem and ensure that it conforms to the specification. Address any errors it finds before continuing.
 
 `python3 benchmark.py --base_path problem_sets/<problem set>/ --validate`
-
 
 ### Step 6: Generate solutions using the framework
 
