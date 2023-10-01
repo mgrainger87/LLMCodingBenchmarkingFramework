@@ -199,11 +199,9 @@ Determine which fields are relevant for your problem type and how the output cou
 
 Next, come up with a prompt that can be provided to an LLM to convert from your format to the structured JSON format. You can use an LLM to come up with this prompt, using an approach like the below:
 
-```
-Now, create a prompt that I could provide to an LLM like you. The prompt should contain the problem definition in the original format and asks for valid JSON for the fields you identified in the output problem definition JSON format.
-
-The prompt should be completely self-contained, not relying on any information previously provided in this conversation.
-```
+> Now, create a prompt that I could provide to an LLM like you. The prompt should contain the problem definition in the original format and asks for valid JSON for the fields you identified in the output problem definition JSON format.
+> 
+> The prompt should be completely self-contained, not relying on any information previously provided in this conversation.
 
 ### Step 3: Convert to the JSON Based on Relevant Fields
 
