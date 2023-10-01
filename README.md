@@ -281,7 +281,7 @@ The directory structure of the Benchmarking Framework is as follows:
 					- Each problem has its own directory (e.g., `problem_1`), within which there is a JSON file for each prompt with the grading information for that prompt.
 	- **bugfixing**:
 		- Similar structure to the `basic` directory but tailored for bugfixing problems.
-- **reports**: Contains a JSON report for each run of the testing framework in (the format described above)[#report-generation].
+- **reports**: Contains a JSON report for each run of the testing framework in [the format described above](#report-generation).
 
 Some additional notes:
 
