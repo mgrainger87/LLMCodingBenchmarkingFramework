@@ -16,6 +16,8 @@ This command provides each problem defined in `problem_sets/bugfixing/problems` 
 
 ## Extending the benchmarking suite
 
+Users can add their benchmark by simply adding a subclass in the grader.py file following the existing format. If AI-based assessment is needed, then the user should be aware that he should implement the LLM call in the grader function which can pass the problems in the problem set to the AI with prompt to ask AI to return the assessment of the solution.
+
 ### Problem Definition
 
 The first phase of the benchmark suite is defining the problems that the AI models will attempt to solve. Problems are defined in a structured JSON format, which encapsulates various details of a problem including a unique identifier, description, function prototype, and correctness test suite among others. Each problem can also have multiple prompts to guide the AI models in generating solutions.
