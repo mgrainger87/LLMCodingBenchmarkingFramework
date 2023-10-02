@@ -2,6 +2,6 @@
     "problem_identifier": "problem_5",
     "model_identifier": "text-davinci-002",
     "prompt_identifier": "detailed_prompt",
-    "solution_code": "Test Case 3:\nInput: a = 12, b = 5\nExpected Output: 2",
+    "solution_code": "",
     "feedback": null
 }

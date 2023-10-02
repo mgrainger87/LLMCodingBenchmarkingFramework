@@ -142,7 +142,7 @@ class OpenAIModelQuerier(AIModelQuerier):
 		if self.is_chat_based_model():
 			messages = [{"role": "user", "content": prompt}]
 			response = openai.ChatCompletion.create(
-				model="gpt-4",
+				model=self.model_identifier,
 				max_tokens=1000,
 				messages = messages)
 			

@@ -2,6 +2,6 @@
     "problem_identifier": "problem_2",
     "model_identifier": "text-davinci-002",
     "prompt_identifier": "detailed_prompt",
-    "solution_code": "Test Case 3:\nInput: a = 10, b = 10\nExpected Output: 0",
+    "solution_code": "\n\ndef subtract(a, b):\n    return a - b",
     "feedback": null
 }

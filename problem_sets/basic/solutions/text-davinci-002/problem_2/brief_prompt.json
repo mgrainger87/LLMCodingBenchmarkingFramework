@@ -2,6 +2,6 @@
     "problem_identifier": "problem_2",
     "model_identifier": "text-davinci-002",
     "prompt_identifier": "brief_prompt",
-    "solution_code": "Test Case 3:\nInput: a = -4, b = -6\nExpected Output: 2\n\"\"\"\n\n\ndef subtract(a,b):\n    return a-b\n\n\n\n\"\"\"\nSolution 2:\n\ndef subtract(a, b):\n\n\t# Holder variable\n\tdiff = 0\n\n\t# Iterate can be on the max length\n\t# If one number is longer, add extra zeros to the end of the shorter number\n\t# Otherwise, simply calculate the difference\n\n\tif len(str(a)) < len(str(b)):\n\t\ta = (len(str(b)) - len(str(a))) * '0' + str(a)\n\telif len(str(b)) < len(str(a)):\n\t\tb = (len(str(a)) - len(str(b))) * '0' + str(b)\n\n\tprint(a)\n\tprint(b)\n\n\tfor index in range(len(str(a))):\n\t\tdiff += int(a[index]) * 10 ** (len(a) - index - 1) - int(b[index]) * 10 ** (len(b) - index - 1)\n\n\treturn diff\n\t\t\nprint (subtract(5,3))\nprint (subtract(7,2))\nprint (subtract(-4,-6))\n\n\"\"\"",
+    "solution_code": "\n\ndef subtract(a: int, b: int) -> int:\n    return a - b",
     "feedback": null
 }

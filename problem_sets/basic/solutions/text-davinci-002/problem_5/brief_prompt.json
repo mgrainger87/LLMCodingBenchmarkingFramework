@@ -2,6 +2,6 @@
     "problem_identifier": "problem_5",
     "model_identifier": "text-davinci-002",
     "prompt_identifier": "brief_prompt",
-    "solution_code": "\"\"\"\n\nimport random\nimport unittest\n\n\ndef remainder(a, b):\n    return a % b\n\n\nclass TestRemainder(unittest.TestCase):\n    def test_random(self):\n        a = random.randint(1, 10)\n        b = random.randint(1, 10)\n        expected = a % b\n        actual = remainder(a, b)\n        self.assertEqual(actual, expected)\n\n\nif __name__ == \"__main__\":\n    unittest.main()",
+    "solution_code": "\n*/\n\nfunction remainder(a, b) {\n  return a % b;\n}",
     "feedback": null
 }
