@@ -64,7 +64,7 @@ add(5, 3)
 
 ## Migrate to the standard problem JSON
 
-Before proceeding, look through the [problem_definition.md](problem definition JSON specification) to understand its overall format.
+Before proceeding, look through the [problem definition JSON specification](problem_definition.md) to understand its overall format.
 
 ### Step 1: Identify appropriate few-shot examples of problems in the existing format
 
