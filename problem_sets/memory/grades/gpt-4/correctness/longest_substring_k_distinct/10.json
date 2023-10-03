@@ -1,0 +1,10 @@
+{
+    "problem_identifier": "longest_substring_k_distinct",
+    "prompt_identifier": "10",
+    "model_identifier": "gpt-4",
+    "score": 0.75,
+    "sub_criteria_scores": null,
+    "issues": [
+        "Test failed: Input: s = a, k = 2; Expected Output: a Result: "
+    ]
+}

@@ -1,0 +1,7 @@
+{
+    "problem_identifier": "find_duplicates",
+    "model_identifier": "gpt-4",
+    "prompt_identifier": "1",
+    "solution_code": "from typing import List\n\ndef find_duplicates(arr: List[int]) -> List[int]:\n    # sort the list\n    arr.sort()\n    \n    duplicates = []\n    count = 0\n    last = None\n    \n    # iterate through the elements of list\n    for num in arr:\n        if num == last:\n            count += 1\n        else:\n            if count > 1:\n                duplicates.append(last)\n            count = 1\n        last = num\n\n    # check if the last element was a duplicate\n    if count > 1:\n        duplicates.append(last)\n        \n    return duplicates",
+    "feedback": null
+}

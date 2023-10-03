@@ -1,0 +1,13 @@
+{
+    "problem_identifier": "find_anagrams",
+    "prompt_identifier": "5",
+    "model_identifier": "gpt-4",
+    "score": 0.0,
+    "sub_criteria_scores": null,
+    "issues": [
+        "Test failed: Input: s = cbaebabacd, p = abc; Expected Output: [0, 6] Result: None",
+        "Test failed: Input: s = abab, p = ab; Expected Output: [0, 1, 2] Result: None",
+        "Test failed: Input: s = , p = a; Expected Output: [] Result: None",
+        "Test failed: Input: s = a, p = a; Expected Output: [0] Result: None"
+    ]
+}

@@ -1,0 +1,7 @@
+{
+    "problem_identifier": "first_unique_char",
+    "model_identifier": "gpt-4",
+    "prompt_identifier": "7",
+    "solution_code": "from typing import Optional\nfrom collections import OrderedDict\n\ndef first_unique_char(s: str) -> Optional[str]:\n    count = OrderedDict()\n    for c in s:\n        if c in count:\n            count[c] += 1\n        else:\n            count[c] = 1\n    for c in count:\n        if count[c] == 1:\n            return c\n    return None",
+    "feedback": null
+}

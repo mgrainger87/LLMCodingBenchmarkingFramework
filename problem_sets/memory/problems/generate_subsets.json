@@ -1,0 +1,35 @@
+{
+    "identifier": "generate_subsets",
+    "prompts": [
+        {
+            "prompt_id": "6",
+            "prompt": "Given a list of distinct integers, return all possible subsets. The solution set must not contain duplicate subsets.",
+            "sample_inputs_outputs": [
+                {
+                    "input": {"nums": [1, 2, 3]},
+                    "expected_output": [[[], [1], [2], [3], [1, 2], [1, 3], [2, 3], [1, 2, 3]]]
+                }
+            ]
+        }
+    ],
+    "function_prototype": {
+        "function_name": "generate_subsets",
+        "parameters": [{"name": "nums", "type": "List[int]"}],
+        "return_values": [{"type": "List[List[int]]"}]
+    },
+    "correctness_test_suite": [
+        {
+            "input": {"nums": [1, 2, 3]},
+            "expected_output": [[[], [1], [2], [3], [1, 2], [1, 3], [2, 3], [1, 2, 3]]]
+        },
+        {
+            "input": {"nums": []},
+            "expected_output": [[]]
+        },
+        {
+            "input": {"nums": [1]},
+            "expected_output": [[[], [1]]]
+        }
+    ],
+    "optimal_solution": "def generate_subsets(nums: list[int]) -> list[list[int]]:\n    result = [[]]\n    for num in nums:\n        result += [curr + [num] for curr in result]\n    return result"
+}

@@ -1,0 +1,7 @@
+{
+    "problem_identifier": "longest_substring_k_distinct",
+    "model_identifier": "gpt-4",
+    "prompt_identifier": "10",
+    "solution_code": "def longest_substring_k_distinct(s: str, k: int) -> str:\n        \n        n = len(s)\n        \n        if n < k:\n            return ''\n        \n        left, right = 0, 0\n        \n        character_count = dict()\n        \n        max_len = 0\n        start = 0\n        \n        while right < n:\n            character = s[right]\n            if character not in character_count:\n                character_count[character] = 0\n            character_count[character] += 1\n            \n            while len(character_count) > k:\n                left_character = s[left]\n                character_count[left_character] -= 1\n                if character_count[left_character] == 0:\n                    del character_count[left_character]\n                left += 1\n            \n            if right - left + 1 > max_len:\n                max_len = right - left + 1\n                start = left\n            \n            right += 1\n        \n        return s[start: start + max_len]",
+    "feedback": null
+}

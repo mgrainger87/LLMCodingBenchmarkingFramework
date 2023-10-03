@@ -1,0 +1,7 @@
+{
+    "problem_identifier": "char_count",
+    "model_identifier": "gpt-4",
+    "prompt_identifier": "3",
+    "solution_code": "from collections import Counter\n\ndef char_count(s: str) -> dict[str, int]:\n    return dict(Counter(s))",
+    "feedback": null
+}

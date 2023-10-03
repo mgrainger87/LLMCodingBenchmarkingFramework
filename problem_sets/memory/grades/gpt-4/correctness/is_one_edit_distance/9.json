@@ -1,0 +1,10 @@
+{
+    "problem_identifier": "is_one_edit_distance",
+    "prompt_identifier": "9",
+    "model_identifier": "gpt-4",
+    "score": 0.75,
+    "sub_criteria_scores": null,
+    "issues": [
+        "Test failed: Input: s1 = bat, s2 = bat; Expected Output: False Result: True"
+    ]
+}

@@ -1,0 +1,7 @@
+{
+    "problem_identifier": "generate_subsets",
+    "model_identifier": "gpt-4",
+    "prompt_identifier": "6",
+    "solution_code": "from typing import List\n\ndef generate_subsets(nums: List[int]) -> List[List[int]]:\n    def backtrack(start = 0, cur = []):\n        # Append a copy of the current subset to result\n        res.append(cur[:])\n        \n        # For each remaining number, call function recursively with new subset and remaining numbers\n        for i in range(start, len(nums)):\n            cur.append(nums[i])\n            backtrack(i + 1, cur)\n            cur.pop()\n    \n    # Initialize an empty list to store subsets\n    res = []\n    backtrack()\n    return res",
+    "feedback": null
+}

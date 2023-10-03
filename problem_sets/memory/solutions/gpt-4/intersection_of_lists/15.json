@@ -1,0 +1,7 @@
+{
+    "problem_identifier": "intersection_of_lists",
+    "model_identifier": "gpt-4",
+    "prompt_identifier": "15",
+    "solution_code": "from typing import List\n\ndef intersection_of_lists(list1: List[int], list2: List[int]) -> List[int]:\n    return list(set(list1).intersection(set(list2)))",
+    "feedback": null
+}

@@ -1,0 +1,7 @@
+{
+    "problem_identifier": "merge_sorted_lists",
+    "model_identifier": "gpt-4",
+    "prompt_identifier": "4",
+    "solution_code": "from typing import List\n\ndef merge_sorted_lists(l1: List[int], l2: List[int]) -> List[int]:\n    return sorted(l1 + l2)",
+    "feedback": null
+}
