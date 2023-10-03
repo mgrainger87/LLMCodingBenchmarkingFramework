@@ -265,17 +265,20 @@ class FunctionPrototype:
 	
 	def get_python_type(self, param_type, input):
 		# Based on the type, convert the string representation to the appropriate Python object
+		print(input)
 		if param_type == "int":
 			return int(input)
 		elif param_type == "float":
 			return float(input)
 		elif param_type == "str":
-			return ast.literal_eval(input)
+			return ast.literal_eval(f'"{input}"')  # Adding double quotes around the string
 		elif param_type == "bool":
 			return input.lower() == "true"
-		elif '[' in param_type:
+		elif '[' in param_type and isinstance(input, str):  # Ensure input is a string
 			# Using ast.literal_eval to safely evaluate the string representation
 			return ast.literal_eval(input)
+		else:
+			return input  # Return the input as-is for unsupported types or if input is not a string
 		
 	def get_parameter_values(self, test_case: TestCase) -> Dict[str, Any]:
 		converted_params = {}
@@ -345,7 +348,7 @@ class Prompt:
 	def __init__(self, data: Dict[str, any]):
 		self.prompt_id = data["prompt_id"]
 		self.prompt = data["prompt"]
-		self.genericize = data["genericize"]
+		self.genericize = data.get("genericize", None)
 		self.sample_inputs_outputs = [TestCase(tc) for tc in data.get("sample_inputs_outputs", [])]
 		self.input_code = data.get("input_code", None)
 	
