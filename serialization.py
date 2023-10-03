@@ -7,7 +7,7 @@ def get_problems_json(basePath: str):
 	problemsDirectory = os.path.join(basePath, "problems")
 	for problem_file in [file for file in sorted(os.listdir(problemsDirectory)) if not file.startswith('.')]:
 		problemPath = os.path.join(problemsDirectory, problem_file)
-		# print(problemPath)
+		print(f'Loading {problemPath}…')
 		with open(problemPath) as f:
 			problemJSON = json.loads(f.read())
 		problemsJSON[problem_file] = problemJSON

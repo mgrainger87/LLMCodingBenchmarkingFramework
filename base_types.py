@@ -1,6 +1,7 @@
 from typing import Dict, List, Union, Optional, Any
 import ast
 import json
+import re
 
 # Define necessary types
 ProblemID = str
@@ -265,7 +266,8 @@ class FunctionPrototype:
 	
 	def get_python_type(self, param_type, input):
 		# Based on the type, convert the string representation to the appropriate Python object
-		print(input)
+		param_type = re.search(r'^Optional\[(.*)\]$', param_type).group(1) if re.search(r'^Optional\[(.*)\]$', param_type) else param_type
+		
 		if param_type == "int":
 			return int(input)
 		elif param_type == "float":
