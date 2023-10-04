@@ -1,0 +1,10 @@
+{
+    "problem_identifier": "add_two_numbers",
+    "prompt_identifier": "29",
+    "model_identifier": "gpt-4",
+    "score": 0.0,
+    "sub_criteria_scores": null,
+    "issues": [
+        "Test failed: Input: l1 = [2,4,3], l2 = [5,6,4]; Expected Output: [7,0,8] Result: None"
+    ]
+}

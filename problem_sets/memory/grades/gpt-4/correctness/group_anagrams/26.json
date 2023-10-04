@@ -1,0 +1,10 @@
+{
+    "problem_identifier": "group_anagrams",
+    "prompt_identifier": "26",
+    "model_identifier": "gpt-4",
+    "score": 0.0,
+    "sub_criteria_scores": null,
+    "issues": [
+        "Test failed: Input: strs = [\"eat\",\"tea\",\"tan\",\"ant\",\"bat\"]; Expected Output: [\"eat\",\"tea\"],[\"ant\",\"tan\"],[\"bat\"] Result: [['eat', 'tea'], ['ant', 'tan'], ['bat']]"
+    ]
+}

@@ -1,0 +1,10 @@
+{
+    "problem_identifier": "min_window_subsequence",
+    "prompt_identifier": "28",
+    "model_identifier": "gpt-4",
+    "score": 0.0,
+    "sub_criteria_scores": null,
+    "issues": [
+        "Test failed: Input: S = abcdebdde, T = bde; Expected Output: bcde Result: None"
+    ]
+}

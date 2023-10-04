@@ -1,0 +1,10 @@
+{
+    "problem_identifier": "task_scheduler",
+    "prompt_identifier": "63",
+    "model_identifier": "gpt-4",
+    "score": 0.0,
+    "sub_criteria_scores": null,
+    "issues": [
+        "Test failed: Input: tasks = ['A','A','A','B','B','B'], n = 2; Expected Output: \"8\" Result: 8"
+    ]
+}

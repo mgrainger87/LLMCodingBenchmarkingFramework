@@ -1,0 +1,10 @@
+{
+    "problem_identifier": "vertical_order_traversal",
+    "prompt_identifier": "44",
+    "model_identifier": "gpt-4",
+    "score": 0.0,
+    "sub_criteria_scores": null,
+    "issues": [
+        "Test failed: Input: root = {'val': 3, 'left': {'val': 9}, 'right': {'val': 20, 'left': {'val': 15}, 'right': {'val': 7}}}; Expected Output: [[9],[3,15],[20],[7]] Result: None"
+    ]
+}

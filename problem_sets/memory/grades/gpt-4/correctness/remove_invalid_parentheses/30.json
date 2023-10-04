@@ -1,0 +1,11 @@
+{
+    "problem_identifier": "remove_invalid_parentheses",
+    "prompt_identifier": "30",
+    "model_identifier": "gpt-4",
+    "score": 0.3333333333333333,
+    "sub_criteria_scores": null,
+    "issues": [
+        "Test failed: Input: s = (a)())(); Expected Output: [\"(a)()()\", \"(a())()\"] Result: ['(a())()', '(a)()()']",
+        "Test failed: Input: s = ()())(); Expected Output: [\"()()()\", \"(())()\"] Result: ['(())()', '()()()']"
+    ]
+}

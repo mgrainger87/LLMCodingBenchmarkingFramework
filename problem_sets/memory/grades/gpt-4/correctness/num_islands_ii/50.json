@@ -1,0 +1,10 @@
+{
+    "problem_identifier": "num_islands_ii",
+    "prompt_identifier": "50",
+    "model_identifier": "gpt-4",
+    "score": 0.0,
+    "sub_criteria_scores": null,
+    "issues": [
+        "Test failed: Input: m = 3, n = 3, positions = [[0,0],[0,1],[1,2],[2,1]]; Expected Output: [1,1,2,3] Result: None"
+    ]
+}

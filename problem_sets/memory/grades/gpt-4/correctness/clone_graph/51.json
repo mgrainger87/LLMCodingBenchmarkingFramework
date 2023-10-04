@@ -1,0 +1,10 @@
+{
+    "problem_identifier": "clone_graph",
+    "prompt_identifier": "51",
+    "model_identifier": "gpt-4",
+    "score": 0.0,
+    "sub_criteria_scores": null,
+    "issues": [
+        "Test failed: Input: node = {\"label\":1,\"neighbors\":[{\"label\":2,\"neighbors\":[{\"label\":1}],\"random\":null}]}; Expected Output: {\"label\":1,\"neighbors\":[{\"label\":2,\"neighbors\":[{\"label\":1}],\"random\":null}]} Result: None"
+    ]
+}

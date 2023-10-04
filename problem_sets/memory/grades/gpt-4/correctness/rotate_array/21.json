@@ -1,0 +1,11 @@
+{
+    "problem_identifier": "rotate_array",
+    "prompt_identifier": "21",
+    "model_identifier": "gpt-4",
+    "score": 0.0,
+    "sub_criteria_scores": null,
+    "issues": [
+        "Test failed: Input: nums = [1,2,3,4,5,6,7], k = 3; Expected Output: [5,6,7,1,2,3,4] Result: None",
+        "Test failed: Input: nums = [-1,-100,3,99], k = 2; Expected Output: [3,99,-1,-100] Result: None"
+    ]
+}

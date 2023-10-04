@@ -2,11 +2,7 @@
     "problem_identifier": "word_search",
     "prompt_identifier": "16",
     "model_identifier": "gpt-4",
-    "score": 0.0,
+    "score": 1.0,
     "sub_criteria_scores": null,
-    "issues": [
-        "Test failed: Input: board = [['A','B','C','E'],['S','F','C','S'],['A','D','E','E']], word = ABCCED; Expected Output: True Result: None",
-        "Test failed: Input: board = [['A','B','C','E'],['S','F','C','S'],['A','D','E','E']], word = SEE; Expected Output: True Result: None",
-        "Test failed: Input: board = [['A','B','C','E'],['S','F','C','S'],['A','D','E','E']], word = ABCB; Expected Output: False Result: None"
-    ]
+    "issues": []
 }

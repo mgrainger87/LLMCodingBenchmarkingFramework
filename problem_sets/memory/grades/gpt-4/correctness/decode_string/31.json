@@ -1,0 +1,13 @@
+{
+    "problem_identifier": "decode_string",
+    "prompt_identifier": "31",
+    "model_identifier": "gpt-4",
+    "score": 0.0,
+    "sub_criteria_scores": null,
+    "issues": [
+        "Test failed: Input: s = 3[a]2[bc]; Expected Output: aaabcbc Result: None",
+        "Test failed: Input: s = 3[a2[c]]; Expected Output: accaccacc Result: None",
+        "Test failed: Input: s = 2[abc]3[cd]ef; Expected Output: abcabccdcdcdef Result: None",
+        "Test failed: Input: s = abc3[cd]xyz; Expected Output: abccdcdcdxyz Result: None"
+    ]
+}

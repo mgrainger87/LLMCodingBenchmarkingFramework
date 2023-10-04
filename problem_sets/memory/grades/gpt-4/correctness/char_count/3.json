@@ -2,7 +2,12 @@
     "problem_identifier": "char_count",
     "prompt_identifier": "3",
     "model_identifier": "gpt-4",
-    "score": 1.0,
+    "score": 0.0,
     "sub_criteria_scores": null,
-    "issues": []
+    "issues": [
+        "Test failed: Input: s = aabbcc; Expected Output: {'a': 2, 'b': 2, 'c': 2} Result: None",
+        "Test failed: Input: s = ; Expected Output: {} Result: None",
+        "Test failed: Input: s = abc; Expected Output: {'a': 1, 'b': 1, 'c': 1} Result: None",
+        "Test failed: Input: s = Aa; Expected Output: {'A': 1, 'a': 1} Result: None"
+    ]
 }
