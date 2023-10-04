@@ -117,7 +117,16 @@ def execute_function(function_code, parameters, iterations, collect_cpu_time, co
 		# Create a separate Python process to run the executor_script
 		process = multiprocessing.Process(target=executor_script, args=(function_code_file.name, parameters_file.name, config_file.name, result_file.name))
 		process.start()
-		process.join()
+		process.join(timeout=5)  # Add a timeout of 5 seconds
+		
+		# If the process is still alive after the timeout, terminate it
+		if process.is_alive():
+			process.terminate()
+			return FunctionExecutionResult(
+				error="Function execution timed out after 5 seconds.",
+				function_code=function_code,
+				parameters=parameters
+			)
 		
 		# Load the result from the result file
 		with open(result_file.name, 'r') as file:
