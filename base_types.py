@@ -475,13 +475,17 @@ class ProblemDefinition:
 	def get_llm_problem_inputs(self) -> list['LLMProblemInput']:
 		llm_problem_inputs = []
 		for prompt in self.prompts:
+			function_prototype = self.function_prototype
+			if prompt.genericize:
+				function_prototype = function_prototype.genericize()
+			
 			llm_input_data = {
 				'problem_id': self.identifier,
 				'prompt_id': prompt.prompt_id,
 				'prompt':  prompt.prompt,
 				'sample_inputs_outputs': [tc.to_json() for tc in prompt.sample_inputs_outputs],
 				'input_code': prompt.input_code,
-				'function_prototype': self.function_prototype.to_json()
+				'function_prototype': function_prototype.to_json()
 			}
 			llm_problem_input = LLMProblemInput(llm_input_data)
 			llm_problem_inputs.append(llm_problem_input)

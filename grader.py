@@ -105,6 +105,7 @@ class PerformanceGrader(Grader):
 					total_optimal_time = 0
 					issues = []
 					for test_case in problem.correctness_test_suite:
+						print(solution.problem_identifier)
 						iterations = 1  # Starting with 1 iteration
 						while True:  # Continue running until a break condition is met
 							solution_results = Grader.run_function(solution.solution_code, function_prototype, test_case, iterations=iterations, collect_cpu_time=True)
