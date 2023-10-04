@@ -105,18 +105,25 @@ class PerformanceGrader(Grader):
 					total_optimal_time = 0
 					issues = []
 					for test_case in problem.correctness_test_suite:
-						iterations = 100000
-						solution_results = Grader.run_function(solution.solution_code, function_prototype, test_case, iterations=iterations, collect_cpu_time=True)
-						optimal_results = Grader.run_function(problem.optimal_solution, function_prototype, test_case, iterations=iterations, collect_cpu_time=True)
-						if solution_results.cpu_time is None or optimal_results.cpu_time is None:
-							continue
-
-						total_solution_time += solution_results.cpu_time
-						total_optimal_time += optimal_results.cpu_time
-					
+						iterations = 1  # Starting with 1 iteration
+						while True:  # Continue running until a break condition is met
+							solution_results = Grader.run_function(solution.solution_code, function_prototype, test_case, iterations=iterations, collect_cpu_time=True)
+							optimal_results = Grader.run_function(problem.optimal_solution, function_prototype, test_case, iterations=iterations, collect_cpu_time=True)
+							
+							if solution_results.cpu_time is None or optimal_results.cpu_time is None:
+								break
+		
+							total_solution_time += solution_results.cpu_time
+							total_optimal_time += optimal_results.cpu_time
+		
+							# Check if either total time exceeds 2 seconds
+							if total_solution_time > 0.4 or total_optimal_time > 0.4:
+								break
+							else:
+								iterations *= 10  # Increase iterations by 10 times
+		
 					if total_solution_time > 0:
 						overall_grade = min(1, total_optimal_time / total_solution_time)
-						
 						grade = SolutionGrade(problem.identifier, solution.prompt_identifier, solution.model_identifier, overall_grade, None, issues)
 						solutionGrades.append(grade)
 		return GradingOutput(solutionGrades, self.identifier)
