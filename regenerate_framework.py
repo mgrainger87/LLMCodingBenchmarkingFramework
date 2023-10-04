@@ -5,12 +5,10 @@ Create a Python implementation that can read, validate, and manipulate problem d
 
 ### Top-Level Problem JSON Structure:
 - **identifier**: A string representing the unique identifier of the problem definition.
-- **description**: A string providing a description of the problem definition.
 - **prompts**: An array of objects representing the prompts.
 - **function_prototype**: An object representing the function prototype.
 - **correctness_test_suite**: An optional array of objects representing the test cases for correctness.
 - **optimal_solution**: An optional string representing the optimal solution to the problem.
-- **additional_instructions**: An optional string providing additional instructions for the problem definition.
 - **tags**: An optional array of strings representing tags associated with the problem definition.
 
 ### Nested JSON Structures:

@@ -42,7 +42,7 @@ class Grader(ABC):
 		This method should be overridden by a child class if said class has stricter requirements.
 		"""
 		for p in problems:
-			if not (all(var is not None for var in (p.identifier, p.description, p.prompts, p.function_prototype)) and len(p.prompts) > 0):
+			if not (all(var is not None for var in (p.identifier, p.prompts, p.function_prototype)) and len(p.prompts) > 0):
 				return False
 		return True
 	
@@ -134,7 +134,7 @@ class PerformanceGrader(Grader):
 		This method should be overridden by a child class if said class has stricter requirements.
 		"""
 		for p in problems:
-			if not (all(var is not None for var in (p.identifier, p.description, p.prompts, p.function_prototype, p.optimal_solution)) and len(p.prompts) > 0):
+			if not (all(var is not None for var in (p.identifier, p.prompts, p.function_prototype, p.optimal_solution)) and len(p.prompts) > 0):
 				return False
 		return True
 
