@@ -2,6 +2,7 @@ from abc import ABC, abstractmethod
 from base_types import *
 import execution
 import time
+import tokenize
 
 class Grader(ABC):
 	"""
@@ -119,7 +120,7 @@ class PerformanceGrader(Grader):
 						solutionGrades.append(grade)
 		return GradingOutput(solutionGrades, self.identifier)
 		
-		def can_grade(cls, problems: List[ProblemDefinition]) -> bool:
+	def can_grade(cls, problems: List[ProblemDefinition]) -> bool:
 		"""
 		Check if the current grader is capable of running the problem set.
 		This method should be overridden by a child class if said class has stricter requirements.
@@ -159,4 +160,44 @@ class MemoryGrader(Grader):
 						
 						grade = SolutionGrade(problem.identifier, solution.prompt_identifier, solution.model_identifier, overall_grade, None, issues)
 						solutionGrades.append(grade)
+		return GradingOutput(solutionGrades, self.identifier)
+
+class HalsteadGrader(Grader):
+	@classmethod
+	@property
+	def identifier(self):
+		return "halstead"
+	
+	def grade(self, problems:List[ProblemDefinition], solutions: List[LLMSolution]) -> GradingOutput:
+
+		def halstead_difficulty(code):
+			operators = {'+', '-', '*', '/', '%', '//', '**', '<<', '>>', '&', '|', '^', '~', '<', '>', '<=', '>=', '==', '!=', 
+						'and', 'or', 'not', 'is', 'in', '+=', '-=', '*=', '/=', '%=', '&=', '|=', '^=', '<<=', '>>=', '//=', '**=',
+						'(', ')', '[', ']', '{', '}', '@', ',', ':', '.', '=', '->', '-=', '*=', '/=', '%=', '&=', '|=', '^=', '<<=', '>>=', '//=', '**=', ';'}
+			
+			words = code.replace('\n', ' ').replace('\t', ' ').split(' ')
+			operands = [word for word in words if not any(op in word for op in operators) and word]
+			
+			# operator_count = sum(code.count(op) for op in operators)
+			operand_count = len(operands)
+			
+			unique_operators = len(set(op for op in code.split() if op in operators))
+			unique_operands = len(set(operands))
+			
+			difficulty = (unique_operators / 2) * (operand_count / unique_operands)
+			
+			return difficulty
+
+
+		solutionGrades = []
+		for problem in problems:
+			for solution in solutions:
+				if solution.problem_identifier == problem.identifier:
+
+					# calculate halstead for solution.solution_code
+					score = halstead_difficulty(solution.solution_code)
+							
+					grade = SolutionGrade(problem.identifier, solution.prompt_identifier, solution.model_identifier, score, None, [])
+					solutionGrades.append(grade)
+
 		return GradingOutput(solutionGrades, self.identifier)
