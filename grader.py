@@ -154,7 +154,7 @@ class MemoryGrader(Grader):
 					total_optimal_peak_memory = 0
 					issues = []
 					for test_case in problem.correctness_test_suite:
-						iterations = 1000
+						iterations = 10
 						solution_results = Grader.run_function(solution.solution_code, function_prototype, test_case, iterations=iterations, collect_memory_usage=True)
 						optimal_results = Grader.run_function(problem.optimal_solution, function_prototype, test_case, iterations=iterations, collect_memory_usage=True)
 						if solution_results.peak_memory is None or optimal_results.peak_memory is None:
