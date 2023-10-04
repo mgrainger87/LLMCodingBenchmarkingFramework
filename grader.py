@@ -217,6 +217,16 @@ class PerformanceGrader(Grader):
 						grade = SolutionGrade(problem.identifier, solution.prompt_identifier, solution.model_identifier, overall_grade, None, issues)
 						solutionGrades.append(grade)
 		return GradingOutput(solutionGrades, self.identifier)
+		
+		def can_grade(cls, problems: List[ProblemDefinition]) -> bool:
+		"""
+		Check if the current grader is capable of running the problem set.
+		This method should be overridden by a child class if said class has stricter requirements.
+		"""
+		for p in problems:
+			if not (all(var is not None for var in (p.identifier, p.description, p.prompts, p.function_prototype, p.optimal_results)) and len(p.prompts) > 0):
+				return False
+		return True
 
 class MemoryGrader(Grader):
 	@classmethod
