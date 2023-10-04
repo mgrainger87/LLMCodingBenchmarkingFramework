@@ -1,0 +1,7 @@
+{
+    "problem_identifier": "longest_common_prefix",
+    "model_identifier": "gpt-4",
+    "prompt_identifier": "28",
+    "solution_code": "from typing import List\n\ndef longest_common_prefix(strs: List[str]) -> str:\n    # if the list is empty, there is no common prefix\n    if not strs:\n        return \"\"\n    # take the first string as a prefix\n    prefix = strs[0]\n    # compare the prefix with the prefixes of the rest of the strings\n    for string in strs[1:]:\n        # While the current string does not start with the current prefix\n        while string[:len(prefix)] != prefix:\n            # slice the last character off of the prefix to check the shorter prefix\n            prefix = prefix[:len(prefix)-1]\n            # if we reached the end and did not find any common prefix, return an empty string\n            if not prefix:\n                return \"\"\n    # return the longest common prefix\n    return prefix",
+    "feedback": null
+}

@@ -1,0 +1,7 @@
+{
+    "problem_identifier": "subsets_ii",
+    "model_identifier": "gpt-4",
+    "prompt_identifier": "62",
+    "solution_code": "from typing import List\n\ndef subsets_with_dup(nums: List[int]) -> List[List[int]]:\n    def backtrack(start = 0, curr = []):\n        output.append(curr[:]) # append copy of current subset to output\n        for i in range(start, n):\n            if i > start and nums[i] == nums[i - 1]: # skip duplicates\n                continue\n            curr.append(nums[i]) # add current number to current subset\n            backtrack(i + 1, curr) # generate all subsets starting with current subset\n            del curr[-1] # remove current number from current subset\n\n    n = len(nums)\n    nums.sort()\n    output = []\n    backtrack()\n    return output",
+    "feedback": null
+}

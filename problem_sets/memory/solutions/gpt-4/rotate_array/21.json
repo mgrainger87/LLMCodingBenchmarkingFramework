@@ -1,0 +1,7 @@
+{
+    "problem_identifier": "rotate_array",
+    "model_identifier": "gpt-4",
+    "prompt_identifier": "21",
+    "solution_code": "def rotate(nums, k):\n    n = len(nums)\n    a = [0] * n\n    for i in range(n):\n        a[(i + k) % n] = nums[i]\n    nums[:] = a",
+    "feedback": null
+}

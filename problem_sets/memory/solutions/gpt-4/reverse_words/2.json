@@ -2,6 +2,6 @@
     "problem_identifier": "reverse_words",
     "model_identifier": "gpt-4",
     "prompt_identifier": "2",
-    "solution_code": "def reverse_words(s: str) -> str:\n    words = s.split()\n    words.reverse()\n    return ' '.join(words)",
+    "solution_code": "def reverse_words(s: str) -> str:\n    words = s.split()    # Split the string into words\n    words.reverse()      # Reverse the order of words\n    return ' '.join(words)    # Join the words into a string",
     "feedback": null
 }

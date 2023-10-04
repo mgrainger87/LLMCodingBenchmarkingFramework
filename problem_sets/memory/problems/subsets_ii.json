@@ -1,0 +1,44 @@
+{
+    "identifier": "subsets_ii",
+    "prompts": [
+        {
+            "prompt_id": "62",
+            "prompt": "Given a collection of integers that might contain duplicates, return all possible subsets. The solution set must not contain duplicate subsets.",
+            "sample_inputs_outputs": [
+                {
+                    "input": {
+                        "nums": "[1,2,2]"
+                    },
+                    "expected_output": [
+                        "\"[[],[1],[1,2],[1,2,2],[2],[2,2]]\""
+                    ]
+                }
+            ]
+        }
+    ],
+    "function_prototype": {
+        "function_name": "subsets_with_dup",
+        "parameters": [
+            {
+                "name": "nums",
+                "type": "List[int]"
+            }
+        ],
+        "return_values": [
+            {
+                "type": "List[List[int]]"
+            }
+        ]
+    },
+    "correctness_test_suite": [
+        {
+            "input": {
+                "nums": "[1,2,2]"
+            },
+            "expected_output": [
+                "\"[[],[1],[1,2],[1,2,2],[2],[2,2]]\""
+            ]
+        }
+    ],
+    "optimal_solution": "def subsets_with_dup(nums: List[int]) -> List[List[int]]:\n    res = []\n    nums.sort()\n\n    def backtrack(start=0, current=[]):\n        if start == len(nums):\n            res.append(current[:])\n            return\n        count = 0\n        while start + count < len(nums) and nums[start] == nums[start + count]:\n            count += 1\n        backtrack(start + count, current)\n        for size in range(1, count + 1):\n            backtrack(start + count, current + [nums[start]] * size)\n\n    backtrack()\n    return res"
+}

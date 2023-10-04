@@ -1,0 +1,7 @@
+{
+    "problem_identifier": "min_window_substring",
+    "model_identifier": "gpt-4",
+    "prompt_identifier": "53",
+    "solution_code": "def min_window(s: str, t: str) -> str:\n    from collections import defaultdict\n    \n    # Step 1, 2, 3\n    need = defaultdict(int)\n    for c in t:\n        need[c] += 1\n    not_found = len(t)\n    window = defaultdict(int)\n    left = 0\n    min_len = float('inf')\n    min_start = 0\n\n    # Step 4\n    for right, char in enumerate(s):\n        if need[char] > 0:\n            not_found -= 1\n        need[char] -= 1\n\n        # Step 4.2, 4.3\n        while not_found == 0:\n            if right - left + 1 < min_len:\n                min_len = right - left + 1\n                min_start = left\n            if need[s[left]] == 0:\n                not_found += 1\n            need[s[left]] += 1\n            left += 1  # move the left pointer to make the window invalid, then go to the next iteration to make it valid again.\n\n    # Step 5\n    return \"\" if min_len == float('inf') else s[min_start: min_start + min_len]",
+    "feedback": null
+}

@@ -1,0 +1,7 @@
+{
+    "problem_identifier": "jump_game",
+    "model_identifier": "gpt-4",
+    "prompt_identifier": "jump_game_1",
+    "solution_code": "from typing import List\n\ndef can_jump(nums: List[int]) -> bool:\n    max_reach = 0\n    for i, num in enumerate(nums):\n        if i > max_reach:\n            return False\n        max_reach = max(max_reach, i + num)\n    return True",
+    "feedback": null
+}

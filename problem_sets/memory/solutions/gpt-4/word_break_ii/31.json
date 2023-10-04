@@ -1,0 +1,7 @@
+{
+    "problem_identifier": "word_break_ii",
+    "model_identifier": "gpt-4",
+    "prompt_identifier": "31",
+    "solution_code": "def word_break(s, wordDict):\n    def dfs(s, wordDict, memo):\n        if s in memo: \n            return memo[s]\n        if not s: \n            return []\n        res = []\n        for word in wordDict:\n            if len(s) < len(word) or s[:len(word)] != word:\n                continue\n            if len(word) == len(s):\n                res.append(word)\n            else:\n                for r in dfs(s[len(word):], wordDict, memo):\n                    res.append(word + ' ' + r)\n        memo[s] = res\n        return res\n    return dfs(s, wordDict, {})",
+    "feedback": null
+}

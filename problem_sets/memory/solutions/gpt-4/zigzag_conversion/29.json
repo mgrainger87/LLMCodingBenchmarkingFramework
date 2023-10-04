@@ -1,0 +1,7 @@
+{
+    "problem_identifier": "zigzag_conversion",
+    "model_identifier": "gpt-4",
+    "prompt_identifier": "29",
+    "solution_code": "def convert(s: str, numRows: int) -> str:\n    if numRows == 1 or numRows >= len(s):\n        return s\n\n    # Create an array of strings for each row\n    res = [''] * numRows\n    index, step = 0, 1\n\n    # Iterate over the input string\n    for char in s:\n        res[index] += char\n\n        # If we reach the first or last row, change direction\n        if index == 0:\n            step = 1\n        elif index == numRows - 1:\n            step = -1\n\n        # Move to the next row\n        index += step\n\n    return ''.join(res)",
+    "feedback": null
+}

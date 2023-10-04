@@ -1,0 +1,7 @@
+{
+    "problem_identifier": "find_duplicate_number",
+    "model_identifier": "gpt-4",
+    "prompt_identifier": "find_duplicate_number_1",
+    "solution_code": "The approach to solve this problem by following the steps below:\n\n1.) We would be checking the variable for negative values.\n2.) Then, we calculate the absolute value of the current element.\n3.) Then, we would evaluate the 'n'th element to be negative if the absolute value of the current element is positive.\n4.) If the absolute value of the current element is negative, this would definitely mean that we have seen this value before.\n\nPython solution is written below:\n\n    def find_duplicate(nums):\n        for i in range(len(nums)):\n            if nums[abs(nums[i])] >= 0:\n                nums[abs(nums[i])] = -nums[abs(nums[i])]\n            else:\n                return abs(nums[i])",
+    "feedback": null
+}

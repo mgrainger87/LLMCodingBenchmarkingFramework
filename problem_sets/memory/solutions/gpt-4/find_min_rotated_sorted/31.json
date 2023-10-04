@@ -1,0 +1,7 @@
+{
+    "problem_identifier": "find_min_rotated_sorted",
+    "model_identifier": "gpt-4",
+    "prompt_identifier": "31",
+    "solution_code": "def find_min(nums):\n    if not nums:\n        return -1\n    left, right = 0, len(nums) - 1\n    while left < right:\n        mid = left + (right - left) // 2\n        if nums[mid] < nums[right]:    # right side is sorted, move search to unsorted side\n            right = mid\n        elif nums[mid] > nums[right]:  # left side is sorted, move search to unsorted side\n            left = mid + 1\n        else:   # we cannot know which side is sorted, continue with binary search\n            right -= 1\n    return nums[left]",
+    "feedback": null
+}

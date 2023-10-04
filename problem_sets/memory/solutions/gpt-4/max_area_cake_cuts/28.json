@@ -1,0 +1,7 @@
+{
+    "problem_identifier": "max_area_cake_cuts",
+    "model_identifier": "gpt-4",
+    "prompt_identifier": "28",
+    "solution_code": "def max_area(h: int, w: int, horizontalCuts: list[int], verticalCuts: list[int]) -> int:\n    horizontalCuts.append(0)\n    horizontalCuts.append(h)\n    verticalCuts.append(0)\n    verticalCuts.append(w)\n\n    horizontalCuts.sort()\n    verticalCuts.sort()\n\n    max_horizontal_cut = max(horizontalCuts[i+1] - horizontalCuts[i] for i in range(len(horizontalCuts) - 1))\n    max_vertical_cut = max(verticalCuts[i+1] - verticalCuts[i] for i in range(len(verticalCuts) - 1))\n\n    return (max_horizontal_cut * max_vertical_cut) % (10**9 + 7)",
+    "feedback": null
+}

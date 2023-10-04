@@ -1,0 +1,44 @@
+{
+    "identifier": "serialize_deserialize_tree",
+    "prompts": [
+        {
+            "prompt_id": "37",
+            "prompt": "Design an algorithm to serialize and deserialize a binary tree. Serialization is the process of converting a data structure or object into a sequence of bits so that it can be stored in a file or memory buffer, or transmitted across a network connection link to be reconstructed later in the same or another computer environment.",
+            "sample_inputs_outputs": [
+                {
+                    "input": {
+                        "root": "{'val': 1, 'left': {'val': 2}, 'right': {'val': 3, 'left': {'val': 4}, 'right': {'val': 5}}}"
+                    },
+                    "expected_output": [
+                        "1,2,#,#,3,4,#,#,5,#,#"
+                    ]
+                }
+            ]
+        }
+    ],
+    "function_prototype": {
+        "function_name": "serialize",
+        "parameters": [
+            {
+                "name": "root",
+                "type": "TreeNode"
+            }
+        ],
+        "return_values": [
+            {
+                "type": "str"
+            }
+        ]
+    },
+    "correctness_test_suite": [
+        {
+            "input": {
+                "root": "{'val': 1, 'left': {'val': 2}, 'right': {'val': 3, 'left': {'val': 4}, 'right': {'val': 5}}}"
+            },
+            "expected_output": [
+                "1,2,#,#,3,4,#,#,5,#,#"
+            ]
+        }
+    ],
+    "optimal_solution": "class TreeNode:\n    def __init__(self, x):\n        self.val = x\n        self.left = None\n        self.right = None\n\ndef serialize(root: 'TreeNode') -> str:\n    def helper(node):\n        if not node:\n            return ['#']\n        return [str(node.val)] + helper(node.left) + helper(node.right)\n    \n    return ','.join(helper(root))\n\ndef deserialize(data: str) -> 'TreeNode':\n    data_list = data.split(',')\n    \n    def helper():\n        val = data_list.pop(0)\n        if val == '#':\n            return None\n        node = TreeNode(int(val))\n        node.left = helper()\n        node.right = helper()\n        return node\n    \n    return helper()"
+}

@@ -1,0 +1,7 @@
+{
+    "problem_identifier": "course_schedule",
+    "model_identifier": "gpt-4",
+    "prompt_identifier": "34",
+    "solution_code": "from collections import defaultdict\nfrom typing import List\n\ndef can_finish(numCourses: int, prerequisites: List[List[int]]) -> bool:\n    graph = defaultdict(list)\n    visited = [0]*numCourses\n    \n    # Create adjacency list from prerequisites\n    for x, y in prerequisites:\n        graph[x].append(y)\n    \n    def dfs(node):\n        if visited[node] == -1:  # cycle detected\n            return True\n        if visited[node] == 1:  # finished dfs on this node\n            return False\n        visited[node] = -1  # mark as visited\n        for j in graph[node]:  # dfs on adjacent nodes\n            if dfs(j):\n                return True\n        visited[node] = 1  # unmark as visited\n        return False\n    \n    # Perform dfs from each node\n    for i in range(numCourses):\n        if dfs(i):\n            return False\n    \n    # All courses can be finished if no cycle detected\n    return True",
+    "feedback": null
+}

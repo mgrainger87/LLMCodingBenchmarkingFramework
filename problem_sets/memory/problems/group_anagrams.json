@@ -1,0 +1,44 @@
+{
+    "identifier": "group_anagrams",
+    "prompts": [
+        {
+            "prompt_id": "26",
+            "prompt": "Given an array of strings strs, group the anagrams together. Within a group, the values should be in alphabetical order.",
+            "sample_inputs_outputs": [
+                {
+                    "input": {
+                        "strs": "[\"eat\",\"tea\",\"tan\",\"ant\",\"bat\"]"
+                    },
+                    "expected_output": [
+                        "[\"eat\",\"tea\"],[\"ant\",\"tan\"],[\"bat\"]"
+                    ]
+                }
+            ]
+        }
+    ],
+    "function_prototype": {
+        "function_name": "group_anagrams",
+        "parameters": [
+            {
+                "name": "strs",
+                "type": "List[str]"
+            }
+        ],
+        "return_values": [
+            {
+                "type": "List[List[str]]"
+            }
+        ]
+    },
+    "correctness_test_suite": [
+        {
+            "input": {
+                "strs": "[\"eat\",\"tea\",\"tan\",\"ant\",\"bat\"]"
+            },
+            "expected_output": [
+                "[\"eat\",\"tea\"],[\"ant\",\"tan\"],[\"bat\"]"
+            ]
+        }
+    ],
+    "optimal_solution": "def group_anagrams(strs: list[str]) -> list[list[str]]:\n    from collections import defaultdict\n    anagrams = defaultdict(list)\n    for word in strs:\n        sorted_word = ''.join(sorted(word))\n        anagrams[sorted_word].append(word)\n    return list(anagrams.values())"
+}

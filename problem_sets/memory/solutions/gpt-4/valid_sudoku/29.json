@@ -1,0 +1,7 @@
+{
+    "problem_identifier": "valid_sudoku",
+    "model_identifier": "gpt-4",
+    "prompt_identifier": "29",
+    "solution_code": "from typing import List\n\ndef is_valid_sudoku(board: List[List[str]]) -> bool:\n    rows = defaultdict(set)\n    columns = defaultdict(set)\n    boxes = defaultdict(set)\n    \n    for row in range(9):\n        for column in range(9):\n            val = board[row][column]\n            if val == '.':\n                continue\n            \n            box_index = (row // 3) * 3 + column // 3\n            \n            if ((val in rows[row]) or\n                (val in columns[column]) or \n                (val in boxes[box_index])):\n                return False\n            \n            rows[row].add(val)\n            columns[column].add(val)\n            boxes[box_index].add(val)\n    \n    return True",
+    "feedback": null
+}

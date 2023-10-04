@@ -1,0 +1,7 @@
+{
+    "problem_identifier": "min_arrows_burst_balloons",
+    "model_identifier": "gpt-4",
+    "prompt_identifier": "30",
+    "solution_code": "def find_min_arrows(points):\n    if not points: # check if points is empty\n        return 0   # return 0 if points is empty\n    \n    # sort the balloons by end coordinate\n    points.sort(key=lambda x: x[1])\n    \n    # initialize minimum arrows with 1\n    arrows = 1\n    \n    # current arrow can burst balloons till end\n    end = points[0][1]\n    \n    for balloon in points:\n        # if the balloon start after current end\n        # increment arrows and update end\n        if balloon[0] > end:\n            arrows += 1\n            end = balloon[1]\n    \n    return arrows",
+    "feedback": null
+}

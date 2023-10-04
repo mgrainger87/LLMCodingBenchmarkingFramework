@@ -1,0 +1,60 @@
+{
+    "identifier": "basic_calculator",
+    "prompts": [
+        {
+            "prompt_id": "29",
+            "prompt": "Implement a basic calculator to evaluate a simple expression string which contains non-negative integers, '+', '-', '*', and '/'. The expression string only contains non-negative integers, '+', '-', '*', and '/' operators, and spaces. The integer division should truncate toward zero.",
+            "sample_inputs_outputs": [
+                {
+                    "input": {
+                        "s": "3+2*2"
+                    },
+                    "expected_output": [
+                        "7"
+                    ]
+                }
+            ]
+        }
+    ],
+    "function_prototype": {
+        "function_name": "basic_calculator",
+        "parameters": [
+            {
+                "name": "s",
+                "type": "str"
+            }
+        ],
+        "return_values": [
+            {
+                "type": "int"
+            }
+        ]
+    },
+    "correctness_test_suite": [
+        {
+            "input": {
+                "s": "3+2*2"
+            },
+            "expected_output": [
+                "7"
+            ]
+        },
+        {
+            "input": {
+                "s": " 3/2 "
+            },
+            "expected_output": [
+                "1"
+            ]
+        },
+        {
+            "input": {
+                "s": " 3+5 / 2 "
+            },
+            "expected_output": [
+                "5"
+            ]
+        }
+    ],
+    "optimal_solution": "def basic_calculator(s: str) -> int:\n    stack, num, sign, res = [], 0, 1, 0\n    for i in s:\n        if i.isdigit():\n            num = num * 10 + int(i)\n        elif i in ['-', '+']:\n            res += sign * num\n            num = 0\n            sign = 1 if i == '+' else -1\n        elif i in ['*', '/']:\n            stack.append(sign if num == 0 else sign * num)\n            sign = 1 if i == '*' else -1\n            num = 0\n    res += sign * num\n    while stack:\n        res += res // stack.pop() if sign == -1 else res * stack.pop()\n    return res"
+}

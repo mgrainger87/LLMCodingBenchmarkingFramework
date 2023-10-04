@@ -1,0 +1,7 @@
+{
+    "problem_identifier": "shortest_word_distance",
+    "model_identifier": "gpt-4",
+    "prompt_identifier": "45",
+    "solution_code": "def shortest_distance(words, word1, word2):\n    idx1, idx2 = -1, -1\n    min_distance = len(words)\n    \n    for i, word in enumerate(words):\n        if word == word1:\n            idx1 = i\n        elif word == word2:\n            idx2 = i\n        \n        if idx1 != -1 and idx2 != -1:\n            min_distance = min(min_distance, abs(idx1 - idx2))\n    return min_distance",
+    "feedback": null
+}

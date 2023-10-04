@@ -1,0 +1,7 @@
+{
+    "problem_identifier": "trapping_rain_water",
+    "model_identifier": "gpt-4",
+    "prompt_identifier": "28",
+    "solution_code": "from typing import List\n\ndef trap(height: List[int]) -> int:\n    if not height:\n        return 0\n    \n    result = 0\n    left, right = 0, len(height) - 1\n    max_left, max_right = height[left], height[right]\n    \n    while left < right:\n        if max_left < max_right:\n            left += 1\n            max_left = max(max_left, height[left])\n            result += max_left - height[left]\n        else:\n            right -= 1\n            max_right = max(max_right, height[right])\n            result += max_right - height[right]\n    \n    return result",
+    "feedback": null
+}

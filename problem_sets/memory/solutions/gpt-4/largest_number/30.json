@@ -1,0 +1,7 @@
+{
+    "problem_identifier": "largest_number",
+    "model_identifier": "gpt-4",
+    "prompt_identifier": "30",
+    "solution_code": "from functools import cmp_to_key\n\ndef largest_number(nums):\n    # Convert all integers to string.\n    nums = list(map(str, nums))\n    \n    # Define comparator.\n    def compare(a,b):\n        if a+b > b+a:\n            return -1\n        else:\n            return 1\n    \n    # Sort the array according to the comparator we defined.\n    nums.sort(key = cmp_to_key(compare))\n    \n    # Concatenate all numbers to form the largest number.\n    largest = ''.join(nums)\n    \n    # Remove leading zeros.\n    largest = largest.lstrip('0')\n    \n    # If all numbers are zero, return '0'.\n    if largest == '':\n        return '0'\n    \n    return largest",
+    "feedback": null
+}

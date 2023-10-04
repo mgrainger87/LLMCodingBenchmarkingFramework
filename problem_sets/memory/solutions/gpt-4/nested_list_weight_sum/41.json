@@ -1,0 +1,7 @@
+{
+    "problem_identifier": "nested_list_weight_sum",
+    "model_identifier": "gpt-4",
+    "prompt_identifier": "41",
+    "solution_code": "from typing import List, Union, NestedInteger\ndef depth_sum(nested_list: List[NestedInteger], depth=1) -> int:\n    total = 0\n    for element in nested_list:\n        if isinstance(element, list):\n            # If the item is a list, make a recursive call with an increased depth.\n            total += depth_sum(element, depth + 1)\n        else:\n            # If the item is an integer, multiply it by the depth and add it to the sum.\n            total += element * depth     \n    return total",
+    "feedback": null
+}

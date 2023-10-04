@@ -1,0 +1,7 @@
+{
+    "problem_identifier": "next_permutation",
+    "model_identifier": "gpt-4",
+    "prompt_identifier": "31",
+    "solution_code": "from typing import List\n\ndef next_permute(nums: List[int]) -> List[int]:\n    n = len(nums)\n    \n    # Find the first decreasing element from end\n    first_dec = -1\n    for i in range(n-1, 0, -1):\n        if nums[i-1] < nums[i]:\n            first_dec = i-1\n            break\n\n    # If no such element exists, reverse the entire array\n    if first_dec == -1:\n        nums.reverse()\n    else:\n        # Find the next smallest element greater than nums[first_dec]\n        smallest_larger = -1\n        for i in range(n-1, first_dec, -1):\n            if nums[i] > nums[first_dec]:\n                smallest_larger = i\n                break\n\n        # Swap nums[first_dec] and nums[smallest_larger]\n        nums[first_dec], nums[smallest_larger] = nums[smallest_larger], nums[first_dec]\n\n        # Reverse the array from first_dec + 1 to end\n        nums[first_dec+1:] = reversed(nums[first_dec+1:])\n    \n    return nums",
+    "feedback": null
+}

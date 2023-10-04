@@ -1,0 +1,7 @@
+{
+    "problem_identifier": "min_window_subarray",
+    "model_identifier": "gpt-4",
+    "prompt_identifier": "30",
+    "solution_code": "def min_subarray_len(nums, target):\n    total_sum = 0\n    start = 0\n    min_len = float('inf')\n    for end in range(len(nums)):\n        total_sum += nums[end]\n        while total_sum >= target:\n            min_len = min(min_len, end - start + 1)\n            total_sum -= nums[start]\n            start += 1\n    return min_len if min_len != float('inf') else 0",
+    "feedback": null
+}

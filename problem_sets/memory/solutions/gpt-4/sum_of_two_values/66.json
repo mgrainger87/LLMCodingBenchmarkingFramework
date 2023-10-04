@@ -1,0 +1,7 @@
+{
+    "problem_identifier": "sum_of_two_values",
+    "model_identifier": "gpt-4",
+    "prompt_identifier": "66",
+    "solution_code": "def has_pair_with_sum(nums, target):\n    nums.sort()\n    left = 0\n    right = len(nums) - 1\n    while left < right:\n        current_sum = nums[left] + nums[right]\n        if current_sum == target:\n            return True\n        elif current_sum < target:\n            left += 1\n        else:\n            right -= 1\n    return False",
+    "feedback": null
+}

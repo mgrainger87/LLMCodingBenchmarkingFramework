@@ -1,0 +1,7 @@
+{
+    "problem_identifier": "max_points_from_cards",
+    "model_identifier": "gpt-4",
+    "prompt_identifier": "28",
+    "solution_code": "from typing import List\n\ndef max_score(cardPoints: List[int], k: int) -> int:\n        n = len(cardPoints)\n        curr_sum = sum(cardPoints[:k])\n        max_sum = curr_sum\n        for i in range(1, k+1):\n            curr_sum -= cardPoints[k-i]\n            curr_sum += cardPoints[n-i]\n            max_sum = max(max_sum, curr_sum)\n        return max_sum",
+    "feedback": null
+}

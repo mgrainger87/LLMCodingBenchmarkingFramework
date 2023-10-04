@@ -2,6 +2,6 @@
     "problem_identifier": "factorial",
     "model_identifier": "gpt-4",
     "prompt_identifier": "8",
-    "solution_code": "def factorial(n: int) -> int:\n    result = 1\n    for i in range(2, n + 1):\n        result *= i\n    return result",
+    "solution_code": "def factorial(n: int) -> int:\n    if n==0:\n        return 1\n    else:\n        fact = 1\n        for i in range(1, n+1):\n            fact *= i\n        return fact",
     "feedback": null
 }

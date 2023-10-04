@@ -1,0 +1,7 @@
+{
+    "problem_identifier": "add_two_numbers",
+    "model_identifier": "gpt-4",
+    "prompt_identifier": "29",
+    "solution_code": "def add_two_numbers(l1: List[int], l2: List[int]) -> List[int]:\n    \n    # Initialize the result list with a dummy head\n    dummy_head = curr = ListNode(0)\n    \n    # Initialize the carry\n    carry = 0\n    \n    # While there are digits left in either l1 or l2\n    while l1 or l2:\n        # Calculate the sum of two numbers plus carry from the last iteration\n        temp_sum = carry\n        if l1:\n            temp_sum += l1.val\n            l1 = l1.next\n        if l2:\n            temp_sum += l2.val\n            l2 = l2.next\n        \n        # Update the carry\n        carry = temp_sum // 10\n        \n        # Create the new node with the digit in temp_sum (excluding the carry)\n        curr.next = ListNode(temp_sum % 10)\n        # Move to the next digit\n        curr = curr.next\n    \n    # After adding all pairs of digits, check if there is still a carry left\n    # If so, append it to the end of the list\n    if carry > 0:\n        curr.next = ListNode(carry)\n    \n    # Return the whole list, exclude the dummy head\n    return dummy_head.next",
+    "feedback": null
+}

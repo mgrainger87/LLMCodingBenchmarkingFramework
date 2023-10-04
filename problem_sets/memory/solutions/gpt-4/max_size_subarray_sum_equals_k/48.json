@@ -1,0 +1,7 @@
+{
+    "problem_identifier": "max_size_subarray_sum_equals_k",
+    "model_identifier": "gpt-4",
+    "prompt_identifier": "48",
+    "solution_code": "from typing import List\n\ndef max_sub_array_len(nums: List[int], k: int) -> int:   \n    sum_map = {0:-1}\n    max_len = cur_sum = 0\n    for i, num in enumerate(nums):\n        cur_sum += num\n        if cur_sum not in sum_map:\n            sum_map[cur_sum] = i\n        if cur_sum - k in sum_map:\n            max_len = max(max_len, i - sum_map[cur_sum - k])\n    return max_len",
+    "feedback": null
+}

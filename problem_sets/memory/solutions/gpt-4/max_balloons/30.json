@@ -1,0 +1,7 @@
+{
+    "problem_identifier": "max_balloons",
+    "model_identifier": "gpt-4",
+    "prompt_identifier": "30",
+    "solution_code": "def max_balloons(text):\n    # Initialize a dictionary to hold the character counts\n    char_count = {'b': 0, 'a': 0, 'l': 0, 'o': 0, 'n': 0}\n    \n    # Count the characters in the text\n    for char in text:\n        if char in char_count:\n            char_count[char] += 1\n    # Half the counts of the 'l' and 'o' characters\n    char_count['l'] //= 2\n    char_count['o'] //= 2\n    \n    # Return the minimum character count, as this represents the maximum number of 'balloon's we can form\n    return min(char_count.values())",
+    "feedback": null
+}

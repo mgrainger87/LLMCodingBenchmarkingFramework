@@ -1,0 +1,7 @@
+{
+    "problem_identifier": "decode_string",
+    "model_identifier": "gpt-4",
+    "prompt_identifier": "31",
+    "solution_code": "def decode_string(s: str) -> str:\n    num_stack, str_stack = [], ['']\n    num = ''\n    for c in s:\n        if c.isdigit():\n            num += c\n        elif c == '[':\n            num_stack.append(int(num))\n            num = ''\n            str_stack.append('')\n        elif c == ']':\n            str_stack[-2] += str_stack.pop() * num_stack.pop()\n        else:\n            str_stack[-1] += c\n    return str_stack[0]",
+    "feedback": null
+}

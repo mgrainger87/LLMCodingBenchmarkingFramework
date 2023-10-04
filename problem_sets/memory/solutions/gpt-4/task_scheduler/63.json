@@ -1,0 +1,7 @@
+{
+    "problem_identifier": "task_scheduler",
+    "model_identifier": "gpt-4",
+    "prompt_identifier": "63",
+    "solution_code": "from collections import Counter\nimport heapq\n\ndef least_interval(tasks, n):\n    \n    # build a max heap\n    heap = [-freq for task, freq in Counter(tasks).items()]\n    heapq.heapify(heap)\n    \n    time = 0\n    while heap:\n        i, temp = 0, []\n        while i <= n:\n            if heap:\n                if heap[0] < -1:\n                    heapq.heappush(temp, heapq.heappop(heap) + 1)\n                else:\n                    heapq.heappop(heap)\n            \n            time += 1\n            if not heap and not temp:\n                break\n            \n            if i <= n:\n                i += 1\n        \n        for freq in temp:\n            heapq.heappush(heap, freq)\n    \n    return str(time)",
+    "feedback": null
+}

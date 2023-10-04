@@ -1,0 +1,59 @@
+{
+    "identifier": "word_break_ii",
+    "prompts": [
+        {
+            "prompt_id": "31",
+            "prompt": "Given a non-empty string s and a dictionary wordDict containing a list of non-empty words, add spaces in s to construct a sentence where each word is a valid dictionary word. Return all such possible sentences.",
+            "sample_inputs_outputs": [
+                {
+                    "input": {
+                        "s": "catsanddog",
+                        "wordDict": "[\"cat\", \"cats\", \"and\", \"sand\", \"dog\"]"
+                    },
+                    "expected_output": [
+                        "[\"cats and dog\", \"cat sand dog\"]"
+                    ]
+                }
+            ]
+        }
+    ],
+    "function_prototype": {
+        "function_name": "word_break",
+        "parameters": [
+            {
+                "name": "s",
+                "type": "str"
+            },
+            {
+                "name": "wordDict",
+                "type": "List[str]"
+            }
+        ],
+        "return_values": [
+            {
+                "type": "List[str]"
+            }
+        ]
+    },
+    "correctness_test_suite": [
+        {
+            "input": {
+                "s": "catsanddog",
+                "wordDict": "[\"cat\", \"cats\", \"and\", \"sand\", \"dog\"]"
+            },
+            "expected_output": [
+                "[\"cats and dog\", \"cat sand dog\"]"
+            ]
+        },
+        {
+            "input": {
+                "s": "pineapplepenapple",
+                "wordDict": "[\"apple\", \"pen\", \"applepen\", \"pine\", \"pineapple\"]"
+            },
+            "expected_output": [
+                "[\"pine apple pen apple\", \"pine applepen apple\", \"pineapple pen apple\"]"
+            ]
+        }
+    ],
+    "optimal_solution": "def word_break(s: str, wordDict: list[str]) -> list[str]:\n    memo = {}\n    word_set = set(wordDict)\n\n    def backtrack(start: int) -> list[str]:\n        if start == len(s):\n            return [\"\"]\n        if start in memo:\n            return memo[start]\n\n        sentences = []\n        for end in range(start + 1, len(s) + 1):\n            word = s[start:end]\n            if word in word_set:\n                rest_sentences = backtrack(end)\n                for rest in rest_sentences:\n                    if rest:\n                        sentences.append(word + \" \" + rest)\n                    else:\n                        sentences.append(word)\n\n        memo[start] = sentences\n        return sentences\n\n    return backtrack(0)"
+}

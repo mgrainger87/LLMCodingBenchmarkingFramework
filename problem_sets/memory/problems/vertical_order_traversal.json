@@ -1,0 +1,44 @@
+{
+    "identifier": "vertical_order_traversal",
+    "prompts": [
+        {
+            "prompt_id": "44",
+            "prompt": "Given a binary tree, return the vertical order traversal of its nodes' values. (ie, from top to bottom, column by column). If two nodes are in the same row and column, the order should be from left to right.",
+            "sample_inputs_outputs": [
+                {
+                    "input": {
+                        "root": "{'val': 3, 'left': {'val': 9}, 'right': {'val': 20, 'left': {'val': 15}, 'right': {'val': 7}}}"
+                    },
+                    "expected_output": [
+                        "[[9],[3,15],[20],[7]]"
+                    ]
+                }
+            ]
+        }
+    ],
+    "function_prototype": {
+        "function_name": "vertical_order",
+        "parameters": [
+            {
+                "name": "root",
+                "type": "TreeNode"
+            }
+        ],
+        "return_values": [
+            {
+                "type": "List[List[int]]"
+            }
+        ]
+    },
+    "correctness_test_suite": [
+        {
+            "input": {
+                "root": "{'val': 3, 'left': {'val': 9}, 'right': {'val': 20, 'left': {'val': 15}, 'right': {'val': 7}}}"
+            },
+            "expected_output": [
+                "[[9],[3,15],[20],[7]]"
+            ]
+        }
+    ],
+    "optimal_solution": "class TreeNode:\n    def __init__(self, x):\n        self.val = x\n        self.left = None\n        self.right = None\n\ndef vertical_order(root: 'TreeNode') -> List[List[int]]:\n    if not root:\n        return []\n\n    result = {}\n    min_col = 0\n    max_col = 0\n    queue = [(root, 0)]\n\n    while queue:\n        node, col = queue.pop(0)\n        if col not in result:\n            result[col] = []\n        result[col].append(node.val)\n        \n        if node.left:\n            queue.append((node.left, col-1))\n            min_col = min(min_col, col-1)\n        if node.right:\n            queue.append((node.right, col+1))\n            max_col = max(max_col, col+1)\n\n    return [result[i] for i in range(min_col, max_col+1)]"
+}
