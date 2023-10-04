@@ -2,7 +2,11 @@
     "problem_identifier": "problem_5",
     "prompt_identifier": "detailed_prompt",
     "model_identifier": "gpt-4",
+<<<<<<< HEAD
+    "score": 1.0601446516938984,
+=======
     "score": 0.9403050108932695,
+>>>>>>> 9bbd0a57c39719cf275505b99da8433592a0bc1b
     "sub_criteria_scores": null,
     "issues": []
 }

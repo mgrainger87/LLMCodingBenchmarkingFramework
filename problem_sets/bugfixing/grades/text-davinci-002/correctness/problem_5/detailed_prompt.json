@@ -5,7 +5,12 @@
     "score": 0.0,
     "sub_criteria_scores": null,
     "issues": [
+<<<<<<< HEAD
+        "Test failed: Input: n = 4\nExpected Output: 24 Result: {'exception': 'invalid syntax (<string>, line 5)', 'traceback': 'Traceback (most recent call last):\\n  File \"/Users/morgang/code/LLMCodingBenchmarkingFramework/execution.py\", line 30, in executor_script\\n    exec(function_code, exec_globals)\\n  File \"<string>\", line 5\\n    A valid solution contains the following:\\n      ^\\nSyntaxError: invalid syntax\\n', 'parameters': [4], 'function_code': '\\n\\nA valid solution contains the following:\\n\\nThe fixed function code. No syntax error should be present.\\nThe function must return the correct factorial for a positive integer input---a positive integer output should be returned.\\nThe function should return the value of 1 if the input is 0.\\ndef factorial(n: int) -> int:\\n    return 1 if n == 0 else n*factorial(n-1)'}",
+        "Test failed: Input: n = 6\nExpected Output: 720 Result: {'exception': 'invalid syntax (<string>, line 5)', 'traceback': 'Traceback (most recent call last):\\n  File \"/Users/morgang/code/LLMCodingBenchmarkingFramework/execution.py\", line 30, in executor_script\\n    exec(function_code, exec_globals)\\n  File \"<string>\", line 5\\n    A valid solution contains the following:\\n      ^\\nSyntaxError: invalid syntax\\n', 'parameters': [6], 'function_code': '\\n\\nA valid solution contains the following:\\n\\nThe fixed function code. No syntax error should be present.\\nThe function must return the correct factorial for a positive integer input---a positive integer output should be returned.\\nThe function should return the value of 1 if the input is 0.\\ndef factorial(n: int) -> int:\\n    return 1 if n == 0 else n*factorial(n-1)'}"
+=======
         "Test failed: Input: n = 4; Expected Output: 24 Result: 4",
         "Test failed: Input: n = 6; Expected Output: 720 Result: 6"
+>>>>>>> 9bbd0a57c39719cf275505b99da8433592a0bc1b
     ]
 }

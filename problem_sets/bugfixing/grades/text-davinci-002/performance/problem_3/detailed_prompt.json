@@ -2,7 +2,11 @@
     "problem_identifier": "problem_3",
     "prompt_identifier": "detailed_prompt",
     "model_identifier": "text-davinci-002",
+<<<<<<< HEAD
+    "score": 1.016500217108112,
+=======
     "score": 1.0622966062296968,
+>>>>>>> 9bbd0a57c39719cf275505b99da8433592a0bc1b
     "sub_criteria_scores": null,
     "issues": []
 }

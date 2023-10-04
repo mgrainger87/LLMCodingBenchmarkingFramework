@@ -6,7 +6,11 @@ Migrating from your current benchmarking suite to the format used in this framew
 2. Migrate each of the problems to the standard problem JSON format.
 3. Migrate the evaluation mechanism to the `Grader` class.
 
+<<<<<<< HEAD
+We will go through each of these in turn below.
+=======
 We will go through each of these in turn below. You can also see [an example ChatGPT session](https://chat.openai.com/share/3ee72075-7797-4ccb-905d-f6ad71c8fafa) that goes through these steps.
+>>>>>>> 9bbd0a57c39719cf275505b99da8433592a0bc1b
 
 ## Examine and refine the problem set and evaluation metrics
 
@@ -64,7 +68,11 @@ add(5, 3)
 
 ## Migrate to the standard problem JSON
 
+<<<<<<< HEAD
+Before proceeding, look through the [problem_definition.md](problem definition JSON specification) to understand its overall format.
+=======
 Before proceeding, look through the [problem definition JSON specification](problem_definition.md) to understand its overall format.
+>>>>>>> 9bbd0a57c39719cf275505b99da8433592a0bc1b
 
 ### Step 1: Identify appropriate few-shot examples of problems in the existing format
 
@@ -199,9 +207,17 @@ Determine which fields are relevant for your problem type and how the output cou
 
 Next, come up with a prompt that can be provided to an LLM to convert from your format to the structured JSON format. You can use an LLM to come up with this prompt, using an approach like the below:
 
+<<<<<<< HEAD
+```
+Now, create a prompt that I could provide to an LLM like you. The prompt should contain the problem definition in the original format and asks for valid JSON for the fields you identified in the output problem definition JSON format.
+
+The prompt should be completely self-contained, not relying on any information previously provided in this conversation.
+```
+=======
 > Now, create a prompt that I could provide to an LLM like you. The prompt should contain the problem definition in the original format and asks for valid JSON for the fields you identified in the output problem definition JSON format.
 > 
 > The prompt should be completely self-contained, not relying on any information previously provided in this conversation.
+>>>>>>> 9bbd0a57c39719cf275505b99da8433592a0bc1b
 
 ### Step 3: Convert to the JSON Based on Relevant Fields
 
@@ -359,10 +375,18 @@ The file name should have the format {problem_id}.json. Save your problem set in
 
 ### Step 5: Validate your problem definitions in the framework
 
+<<<<<<< HEAD
+If you have provided correctness test cases, you can use your problem set to generate solutions with gpt-4 and the correctness grader with the following command:
+
+`python3 benchmark.py --base_path problem_sets/<problem set>/ --validate`
+
+
+=======
 The following command will examine the JSON for each problem and ensure that it conforms to the specification. Address any errors it finds before continuing.
 
 `python3 benchmark.py --base_path problem_sets/<problem set>/ --validate`
 
+>>>>>>> 9bbd0a57c39719cf275505b99da8433592a0bc1b
 ### Step 6: Generate solutions using the framework
 
 Generate solutions for your problem set to generate solutions with gpt-4 as follows:

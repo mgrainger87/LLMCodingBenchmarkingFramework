@@ -2,6 +2,10 @@
     "problem_identifier": "problem_4",
     "model_identifier": "text-davinci-002",
     "prompt_identifier": "detailed_prompt",
+<<<<<<< HEAD
+    "solution_code": "\n\ndef concatenate(a: str, b: str) -> str:\n    return a + b",
+=======
     "solution_code": " Do not any include test code after the Markdown code block.\n\ndef concatenate(a: str, b: str) -> str:\n    return a + b",
+>>>>>>> 9bbd0a57c39719cf275505b99da8433592a0bc1b
     "feedback": null
 }

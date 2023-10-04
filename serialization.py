@@ -7,7 +7,11 @@ def get_problems_json(basePath: str):
 	problemsDirectory = os.path.join(basePath, "problems")
 	for problem_file in [file for file in sorted(os.listdir(problemsDirectory)) if not file.startswith('.')]:
 		problemPath = os.path.join(problemsDirectory, problem_file)
+<<<<<<< HEAD
+		# print(problemPath)
+=======
 		print(f'Loading {problemPath}…')
+>>>>>>> 9bbd0a57c39719cf275505b99da8433592a0bc1b
 		with open(problemPath) as f:
 			problemJSON = json.loads(f.read())
 		problemsJSON[problem_file] = problemJSON
@@ -41,6 +45,10 @@ def get_solutions(basePath: str, model_identifier: str):
 					solutionJSON = json.loads(f.read())
 				solutions.append(LLMSolution.from_json(solutionJSON))
 	return solutions		
+<<<<<<< HEAD
+	
+def save_grades(basePath: str, grades: GradingOutput):
+=======
 
 
 def update_report(basePath: str, grades: GradingOutput, solutionGrade: SolutionGrade, current_report_path: str):
@@ -78,6 +86,7 @@ def update_report(basePath: str, grades: GradingOutput, solutionGrade: SolutionG
 
 	
 def save_grades(basePath: str, grades: GradingOutput, current_report_path: str):
+>>>>>>> 9bbd0a57c39719cf275505b99da8433592a0bc1b
 	# print(grades.solution_grades)
 	for solutionGrade in grades.solution_grades:
 		directoryPath = os.path.join(basePath, "grades", solutionGrade.model_identifier, grades.grader_identifier, solutionGrade.problem_identifier)
@@ -88,9 +97,12 @@ def save_grades(basePath: str, grades: GradingOutput, current_report_path: str):
 		with open(path, 'w') as f:
 			jsonString = json.dumps(solutionGrade.to_json(), indent=4)
 			f.write(jsonString)
+<<<<<<< HEAD
+=======
 		
 		update_report(basePath, grades, solutionGrade, current_report_path)
 		
+>>>>>>> 9bbd0a57c39719cf275505b99da8433592a0bc1b
 			
 def get_grades(basePath: str, model_identifier: str, grader_identifier: str):
 	grades = []

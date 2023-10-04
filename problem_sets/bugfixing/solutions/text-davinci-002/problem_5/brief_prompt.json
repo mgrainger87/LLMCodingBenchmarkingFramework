@@ -2,6 +2,10 @@
     "problem_identifier": "problem_5",
     "model_identifier": "text-davinci-002",
     "prompt_identifier": "brief_prompt",
+<<<<<<< HEAD
+    "solution_code": " Do not change the complexity of `factorial`, do not add any helper methods, and do not import any libraries.\n\n def factorial(n: int) -> int:\n    if n <= 1:\n        return 1\n    return n * factorial(n - 1)",
+=======
     "solution_code": "",
+>>>>>>> 9bbd0a57c39719cf275505b99da8433592a0bc1b
     "feedback": null
 }

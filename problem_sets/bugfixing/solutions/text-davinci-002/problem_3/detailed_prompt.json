@@ -2,6 +2,10 @@
     "problem_identifier": "problem_3",
     "model_identifier": "text-davinci-002",
     "prompt_identifier": "detailed_prompt",
+<<<<<<< HEAD
+    "solution_code": "\n\ndef divide1(a: float, b: float) -> float:\n    return float (a/b)",
+=======
     "solution_code": " The sample inputs and expected outputs above will be used for testing.\n\ndef divide(a: float, b: float) -> float:\n    return a / b",
+>>>>>>> 9bbd0a57c39719cf275505b99da8433592a0bc1b
     "feedback": null
 }
