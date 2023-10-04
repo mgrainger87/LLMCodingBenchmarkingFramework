@@ -74,6 +74,7 @@ class CorrectnessGrader(Grader):
 					for test_case in problem.correctness_test_suite:
 						execution_results = Grader.run_function(solution.solution_code, function_prototype, test_case)
 						actual_result = execution_results.result
+						print(f"Grading problem:\n{problem}")
 						expected_result = function_prototype.get_return_values(test_case)
 						total_tests += 1
 						if expected_result == actual_result:
@@ -126,7 +127,7 @@ class PerformanceGrader(Grader):
 		This method should be overridden by a child class if said class has stricter requirements.
 		"""
 		for p in problems:
-			if not (all(var is not None for var in (p.identifier, p.description, p.prompts, p.function_prototype, p.optimal_results)) and len(p.prompts) > 0):
+			if not (all(var is not None for var in (p.identifier, p.description, p.prompts, p.function_prototype, p.optimal_solution)) and len(p.prompts) > 0):
 				return False
 		return True
 

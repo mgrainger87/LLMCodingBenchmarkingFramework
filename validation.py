@@ -1,4 +1,4 @@
-
+from base_types import *
 
 def validate_parameter(parameter: dict) -> tuple:
 	"""
@@ -84,7 +84,7 @@ def validate_function_prototype(function_prototype: dict) -> tuple:
 
 	return True, ""
 
-def validate_test_case(test_case: dict) -> tuple:
+def validate_test_case(test_case: dict, function_prototype: FunctionPrototype) -> tuple:
 	"""
 	Validates a TestCase JSON object.
 
@@ -105,15 +105,15 @@ def validate_test_case(test_case: dict) -> tuple:
 	if not isinstance(test_case["input"], dict) or not isinstance(test_case["expected_output"], list):
 		return False, "'input' field must be of type object and 'expected_output' field must be of type array."
 
+	try:
+		test_case_obj = TestCase(test_case)
+		parameters = function_prototype.get_ordered_parameter_values(test_case_obj)
+		expected_result = function_prototype.get_return_values(test_case_obj)
+	except Exception as e:
+		return False, f"Got exception while parsing test case: {e}"
 	return True, ""
 
-# Test the updated validate_test_case function
-validate_test_case({
-	"input": {"a": 5, "b": 3},
-	"expected_output": "invalid"
-})  # Expected output: (False, "'input' field must be of type object and 'expected_output' field must be of type array.")
-
-def validate_prompt(prompt: dict) -> tuple:
+def validate_prompt(prompt: dict, function_prototype=None) -> tuple:
 	"""
 	Validates a Prompt JSON object.
 
@@ -139,11 +139,13 @@ def validate_prompt(prompt: dict) -> tuple:
 		return False, "'genericize' field must be of type boolean."
 	
 	if "sample_inputs_outputs" in prompt:
+		if function_prototype is None:
+			return False, f"Function prototype must be present if a correctness test suite is provided."
 		if not isinstance(prompt["sample_inputs_outputs"], list):
 			return False, "'sample_inputs_outputs' field must be of type array."
 		# Validate each TestCase JSON object
 		for test_case in prompt["sample_inputs_outputs"]:
-			valid, error = validate_test_case(test_case)
+			valid, error = validate_test_case(test_case, function_prototype)
 			if not valid:
 				return False, f"Invalid TestCase JSON object in 'sample_inputs_outputs': {error}"
 
@@ -186,13 +188,18 @@ def validate_problem_json(problem_json: dict) -> (bool, str):
 	
 	# Validate each Prompt, TestCase, and FunctionPrototype JSON object
 	for index, prompt in enumerate(problem_json["prompts"]):
-		valid, error_message = validate_prompt(prompt)
+		function_prototype = FunctionPrototype(problem_json["function_prototype"]) if "function_prototype" in problem_json else None
+		valid, error_message = validate_prompt(prompt, function_prototype)
 		if not valid:
 			return False, f"Invalid prompt at index {index}: {error_message}"
 	
 	if "correctness_test_suite" in problem_json:
+		if not "function_prototype" in problem_json:
+			return False, f"Function prototype must be present if a correctness test suite is provided."
+		function_prototype = FunctionPrototype(problem_json["function_prototype"])	
+
 		for index, test_case in enumerate(problem_json["correctness_test_suite"]):
-			valid, error_message = validate_test_case(test_case)
+			valid, error_message = validate_test_case(test_case, function_prototype)
 			if not valid:
 				return False, f"Invalid test case in 'correctness_test_suite' at index {index}: {error_message}"
 	

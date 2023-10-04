@@ -267,7 +267,8 @@ class FunctionPrototype:
 	def get_python_type(self, param_type, input):
 		# Based on the type, convert the string representation to the appropriate Python object
 		param_type = re.search(r'^Optional\[(.*)\]$', param_type).group(1) if re.search(r'^Optional\[(.*)\]$', param_type) else param_type
-		
+		if isinstance(input, str):
+			input = input[1:-1] if (input.startswith("'") and input.endswith("'")) or (input.startswith('"') and input.endswith('"')) else input
 		if param_type == "int":
 			return int(input)
 		elif param_type == "float":
