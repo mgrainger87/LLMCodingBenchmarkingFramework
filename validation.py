@@ -49,10 +49,10 @@ def validate_return_value(return_value: dict) -> tuple:
 def validate_function_prototype(function_prototype: dict) -> tuple:
 	"""
 	Validates a FunctionPrototype JSON object.
-
+	
 	Args:
 	function_prototype (dict): A dictionary representing a FunctionPrototype JSON object.
-
+	
 	Returns:
 	tuple: A tuple containing a boolean and a string. The boolean is True if the function_prototype conforms to the 
 		   specified format, False otherwise. The string contains the error message if validation fails.
@@ -65,12 +65,14 @@ def validate_function_prototype(function_prototype: dict) -> tuple:
 	
 	# Check that the fields are of the correct type
 	if not isinstance(function_prototype["function_name"], str):
-		return False, "'function_name' field must be of type string."
-
+		return False, f"'function_name' field must be of type string. Found: {type(function_prototype['function_name']).__name__}."
+	
 	# Check that parameters and return_values are arrays
-	if not isinstance(function_prototype["parameters"], list) or not isinstance(function_prototype["return_values"], list):
-		return False, "'parameters' and 'return_values' fields must be of type array."
-
+	if not isinstance(function_prototype["parameters"], list):
+		return False, f"'parameters' field must be of type array. Found: {type(function_prototype['parameters']).__name__}."
+	if not isinstance(function_prototype["return_values"], list):
+		return False, f"'return_values' field must be of type array. Found: {type(function_prototype['return_values']).__name__}."
+	
 	# Validate each Parameter and ReturnValue JSON object
 	for param in function_prototype["parameters"]:
 		valid, error = validate_parameter(param)
@@ -81,7 +83,7 @@ def validate_function_prototype(function_prototype: dict) -> tuple:
 		valid, error = validate_return_value(ret_val)
 		if not valid:
 			return False, f"Invalid ReturnValue JSON object: {error}"
-
+	
 	return True, ""
 
 def validate_test_case(test_case: dict, function_prototype: FunctionPrototype) -> tuple:
@@ -102,8 +104,10 @@ def validate_test_case(test_case: dict, function_prototype: FunctionPrototype) -
 		return False, f"Missing required fields: {', '.join(missing_fields)}"
 	
 	# Check that input is an object and expected_output is an array
-	if not isinstance(test_case["input"], dict) or not isinstance(test_case["expected_output"], list):
-		return False, "'input' field must be of type object and 'expected_output' field must be of type array."
+	if not isinstance(test_case["input"], dict):
+		return False, f"'input' field must be of type object. Found: {type(test_case['input']).__name__}."
+	if not isinstance(test_case["expected_output"], list):
+		return False, f"'expected_output' field must be of type array. Found: {type(test_case['expected_output']).__name__}."
 
 	try:
 		test_case_obj = TestCase(test_case)
@@ -131,12 +135,14 @@ def validate_prompt(prompt: dict, function_prototype=None) -> tuple:
 		return False, f"Missing required fields: {', '.join(missing_fields)}"
 	
 	# Check that the fields are of the correct type
-	if not isinstance(prompt["prompt_id"], str) or not isinstance(prompt["prompt"], str):
-		return False, "Both 'prompt_id' and 'prompt' fields must be of type string."
-
+	if not isinstance(prompt["prompt_id"], str):
+		return False, f"'prompt_id' field must be of type string. Found: {type(prompt['prompt_id']).__name__}."
+	if not isinstance(prompt["prompt"], str):
+		return False, f"'prompt' field must be of type string. Found: {type(prompt['prompt']).__name__}."
+	
 	# Check that optional fields, if present, are of the correct type
 	if "genericize" in prompt and not isinstance(prompt["genericize"], bool):
-		return False, "'genericize' field must be of type boolean."
+		return False, f"'genericize' field must be of type boolean. Found: {type(prompt['genericize']).__name__}."
 	
 	if "sample_inputs_outputs" in prompt:
 		if function_prototype is None:
@@ -150,7 +156,7 @@ def validate_prompt(prompt: dict, function_prototype=None) -> tuple:
 				return False, f"Invalid TestCase JSON object in 'sample_inputs_outputs': {error}"
 
 	if "input_code" in prompt and not isinstance(prompt["input_code"], str):
-		return False, "'input_code' field must be of type string."
+		return False, f"'input_code' field must be of type string. Found: {type(prompt['input_code']).__name__}."
 
 	return True, ""
 
