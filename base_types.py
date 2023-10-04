@@ -1,6 +1,10 @@
 from typing import Dict, List, Union, Optional, Any
 import ast
 import json
+<<<<<<< HEAD
+=======
+import re
+>>>>>>> 9bbd0a57c39719cf275505b99da8433592a0bc1b
 
 # Define necessary types
 ProblemID = str
@@ -265,17 +269,33 @@ class FunctionPrototype:
 	
 	def get_python_type(self, param_type, input):
 		# Based on the type, convert the string representation to the appropriate Python object
+<<<<<<< HEAD
+=======
+		param_type = re.search(r'^Optional\[(.*)\]$', param_type).group(1) if re.search(r'^Optional\[(.*)\]$', param_type) else param_type
+		
+>>>>>>> 9bbd0a57c39719cf275505b99da8433592a0bc1b
 		if param_type == "int":
 			return int(input)
 		elif param_type == "float":
 			return float(input)
 		elif param_type == "str":
+<<<<<<< HEAD
 			return ast.literal_eval(input)
 		elif param_type == "bool":
 			return input.lower() == "true"
 		elif '[' in param_type:
 			# Using ast.literal_eval to safely evaluate the string representation
 			return ast.literal_eval(input)
+=======
+			return ast.literal_eval(f'"{input}"')  # Adding double quotes around the string
+		elif param_type == "bool":
+			return input.lower() == "true"
+		elif '[' in param_type and isinstance(input, str):  # Ensure input is a string
+			# Using ast.literal_eval to safely evaluate the string representation
+			return ast.literal_eval(input)
+		else:
+			return input  # Return the input as-is for unsupported types or if input is not a string
+>>>>>>> 9bbd0a57c39719cf275505b99da8433592a0bc1b
 		
 	def get_parameter_values(self, test_case: TestCase) -> Dict[str, Any]:
 		converted_params = {}
@@ -345,7 +365,11 @@ class Prompt:
 	def __init__(self, data: Dict[str, any]):
 		self.prompt_id = data["prompt_id"]
 		self.prompt = data["prompt"]
+<<<<<<< HEAD
 		self.genericize = data["genericize"]
+=======
+		self.genericize = data.get("genericize", None)
+>>>>>>> 9bbd0a57c39719cf275505b99da8433592a0bc1b
 		self.sample_inputs_outputs = [TestCase(tc) for tc in data.get("sample_inputs_outputs", [])]
 		self.input_code = data.get("input_code", None)
 	

@@ -26,12 +26,20 @@ class Grader(ABC):
 		return instances
 	
 	@classmethod
+<<<<<<< HEAD
 	def run_function(cls, code: str, function_prototype: FunctionPrototype, test_case: TestCase) -> str:
+=======
+	def run_function(cls, code: str, function_prototype: FunctionPrototype, test_case: TestCase, iterations=1, collect_cpu_time=False, collect_memory_usage=False) -> str:
+>>>>>>> 9bbd0a57c39719cf275505b99da8433592a0bc1b
 		"""
 		Runs generated Python code against a given test case.
 		"""
 		parameters = function_prototype.get_ordered_parameter_values(test_case)
+<<<<<<< HEAD
 		return execution.execute_function(code, parameters)
+=======
+		return execution.execute_function(code, parameters, iterations, collect_cpu_time, collect_memory_usage)
+>>>>>>> 9bbd0a57c39719cf275505b99da8433592a0bc1b
 		pass
 		
 	@classmethod
@@ -71,7 +79,12 @@ class CorrectnessGrader(Grader):
 				issues = []
 				if solution.problem_identifier == problem.identifier:
 					for test_case in problem.correctness_test_suite:
+<<<<<<< HEAD
 						actual_result = Grader.run_function(solution.solution_code, function_prototype, test_case)
+=======
+						execution_results = Grader.run_function(solution.solution_code, function_prototype, test_case)
+						actual_result = execution_results.result
+>>>>>>> 9bbd0a57c39719cf275505b99da8433592a0bc1b
 						expected_result = function_prototype.get_return_values(test_case)
 						total_tests += 1
 						if expected_result == actual_result:
@@ -102,6 +115,7 @@ class PerformanceGrader(Grader):
 					total_optimal_time = 0
 					issues = []
 					for test_case in problem.correctness_test_suite:
+<<<<<<< HEAD
 						start_time = time.process_time()
 						Grader.run_function(solution.solution_code, function_prototype, test_case)
 						end_time = time.process_time()
@@ -187,12 +201,37 @@ class PerformanceGrader(Grader):
 	def identifier(self):
 		return "performance"
 
+=======
+						iterations = 100000
+						solution_results = Grader.run_function(solution.solution_code, function_prototype, test_case, iterations=iterations, collect_cpu_time=True)
+						optimal_results = Grader.run_function(problem.optimal_solution, function_prototype, test_case, iterations=iterations, collect_cpu_time=True)
+						if solution_results.cpu_time is None or optimal_results.cpu_time is None:
+							continue
+
+						total_solution_time += solution_results.cpu_time
+						total_optimal_time += optimal_results.cpu_time
+					
+					if total_solution_time > 0:
+						overall_grade = min(1, total_optimal_time / total_solution_time)
+						
+						grade = SolutionGrade(problem.identifier, solution.prompt_identifier, solution.model_identifier, overall_grade, None, issues)
+						solutionGrades.append(grade)
+		return GradingOutput(solutionGrades, self.identifier)
+
+class MemoryGrader(Grader):
+	@classmethod
+	@property
+	def identifier(self):
+		return "memory"
+		
+>>>>>>> 9bbd0a57c39719cf275505b99da8433592a0bc1b
 	def grade(self, problems: List[ProblemDefinition], solutions: List[LLMSolution]) -> GradingOutput:
 		solutionGrades = []
 		for problem in problems:
 			function_prototype = problem.function_prototype
 			for solution in solutions:
 				if solution.problem_identifier == problem.identifier:
+<<<<<<< HEAD
 					total_solution_time = 0
 					total_optimal_time = 0
 					issues = []
@@ -337,4 +376,24 @@ class CodingConventionGrader(Grader):
 					grade = SolutionGrade(problem.identifier, solution.prompt_identifier, solution.model_identifier,
 										  score, None, issues)
 					solutionGrades.append(grade)
+=======
+					total_solution_peak_memory = 0
+					total_optimal_peak_memory = 0
+					issues = []
+					for test_case in problem.correctness_test_suite:
+						iterations = 1000
+						solution_results = Grader.run_function(solution.solution_code, function_prototype, test_case, iterations=iterations, collect_memory_usage=True)
+						optimal_results = Grader.run_function(problem.optimal_solution, function_prototype, test_case, iterations=iterations, collect_memory_usage=True)
+						if solution_results.peak_memory is None or optimal_results.peak_memory is None:
+							continue
+		
+						total_solution_peak_memory += solution_results.peak_memory
+						total_optimal_peak_memory += optimal_results.peak_memory
+					
+					if total_solution_peak_memory > 0:
+						overall_grade = min(1, total_optimal_peak_memory / total_solution_peak_memory)
+						
+						grade = SolutionGrade(problem.identifier, solution.prompt_identifier, solution.model_identifier, overall_grade, None, issues)
+						solutionGrades.append(grade)
+>>>>>>> 9bbd0a57c39719cf275505b99da8433592a0bc1b
 		return GradingOutput(solutionGrades, self.identifier)

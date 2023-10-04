@@ -7,6 +7,10 @@ import querier
 import sys
 import os
 import validation
+<<<<<<< HEAD
+=======
+import datetime
+>>>>>>> 9bbd0a57c39719cf275505b99da8433592a0bc1b
 
 def load_problems(base_path):
 	return serialization.get_problems(base_path)
@@ -37,15 +41,27 @@ def load_solutions(base_path, models):
 		solutions += serialization.load_solutions(base_path, model.model_identifier)
 	return solutions
 
+<<<<<<< HEAD
 def grade_solutions(base_path, problem_definitions, models, graders):
+=======
+def grade_solutions(base_path, problem_definitions, models, graders, current_report_paths):
+>>>>>>> 9bbd0a57c39719cf275505b99da8433592a0bc1b
 	gradingOutputs = []
 	for grader in graders:
 		if not grader.can_grade(problem_definitions):
 			continue
 		for model in models:
+<<<<<<< HEAD
 			solutions = serialization.get_solutions(base_path, model.model_identifier)
 			grades = grader.grade(problem_definitions, solutions)
 			serialization.save_grades(base_path, grades)
+=======
+			print(f'Grading solutions from model {model.model_identifier} with grader {grader.identifier}')
+			solutions = serialization.get_solutions(base_path, model.model_identifier)
+			grades = grader.grade(problem_definitions, solutions)
+			current_report_path = current_report_paths[model]
+			serialization.save_grades(base_path, grades, current_report_path)
+>>>>>>> 9bbd0a57c39719cf275505b99da8433592a0bc1b
 			gradingOutputs.append(grades)
 	print(gradingOutputs)
 	return gradingOutputs
@@ -82,6 +98,10 @@ def main():
 	parser.add_argument('--model', required='--generate' in sys.argv or '--grade' in sys.argv, nargs='+', help=f"The model(s) to use for generating solutions The following model names can be queried through the OpenAI API: {querier.OpenAIModelQuerier.supported_model_names()}")
 	parser.add_argument('--grader', required='--grade' in sys.argv, nargs='+', help="The grader(s) to use for grading solutions.")
 	parser.add_argument('--force-human', action='store_true', help="Always use the interactive human model querier.")
+<<<<<<< HEAD
+=======
+	parser.add_argument('--report-path', default=None, help="Location in which to store reports generated during each run. Default= ./reports")
+>>>>>>> 9bbd0a57c39719cf275505b99da8433592a0bc1b
 	args = parser.parse_args()
 
 	problem_definitions = []
@@ -93,6 +113,12 @@ def main():
 	
 	if args.base_path is None:
 		args.base_path = [os.path.join('problem_sets', d) for d in os.listdir('problem_sets') if os.path.isdir(os.path.join('problem_sets', d))]
+<<<<<<< HEAD
+=======
+
+	if args.report_path is None:
+		args.report_path = 'reports'
+>>>>>>> 9bbd0a57c39719cf275505b99da8433592a0bc1b
 		
 	if args.validate:
 		print_header('Validation')
@@ -105,6 +131,13 @@ def main():
 				print(f"\t{fileName}: {validation_result}")
 	
 	if args.generate or args.grade:
+<<<<<<< HEAD
+=======
+		# generate timestamp to identify final report:
+		timestamp = datetime.datetime.now().strftime("%m-%d-%Y--%H-%M-%S")
+		current_report_paths = {m: os.path.join(args.report_path, "report-" + m.model_identifier + "-" + timestamp + ".json") for m in models}
+
+>>>>>>> 9bbd0a57c39719cf275505b99da8433592a0bc1b
 		print_header('Problems')
 		print("Loading problems…")
 		problem_sets = {x: load_problems(x) for x in args.base_path}
@@ -125,7 +158,11 @@ def main():
 			if args.grade:
 				print_header('Grading')
 				print("Grading solutions…")
+<<<<<<< HEAD
 				grading_outputs = grade_solutions(base_path, problem_definitions, models, graders)
+=======
+				grading_outputs = grade_solutions(base_path, problem_definitions, models, graders, current_report_paths)
+>>>>>>> 9bbd0a57c39719cf275505b99da8433592a0bc1b
 	
 				for output in grading_outputs:
 					print(output.str_including_solutions())

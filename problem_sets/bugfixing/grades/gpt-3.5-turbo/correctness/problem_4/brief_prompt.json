@@ -2,7 +2,16 @@
     "problem_identifier": "problem_4",
     "prompt_identifier": "brief_prompt",
     "model_identifier": "gpt-3.5-turbo",
+<<<<<<< HEAD
     "score": 1.0,
     "sub_criteria_scores": null,
     "issues": []
+=======
+    "score": 0.0,
+    "sub_criteria_scores": null,
+    "issues": [
+        "Test failed: Input: a = 'Hi ', b = 'there!'; Expected Output: 'Hi there!' Result: Hi , there!",
+        "Test failed: Input: a = 'See ', b = 'you!'; Expected Output: 'See you!' Result: See , you!"
+    ]
+>>>>>>> 9bbd0a57c39719cf275505b99da8433592a0bc1b
 }

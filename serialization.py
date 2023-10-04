@@ -7,7 +7,11 @@ def get_problems_json(basePath: str):
 	problemsDirectory = os.path.join(basePath, "problems")
 	for problem_file in [file for file in sorted(os.listdir(problemsDirectory)) if not file.startswith('.')]:
 		problemPath = os.path.join(problemsDirectory, problem_file)
+<<<<<<< HEAD
 		# print(problemPath)
+=======
+		print(f'Loading {problemPath}…')
+>>>>>>> 9bbd0a57c39719cf275505b99da8433592a0bc1b
 		with open(problemPath) as f:
 			problemJSON = json.loads(f.read())
 		problemsJSON[problem_file] = problemJSON
@@ -41,8 +45,48 @@ def get_solutions(basePath: str, model_identifier: str):
 					solutionJSON = json.loads(f.read())
 				solutions.append(LLMSolution.from_json(solutionJSON))
 	return solutions		
+<<<<<<< HEAD
 	
 def save_grades(basePath: str, grades: GradingOutput):
+=======
+
+
+def update_report(basePath: str, grades: GradingOutput, solutionGrade: SolutionGrade, current_report_path: str):
+	if os.path.exists(current_report_path):
+			with open(current_report_path, 'r') as f:
+				report = json.load(f)
+	else:
+		report = {
+			"Problem Sets": {},
+			"Average Scores Per Problem Set": {},
+			"Average Scores Per Criterion": {}
+		}
+
+	problem_set_name = basePath
+	if problem_set_name not in report["Problem Sets"]:
+		report["Problem Sets"][problem_set_name] = {}
+	if grades.grader_identifier not in report["Problem Sets"][problem_set_name]:
+		report["Problem Sets"][problem_set_name][grades.grader_identifier] = []
+
+	report["Problem Sets"][problem_set_name][grades.grader_identifier].append(solutionGrade.to_json())
+
+	# update average score for problem set
+	all_scores = [problem["score"] for grader in report["Problem Sets"][problem_set_name].values() for problem in grader]
+	avg_score = sum(all_scores) / len(all_scores)
+	report["Average Scores Per Problem Set"][problem_set_name] = avg_score
+
+	# update average score for grading metric
+	all_scores_for_grader = [problem["score"] for pset in report["Problem Sets"].values() for problem in pset.get(grades.grader_identifier, [])]
+	avg_score_for_grader = sum(all_scores_for_grader) / len(all_scores_for_grader) if all_scores_for_grader else 0
+	report["Average Scores Per Criterion"][grades.grader_identifier] = avg_score_for_grader
+    
+	with open(current_report_path, 'w') as f:
+		json.dump(report, f, indent=4)	
+
+
+	
+def save_grades(basePath: str, grades: GradingOutput, current_report_path: str):
+>>>>>>> 9bbd0a57c39719cf275505b99da8433592a0bc1b
 	# print(grades.solution_grades)
 	for solutionGrade in grades.solution_grades:
 		directoryPath = os.path.join(basePath, "grades", solutionGrade.model_identifier, grades.grader_identifier, solutionGrade.problem_identifier)
@@ -53,6 +97,12 @@ def save_grades(basePath: str, grades: GradingOutput):
 		with open(path, 'w') as f:
 			jsonString = json.dumps(solutionGrade.to_json(), indent=4)
 			f.write(jsonString)
+<<<<<<< HEAD
+=======
+		
+		update_report(basePath, grades, solutionGrade, current_report_path)
+		
+>>>>>>> 9bbd0a57c39719cf275505b99da8433592a0bc1b
 			
 def get_grades(basePath: str, model_identifier: str, grader_identifier: str):
 	grades = []
