@@ -229,9 +229,10 @@ def validate_problem_json(problem_json: dict) -> (bool, str):
 			parameters = function_prototype.get_ordered_parameter_values(test_case_obj)
 			expected_result = function_prototype.get_return_values(test_case_obj)
 			execution_results = execution.execute_function(problem_json["optimal_solution"], parameters, iterations=1, collect_cpu_time=False, collect_memory_usage=False)
+			parameters_desc = ', '.join([f'{p} {type(p)}' for p in parameters])
 			if execution_results.error:
-				return False, f"Optimal solution encountered error for test case {test_case_obj}. Error: {execution_results.error}"
+				return False, f"Optimal solution encountered error for test case {test_case_obj}. Parameters: {parameters_desc}; Error: {execution_results.error}"
 			if expected_result != execution_results.result:
-				return False, f"Optimal solution did not pass test case {test_case_obj}. Expected result: {expected_result} {type(expected_result)}; Actual result: {execution_results.result} {type(execution_results.result)}"
+				return False, f"Optimal solution did not pass test case {test_case_obj}. Parameters: {parameters_desc}; Expected result: {expected_result} {type(expected_result)}; Actual result: {execution_results.result} {type(execution_results.result)}"
 	
 	return True, "Validation successful"

@@ -19,6 +19,7 @@ def validate_problems(base_path):
 	
 	for fileName, json in problemsJSON.items():
 		validation_results[fileName] = validation.validate_problem_json(json)
+		print(f'{fileName}: {validation_results[fileName]}')
 	return validation_results
 
 def generate_solutions(base_path, problem_definitions, models):
