@@ -163,9 +163,8 @@ class GradingOutput:
 	@property
 	def overall_score(self) -> float:
 		"""Calculate and return the overall score as the average of all solution grades."""
-		# Ensure the solution_grades list is not empty to avoid division by zero
 		if not self.solution_grades:
-			raise ValueError("The solution_grades list cannot be empty.")
+			return 0
 	
 		total_score = sum(grade.score for grade in self.solution_grades)
 		average_score = total_score / len(self.solution_grades)
