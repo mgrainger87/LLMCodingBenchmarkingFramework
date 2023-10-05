@@ -139,6 +139,39 @@ class PerformanceGrader(Grader):
 				return False
 		return True
 
+class MemoryGrader(Grader):
+	@classmethod
+	@property
+	def identifier(self):
+		return "memory"
+		
+	def grade(self, problems: List[ProblemDefinition], solutions: List[LLMSolution]) -> GradingOutput:
+		solutionGrades = []
+		for problem in problems:
+			function_prototype = problem.function_prototype
+			for solution in solutions:
+				if solution.problem_identifier == problem.identifier:
+					print(f"Grading problem {problem.identifier}")
+					total_solution_peak_memory = 0
+					total_optimal_peak_memory = 0
+					issues = []
+					for test_case in problem.correctness_test_suite:
+						iterations = 10
+						solution_results = Grader.run_function(solution.solution_code, function_prototype, test_case, iterations=iterations, collect_memory_usage=True)
+						optimal_results = Grader.run_function(problem.optimal_solution, function_prototype, test_case, iterations=iterations, collect_memory_usage=True)
+						if solution_results.peak_memory is None or optimal_results.peak_memory is None:
+							continue
+		
+						total_solution_peak_memory += solution_results.peak_memory
+						total_optimal_peak_memory += optimal_results.peak_memory
+					
+					if total_solution_peak_memory > 0:
+						overall_grade = min(1, total_optimal_peak_memory / total_solution_peak_memory)
+						
+						grade = SolutionGrade(problem.identifier, solution.prompt_identifier, solution.model_identifier, overall_grade, None, issues)
+						solutionGrades.append(grade)
+		return GradingOutput(solutionGrades, self.identifier)
+
 class HalsteadGrader(Grader):
 	@classmethod
 	@property
