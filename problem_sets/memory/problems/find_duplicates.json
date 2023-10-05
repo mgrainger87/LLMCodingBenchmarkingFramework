@@ -35,5 +35,5 @@
             "expected_output": [[1]]
         }
     ],
-    "optimal_solution": "def find_duplicates(arr: list[int]) -> list[int]:\n    from collections import Counter\n    count = Counter(arr)\n    return [num for num, freq in count.items() if freq > 1]"
+    "optimal_solution": "def find_duplicates(arr: list[int]) -> list[int]:\n    from collections import Counter\n    count = Counter(arr)\n    return sorted([num for num, freq in count.items() if freq > 1])"
 }

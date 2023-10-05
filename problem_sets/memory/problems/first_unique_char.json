@@ -24,11 +24,11 @@
         },
         {
             "input": {"s": "aabbcc"},
-            "expected_output": []
+            "expected_output": [null]
         },
         {
             "input": {"s": ""},
-            "expected_output": []
+            "expected_output": [null]
         },
         {
             "input": {"s": "abcd"},
