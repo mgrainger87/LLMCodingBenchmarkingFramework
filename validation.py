@@ -1,4 +1,5 @@
 from base_types import *
+import execution
 
 def validate_parameter(parameter: dict) -> tuple:
 	"""
@@ -220,5 +221,17 @@ def validate_problem_json(problem_json: dict) -> (bool, str):
 	
 	if "tags" in problem_json and not all(isinstance(tag, str) for tag in problem_json["tags"]):
 		return False, "All elements in field 'tags' should be strings"
+		
+	if 'optimal_solution' in problem_json and 'correctness_test_suite' in problem_json:
+		# Ensure that the optimal solution passes the correctness test suite
+		for index, test_case in enumerate(problem_json["correctness_test_suite"]):
+			test_case_obj = TestCase(test_case)
+			parameters = function_prototype.get_ordered_parameter_values(test_case_obj)
+			expected_result = function_prototype.get_return_values(test_case_obj)
+			execution_results = execution.execute_function(problem_json["optimal_solution"], parameters, iterations=1, collect_cpu_time=False, collect_memory_usage=False)
+			if execution_results.error:
+				return False, f"Optimal solution encountered error for test case {test_case_obj}. Error: {execution_results.error}"
+			if expected_result != execution_results.result:
+				return False, f"Optimal solution did not pass test case {test_case_obj}. Expected result: {expected_result} {type(expected_result)}; Actual result: {execution_results.result} {type(execution_results.result)}"
 	
 	return True, "Validation successful"

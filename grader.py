@@ -27,7 +27,7 @@ class Grader(ABC):
 		return instances
 	
 	@classmethod
-	def run_function(cls, code: str, function_prototype: FunctionPrototype, test_case: TestCase, iterations=1, collect_cpu_time=False, collect_memory_usage=False) -> str:
+	def run_function(cls, code: str, function_prototype: FunctionPrototype, test_case: TestCase, iterations=1, collect_cpu_time=False, collect_memory_usage=False) -> execution.FunctionExecutionResult:
 		"""
 		Runs generated Python code against a given test case.
 		"""
@@ -74,13 +74,19 @@ class CorrectnessGrader(Grader):
 					print(f"Grading problem {problem.identifier}")
 					for test_case in problem.correctness_test_suite:
 						execution_results = Grader.run_function(solution.solution_code, function_prototype, test_case)
-						actual_result = execution_results.result
 						expected_result = function_prototype.get_return_values(test_case)
+						actual_result = execution_results.result
+
 						total_tests += 1
-						if expected_result == actual_result:
+
+						if execution_results.error:
+							issues.append(f"Error encountered during execution for test case {test_case}: {execution_results.error}\n{execution_results.traceback}")
+							print(issues[-1])
+						elif expected_result == actual_result:
 							number_correct += 1
 						else:
-							issues.append(f"Test failed: {test_case} Result: {actual_result}")
+							issues.append(f"Test failed:\n\t{test_case}\n\tFunction prototype: {function_prototype}\n\tExpected result: {expected_result} {type(expected_result)}\n\tActual result: {actual_result} {type(actual_result)}")
+							print(issues[-1])
 							
 					score = 0
 					if total_tests > 0:

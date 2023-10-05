@@ -304,13 +304,13 @@ class FunctionPrototype:
 		expectedOutput = test_case.expected_output
 		
 		for retval, expected in zip(self.return_values, expectedOutput):
+			converted_retval = self.get_python_type(retval.type, expected)
 			# Extract the type of the parameter
-			converted_retvals.append(self.get_python_type(retval.type, expected))
-			
+			converted_retvals.append(converted_retval)
+		
 		if len(converted_retvals) == 1:
 			return converted_retvals[0]
-		elif len(converted_retvals) > 1:
-			return tuple(converted_retvals)
+		return tuple(converted_retvals)
 
 class Parameter:
 	def __init__(self, data):
