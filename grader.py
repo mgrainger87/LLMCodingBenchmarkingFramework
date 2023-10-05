@@ -71,10 +71,10 @@ class CorrectnessGrader(Grader):
 				total_tests = 0
 				issues = []
 				if solution.problem_identifier == problem.identifier:
+					print(f"Grading problem {problem.identifier}")
 					for test_case in problem.correctness_test_suite:
 						execution_results = Grader.run_function(solution.solution_code, function_prototype, test_case)
 						actual_result = execution_results.result
-						print(f"Grading problem:\n{problem}")
 						expected_result = function_prototype.get_return_values(test_case)
 						total_tests += 1
 						if expected_result == actual_result:
@@ -101,11 +101,11 @@ class PerformanceGrader(Grader):
 			function_prototype = problem.function_prototype
 			for solution in solutions:
 				if solution.problem_identifier == problem.identifier:
+					print(f"Grading problem {problem.identifier}")
 					total_solution_time = 0
 					total_optimal_time = 0
 					issues = []
 					for test_case in problem.correctness_test_suite:
-						print(solution.problem_identifier)
 						iterations = 1  # Starting with 1 iteration
 						while True:  # Continue running until a break condition is met
 							solution_results = Grader.run_function(solution.solution_code, function_prototype, test_case, iterations=iterations, collect_cpu_time=True)
@@ -151,6 +151,7 @@ class MemoryGrader(Grader):
 			function_prototype = problem.function_prototype
 			for solution in solutions:
 				if solution.problem_identifier == problem.identifier:
+					print(f"Grading problem {problem.identifier}")
 					total_solution_peak_memory = 0
 					total_optimal_peak_memory = 0
 					issues = []
