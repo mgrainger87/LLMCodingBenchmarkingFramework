@@ -1,0 +1,68 @@
+{
+    "identifier": "min_window_subarray_sum",
+    "prompts": [
+        {
+            "prompt_id": "30",
+            "prompt": "Given an array of positive integers nums and a positive integer target, return the minimal length of a contiguous subarray of which the sum is greater than or equal to target. If there is no such subarray, return 0 instead.",
+            "sample_inputs_outputs": [
+                {
+                    "input": {
+                        "nums": "[2,3,1,2,4,3]",
+                        "target": "7"
+                    },
+                    "expected_output": [
+                        "2"
+                    ]
+                }
+            ]
+        }
+    ],
+    "function_prototype": {
+        "function_name": "min_sub_array_len",
+        "parameters": [
+            {
+                "name": "target",
+                "type": "int"
+            },
+            {
+                "name": "nums",
+                "type": "List[int]"
+            }
+        ],
+        "return_values": [
+            {
+                "type": "int"
+            }
+        ]
+    },
+    "correctness_test_suite": [
+        {
+            "input": {
+                "nums": "[2,3,1,2,4,3]",
+                "target": "7"
+            },
+            "expected_output": [
+                "2"
+            ]
+        },
+        {
+            "input": {
+                "nums": "[1,4,4]",
+                "target": "4"
+            },
+            "expected_output": [
+                "1"
+            ]
+        },
+        {
+            "input": {
+                "nums": "[2,3,1,2,4,3]",
+                "target": "15"
+            },
+            "expected_output": [
+                "0"
+            ]
+        }
+    ],
+    "optimal_solution": "def min_sub_array_len(target: int, nums: list[int]) -> int:\n    n = len(nums)\n    ans = n + 1\n    left, right, total = 0, 0, 0\n    while right < n:\n        total += nums[right]\n        while total >= target:\n            ans = min(ans, right - left + 1)\n            total -= nums[left]\n            left += 1\n        right += 1\n    return ans if ans <= n else 0"
+}
