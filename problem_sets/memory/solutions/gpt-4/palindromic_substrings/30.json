@@ -1,7 +1,0 @@
-{
-    "problem_identifier": "palindromic_substrings",
-    "model_identifier": "gpt-4",
-    "prompt_identifier": "30",
-    "solution_code": "def count_substrings(s: str) -> int:\n    n = len(s)\n    count = 0\n    for center in range(2*n - 1):\n        left = center // 2\n        right = left + center % 2\n        while left >= 0 and right < n and s[left] == s[right]:\n            count += 1\n            left -= 1\n            right += 1\n    return count",
-    "feedback": null
-}

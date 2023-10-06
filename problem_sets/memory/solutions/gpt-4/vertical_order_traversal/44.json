@@ -1,7 +1,0 @@
-{
-    "problem_identifier": "vertical_order_traversal",
-    "model_identifier": "gpt-4",
-    "prompt_identifier": "44",
-    "solution_code": "from collections import defaultdict\n\ndef vertical_order(root):\n    \n    def dfs(node, col):\n        \n        if node is None:\n            return\n\n        rows[col].append(node.val)\n            \n        dfs(node.left, col-1)\n        dfs(node.right, col+1)\n    \n    if root is None:\n        return []\n    \n    rows = defaultdict(list)\n    \n    dfs(root, 0)\n    \n    return [rows[i] for i in sorted(rows.keys())]",
-    "feedback": null
-}

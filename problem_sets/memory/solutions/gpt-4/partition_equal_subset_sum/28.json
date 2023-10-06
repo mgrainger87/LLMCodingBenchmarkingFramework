@@ -1,7 +1,0 @@
-{
-    "problem_identifier": "partition_equal_subset_sum",
-    "model_identifier": "gpt-4",
-    "prompt_identifier": "28",
-    "solution_code": "def can_partition(nums):\n    total = sum(nums)\n    if total % 2 != 0:\n        return False\n    total //= 2\n    dp = [False] * (total + 1)\n    dp[0] = True\n    for num in nums:\n        for i in range(total, num - 1, -1):\n            dp[i] = dp[i] or dp[i - num]\n    return dp[total]",
-    "feedback": null
-}

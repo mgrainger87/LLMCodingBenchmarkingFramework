@@ -1,7 +1,0 @@
-{
-    "problem_identifier": "valid_parentheses",
-    "model_identifier": "gpt-4",
-    "prompt_identifier": "29",
-    "solution_code": "def is_valid(s: str) -> bool:\n    # Stack to store the open brackets\n    stack = []\n    \n    # Dictionary to hold the corresponding open bracket for a given closing one\n    map = {')': '(', '}': '{', ']': '['}\n\n    # Loop over each character in the string\n    for char in s:\n        if char in map:\n            # If the stack is empty or the top of the stack is not the corresponding open bracket\n            if not stack or stack.pop() != map[char]:\n                return False\n        else:\n            # If the character is an open bracket, push it in the stack\n            stack.append(char)\n\n    # Check the stack is empty or not \n    return not stack",
-    "feedback": null
-}

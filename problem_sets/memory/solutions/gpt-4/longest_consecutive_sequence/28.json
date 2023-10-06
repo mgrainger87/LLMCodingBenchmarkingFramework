@@ -1,7 +1,0 @@
-{
-    "problem_identifier": "longest_consecutive_sequence",
-    "model_identifier": "gpt-4",
-    "prompt_identifier": "28",
-    "solution_code": "def longestConsecutive(nums):\n    num_set = set(nums)\n    longest_streak = 0\n\n    for num in num_set:\n        if num - 1 not in num_set:\n            current_num = num\n            current_streak = 1\n\n            while current_num + 1 in num_set:\n                current_num += 1\n                current_streak += 1\n\n            longest_streak = max(longest_streak, current_streak)\n\n    return longest_streak",
-    "feedback": null
-}

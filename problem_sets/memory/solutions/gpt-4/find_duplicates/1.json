@@ -1,7 +1,0 @@
-{
-    "problem_identifier": "find_duplicates",
-    "model_identifier": "gpt-4",
-    "prompt_identifier": "1",
-    "solution_code": "from typing import List\nfrom collections import Counter\n\ndef find_duplicates(arr: List[int]) -> List[int]:\n    # Count the occurrence of each integer\n    counts = Counter(arr)\n    # Select only those numbers that appear more than once\n    duplicates = [num for num, count in counts.items() if count > 1]\n    # Sort the list\n    duplicates.sort()\n    return duplicates",
-    "feedback": null
-}

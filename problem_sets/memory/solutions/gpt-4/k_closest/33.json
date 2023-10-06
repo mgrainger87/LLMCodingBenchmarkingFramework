@@ -1,7 +1,0 @@
-{
-    "problem_identifier": "k_closest",
-    "model_identifier": "gpt-4",
-    "prompt_identifier": "33",
-    "solution_code": "import heapq\nfrom typing import List\n\ndef k_closest(points: List[List[int]], k: int) -> List[List[int]]:\n    queue = []\n\n    for point in points:\n        dist = point[0]**2 + point[1]**2\n        heapq.heappush(queue, (-dist, point))\n\n        if len(queue) > k:\n            heapq.heappop(queue)\n\n    return [point for dist, point in queue]",
-    "feedback": null
-}

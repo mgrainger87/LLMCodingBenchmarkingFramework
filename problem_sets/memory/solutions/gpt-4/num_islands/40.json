@@ -1,7 +1,0 @@
-{
-    "problem_identifier": "num_islands",
-    "model_identifier": "gpt-4",
-    "prompt_identifier": "40",
-    "solution_code": "def num_islands(grid):\n        def DFS(grid, i, j):\n            if i < 0 or j < 0 or i >= len(grid) or j >= len(grid[0]) or grid[i][j] == '0':\n                return\n            grid[i][j] = '0'\n            DFS(grid, i + 1, j)  \n            DFS(grid, i - 1, j)  \n            DFS(grid, i, j + 1)  \n            DFS(grid, i, j - 1)  \n\n        if not grid:\n            return 0\n\n        count = 0\n        for i in range(len(grid)):\n            for j in range(len(grid[0])):\n                if grid[i][j] == '1':\n                    DFS(grid, i, j)\n                    count += 1\n        return count",
-    "feedback": null
-}

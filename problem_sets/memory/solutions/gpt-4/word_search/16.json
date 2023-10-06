@@ -1,7 +1,0 @@
-{
-    "problem_identifier": "word_search",
-    "model_identifier": "gpt-4",
-    "prompt_identifier": "16",
-    "solution_code": "from typing import List\n\ndef word_search(board: List[List[str]], word: str) -> bool:\n\n    def dfs(board, i, j, word):\n        if len(word) == 0:  # All the characters are checked\n            return True\n        if i < 0 or i >= len(board) or j < 0 or j >= len(board[0]) or word[0] != board[i][j]:  # If the cell is out of bounds or the current character doesn't match the word character or the cell has been visited.\n            return False\n        temp = board[i][j]  # first character is found, check the remaining part\n        board[i][j] = '#'  # avoid visiting again\n        # Check whether can find `word[1:]` in neighbours\n        res = dfs(board, i + 1, j, word[1:]) or dfs(board, i - 1, j, word[1:]) or dfs(board, i, j + 1, word[1:]) or dfs(board, i, j - 1, word[1:])\n        board[i][j] = temp  # restore the original character after the visiting of this cell is done\n        return res\n\n    if not board:\n        return False\n    for i in range(len(board)):\n        for j in range(len(board[0])):\n            if dfs(board, i, j, word):\n                return True\n    return False",
-    "feedback": null
-}

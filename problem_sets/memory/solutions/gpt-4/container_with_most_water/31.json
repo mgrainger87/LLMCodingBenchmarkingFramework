@@ -1,7 +1,0 @@
-{
-    "problem_identifier": "container_with_most_water",
-    "model_identifier": "gpt-4",
-    "prompt_identifier": "31",
-    "solution_code": "def max_area(height):\n    l, r = 0, len(height) - 1\n    max_area = 0\n    while l < r:\n        # calculate the area\n        h = min(height[l], height[r])\n        w = r - l\n        area = h * w\n        # update max_area if current area is greater\n        max_area = max(max_area, area)\n        # move the pointer at the direction of higher line\n        if height[l] < height[r]:\n            l += 1\n        else:\n            r -= 1\n    return max_area",
-    "feedback": null
-}

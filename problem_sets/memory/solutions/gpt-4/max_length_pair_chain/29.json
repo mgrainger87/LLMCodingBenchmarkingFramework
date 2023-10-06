@@ -1,7 +1,0 @@
-{
-    "problem_identifier": "max_length_pair_chain",
-    "model_identifier": "gpt-4",
-    "prompt_identifier": "29",
-    "solution_code": "def findLongestChain(pairs):\n    pairs.sort(key = lambda x: x[1]) #sort by end element of pair\n    curr, ans = pairs[0][1], 1\n    for pair in pairs:\n        if pair[0] > curr: #if start of current pair > end of last pair in chain\n            curr = pair[1] #update the end to current pair's end\n            ans += 1 #increase chain length\n    return ans",
-    "feedback": null
-}

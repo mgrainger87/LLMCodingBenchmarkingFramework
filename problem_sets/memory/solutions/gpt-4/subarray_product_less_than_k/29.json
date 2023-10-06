@@ -1,7 +1,0 @@
-{
-    "problem_identifier": "subarray_product_less_than_k",
-    "model_identifier": "gpt-4",
-    "prompt_identifier": "29",
-    "solution_code": "from typing import List\n\ndef num_subarray_product_less_than_k(nums: List[int], k: int) -> int:\n    if k <= 1:\n        return 0\n    prod = 1\n    ans = left = 0\n    for right, val in enumerate(nums):\n        prod *= val\n        while prod >= k:\n            prod /= nums[left]\n            left += 1\n        ans += right - left + 1\n    return ans",
-    "feedback": null
-}

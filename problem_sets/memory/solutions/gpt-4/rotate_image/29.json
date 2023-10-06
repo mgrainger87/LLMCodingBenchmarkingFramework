@@ -1,7 +1,0 @@
-{
-    "problem_identifier": "rotate_image",
-    "model_identifier": "gpt-4",
-    "prompt_identifier": "29",
-    "solution_code": "def rotate(matrix):\n    # Transpose input matrix\n    for i in range(len(matrix)):\n        for j in range(i, len(matrix)):\n            matrix[j][i], matrix[i][j] = matrix[i][j], matrix[j][i]\n            \n    # Reverse each row\n    for row in matrix:\n        row.reverse()\n    \n    return matrix",
-    "feedback": null
-}

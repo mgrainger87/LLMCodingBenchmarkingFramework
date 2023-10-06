@@ -1,7 +1,0 @@
-{
-    "problem_identifier": "stock_with_cooldown",
-    "model_identifier": "gpt-4",
-    "prompt_identifier": "31",
-    "solution_code": "from typing import List\n\ndef max_profit(prices: List[int]) -> int:\n    buy, sell, cooldown = float('-inf'), 0, 0\n    for price in prices:\n        buy, sell, cooldown = max(buy, cooldown-price), max(sell, buy+price), max(cooldown, sell)\n    return max(sell, cooldown)",
-    "feedback": null
-}

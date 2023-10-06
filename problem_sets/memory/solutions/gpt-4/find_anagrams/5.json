@@ -1,7 +1,0 @@
-{
-    "problem_identifier": "find_anagrams",
-    "model_identifier": "gpt-4",
-    "prompt_identifier": "5",
-    "solution_code": "def find_anagrams(s, p):\n    from collections import Counter\n    p_count = Counter(p)\n    s_count = Counter()\n    \n    result = []\n    for i in range(len(s)):\n        s_count[s[i]] += 1\n        if i >= len(p):\n            if s_count[s[i - len(p)]] == 1:\n                del s_count[s[i - len(p)]]\n            else:\n                s_count[s[i - len(p)]] -= 1\n        if p_count == s_count:\n            result.append(i - len(p) + 1)\n    return result",
-    "feedback": null
-}

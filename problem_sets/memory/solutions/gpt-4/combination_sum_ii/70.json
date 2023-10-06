@@ -1,7 +1,0 @@
-{
-    "problem_identifier": "combination_sum_ii",
-    "model_identifier": "gpt-4",
-    "prompt_identifier": "70",
-    "solution_code": "def combination_sum_ii(candidates, target):\n    def dfs(start, path, target):\n        if target < 0:\n            return\n        if target == 0:\n            result.append(path)\n            return\n        for i in range(start, len(candidates)):\n            if i > start and candidates[i] == candidates[i-1]:\n                continue\n            dfs(i+1, path + [candidates[i]], target - candidates[i])\n\n    candidates.sort()\n    result = []\n    dfs(0, [], target)\n    return result",
-    "feedback": null
-}

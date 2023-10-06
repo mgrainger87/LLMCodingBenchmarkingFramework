@@ -1,7 +1,0 @@
-{
-    "problem_identifier": "remove_invalid_parentheses",
-    "model_identifier": "gpt-4",
-    "prompt_identifier": "30",
-    "solution_code": "from collections import deque\nfrom typing import List\n\ndef remove_invalid(s: str) -> List[str]:\n    \n    if not s:\n        return [\"\"]\n    \n    visited = set()\n    queue = deque()\n    queue.append(s)\n\n    removed = False\n    results = []\n    \n    def is_valid(s: str) -> bool:\n        count = 0\n        for ch in s:\n            if ch == \"(\":\n                count+= 1\n            elif ch == \")\":\n                count-= 1\n            if count < 0:\n                return False\n        return count == 0\n    \n    while queue and not removed:\n        for _ in range(len(queue)):\n            curr = queue.popleft()\n            if is_valid(curr):\n                results.append(curr)\n                removed = True\n            if not removed:\n                for i in range(len(curr)):\n                    if curr[i] in \"()\":\n                        next_str = curr[:i] + curr[i+1:]\n                        if next_str not in visited:\n                            visited.add(next_str)\n                            queue.append(next_str)\n                            \n    return results",
-    "feedback": null
-}

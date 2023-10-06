@@ -1,7 +1,0 @@
-{
-    "problem_identifier": "max_profit_stock",
-    "model_identifier": "gpt-4",
-    "prompt_identifier": "30",
-    "solution_code": "import sys\n\ndef max_profit(prices):\n    min_price = sys.maxsize\n    max_profit = 0\n    \n    for price in prices:\n        min_price = min(min_price, price)\n        max_profit = max(max_profit, price - min_price)\n    \n    return max_profit",
-    "feedback": null
-}

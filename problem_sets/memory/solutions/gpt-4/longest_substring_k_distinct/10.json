@@ -1,7 +1,0 @@
-{
-    "problem_identifier": "longest_substring_k_distinct",
-    "model_identifier": "gpt-4",
-    "prompt_identifier": "10",
-    "solution_code": "def longest_substring_k_distinct(s, k):\n    if k == 0 or s == \"\":\n        return ''\n        \n    window_start = 0\n    max_len = 0\n    max_substring_start = 0\n    chars_freq = {}\n  \n    for window_end in range(len(s)):\n        right_char = s[window_end]\n        if right_char not in chars_freq:\n            chars_freq[right_char] = 0\n        chars_freq[right_char] += 1\n\n        while len(chars_freq) > k:\n            left_char = s[window_start]\n            chars_freq[left_char] -= 1\n            if chars_freq[left_char] == 0:\n                del chars_freq[left_char]\n            window_start += 1\n\n        if window_end - window_start + 1 > max_len:\n            max_len = window_end - window_start + 1\n            max_substring_start = window_start\n\n    return s[max_substring_start:max_substring_start + max_len]",
-    "feedback": null
-}

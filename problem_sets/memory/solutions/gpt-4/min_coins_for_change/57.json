@@ -1,7 +1,0 @@
-{
-    "problem_identifier": "min_coins_for_change",
-    "model_identifier": "gpt-4",
-    "prompt_identifier": "57",
-    "solution_code": "from typing import List\n\ndef coin_change(coins: List[int], amount: int) -> int:\n    dp = [amount+1]*(amount+1)\n    dp[0] = 0\n    for coin in coins:\n        for i in range(coin,amount+1):\n            dp[i] = min(dp[i-coin]+1,dp[i])\n    return dp[amount] if dp[amount]!=(amount+1) else -1",
-    "feedback": null
-}

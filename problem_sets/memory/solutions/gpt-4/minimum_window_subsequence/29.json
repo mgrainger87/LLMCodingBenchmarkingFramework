@@ -1,7 +1,0 @@
-{
-    "problem_identifier": "minimum_window_subsequence",
-    "model_identifier": "gpt-4",
-    "prompt_identifier": "29",
-    "solution_code": "def minimum_window_subsequence(S: str, T: str) -> str:\n    N = len(S)\n    ans = [0, N]  # To store the answer as [start, end]\n    cur_j = 0  # The current matching index in T\n    min_len = float('inf')\n    for i in range(N):\n        if S[i] == T[cur_j]:\n            cur_j += 1\n            if cur_j == len(T):  # If T is found, try to minimize window from left\n                end_i = i + 1\n                cur_j -= 1\n                while cur_j >= 0:  # Minimize the window from left\n                    if S[i] == T[cur_j]:\n                        cur_j -= 1\n                    i -= 1\n                cur_j += 1\n                i += 1\n                if end_i - i < min_len:  # Record smaller window\n                    min_len = end_i - i\n                    ans = [i, end_i]\n    return '' if min_len == float('inf') else S[ans[0]: ans[1]]",
-    "feedback": null
-}

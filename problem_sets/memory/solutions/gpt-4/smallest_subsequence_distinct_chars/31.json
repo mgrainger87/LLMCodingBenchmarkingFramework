@@ -1,7 +1,0 @@
-{
-    "problem_identifier": "smallest_subsequence_distinct_chars",
-    "model_identifier": "gpt-4",
-    "prompt_identifier": "31",
-    "solution_code": "def smallest_subsequence(s: str) -> str:\n    last_occurrence = [0]*26\n    for i, c in enumerate(s):\n        last_occurrence[ord(c)-ord('a')] = i\n        \n    sub_sequence = []\n    visited = [0]*26\n    \n    for i, c in enumerate(s):\n        if not visited[ord(c)-ord('a')]:\n            while sub_sequence and sub_sequence[-1] > c and i < last_occurrence[ord(sub_sequence[-1])-ord('a')]:\n                visited[ord(sub_sequence.pop()) - ord('a')] = 0\n            sub_sequence.append(c)\n            visited[ord(c)-ord('a')] = 1\n                \n    return ''.join(sub_sequence)",
-    "feedback": null
-}

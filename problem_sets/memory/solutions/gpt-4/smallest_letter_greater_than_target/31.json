@@ -1,7 +1,0 @@
-{
-    "problem_identifier": "smallest_letter_greater_than_target",
-    "model_identifier": "gpt-4",
-    "prompt_identifier": "31",
-    "solution_code": "from typing import List\n\ndef next_greatest_letter(letters: List[str], target: str) -> str:\n    start = 0\n    end = len(letters)\n    \n    while start < end:\n        mid = start + (end - start) // 2\n        if letters[mid] <= target:\n            start = mid + 1\n        else:\n            end = mid\n            \n    return letters[start % len(letters)]",
-    "feedback": null
-}

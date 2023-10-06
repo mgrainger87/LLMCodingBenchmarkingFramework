@@ -1,7 +1,0 @@
-{
-    "problem_identifier": "top_k_frequent",
-    "model_identifier": "gpt-4",
-    "prompt_identifier": "28",
-    "solution_code": "from collections import Counter\nfrom typing import List\n\ndef top_k_frequent(nums: List[int], k: int) -> List[int]:\n    # create a hash table to keep track of the frequency of each number\n    counter = Counter(nums)\n    \n    # create a list of keys sorted by frequency\n    keys_sorted_by_frequency = sorted(counter.keys(), key=lambda x: -counter[x])\n    \n    # return the k most frequent keys\n    return keys_sorted_by_frequency[:k]",
-    "feedback": null
-}

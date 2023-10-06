@@ -1,7 +1,0 @@
-{
-    "problem_identifier": "find_disappeared_numbers",
-    "model_identifier": "gpt-4",
-    "prompt_identifier": "31",
-    "solution_code": "def find_disappeared_numbers(nums):\n    number_pool = set(range(1, len(nums) + 1))\n    for num in nums:\n        if num in number_pool:\n            number_pool.remove(num)\n    return list(number_pool)",
-    "feedback": null
-}

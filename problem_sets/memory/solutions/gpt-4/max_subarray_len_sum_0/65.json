@@ -1,7 +1,0 @@
-{
-    "problem_identifier": "max_subarray_len_sum_0",
-    "model_identifier": "gpt-4",
-    "prompt_identifier": "65",
-    "solution_code": "Approach:\n- We can solve this problem using the prefix-sum-array and Hashing technique.\n- Traverse the given array, and maintain the sum of elements. If the sum becomes zero at any index, then update the 'max_len' as 'i+1'.\n- If the sum at any index produces a sum that is already present in the hash map, this means that the sub-array between the previous index corresponding to the current sum in the hashmap and the current index has a sum of zero.\n- Thus, we update our 'max_len' to the maximum of 'max_len' and difference of current index and previous index corresponding to the current sum in the hashmap.\n\nAlgorithm:\n- Initialize 'sum' = 0, 'max_len' = 0 and an empty hash_map.\n- Traverse each element of given array:\n    - Add current element to 'sum'.\n    - If 'sum' == 0:\n        - Update 'max_len' = i+1.\n    - Else If sum is not present in hash_map:\n        - Store 'sum' and 'i' in hash_map.\n    - Else:\n        - Check if 'max_len' < i - hash_map(sum), if true then update 'max_len', otherwise do not update 'max_len'.\n- Return 'max_len'.",
-    "feedback": null
-}

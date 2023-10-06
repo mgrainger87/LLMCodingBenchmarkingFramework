@@ -1,7 +1,0 @@
-{
-    "problem_identifier": "is_one_edit_distance",
-    "model_identifier": "gpt-4",
-    "prompt_identifier": "9",
-    "solution_code": "def is_one_edit_distance(s1: str, s2: str) -> bool:\n    len1, len2 = len(s1), len(s2)\n    \n    if abs(len1-len2) > 1:\n        return False\n    \n    i, j, count = 0, 0, 0\n    \n    while i < len1 and j < len2:\n        if s1[i] != s2[j]:\n            if count == 1:\n                return False\n            if len1 > len2:\n                i += 1\n            elif len1 < len2:\n                j += 1\n            else:\n                i += 1\n                j += 1\n            count += 1\n        else:\n            i += 1\n            j += 1\n            \n    if i < len1 or j < len2:\n        count += 1\n    return count == 1",
-    "feedback": null
-}

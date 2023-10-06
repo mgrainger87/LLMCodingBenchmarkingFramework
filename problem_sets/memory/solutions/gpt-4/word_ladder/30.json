@@ -1,7 +1,0 @@
-{
-    "problem_identifier": "word_ladder",
-    "model_identifier": "gpt-4",
-    "prompt_identifier": "30",
-    "solution_code": "from typing import List\nfrom collections import deque\n\ndef ladder_length(beginWord: str, endWord: str, wordList: List[str]) -> int:\n    wordList = set(wordList)  # convert to set for quick lookup\n    queue = deque([(beginWord, 1)])  # initialize queue with beginWord and length\n    visited = set()  # initialize an empty set to keep track of visited words\n\n    while queue:\n        word, length = queue.popleft()  # pop the next word from the queue\n        if word == endWord:  # found the endWord\n            return length\n        if word not in visited:  # proceed if word has not been visited\n            visited.add(word)\n            for i in range(len(word)):\n                for c in 'abcdefghijklmnopqrstuvwxyz':\n                    next_word = word[:i] + c + word[i+1:]\n                    if next_word in wordList:  # if next_word is in wordList\n                        queue.append((next_word, length+1))\n                        wordList.remove(next_word)  # remove next_word from wordList\n\n    return 0  # return 0 if no valid transformation sequence is found",
-    "feedback": null
-}

@@ -1,7 +1,0 @@
-{
-    "problem_identifier": "valid_anagram",
-    "model_identifier": "gpt-4",
-    "prompt_identifier": "25",
-    "solution_code": "from collections import Counter\n\ndef valid_anagram(s: str, t: str) -> bool:\n    \n    if len(s) != len(t):\n        return False\n      \n    if Counter(s) != Counter(t):\n        return False\n      \n    return True",
-    "feedback": null
-}

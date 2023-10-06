@@ -1,7 +1,0 @@
-{
-    "problem_identifier": "contains_duplicate",
-    "model_identifier": "gpt-4",
-    "prompt_identifier": "22",
-    "solution_code": "from typing import List\n\ndef contains_duplicate(nums: List[int]) -> bool:\n    seen = {}\n    \n    for num in nums:\n        if num in seen:\n            return True\n        seen[num] = None\n    \n    return False",
-    "feedback": null
-}

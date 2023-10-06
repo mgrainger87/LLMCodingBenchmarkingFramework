@@ -1,7 +1,0 @@
-{
-    "problem_identifier": "generate_subsets",
-    "model_identifier": "gpt-4",
-    "prompt_identifier": "6",
-    "solution_code": "from itertools import combinations\nfrom typing import List\n\ndef generate_subsets(nums: List[int]) -> List[List[int]]:\n    subsets = []\n    n = len(nums)\n    for r in range(n+1):\n        for subset in combinations(nums, r):\n            subsets.append(list(subset))\n    return subsets",
-    "feedback": null
-}

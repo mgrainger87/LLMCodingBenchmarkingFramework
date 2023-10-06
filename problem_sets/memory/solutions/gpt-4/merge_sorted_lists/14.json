@@ -1,7 +1,0 @@
-{
-    "problem_identifier": "merge_sorted_lists",
-    "model_identifier": "gpt-4",
-    "prompt_identifier": "14",
-    "solution_code": "from typing import List\n\ndef merge_sorted_lists(list1: List[int], list2: List[int]) -> List[int]:\n    i, j, res = 0, 0, []\n    while i < len(list1) and j < len(list2):\n        if list1[i] < list2[j]:\n            res.append(list1[i])\n            i += 1\n        else:\n            res.append(list2[j])\n            j += 1\n    if i < len(list1):\n        res.extend(list1[i:])\n    if j < len(list2):\n        res.extend(list2[j:])\n    return res",
-    "feedback": null
-}

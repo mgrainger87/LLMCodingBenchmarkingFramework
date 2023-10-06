@@ -1,7 +1,0 @@
-{
-    "problem_identifier": "longest_palindromic_substring",
-    "model_identifier": "gpt-4",
-    "prompt_identifier": "27",
-    "solution_code": "def longest_palindromic_substring(s: str) -> str:\n\n    n = len(s)\n\n    if n <= 1: return s\n\n    table = [[0]*n for _ in range(n)]\n    max_length = 1\n    start = 0\n\n    for i in range(n):\n        table[i][i] = 1\n\n    for i in range(n-1):\n        if s[i] == s[i+1]:\n            table[i][i+1] = 1\n            start = i\n            max_length = 2\n\n    for length in range(3, n+1):\n        for i in range(n-length+1):\n            j = i+length-1\n            if s[i] == s[j] and table[i+1][j-1] == 1:\n                table[i][j] = 1\n                start = i\n                max_length = length\n\n    return s[start:start+max_length]",
-    "feedback": null
-}

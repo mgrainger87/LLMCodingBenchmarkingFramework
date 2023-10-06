@@ -1,7 +1,0 @@
-{
-    "problem_identifier": "min_subarray_sum",
-    "model_identifier": "gpt-4",
-    "prompt_identifier": "min_subarray_sum_1",
-    "solution_code": "from typing import List\n\ndef min_sub_array_len(target: int, nums: List[int]) -> int:\n    start = 0\n    sum = 0\n    min_len = float('inf')\n    \n    for end in range(len(nums)):\n        sum += nums[end]\n        while sum >= target:\n            min_len = min(min_len, end - start + 1)\n            sum -= nums[start]\n            start += 1\n        \n    return 0 if min_len == float('inf') else min_len",
-    "feedback": null
-}

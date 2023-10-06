@@ -1,7 +1,0 @@
-{
-    "problem_identifier": "remove_k_digits",
-    "model_identifier": "gpt-4",
-    "prompt_identifier": "29",
-    "solution_code": "def remove_kdigits(num, k):\n    stack = []\n    for n in num:\n        while k and stack and stack[-1] > n:\n            stack.pop()\n            k -= 1\n        stack.append(n)\n    while k:\n        stack.pop()\n        k -= 1\n    output = ''.join(stack).lstrip('0')\n    if output:\n        return output\n    else:\n        return '0'",
-    "feedback": null
-}

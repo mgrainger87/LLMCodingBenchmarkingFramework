@@ -1,7 +1,0 @@
-{
-    "problem_identifier": "group_anagrams",
-    "model_identifier": "gpt-4",
-    "prompt_identifier": "26",
-    "solution_code": "def group_anagrams(strs: List[str]) -> List[List[str]]:\n    ana_dict = {}\n    for word in strs:\n        sorted_word = ''.join(sorted(word))\n        if sorted_word in ana_dict:\n            ana_dict[sorted_word].append(word)\n        else:\n            ana_dict[sorted_word] = [word]\n          \n    return [sorted(val) for val in ana_dict.values()]",
-    "feedback": null
-}

@@ -1,7 +1,0 @@
-{
-    "problem_identifier": "max_sum_subarray",
-    "model_identifier": "gpt-4",
-    "prompt_identifier": "24",
-    "solution_code": "def max_sum_subarray(nums):\n    if not nums:\n        return 0\n        \n    max_current = max_global = nums[0]\n    \n    for num in nums[1:]:\n        max_current = max(num, max_current + num)\n        max_global = max(max_global, max_current)\n    \n    return max_global",
-    "feedback": null
-}

@@ -1,7 +1,0 @@
-{
-    "problem_identifier": "unique_paths",
-    "model_identifier": "gpt-4",
-    "prompt_identifier": "28",
-    "solution_code": "import math\n\ndef unique_paths(m: int, n: int) -> int:\n    return math.factorial(m+n-2) // (math.factorial(m-1) * math.factorial(n-1))",
-    "feedback": null
-}

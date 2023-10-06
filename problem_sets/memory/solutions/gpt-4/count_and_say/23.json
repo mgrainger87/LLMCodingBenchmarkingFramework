@@ -1,7 +1,0 @@
-{
-    "problem_identifier": "count_and_say",
-    "model_identifier": "gpt-4",
-    "prompt_identifier": "23",
-    "solution_code": "def count_and_say(n: int) -> str:\n    if n == 1:\n        return '1'\n        \n    previous = count_and_say(n - 1)\n    result = ''\n    i = 0\n    while i < len(previous):\n        j = i\n        while j < len(previous) and previous[j] == previous[i]:\n            j += 1\n        count = str(j - i)\n        result += count + previous[i]\n        i = j\n    return result",
-    "feedback": null
-}
