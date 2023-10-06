@@ -6,8 +6,15 @@ import traceback
 import tempfile
 import multiprocessing
 import json
-import resource
+import time
 import tracemalloc
+
+# The resource module isn't available on Windows
+try:
+	import resource
+	USE_RESOURCE = True
+except ImportError:
+	USE_RESOURCE = False
 
 class FunctionExecutionResult:
 	def __init__(self, result=None, cpu_time=None, peak_memory=None, error=None, traceback=None, function_code=None, parameters=None):
@@ -61,11 +68,18 @@ def executor_script(function_code_file, parameters_file, config_file, result_fil
 			if collect_memory_usage:
 				tracemalloc.start()
 	
-			start_time = (resource.getrusage(resource.RUSAGE_SELF).ru_utime + resource.getrusage(resource.RUSAGE_SELF).ru_stime) if collect_cpu_time else None
-			result = function(*parameters)
-			end_time = (resource.getrusage(resource.RUSAGE_SELF).ru_utime + resource.getrusage(resource.RUSAGE_SELF).ru_stime) if collect_cpu_time else None
-	
 			if collect_cpu_time:
+				if USE_RESOURCE:
+					start_time = resource.getrusage(resource.RUSAGE_SELF).ru_utime + resource.getrusage(resource.RUSAGE_SELF).ru_stime
+				else:
+					start_time = time.time()
+			result = function(*parameters)
+			if collect_cpu_time:
+				if USE_RESOURCE:
+					end_time = (resource.getrusage(resource.RUSAGE_SELF).ru_utime + resource.getrusage(resource.RUSAGE_SELF).ru_stime)
+				else:
+					end_time = time.time()
+
 				total_time += (end_time - start_time)
 	
 			if collect_memory_usage:
@@ -132,11 +146,14 @@ def execute_function(function_code, parameters, iterations, collect_cpu_time, co
 		with open(result_file.name, 'r') as file:
 			result_data = json.load(file)
 		
-		# Clean up temporary files
-		os.unlink(function_code_file.name)
-		os.unlink(parameters_file.name)
-		os.unlink(config_file.name)
-		os.unlink(result_file.name)
+		try:
+			# Clean up temporary files
+			os.unlink(function_code_file.name)
+			os.unlink(parameters_file.name)
+			os.unlink(config_file.name)
+			os.unlink(result_file.name)
+		except Exception as e:
+			print(f"Failed to unlink temporary files: {str(e)}")
 		
 		# Construct the result object
 		metrics = result_data.get('metrics', {})
