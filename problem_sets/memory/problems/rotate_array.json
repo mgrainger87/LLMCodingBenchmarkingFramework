@@ -3,7 +3,7 @@
     "prompts": [
         {
             "prompt_id": "21",
-            "prompt": "Given an array, rotate the array to the right by k steps, where k is non-negative.",
+            "prompt": "Given an array, return an array rotated to the right by k steps, where k is non-negative.",
             "sample_inputs_outputs": [
                 {
                     "input": {
@@ -31,7 +31,7 @@
         ],
         "return_values": [
             {
-                "type": "None"
+                "type": "List[int]"
             }
         ]
     },
@@ -55,5 +55,5 @@
             ]
         }
     ],
-    "optimal_solution": "def rotate_array(nums: list[int], k: int) -> None:\n    k = k % len(nums)\n    nums[:] = nums[-k:] + nums[:-k]"
+    "optimal_solution": "def rotate_array(nums: List[int], k: int) -> List[int]:\n    k = k % len(nums)\n    return nums[-k:] + nums[:-k]\n"
 }

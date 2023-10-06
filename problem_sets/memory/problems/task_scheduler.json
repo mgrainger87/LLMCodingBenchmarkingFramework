@@ -46,5 +46,5 @@
             ]
         }
     ],
-    "optimal_solution": "import collections\n\ndef least_interval(tasks: List[chr], n: int) -> int:\n    task_counts = collections.Counter(tasks).values()\n    M = max(task_counts)\n    Mct = task_counts.count(M)\n    return max(len(tasks), (M - 1) * (n + 1) + Mct)"
+    "optimal_solution": "import collections\nfrom typing import List\n\ndef least_interval(tasks: List[chr], n: int) -> int:\n    task_counts = collections.Counter(tasks).values()\n    M = max(task_counts)\n    Mct = list(task_counts).count(M)\n    return max(len(tasks), (M - 1) * (n + 1) + Mct)\n"
 }

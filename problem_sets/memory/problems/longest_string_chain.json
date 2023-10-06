@@ -52,7 +52,7 @@
                 "words": "[\"abcd\",\"bcdf\",\"acef\",\"xyz\",\"az\",\"ba\",\"a\",\"b\"]"
             },
             "expected_output": [
-                "4"
+                "2"
             ]
         }
     ],
