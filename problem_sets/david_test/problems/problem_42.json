@@ -13,13 +13,13 @@
             "input": {
                 "matrix": [[8, 1, 6], [3, 5, 7], [4, 9, 2]]
             },
-            "expected_output": true
+            "expected_output": [true]
         },
         {
             "input": {
                 "matrix": [[8, 2, 6], [3, 5, 7], [4, 9, 2]]
             },
-            "expected_output": false
+            "expected_output": [false]
         }
     ],
     "tags": ["Matrix", "Medium"],
@@ -33,13 +33,13 @@
                     "input": {
                         "matrix": [[2, 7, 6], [9, 5, 1], [4, 3, 8]]
                     },
-                    "expected_output": true
+                    "expected_output": [true]
                 },
                 {
                     "input": {
                         "matrix": [[2, 7, 6], [9, 6, 1], [4, 3, 8]]
                     },
-                    "expected_output": false
+                    "expected_output": [false]
                 }
             ]
         }

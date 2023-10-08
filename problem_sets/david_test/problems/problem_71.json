@@ -9,21 +9,21 @@
     "correctness_test_suite": [
         {
             "input": {"password": "Password123"},
-            "expected_output": {
+            "expected_output": [{
                 "valid_length": "True",
                 "has_uppercase": "True",
                 "has_lowercase": "True",
                 "has_digit": "True"
-            }
+            }]
         },
         {
             "input": {"password": "pass"},
-            "expected_output": {
+            "expected_output": [{
                 "valid_length": "False",
                 "has_uppercase": "False",
                 "has_lowercase": "True",
                 "has_digit": "False"
-            }
+            }]
         }
     ],
     "tags": ["Strings", "Medium"],
@@ -35,12 +35,12 @@
             "sample_inputs_outputs": [
                 {
                     "input": {"password": "Abc123"},
-                    "expected_output": {
+                    "expected_output": [{
                         "valid_length": "False",
                         "has_uppercase": "True",
                         "has_lowercase": "True",
                         "has_digit": "True"
-                    }
+                    }]
                 }
             ]
         }

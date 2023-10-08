@@ -13,13 +13,13 @@
             "input": {
                 "text": "this is a sample text"
             },
-            "expected_output": "this IS a SAMPLE text"
+            "expected_output": ["this IS a SAMPLE text"]
         },
         {
             "input": {
                 "text": "another test string here"
             },
-            "expected_output": "another TEST string HERE"
+            "expected_output": ["another TEST string HERE"]
         }
     ],
     "tags": ["String Manipulation", "Medium"],
@@ -33,13 +33,13 @@
                     "input": {
                         "text": "hello world"
                     },
-                    "expected_output": "hello WORLD"
+                    "expected_output": ["hello WORLD"]
                 },
                 {
                     "input": {
                         "text": "keep coding"
                     },
-                    "expected_output": "keep CODING"
+                    "expected_output": ["keep CODING"]
                 }
             ]
         }

@@ -13,13 +13,13 @@
             "input": {
                 "code": "def add(a, b):\n    return a + b\nprint(add(1, 2))"
             },
-            "expected_output": {"def": 1, "return": 1, "print": 1}
+            "expected_output": [{"def": 1, "return": 1, "print": 1}]
         },
         {
             "input": {
                 "code": "for i in range(10):\n    if i % 2 == 0:\n        print(i)"
             },
-            "expected_output": {"for": 1, "in": 1, "range": 1, "if": 1, "print": 1}
+            "expected_output": [{"for": 1, "in": 1, "range": 1, "if": 1, "print": 1}]
         }
     ],
     "tags": ["String Processing", "Medium"],
@@ -33,13 +33,13 @@
                     "input": {
                         "code": "class Test:\n    def __init__(self):\n        pass\n\n    def test_func(self):\n        return 'test'"
                     },
-                    "expected_output": {"class": 1, "def": 2, "return": 1}
+                    "expected_output": [{"class": 1, "def": 2, "return": 1}]
                 },
                 {
                     "input": {
                         "code": "while True:\n    pass"
                     },
-                    "expected_output": {"while": 1, "True": 1, "pass": 1}
+                    "expected_output": [{"while": 1, "True": 1, "pass": 1}]
                 }
             ]
         }

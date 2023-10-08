@@ -11,13 +11,13 @@
     "correctness_test_suite": [
         {
             "input": {
-                "operations": [["add_user", "Alice"], ["add_user", "Bob"], ["add_connection", ["Alice", "Bob"]], ["get_friends", "Alice"], ["are_connected", ["Alice", "Bob"]], ["get_user_with_max_friends", ]]
+                "operations": [["add_user", "Alice"], ["add_user", "Bob"], ["add_connection", ["Alice", "Bob"]], ["get_friends", "Alice"], ["are_connected", ["Alice", "Bob"]], ["get_user_with_max_friends", ""]]
             },
             "expected_output": ["None", "None", "None", ["Bob"], "True", "Alice"]
         },
         {
             "input": {
-                "operations": [["add_user", "Charlie"], ["get_friends", "Charlie"], ["get_user_with_max_friends", ]]
+                "operations": [["add_user", "Charlie"], ["get_friends", "Charlie"], ["get_user_with_max_friends", ""]]
             },
             "expected_output": ["None", [], "Charlie"]
         }
@@ -31,7 +31,7 @@
             "sample_inputs_outputs": [
                 {
                     "input": {
-                        "operations": [["add_user", "Dave"], ["add_user", "Eve"], ["get_user_with_max_friends", ]]
+                        "operations": [["add_user", "Dave"], ["add_user", "Eve"], ["get_user_with_max_friends", ""]]
                     },
                     "expected_output": ["None", "None", "Dave"]
                 },

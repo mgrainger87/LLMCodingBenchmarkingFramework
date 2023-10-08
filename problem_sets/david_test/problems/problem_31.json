@@ -17,7 +17,7 @@
         },
         {
             "input": {"operation": "get_value", "array": [[1,2],[3,4]], "args": [1, 0]},
-            "expected_output": 3
+            "expected_output": [3]
         }
     ],
     "tags": ["2D Array", "Operations"],
@@ -27,8 +27,8 @@
             "prompt": "Implement the `array_operations` function to perform various operations on a 2D array. You will be given an operation name and respective parameters. The function will return the appropriate result based on the operation or an updated state of the array.",
             "genericize": false,
             "sample_inputs_outputs": [
-                {"input": {"operation": "row_sum", "array": [[1,2],[3,4]], "args": [0]}, "expected_output": 3},
-                {"input": {"operation": "col_sum", "array": [[1,2],[3,4]], "args": [1]}, "expected_output": 6}
+                {"input": {"operation": "row_sum", "array": [[1,2],[3,4]], "args": [0]}, "expected_output": [3]},
+                {"input": {"operation": "col_sum", "array": [[1,2],[3,4]], "args": [1]}, "expected_output": [6]}
             ]
         }
     ]

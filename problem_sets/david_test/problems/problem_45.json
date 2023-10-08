@@ -21,7 +21,7 @@
         {
             "prompt_id": "brief_prompt",
             "prompt": "Implement the trie_operations function that accepts a list of operations and performs them on a trie data structure. The function should return a list of results corresponding to each operation.",
-            "genericize": "False",
+            "genericize": false,
             "sample_inputs_outputs": [
                 {
                     "input": {

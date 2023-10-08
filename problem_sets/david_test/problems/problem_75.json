@@ -33,7 +33,7 @@
         {
             "prompt_id": "brief_prompt",
             "prompt": "Implement the convert_time function to convert time based on a specified operation.",
-            "genericize": False,
+            "genericize": false,
             "sample_inputs_outputs": [
                 {
                     "input": {

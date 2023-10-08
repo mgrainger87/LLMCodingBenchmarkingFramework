@@ -13,11 +13,11 @@
     "correctness_test_suite": [
         {
             "input": {"initial_values": [1, 2, 3], "operation": "insert_at_end", "value": 4},
-            "expected_output": "None"
+            "expected_output": ["None"]
         },
         {
             "input": {"initial_values": [1, 2, 3, 4], "operation": "find", "value": 4},
-            "expected_output": "True"
+            "expected_output": ["True"]
         },
         {
             "input": {"initial_values": [1, 2, 3, 4], "operation": "display"},
@@ -31,8 +31,8 @@
             "prompt": "Implement the `linked_list_operations` function to perform the specified operations on a singly linked list.",
             "genericize": false,
             "sample_inputs_outputs": [
-                {"input": {"initial_values": [1, 2], "operation": "insert_at_end", "value": 3}, "expected_output": "None"},
-                {"input": {"initial_values": [1, 2, 3], "operation": "find", "value": 2}, "expected_output": "True"},
+                {"input": {"initial_values": [1, 2], "operation": "insert_at_end", "value": 3}, "expected_output": ["None"]},
+                {"input": {"initial_values": [1, 2, 3], "operation": "find", "value": 2}, "expected_output": ["True"]},
                 {"input": {"initial_values": [1, 2, 3], "operation": "display"}, "expected_output": [1, 2, 3]}
             ]
         }

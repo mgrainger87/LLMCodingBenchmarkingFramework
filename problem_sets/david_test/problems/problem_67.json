@@ -28,16 +28,16 @@
                 "username": "alice",
                 "other_username": "bob"
             },
-            "expected_output": {
+            "expected_output": [{
                 "alice": {
                     "followers": [],
-                    "following": {"bob"}
+                    "following": ["bob"]
                 },
                 "bob": {
-                    "followers": {"alice"},
+                    "followers": ["alice"],
                     "following": []
                 }
-            }
+            }]
         }
 
     ],
@@ -64,7 +64,7 @@
                         "username": "charlie",
                         "other_username": "david"
                     },
-                    "expected_output": {
+                    "expected_output": [{
                         "charlie": {
                             "followers": [],
                             "following": ["david"]
@@ -73,7 +73,7 @@
                             "followers": ["charlie"],
                             "following": []
                         }
-                    }
+                    }]
                 }
 
             ]
