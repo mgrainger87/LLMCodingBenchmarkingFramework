@@ -236,8 +236,8 @@ class CodeCoverageGrader(Grader):
 		for problem in problems:
 			for solution in solutions:
 				if solution.problem_identifier == problem.identifier:
-					# create temporary directory
 					with tempfile.TemporaryDirectory() as temp_dir:
+						# Create necessary files
 						with open(os.path.join(temp_dir, "__init__.py"), "w") as f:
 							f.write("")
 						
@@ -248,9 +248,11 @@ class CodeCoverageGrader(Grader):
 							f.write(f"from .code import {problem.function_prototype.function_name}\n")
 							f.write(solution.solution_code)
 
+						# Run pytest
 						subprocess.run(["pytest", "--cov=.", "--cov-report", "json"], cwd=temp_dir, stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL)
 						data = json.loads(open(os.path.join(temp_dir, "coverage.json")).read())
 
+						# Assemble score
 						grade = SolutionGrade(problem.identifier, solution.prompt_identifier, solution.model_identifier, data["files"]["code.py"]["summary"]["percent_covered"], None, [])
 						solution_grades.append(grade)
 
