@@ -1,0 +1,1266 @@
+{
+    "Problem Sets": {
+        "problem_sets/basic": {
+            "correctness": [
+                {
+                    "problem_identifier": "problem_1",
+                    "prompt_identifier": "brief_prompt",
+                    "model_identifier": "gpt-4",
+                    "score": 1.0,
+                    "sub_criteria_scores": null,
+                    "issues": []
+                },
+                {
+                    "problem_identifier": "problem_1",
+                    "prompt_identifier": "detailed_prompt",
+                    "model_identifier": "gpt-4",
+                    "score": 1.0,
+                    "sub_criteria_scores": null,
+                    "issues": []
+                },
+                {
+                    "problem_identifier": "problem_2",
+                    "prompt_identifier": "brief_prompt",
+                    "model_identifier": "gpt-4",
+                    "score": 1.0,
+                    "sub_criteria_scores": null,
+                    "issues": []
+                },
+                {
+                    "problem_identifier": "problem_2",
+                    "prompt_identifier": "detailed_prompt",
+                    "model_identifier": "gpt-4",
+                    "score": 1.0,
+                    "sub_criteria_scores": null,
+                    "issues": []
+                },
+                {
+                    "problem_identifier": "problem_3",
+                    "prompt_identifier": "brief_prompt",
+                    "model_identifier": "gpt-4",
+                    "score": 1.0,
+                    "sub_criteria_scores": null,
+                    "issues": []
+                },
+                {
+                    "problem_identifier": "problem_3",
+                    "prompt_identifier": "detailed_prompt",
+                    "model_identifier": "gpt-4",
+                    "score": 1.0,
+                    "sub_criteria_scores": null,
+                    "issues": []
+                },
+                {
+                    "problem_identifier": "problem_4",
+                    "prompt_identifier": "brief_prompt",
+                    "model_identifier": "gpt-4",
+                    "score": 1.0,
+                    "sub_criteria_scores": null,
+                    "issues": []
+                },
+                {
+                    "problem_identifier": "problem_4",
+                    "prompt_identifier": "detailed_prompt",
+                    "model_identifier": "gpt-4",
+                    "score": 1.0,
+                    "sub_criteria_scores": null,
+                    "issues": []
+                },
+                {
+                    "problem_identifier": "problem_5",
+                    "prompt_identifier": "brief_prompt",
+                    "model_identifier": "gpt-4",
+                    "score": 1.0,
+                    "sub_criteria_scores": null,
+                    "issues": []
+                },
+                {
+                    "problem_identifier": "problem_5",
+                    "prompt_identifier": "detailed_prompt",
+                    "model_identifier": "gpt-4",
+                    "score": 1.0,
+                    "sub_criteria_scores": null,
+                    "issues": []
+                }
+            ]
+        },
+        "problem_sets/halstead": {
+            "correctness": [
+                {
+                    "problem_identifier": "problem_058ccb73-9049-4edc-9509-38e16980ebe8",
+                    "prompt_identifier": "058ccb73-9049-4edc-9509-38e16980ebe8",
+                    "model_identifier": "gpt-4",
+                    "score": 0.6666666666666666,
+                    "sub_criteria_scores": null,
+                    "issues": [
+                        "Test failed:\n\tInput: n = 2; Expected Output: 9\n\tFunction prototype: solve(n: int) -> int\n\tExpected result: 9 <class 'int'>\n\tActual result: 3 <class 'int'>"
+                    ]
+                },
+                {
+                    "problem_identifier": "problem_0af34675-f85e-47ae-a210-c4a9d8113a49",
+                    "prompt_identifier": "0af34675-f85e-47ae-a210-c4a9d8113a49",
+                    "model_identifier": "gpt-4",
+                    "score": 0.6666666666666666,
+                    "sub_criteria_scores": null,
+                    "issues": [
+                        "Test failed:\n\tInput: n = [2, 5, 8, 11, 14, 17, 20]; Expected Output: 3\n\tFunction prototype: solve(n: List[int]) -> int\n\tExpected result: 3 <class 'int'>\n\tActual result: 1 <class 'int'>"
+                    ]
+                },
+                {
+                    "problem_identifier": "problem_1359ea7c-a1cb-4963-b252-0b0c6d666b45",
+                    "prompt_identifier": "1359ea7c-a1cb-4963-b252-0b0c6d666b45",
+                    "model_identifier": "gpt-4",
+                    "score": 0.3333333333333333,
+                    "sub_criteria_scores": null,
+                    "issues": [
+                        "Test failed:\n\tInput: n = 2; Expected Output: 7\n\tFunction prototype: solve(n: int) -> int\n\tExpected result: 7 <class 'int'>\n\tActual result: 0 <class 'int'>",
+                        "Test failed:\n\tInput: n = 3; Expected Output: 10\n\tFunction prototype: solve(n: int) -> int\n\tExpected result: 10 <class 'int'>\n\tActual result: 7 <class 'int'>"
+                    ]
+                },
+                {
+                    "problem_identifier": "problem_15e7a0ff-6a64-42b1-8ac9-cabcb9c5b258",
+                    "prompt_identifier": "15e7a0ff-6a64-42b1-8ac9-cabcb9c5b258",
+                    "model_identifier": "gpt-4",
+                    "score": 0.3333333333333333,
+                    "sub_criteria_scores": null,
+                    "issues": [
+                        "Test failed:\n\tInput: n = 2; Expected Output: 18\n\tFunction prototype: solve(n: int) -> int\n\tExpected result: 18 <class 'int'>\n\tActual result: 8 <class 'int'>",
+                        "Test failed:\n\tInput: n = 3; Expected Output: 32\n\tFunction prototype: solve(n: int) -> int\n\tExpected result: 32 <class 'int'>\n\tActual result: 24 <class 'int'>"
+                    ]
+                },
+                {
+                    "problem_identifier": "problem_193c2a12-db66-433e-b561-b1ec33c231c5",
+                    "prompt_identifier": "193c2a12-db66-433e-b561-b1ec33c231c5",
+                    "model_identifier": "gpt-4",
+                    "score": 0.6666666666666666,
+                    "sub_criteria_scores": null,
+                    "issues": [
+                        "Test failed:\n\tInput: n = 3; Expected Output: 9\n\tFunction prototype: solve(n: int) -> int\n\tExpected result: 9 <class 'int'>\n\tActual result: 7 <class 'int'>"
+                    ]
+                },
+                {
+                    "problem_identifier": "problem_1ecd8e42-ac89-4f75-8ab4-e04ec4684137",
+                    "prompt_identifier": "1ecd8e42-ac89-4f75-8ab4-e04ec4684137",
+                    "model_identifier": "gpt-4",
+                    "score": 1.0,
+                    "sub_criteria_scores": null,
+                    "issues": []
+                },
+                {
+                    "problem_identifier": "problem_230b8b86-6e94-4f68-bc19-04c27c1c99bc",
+                    "prompt_identifier": "230b8b86-6e94-4f68-bc19-04c27c1c99bc",
+                    "model_identifier": "gpt-4",
+                    "score": 0.0,
+                    "sub_criteria_scores": null,
+                    "issues": [
+                        "Test failed:\n\tInput: n = 1; Expected Output: 0\n\tFunction prototype: solve(n: int) -> int\n\tExpected result: 0 <class 'int'>\n\tActual result: 14348907 <class 'int'>",
+                        "Test failed:\n\tInput: n = 2; Expected Output: 0\n\tFunction prototype: solve(n: int) -> int\n\tExpected result: 0 <class 'int'>\n\tActual result: 10 <class 'int'>",
+                        "Test failed:\n\tInput: n = 3; Expected Output: 14\n\tFunction prototype: solve(n: int) -> int\n\tExpected result: 14 <class 'int'>\n\tActual result: 50 <class 'int'>"
+                    ]
+                },
+                {
+                    "problem_identifier": "problem_23980309-3f2f-4862-b3ee-c054af6969b0",
+                    "prompt_identifier": "23980309-3f2f-4862-b3ee-c054af6969b0",
+                    "model_identifier": "gpt-4",
+                    "score": 1.0,
+                    "sub_criteria_scores": null,
+                    "issues": []
+                },
+                {
+                    "problem_identifier": "problem_2465ec5a-e1b1-4659-bc84-19c941ef95b2",
+                    "prompt_identifier": "2465ec5a-e1b1-4659-bc84-19c941ef95b2",
+                    "model_identifier": "gpt-4",
+                    "score": 0.6666666666666666,
+                    "sub_criteria_scores": null,
+                    "issues": [
+                        "Error encountered during execution for test case Input: n = 1; Expected Output: 2: list assignment index out of range\nTraceback (most recent call last):\n  File \"/Users/vamsiimmanneni/Documents/Documents - Vamsi\u2019s MacBook Pro/Homework/SWE GPT/Integration/Strict/LLMCodingBenchmarkingFramework/execution.py\", line 76, in executor_script\n    result = function(*parameters)\n  File \"<string>\", line 6, in solve\nIndexError: list assignment index out of range\n"
+                    ]
+                },
+                {
+                    "problem_identifier": "problem_257db52b-a8c3-440e-a4f0-702130893655",
+                    "prompt_identifier": "257db52b-a8c3-440e-a4f0-702130893655",
+                    "model_identifier": "gpt-4",
+                    "score": 0.3333333333333333,
+                    "sub_criteria_scores": null,
+                    "issues": [
+                        "Test failed:\n\tInput: n = 1; Expected Output: 4\n\tFunction prototype: solve(n: int) -> int\n\tExpected result: 4 <class 'int'>\n\tActual result: 24 <class 'int'>",
+                        "Test failed:\n\tInput: n = 2; Expected Output: 7\n\tFunction prototype: solve(n: int) -> int\n\tExpected result: 7 <class 'int'>\n\tActual result: 27 <class 'int'>"
+                    ]
+                },
+                {
+                    "problem_identifier": "problem_26924784-f89a-4755-b11a-a3557101670a",
+                    "prompt_identifier": "26924784-f89a-4755-b11a-a3557101670a",
+                    "model_identifier": "gpt-4",
+                    "score": 1.0,
+                    "sub_criteria_scores": null,
+                    "issues": []
+                },
+                {
+                    "problem_identifier": "problem_276c7142-2eda-4e4c-86b2-08500d535cc3",
+                    "prompt_identifier": "276c7142-2eda-4e4c-86b2-08500d535cc3",
+                    "model_identifier": "gpt-4",
+                    "score": 1.0,
+                    "sub_criteria_scores": null,
+                    "issues": []
+                },
+                {
+                    "problem_identifier": "problem_2978c72d-3c11-4ab3-9067-eacf471423dc",
+                    "prompt_identifier": "2978c72d-3c11-4ab3-9067-eacf471423dc",
+                    "model_identifier": "gpt-4",
+                    "score": 0.0,
+                    "sub_criteria_scores": null,
+                    "issues": [
+                        "Test failed:\n\tInput: n = 1; Expected Output: 0\n\tFunction prototype: solve(n: int) -> int\n\tExpected result: 0 <class 'int'>\n\tActual result: 2 <class 'int'>",
+                        "Test failed:\n\tInput: n = 2; Expected Output: 6\n\tFunction prototype: solve(n: int) -> int\n\tExpected result: 6 <class 'int'>\n\tActual result: 8 <class 'int'>",
+                        "Test failed:\n\tInput: n = 3; Expected Output: 4\n\tFunction prototype: solve(n: int) -> int\n\tExpected result: 4 <class 'int'>\n\tActual result: 2 <class 'int'>"
+                    ]
+                },
+                {
+                    "problem_identifier": "problem_2d4863f3-eef0-447b-bea3-40bf36b06976",
+                    "prompt_identifier": "2d4863f3-eef0-447b-bea3-40bf36b06976",
+                    "model_identifier": "gpt-4",
+                    "score": 0.0,
+                    "sub_criteria_scores": null,
+                    "issues": [
+                        "Error encountered during execution for test case Input: n = [1, 2, 3, 4, 5, 6]; Expected Output: 1: local variable 'combinations' referenced before assignment\nTraceback (most recent call last):\n  File \"/Users/vamsiimmanneni/Documents/Documents - Vamsi\u2019s MacBook Pro/Homework/SWE GPT/Integration/Strict/LLMCodingBenchmarkingFramework/execution.py\", line 76, in executor_script\n    result = function(*parameters)\n  File \"<string>\", line 8, in solve\nUnboundLocalError: local variable 'combinations' referenced before assignment\n",
+                        "Error encountered during execution for test case Input: n = [11, 2, 33, -4, 5, -6]; Expected Output: 0: local variable 'combinations' referenced before assignment\nTraceback (most recent call last):\n  File \"/Users/vamsiimmanneni/Documents/Documents - Vamsi\u2019s MacBook Pro/Homework/SWE GPT/Integration/Strict/LLMCodingBenchmarkingFramework/execution.py\", line 76, in executor_script\n    result = function(*parameters)\n  File \"<string>\", line 8, in solve\nUnboundLocalError: local variable 'combinations' referenced before assignment\n",
+                        "Error encountered during execution for test case Input: n = [-10, -20, 3, 4, 5, 6]; Expected Output: 0: local variable 'combinations' referenced before assignment\nTraceback (most recent call last):\n  File \"/Users/vamsiimmanneni/Documents/Documents - Vamsi\u2019s MacBook Pro/Homework/SWE GPT/Integration/Strict/LLMCodingBenchmarkingFramework/execution.py\", line 76, in executor_script\n    result = function(*parameters)\n  File \"<string>\", line 8, in solve\nUnboundLocalError: local variable 'combinations' referenced before assignment\n"
+                    ]
+                },
+                {
+                    "problem_identifier": "problem_2de33e73-52a0-45c1-a638-ac0e5a4ec0f8",
+                    "prompt_identifier": "2de33e73-52a0-45c1-a638-ac0e5a4ec0f8",
+                    "model_identifier": "gpt-4",
+                    "score": 0.0,
+                    "sub_criteria_scores": null,
+                    "issues": [
+                        "Error encountered during execution for test case Input: n = [5, 12, 8, 9, 14, 16]; Expected Output: 4: Object of type int64 is not JSON serializable\nTraceback (most recent call last):\n  File \"/Users/vamsiimmanneni/Documents/Documents - Vamsi\u2019s MacBook Pro/Homework/SWE GPT/Integration/Strict/LLMCodingBenchmarkingFramework/execution.py\", line 99, in executor_script\n    json.dump(output, file)\n  File \"/Users/vamsiimmanneni/opt/anaconda3/lib/python3.9/json/__init__.py\", line 179, in dump\n    for chunk in iterable:\n  File \"/Users/vamsiimmanneni/opt/anaconda3/lib/python3.9/json/encoder.py\", line 431, in _iterencode\n    yield from _iterencode_dict(o, _current_indent_level)\n  File \"/Users/vamsiimmanneni/opt/anaconda3/lib/python3.9/json/encoder.py\", line 405, in _iterencode_dict\n    yield from chunks\n  File \"/Users/vamsiimmanneni/opt/anaconda3/lib/python3.9/json/encoder.py\", line 438, in _iterencode\n    o = _default(o)\n  File \"/Users/vamsiimmanneni/opt/anaconda3/lib/python3.9/json/encoder.py\", line 179, in default\n    raise TypeError(f'Object of type {o.__class__.__name__} '\nTypeError: Object of type int64 is not JSON serializable\n",
+                        "Error encountered during execution for test case Input: n = [2, 6, 8, 10, 12, 14, 16, 18, 20]; Expected Output: 9: Object of type int64 is not JSON serializable\nTraceback (most recent call last):\n  File \"/Users/vamsiimmanneni/Documents/Documents - Vamsi\u2019s MacBook Pro/Homework/SWE GPT/Integration/Strict/LLMCodingBenchmarkingFramework/execution.py\", line 99, in executor_script\n    json.dump(output, file)\n  File \"/Users/vamsiimmanneni/opt/anaconda3/lib/python3.9/json/__init__.py\", line 179, in dump\n    for chunk in iterable:\n  File \"/Users/vamsiimmanneni/opt/anaconda3/lib/python3.9/json/encoder.py\", line 431, in _iterencode\n    yield from _iterencode_dict(o, _current_indent_level)\n  File \"/Users/vamsiimmanneni/opt/anaconda3/lib/python3.9/json/encoder.py\", line 405, in _iterencode_dict\n    yield from chunks\n  File \"/Users/vamsiimmanneni/opt/anaconda3/lib/python3.9/json/encoder.py\", line 438, in _iterencode\n    o = _default(o)\n  File \"/Users/vamsiimmanneni/opt/anaconda3/lib/python3.9/json/encoder.py\", line 179, in default\n    raise TypeError(f'Object of type {o.__class__.__name__} '\nTypeError: Object of type int64 is not JSON serializable\n",
+                        "Error encountered during execution for test case Input: n = [1, 3, 5, 7, 9, 11, 13, 15, 17]; Expected Output: 0: Object of type int64 is not JSON serializable\nTraceback (most recent call last):\n  File \"/Users/vamsiimmanneni/Documents/Documents - Vamsi\u2019s MacBook Pro/Homework/SWE GPT/Integration/Strict/LLMCodingBenchmarkingFramework/execution.py\", line 99, in executor_script\n    json.dump(output, file)\n  File \"/Users/vamsiimmanneni/opt/anaconda3/lib/python3.9/json/__init__.py\", line 179, in dump\n    for chunk in iterable:\n  File \"/Users/vamsiimmanneni/opt/anaconda3/lib/python3.9/json/encoder.py\", line 431, in _iterencode\n    yield from _iterencode_dict(o, _current_indent_level)\n  File \"/Users/vamsiimmanneni/opt/anaconda3/lib/python3.9/json/encoder.py\", line 405, in _iterencode_dict\n    yield from chunks\n  File \"/Users/vamsiimmanneni/opt/anaconda3/lib/python3.9/json/encoder.py\", line 438, in _iterencode\n    o = _default(o)\n  File \"/Users/vamsiimmanneni/opt/anaconda3/lib/python3.9/json/encoder.py\", line 179, in default\n    raise TypeError(f'Object of type {o.__class__.__name__} '\nTypeError: Object of type int64 is not JSON serializable\n"
+                    ]
+                },
+                {
+                    "problem_identifier": "problem_2e2f27e9-16cb-435c-8e93-735712962e43",
+                    "prompt_identifier": "2e2f27e9-16cb-435c-8e93-735712962e43",
+                    "model_identifier": "gpt-4",
+                    "score": 1.0,
+                    "sub_criteria_scores": null,
+                    "issues": []
+                },
+                {
+                    "problem_identifier": "problem_2f3a7426-7828-40d9-ad0f-dd9f2e363144",
+                    "prompt_identifier": "2f3a7426-7828-40d9-ad0f-dd9f2e363144",
+                    "model_identifier": "gpt-4",
+                    "score": 0.3333333333333333,
+                    "sub_criteria_scores": null,
+                    "issues": [
+                        "Test failed:\n\tInput: n = [5, 5, 5, 5, 5, 6, 7, 8, 9, 10]; Expected Output: 13\n\tFunction prototype: solve(n: List[int]) -> int\n\tExpected result: 13 <class 'int'>\n\tActual result: 625 <class 'int'>",
+                        "Error encountered during execution for test case Input: n = [2, 3, 4, 5, 6, 7, 8, 9, 10]; Expected Output: 0: list index out of range\nTraceback (most recent call last):\n  File \"/Users/vamsiimmanneni/Documents/Documents - Vamsi\u2019s MacBook Pro/Homework/SWE GPT/Integration/Strict/LLMCodingBenchmarkingFramework/execution.py\", line 76, in executor_script\n    result = function(*parameters)\n  File \"<string>\", line 9, in solve\nIndexError: list index out of range\n"
+                    ]
+                },
+                {
+                    "problem_identifier": "problem_316c904d-193c-48ee-be8d-7b8f21add6f5",
+                    "prompt_identifier": "316c904d-193c-48ee-be8d-7b8f21add6f5",
+                    "model_identifier": "gpt-4",
+                    "score": 0.3333333333333333,
+                    "sub_criteria_scores": null,
+                    "issues": [
+                        "Test failed:\n\tInput: n = [6, 6, 6, 6, 6, 6]; Expected Output: 27\n\tFunction prototype: solve(n: List[int]) -> int\n\tExpected result: 27 <class 'int'>\n\tActual result: 7776 <class 'int'>",
+                        "Test failed:\n\tInput: n = [3, 2, 1, 6, 5, 4, 6, 6, 6, 7, 6, 6]; Expected Output: 27\n\tFunction prototype: solve(n: List[int]) -> int\n\tExpected result: 27 <class 'int'>\n\tActual result: 7776 <class 'int'>"
+                    ]
+                },
+                {
+                    "problem_identifier": "problem_31baecf4-5b57-4087-af28-e4b1eb7177cc",
+                    "prompt_identifier": "31baecf4-5b57-4087-af28-e4b1eb7177cc",
+                    "model_identifier": "gpt-4",
+                    "score": 1.0,
+                    "sub_criteria_scores": null,
+                    "issues": []
+                },
+                {
+                    "problem_identifier": "problem_343cedb4-d291-4ae9-afb3-e180451c2dc4",
+                    "prompt_identifier": "343cedb4-d291-4ae9-afb3-e180451c2dc4",
+                    "model_identifier": "gpt-4",
+                    "score": 0.0,
+                    "sub_criteria_scores": null,
+                    "issues": [
+                        "Error encountered during execution for test case Input: n = 1; Expected Output: 5: invalid syntax (<string>, line 15)\nTraceback (most recent call last):\n  File \"/Users/vamsiimmanneni/Documents/Documents - Vamsi\u2019s MacBook Pro/Homework/SWE GPT/Integration/Strict/LLMCodingBenchmarkingFramework/execution.py\", line 56, in executor_script\n    exec(function_code, exec_globals)\n  File \"<string>\", line 15\n    This function is based on dynamic programming. Starting from a(1) and a(2), we repeatedly compute a(n) for larger n using the provided recursion formula. Since we are only interested in the last digit of the result, we take the result modulo 10. The function returns the last digit of a(n). The Halstead complexity of this function is quite low, since it only consists of a simple loop with a fixed number of iterations, and the operations inside the loop are all simple arithmetic.\n         ^\nSyntaxError: invalid syntax\n",
+                        "Error encountered during execution for test case Input: n = 2; Expected Output: 8: invalid syntax (<string>, line 15)\nTraceback (most recent call last):\n  File \"/Users/vamsiimmanneni/Documents/Documents - Vamsi\u2019s MacBook Pro/Homework/SWE GPT/Integration/Strict/LLMCodingBenchmarkingFramework/execution.py\", line 56, in executor_script\n    exec(function_code, exec_globals)\n  File \"<string>\", line 15\n    This function is based on dynamic programming. Starting from a(1) and a(2), we repeatedly compute a(n) for larger n using the provided recursion formula. Since we are only interested in the last digit of the result, we take the result modulo 10. The function returns the last digit of a(n). The Halstead complexity of this function is quite low, since it only consists of a simple loop with a fixed number of iterations, and the operations inside the loop are all simple arithmetic.\n         ^\nSyntaxError: invalid syntax\n",
+                        "Error encountered during execution for test case Input: n = 3; Expected Output: 5: invalid syntax (<string>, line 15)\nTraceback (most recent call last):\n  File \"/Users/vamsiimmanneni/Documents/Documents - Vamsi\u2019s MacBook Pro/Homework/SWE GPT/Integration/Strict/LLMCodingBenchmarkingFramework/execution.py\", line 56, in executor_script\n    exec(function_code, exec_globals)\n  File \"<string>\", line 15\n    This function is based on dynamic programming. Starting from a(1) and a(2), we repeatedly compute a(n) for larger n using the provided recursion formula. Since we are only interested in the last digit of the result, we take the result modulo 10. The function returns the last digit of a(n). The Halstead complexity of this function is quite low, since it only consists of a simple loop with a fixed number of iterations, and the operations inside the loop are all simple arithmetic.\n         ^\nSyntaxError: invalid syntax\n"
+                    ]
+                },
+                {
+                    "problem_identifier": "problem_3592e836-7869-404b-8dda-f2ae64c45ce4",
+                    "prompt_identifier": "3592e836-7869-404b-8dda-f2ae64c45ce4",
+                    "model_identifier": "gpt-4",
+                    "score": 1.0,
+                    "sub_criteria_scores": null,
+                    "issues": []
+                },
+                {
+                    "problem_identifier": "problem_36fc5e92-3210-4d64-bffd-4e113aa7a019",
+                    "prompt_identifier": "36fc5e92-3210-4d64-bffd-4e113aa7a019",
+                    "model_identifier": "gpt-4",
+                    "score": 1.0,
+                    "sub_criteria_scores": null,
+                    "issues": []
+                },
+                {
+                    "problem_identifier": "problem_39070428-14a4-4e54-9185-03fa3685f187",
+                    "prompt_identifier": "39070428-14a4-4e54-9185-03fa3685f187",
+                    "model_identifier": "gpt-4",
+                    "score": 0.6666666666666666,
+                    "sub_criteria_scores": null,
+                    "issues": [
+                        "Test failed:\n\tInput: n = 3; Expected Output: 4\n\tFunction prototype: solve(n: int) -> int\n\tExpected result: 4 <class 'int'>\n\tActual result: 24 <class 'int'>"
+                    ]
+                },
+                {
+                    "problem_identifier": "problem_3916586a-19bb-4adb-bd33-c0ad57a62265",
+                    "prompt_identifier": "3916586a-19bb-4adb-bd33-c0ad57a62265",
+                    "model_identifier": "gpt-4",
+                    "score": 0.6666666666666666,
+                    "sub_criteria_scores": null,
+                    "issues": [
+                        "Test failed:\n\tInput: n = [250, 350, 150, 250, 450]; Expected Output: 13\n\tFunction prototype: solve(n: List[int]) -> int\n\tExpected result: 13 <class 'int'>\n\tActual result: 29 <class 'int'>"
+                    ]
+                },
+                {
+                    "problem_identifier": "problem_3bc1af8d-a03d-44bb-81bb-b98ce642fa5d",
+                    "prompt_identifier": "3bc1af8d-a03d-44bb-81bb-b98ce642fa5d",
+                    "model_identifier": "gpt-4",
+                    "score": 0.3333333333333333,
+                    "sub_criteria_scores": null,
+                    "issues": [
+                        "Test failed:\n\tInput: n = 3; Expected Output: 1\n\tFunction prototype: solve(n: int) -> int\n\tExpected result: 1 <class 'int'>\n\tActual result: 4 <class 'int'>",
+                        "Test failed:\n\tInput: n = 5; Expected Output: 3\n\tFunction prototype: solve(n: int) -> int\n\tExpected result: 3 <class 'int'>\n\tActual result: 2 <class 'int'>"
+                    ]
+                },
+                {
+                    "problem_identifier": "problem_3c2279b4-5ad2-45f4-8c8c-e700541e645b",
+                    "prompt_identifier": "3c2279b4-5ad2-45f4-8c8c-e700541e645b",
+                    "model_identifier": "gpt-4",
+                    "score": 0.0,
+                    "sub_criteria_scores": null,
+                    "issues": [
+                        "Test failed:\n\tInput: n = 1; Expected Output: 2\n\tFunction prototype: solve(n: int) -> int\n\tExpected result: 2 <class 'int'>\n\tActual result: 1 <class 'int'>",
+                        "Test failed:\n\tInput: n = 2; Expected Output: 5\n\tFunction prototype: solve(n: int) -> int\n\tExpected result: 5 <class 'int'>\n\tActual result: 3 <class 'int'>",
+                        "Test failed:\n\tInput: n = 3; Expected Output: 1\n\tFunction prototype: solve(n: int) -> int\n\tExpected result: 1 <class 'int'>\n\tActual result: 6 <class 'int'>"
+                    ]
+                },
+                {
+                    "problem_identifier": "problem_41490273-310f-4f1b-9553-f0f1d3e06323",
+                    "prompt_identifier": "41490273-310f-4f1b-9553-f0f1d3e06323",
+                    "model_identifier": "gpt-4",
+                    "score": 1.0,
+                    "sub_criteria_scores": null,
+                    "issues": []
+                },
+                {
+                    "problem_identifier": "problem_42628647-4b5e-4c70-9ab5-151b5a6bbe30",
+                    "prompt_identifier": "42628647-4b5e-4c70-9ab5-151b5a6bbe30",
+                    "model_identifier": "gpt-4",
+                    "score": 0.6666666666666666,
+                    "sub_criteria_scores": null,
+                    "issues": [
+                        "Test failed:\n\tInput: n = [1, 2, 3, 4, -5, 6, 7, 8, 9, 10]; Expected Output: 2\n\tFunction prototype: solve(n: List[int]) -> int\n\tExpected result: 2 <class 'int'>\n\tActual result: 1 <class 'int'>"
+                    ]
+                },
+                {
+                    "problem_identifier": "problem_46edba7f-63ff-4456-bc88-d04f4533bdba",
+                    "prompt_identifier": "46edba7f-63ff-4456-bc88-d04f4533bdba",
+                    "model_identifier": "gpt-4",
+                    "score": 1.0,
+                    "sub_criteria_scores": null,
+                    "issues": []
+                },
+                {
+                    "problem_identifier": "problem_4a6418a3-cb83-4a6a-a1e2-4cfea9efac99",
+                    "prompt_identifier": "4a6418a3-cb83-4a6a-a1e2-4cfea9efac99",
+                    "model_identifier": "gpt-4",
+                    "score": 1.0,
+                    "sub_criteria_scores": null,
+                    "issues": []
+                },
+                {
+                    "problem_identifier": "problem_4a6d4878-35c9-4978-b0e0-3dd586a620e0",
+                    "prompt_identifier": "4a6d4878-35c9-4978-b0e0-3dd586a620e0",
+                    "model_identifier": "gpt-4",
+                    "score": 0.3333333333333333,
+                    "sub_criteria_scores": null,
+                    "issues": [
+                        "Test failed:\n\tInput: n = 1; Expected Output: 0\n\tFunction prototype: solve(n: int) -> int\n\tExpected result: 0 <class 'int'>\n\tActual result: 20 <class 'int'>",
+                        "Test failed:\n\tInput: n = 2; Expected Output: 3\n\tFunction prototype: solve(n: int) -> int\n\tExpected result: 3 <class 'int'>\n\tActual result: 23 <class 'int'>"
+                    ]
+                },
+                {
+                    "problem_identifier": "problem_4b0d3d3a-7b74-4633-a965-e05e49e228ab",
+                    "prompt_identifier": "4b0d3d3a-7b74-4633-a965-e05e49e228ab",
+                    "model_identifier": "gpt-4",
+                    "score": 1.0,
+                    "sub_criteria_scores": null,
+                    "issues": []
+                },
+                {
+                    "problem_identifier": "problem_4f04f526-aed0-4222-a23c-bdfa54fe7a49",
+                    "prompt_identifier": "4f04f526-aed0-4222-a23c-bdfa54fe7a49",
+                    "model_identifier": "gpt-4",
+                    "score": 1.0,
+                    "sub_criteria_scores": null,
+                    "issues": []
+                },
+                {
+                    "problem_identifier": "problem_53bc74e7-fbc4-4b3b-bdf6-a00a0188e270",
+                    "prompt_identifier": "53bc74e7-fbc4-4b3b-bdf6-a00a0188e270",
+                    "model_identifier": "gpt-4",
+                    "score": 0.6666666666666666,
+                    "sub_criteria_scores": null,
+                    "issues": [
+                        "Test failed:\n\tInput: n = 1; Expected Output: 5\n\tFunction prototype: solve(n: int) -> int\n\tExpected result: 5 <class 'int'>\n\tActual result: 8 <class 'int'>"
+                    ]
+                },
+                {
+                    "problem_identifier": "problem_5457070e-f978-4a3e-bf5a-20d358fe69f9",
+                    "prompt_identifier": "5457070e-f978-4a3e-bf5a-20d358fe69f9",
+                    "model_identifier": "gpt-4",
+                    "score": 1.0,
+                    "sub_criteria_scores": null,
+                    "issues": []
+                },
+                {
+                    "problem_identifier": "problem_563e6153-69a4-447d-90de-bbccab413cf8",
+                    "prompt_identifier": "563e6153-69a4-447d-90de-bbccab413cf8",
+                    "model_identifier": "gpt-4",
+                    "score": 0.3333333333333333,
+                    "sub_criteria_scores": null,
+                    "issues": [
+                        "Test failed:\n\tInput: n = 2; Expected Output: 1\n\tFunction prototype: solve(n: int) -> int\n\tExpected result: 1 <class 'int'>\n\tActual result: 5 <class 'int'>",
+                        "Test failed:\n\tInput: n = 3; Expected Output: 9\n\tFunction prototype: solve(n: int) -> int\n\tExpected result: 9 <class 'int'>\n\tActual result: 7 <class 'int'>"
+                    ]
+                },
+                {
+                    "problem_identifier": "problem_59111ace-3be7-46bc-b0a5-75108a754392",
+                    "prompt_identifier": "59111ace-3be7-46bc-b0a5-75108a754392",
+                    "model_identifier": "gpt-4",
+                    "score": 0.6666666666666666,
+                    "sub_criteria_scores": null,
+                    "issues": [
+                        "Test failed:\n\tInput: n = 2; Expected Output: 7\n\tFunction prototype: solve(n: int) -> int\n\tExpected result: 7 <class 'int'>\n\tActual result: 14 <class 'int'>"
+                    ]
+                },
+                {
+                    "problem_identifier": "problem_5ae667be-fb55-4f63-94da-1a920e677c44",
+                    "prompt_identifier": "5ae667be-fb55-4f63-94da-1a920e677c44",
+                    "model_identifier": "gpt-4",
+                    "score": 0.3333333333333333,
+                    "sub_criteria_scores": null,
+                    "issues": [
+                        "Test failed:\n\tInput: n = 1; Expected Output: 3\n\tFunction prototype: solve(n: int) -> int\n\tExpected result: 3 <class 'int'>\n\tActual result: 23 <class 'int'>",
+                        "Test failed:\n\tInput: n = 2; Expected Output: 6\n\tFunction prototype: solve(n: int) -> int\n\tExpected result: 6 <class 'int'>\n\tActual result: 26 <class 'int'>"
+                    ]
+                },
+                {
+                    "problem_identifier": "problem_67dd6b47-08af-4437-a060-d33d5ec29724",
+                    "prompt_identifier": "67dd6b47-08af-4437-a060-d33d5ec29724",
+                    "model_identifier": "gpt-4",
+                    "score": 0.0,
+                    "sub_criteria_scores": null,
+                    "issues": [
+                        "Error encountered during execution for test case Input: n = 1; Expected Output: 7: invalid syntax (<string>, line 3)\nTraceback (most recent call last):\n  File \"/Users/vamsiimmanneni/Documents/Documents - Vamsi\u2019s MacBook Pro/Homework/SWE GPT/Integration/Strict/LLMCodingBenchmarkingFramework/execution.py\", line 56, in executor_script\n    exec(function_code, exec_globals)\n  File \"<string>\", line 3\n    The Halstead metric is a software metric used to measure the complexity or volume of a program. It takes into account factors like the number and variety of operators and operands, among others.\n        ^\nSyntaxError: invalid syntax\n",
+                        "Error encountered during execution for test case Input: n = 2; Expected Output: 0: invalid syntax (<string>, line 3)\nTraceback (most recent call last):\n  File \"/Users/vamsiimmanneni/Documents/Documents - Vamsi\u2019s MacBook Pro/Homework/SWE GPT/Integration/Strict/LLMCodingBenchmarkingFramework/execution.py\", line 56, in executor_script\n    exec(function_code, exec_globals)\n  File \"<string>\", line 3\n    The Halstead metric is a software metric used to measure the complexity or volume of a program. It takes into account factors like the number and variety of operators and operands, among others.\n        ^\nSyntaxError: invalid syntax\n",
+                        "Error encountered during execution for test case Input: n = 3; Expected Output: 1: invalid syntax (<string>, line 3)\nTraceback (most recent call last):\n  File \"/Users/vamsiimmanneni/Documents/Documents - Vamsi\u2019s MacBook Pro/Homework/SWE GPT/Integration/Strict/LLMCodingBenchmarkingFramework/execution.py\", line 56, in executor_script\n    exec(function_code, exec_globals)\n  File \"<string>\", line 3\n    The Halstead metric is a software metric used to measure the complexity or volume of a program. It takes into account factors like the number and variety of operators and operands, among others.\n        ^\nSyntaxError: invalid syntax\n"
+                    ]
+                },
+                {
+                    "problem_identifier": "problem_6bde88ad-5070-4d39-9e2b-db3ced2134f7",
+                    "prompt_identifier": "6bde88ad-5070-4d39-9e2b-db3ced2134f7",
+                    "model_identifier": "gpt-4",
+                    "score": 1.0,
+                    "sub_criteria_scores": null,
+                    "issues": []
+                },
+                {
+                    "problem_identifier": "problem_6c4330dd-ee36-4117-833d-a8506b75e45f",
+                    "prompt_identifier": "6c4330dd-ee36-4117-833d-a8506b75e45f",
+                    "model_identifier": "gpt-4",
+                    "score": 1.0,
+                    "sub_criteria_scores": null,
+                    "issues": []
+                },
+                {
+                    "problem_identifier": "problem_6e428d01-9964-4353-961a-0b657f4d7416",
+                    "prompt_identifier": "6e428d01-9964-4353-961a-0b657f4d7416",
+                    "model_identifier": "gpt-4",
+                    "score": 1.0,
+                    "sub_criteria_scores": null,
+                    "issues": []
+                },
+                {
+                    "problem_identifier": "problem_741ddfb5-c024-49cd-9308-98ea221e98cd",
+                    "prompt_identifier": "741ddfb5-c024-49cd-9308-98ea221e98cd",
+                    "model_identifier": "gpt-4",
+                    "score": 0.0,
+                    "sub_criteria_scores": null,
+                    "issues": [
+                        "Error encountered during execution for test case Input: n = 1; Expected Output: 0: name 'reduce' is not defined\nTraceback (most recent call last):\n  File \"/Users/vamsiimmanneni/Documents/Documents - Vamsi\u2019s MacBook Pro/Homework/SWE GPT/Integration/Strict/LLMCodingBenchmarkingFramework/execution.py\", line 76, in executor_script\n    result = function(*parameters)\n  File \"<string>\", line 4, in solve\nNameError: name 'reduce' is not defined\n",
+                        "Error encountered during execution for test case Input: n = 2; Expected Output: 0: name 'reduce' is not defined\nTraceback (most recent call last):\n  File \"/Users/vamsiimmanneni/Documents/Documents - Vamsi\u2019s MacBook Pro/Homework/SWE GPT/Integration/Strict/LLMCodingBenchmarkingFramework/execution.py\", line 76, in executor_script\n    result = function(*parameters)\n  File \"<string>\", line 4, in solve\nNameError: name 'reduce' is not defined\n",
+                        "Error encountered during execution for test case Input: n = 3; Expected Output: 0: name 'reduce' is not defined\nTraceback (most recent call last):\n  File \"/Users/vamsiimmanneni/Documents/Documents - Vamsi\u2019s MacBook Pro/Homework/SWE GPT/Integration/Strict/LLMCodingBenchmarkingFramework/execution.py\", line 76, in executor_script\n    result = function(*parameters)\n  File \"<string>\", line 4, in solve\nNameError: name 'reduce' is not defined\n"
+                    ]
+                },
+                {
+                    "problem_identifier": "problem_75fe9a6e-9cb3-46ac-974a-56bf42e31665",
+                    "prompt_identifier": "75fe9a6e-9cb3-46ac-974a-56bf42e31665",
+                    "model_identifier": "gpt-4",
+                    "score": 1.0,
+                    "sub_criteria_scores": null,
+                    "issues": []
+                },
+                {
+                    "problem_identifier": "problem_774df23b-c334-4493-9df1-2e2736f8a0e0",
+                    "prompt_identifier": "774df23b-c334-4493-9df1-2e2736f8a0e0",
+                    "model_identifier": "gpt-4",
+                    "score": 0.3333333333333333,
+                    "sub_criteria_scores": null,
+                    "issues": [
+                        "Test failed:\n\tInput: n = [2, 2, 2, 2, 2, 2, 2, 2, 3]; Expected Output: 11\n\tFunction prototype: solve(n: List[int]) -> int\n\tExpected result: 11 <class 'int'>\n\tActual result: 128 <class 'int'>",
+                        "Test failed:\n\tInput: n = [3, 3, 3, 3, 3, 3, 3, 3, 4, 4, 4, 4, 4, 4, 4]; Expected Output: 18\n\tFunction prototype: solve(n: List[int]) -> int\n\tExpected result: 18 <class 'int'>\n\tActual result: 2187 <class 'int'>"
+                    ]
+                },
+                {
+                    "problem_identifier": "problem_79049b9d-96e3-4335-99ce-fa827e88cdf7",
+                    "prompt_identifier": "79049b9d-96e3-4335-99ce-fa827e88cdf7",
+                    "model_identifier": "gpt-4",
+                    "score": 0.6666666666666666,
+                    "sub_criteria_scores": null,
+                    "issues": [
+                        "Test failed:\n\tInput: n = 2; Expected Output: 1\n\tFunction prototype: solve(n: int) -> int\n\tExpected result: 1 <class 'int'>\n\tActual result: 9 <class 'int'>"
+                    ]
+                },
+                {
+                    "problem_identifier": "problem_79471bbd-d201-4f74-afa1-8da8ffbe0240",
+                    "prompt_identifier": "79471bbd-d201-4f74-afa1-8da8ffbe0240",
+                    "model_identifier": "gpt-4",
+                    "score": 0.6666666666666666,
+                    "sub_criteria_scores": null,
+                    "issues": [
+                        "Test failed:\n\tInput: n = 2; Expected Output: 0\n\tFunction prototype: solve(n: int) -> int\n\tExpected result: 0 <class 'int'>\n\tActual result: 1 <class 'int'>"
+                    ]
+                },
+                {
+                    "problem_identifier": "problem_80327d99-409c-4dee-aaef-93ad23655ccc",
+                    "prompt_identifier": "80327d99-409c-4dee-aaef-93ad23655ccc",
+                    "model_identifier": "gpt-4",
+                    "score": 0.6666666666666666,
+                    "sub_criteria_scores": null,
+                    "issues": [
+                        "Test failed:\n\tInput: n = [-1, 2, 3, 4, -5, 6]; Expected Output: 2\n\tFunction prototype: solve(n: List[int]) -> int\n\tExpected result: 2 <class 'int'>\n\tActual result: 1 <class 'int'>"
+                    ]
+                },
+                {
+                    "problem_identifier": "problem_84c80196-cf12-4037-86fc-6697328cebd3",
+                    "prompt_identifier": "84c80196-cf12-4037-86fc-6697328cebd3",
+                    "model_identifier": "gpt-4",
+                    "score": 0.0,
+                    "sub_criteria_scores": null,
+                    "issues": [
+                        "Test failed:\n\tInput: n = 1; Expected Output: 0\n\tFunction prototype: solve(n: int) -> int\n\tExpected result: 0 <class 'int'>\n\tActual result: 8 <class 'int'>",
+                        "Test failed:\n\tInput: n = 2; Expected Output: 8\n\tFunction prototype: solve(n: int) -> int\n\tExpected result: 8 <class 'int'>\n\tActual result: 6 <class 'int'>",
+                        "Test failed:\n\tInput: n = 3; Expected Output: 8\n\tFunction prototype: solve(n: int) -> int\n\tExpected result: 8 <class 'int'>\n\tActual result: 18 <class 'int'>"
+                    ]
+                },
+                {
+                    "problem_identifier": "problem_87268fdf-e23e-4018-b3c9-ca5ab96325af",
+                    "prompt_identifier": "87268fdf-e23e-4018-b3c9-ca5ab96325af",
+                    "model_identifier": "gpt-4",
+                    "score": 0.3333333333333333,
+                    "sub_criteria_scores": null,
+                    "issues": [
+                        "Test failed:\n\tInput: n = 2; Expected Output: 1\n\tFunction prototype: solve(n: int) -> int\n\tExpected result: 1 <class 'int'>\n\tActual result: 0 <class 'int'>",
+                        "Test failed:\n\tInput: n = 3; Expected Output: 10\n\tFunction prototype: solve(n: int) -> int\n\tExpected result: 10 <class 'int'>\n\tActual result: 5 <class 'int'>"
+                    ]
+                },
+                {
+                    "problem_identifier": "problem_8bffba85-1857-4797-9a0a-b8c4a6bb8874",
+                    "prompt_identifier": "8bffba85-1857-4797-9a0a-b8c4a6bb8874",
+                    "model_identifier": "gpt-4",
+                    "score": 0.0,
+                    "sub_criteria_scores": null,
+                    "issues": [
+                        "Test failed:\n\tInput: n = 1; Expected Output: 0\n\tFunction prototype: solve(n: int) -> int\n\tExpected result: 0 <class 'int'>\n\tActual result: 12 <class 'int'>",
+                        "Test failed:\n\tInput: n = 2; Expected Output: 8\n\tFunction prototype: solve(n: int) -> int\n\tExpected result: 8 <class 'int'>\n\tActual result: 24 <class 'int'>",
+                        "Test failed:\n\tInput: n = 3; Expected Output: 8\n\tFunction prototype: solve(n: int) -> int\n\tExpected result: 8 <class 'int'>\n\tActual result: 12 <class 'int'>"
+                    ]
+                },
+                {
+                    "problem_identifier": "problem_8cf4a714-d604-457b-9b88-cfe2a2230ffc",
+                    "prompt_identifier": "8cf4a714-d604-457b-9b88-cfe2a2230ffc",
+                    "model_identifier": "gpt-4",
+                    "score": 0.0,
+                    "sub_criteria_scores": null,
+                    "issues": [
+                        "Error encountered during execution for test case Input: n = 1; Expected Output: 9: invalid syntax (<string>, line 4)\nTraceback (most recent call last):\n  File \"/Users/vamsiimmanneni/Documents/Documents - Vamsi\u2019s MacBook Pro/Homework/SWE GPT/Integration/Strict/LLMCodingBenchmarkingFramework/execution.py\", line 56, in executor_script\n    exec(function_code, exec_globals)\n  File \"<string>\", line 4\n    * n will be an integer between 1 and 200.\n        ^\nSyntaxError: invalid syntax\n",
+                        "Error encountered during execution for test case Input: n = 2; Expected Output: 2: invalid syntax (<string>, line 4)\nTraceback (most recent call last):\n  File \"/Users/vamsiimmanneni/Documents/Documents - Vamsi\u2019s MacBook Pro/Homework/SWE GPT/Integration/Strict/LLMCodingBenchmarkingFramework/execution.py\", line 56, in executor_script\n    exec(function_code, exec_globals)\n  File \"<string>\", line 4\n    * n will be an integer between 1 and 200.\n        ^\nSyntaxError: invalid syntax\n",
+                        "Error encountered during execution for test case Input: n = 3; Expected Output: 7: invalid syntax (<string>, line 4)\nTraceback (most recent call last):\n  File \"/Users/vamsiimmanneni/Documents/Documents - Vamsi\u2019s MacBook Pro/Homework/SWE GPT/Integration/Strict/LLMCodingBenchmarkingFramework/execution.py\", line 56, in executor_script\n    exec(function_code, exec_globals)\n  File \"<string>\", line 4\n    * n will be an integer between 1 and 200.\n        ^\nSyntaxError: invalid syntax\n"
+                    ]
+                },
+                {
+                    "problem_identifier": "problem_8d3f2de5-6777-4033-baa6-5cfc06cd72e8",
+                    "prompt_identifier": "8d3f2de5-6777-4033-baa6-5cfc06cd72e8",
+                    "model_identifier": "gpt-4",
+                    "score": 1.0,
+                    "sub_criteria_scores": null,
+                    "issues": []
+                },
+                {
+                    "problem_identifier": "problem_8fc1d866-a661-46d0-a8b8-fb62fb212bf6",
+                    "prompt_identifier": "8fc1d866-a661-46d0-a8b8-fb62fb212bf6",
+                    "model_identifier": "gpt-4",
+                    "score": 1.0,
+                    "sub_criteria_scores": null,
+                    "issues": []
+                },
+                {
+                    "problem_identifier": "problem_93df3694-e633-4c90-84ef-e633b76186ed",
+                    "prompt_identifier": "93df3694-e633-4c90-84ef-e633b76186ed",
+                    "model_identifier": "gpt-4",
+                    "score": 1.0,
+                    "sub_criteria_scores": null,
+                    "issues": []
+                },
+                {
+                    "problem_identifier": "problem_9604957a-0eb7-40fd-b523-ce3618988066",
+                    "prompt_identifier": "9604957a-0eb7-40fd-b523-ce3618988066",
+                    "model_identifier": "gpt-4",
+                    "score": 0.0,
+                    "sub_criteria_scores": null,
+                    "issues": [
+                        "Test failed:\n\tInput: n = 1; Expected Output: 0\n\tFunction prototype: solve(n: int) -> int\n\tExpected result: 0 <class 'int'>\n\tActual result: 3 <class 'int'>",
+                        "Test failed:\n\tInput: n = 2; Expected Output: 3\n\tFunction prototype: solve(n: int) -> int\n\tExpected result: 3 <class 'int'>\n\tActual result: 8 <class 'int'>",
+                        "Test failed:\n\tInput: n = 3; Expected Output: 5\n\tFunction prototype: solve(n: int) -> int\n\tExpected result: 5 <class 'int'>\n\tActual result: 0 <class 'int'>"
+                    ]
+                },
+                {
+                    "problem_identifier": "problem_978b2123-a8c5-48fe-a694-621243f2ed26",
+                    "prompt_identifier": "978b2123-a8c5-48fe-a694-621243f2ed26",
+                    "model_identifier": "gpt-4",
+                    "score": 1.0,
+                    "sub_criteria_scores": null,
+                    "issues": []
+                },
+                {
+                    "problem_identifier": "problem_98eb469f-c6ae-477f-819f-db07d6921609",
+                    "prompt_identifier": "98eb469f-c6ae-477f-819f-db07d6921609",
+                    "model_identifier": "gpt-4",
+                    "score": 0.0,
+                    "sub_criteria_scores": null,
+                    "issues": [
+                        "Error encountered during execution for test case Input: n = [100, 200, 300, 400, 500, 600, 700, 800, 900, 1000]; Expected Output: 5: name 'prod' is not defined\nTraceback (most recent call last):\n  File \"/Users/vamsiimmanneni/Documents/Documents - Vamsi\u2019s MacBook Pro/Homework/SWE GPT/Integration/Strict/LLMCodingBenchmarkingFramework/execution.py\", line 76, in executor_script\n    result = function(*parameters)\n  File \"<string>\", line 10, in solve\nNameError: name 'prod' is not defined\n",
+                        "Error encountered during execution for test case Input: n = [1100, 2200, 3300, 4400, 5500, 6600, 5500]; Expected Output: 3: name 'prod' is not defined\nTraceback (most recent call last):\n  File \"/Users/vamsiimmanneni/Documents/Documents - Vamsi\u2019s MacBook Pro/Homework/SWE GPT/Integration/Strict/LLMCodingBenchmarkingFramework/execution.py\", line 76, in executor_script\n    result = function(*parameters)\n  File \"<string>\", line 10, in solve\nNameError: name 'prod' is not defined\n",
+                        "Error encountered during execution for test case Input: n = [1500, 2500, 500, 3500, 750, 1550, 2000]; Expected Output: 3: name 'prod' is not defined\nTraceback (most recent call last):\n  File \"/Users/vamsiimmanneni/Documents/Documents - Vamsi\u2019s MacBook Pro/Homework/SWE GPT/Integration/Strict/LLMCodingBenchmarkingFramework/execution.py\", line 76, in executor_script\n    result = function(*parameters)\n  File \"<string>\", line 10, in solve\nNameError: name 'prod' is not defined\n"
+                    ]
+                },
+                {
+                    "problem_identifier": "problem_99c24df1-98b0-4d91-9f7e-f6842642b062",
+                    "prompt_identifier": "99c24df1-98b0-4d91-9f7e-f6842642b062",
+                    "model_identifier": "gpt-4",
+                    "score": 0.0,
+                    "sub_criteria_scores": null,
+                    "issues": [
+                        "Error encountered during execution for test case Input: n = 1; Expected Output: 2: invalid syntax (<string>, line 3)\nTraceback (most recent call last):\n  File \"/Users/vamsiimmanneni/Documents/Documents - Vamsi\u2019s MacBook Pro/Homework/SWE GPT/Integration/Strict/LLMCodingBenchmarkingFramework/execution.py\", line 56, in executor_script\n    exec(function_code, exec_globals)\n  File \"<string>\", line 3\n    We can observe a pattern in the last digit of the sequence. \n       ^\nSyntaxError: invalid syntax\n",
+                        "Error encountered during execution for test case Input: n = 2; Expected Output: 5: invalid syntax (<string>, line 3)\nTraceback (most recent call last):\n  File \"/Users/vamsiimmanneni/Documents/Documents - Vamsi\u2019s MacBook Pro/Homework/SWE GPT/Integration/Strict/LLMCodingBenchmarkingFramework/execution.py\", line 56, in executor_script\n    exec(function_code, exec_globals)\n  File \"<string>\", line 3\n    We can observe a pattern in the last digit of the sequence. \n       ^\nSyntaxError: invalid syntax\n",
+                        "Error encountered during execution for test case Input: n = 3; Expected Output: 1: invalid syntax (<string>, line 3)\nTraceback (most recent call last):\n  File \"/Users/vamsiimmanneni/Documents/Documents - Vamsi\u2019s MacBook Pro/Homework/SWE GPT/Integration/Strict/LLMCodingBenchmarkingFramework/execution.py\", line 56, in executor_script\n    exec(function_code, exec_globals)\n  File \"<string>\", line 3\n    We can observe a pattern in the last digit of the sequence. \n       ^\nSyntaxError: invalid syntax\n"
+                    ]
+                },
+                {
+                    "problem_identifier": "problem_9a0d368d-bfe6-46ae-8d27-8c3d1e5a1951",
+                    "prompt_identifier": "9a0d368d-bfe6-46ae-8d27-8c3d1e5a1951",
+                    "model_identifier": "gpt-4",
+                    "score": 0.6666666666666666,
+                    "sub_criteria_scores": null,
+                    "issues": [
+                        "Test failed:\n\tInput: n = 3; Expected Output: 0\n\tFunction prototype: solve(n: int) -> int\n\tExpected result: 0 <class 'int'>\n\tActual result: 5 <class 'int'>"
+                    ]
+                },
+                {
+                    "problem_identifier": "problem_9aa484d8-8124-4739-b339-3384d185fe7b",
+                    "prompt_identifier": "9aa484d8-8124-4739-b339-3384d185fe7b",
+                    "model_identifier": "gpt-4",
+                    "score": 1.0,
+                    "sub_criteria_scores": null,
+                    "issues": []
+                },
+                {
+                    "problem_identifier": "problem_9c6b2cb6-fa88-44ee-8243-869ea271ff83",
+                    "prompt_identifier": "9c6b2cb6-fa88-44ee-8243-869ea271ff83",
+                    "model_identifier": "gpt-4",
+                    "score": 0.6666666666666666,
+                    "sub_criteria_scores": null,
+                    "issues": [
+                        "Test failed:\n\tInput: n = 1; Expected Output: 0\n\tFunction prototype: solve(n: int) -> int\n\tExpected result: 0 <class 'int'>\n\tActual result: 1 <class 'int'>"
+                    ]
+                },
+                {
+                    "problem_identifier": "problem_9f340bc0-f030-445c-bf93-b7b30aef4223",
+                    "prompt_identifier": "9f340bc0-f030-445c-bf93-b7b30aef4223",
+                    "model_identifier": "gpt-4",
+                    "score": 0.3333333333333333,
+                    "sub_criteria_scores": null,
+                    "issues": [
+                        "Error encountered during execution for test case Input: n = 1; Expected Output: 0: unexpected EOF while parsing (<string>, line 0)\nTraceback (most recent call last):\n  File \"/Users/vamsiimmanneni/Documents/Documents - Vamsi\u2019s MacBook Pro/Homework/SWE GPT/Integration/Strict/LLMCodingBenchmarkingFramework/execution.py\", line 76, in executor_script\n    result = function(*parameters)\n  File \"<string>\", line 12, in solve\n  File \"<string>\", line 0\n    \nSyntaxError: unexpected EOF while parsing\n",
+                        "Test failed:\n\tInput: n = 3; Expected Output: 147\n\tFunction prototype: solve(n: int) -> int\n\tExpected result: 147 <class 'int'>\n\tActual result: 3 <class 'int'>"
+                    ]
+                },
+                {
+                    "problem_identifier": "problem_9fcc47df-ab82-4dfc-b1d1-0c245527dc2d",
+                    "prompt_identifier": "9fcc47df-ab82-4dfc-b1d1-0c245527dc2d",
+                    "model_identifier": "gpt-4",
+                    "score": 0.3333333333333333,
+                    "sub_criteria_scores": null,
+                    "issues": [
+                        "Test failed:\n\tInput: n = 2; Expected Output: 10\n\tFunction prototype: solve(n: int) -> int\n\tExpected result: 10 <class 'int'>\n\tActual result: 24 <class 'int'>",
+                        "Test failed:\n\tInput: n = 3; Expected Output: 5\n\tFunction prototype: solve(n: int) -> int\n\tExpected result: 5 <class 'int'>\n\tActual result: 33 <class 'int'>"
+                    ]
+                },
+                {
+                    "problem_identifier": "problem_a206117a-e66c-47ea-8164-4cb61d4d8606",
+                    "prompt_identifier": "a206117a-e66c-47ea-8164-4cb61d4d8606",
+                    "model_identifier": "gpt-4",
+                    "score": 1.0,
+                    "sub_criteria_scores": null,
+                    "issues": []
+                },
+                {
+                    "problem_identifier": "problem_a9550f62-a637-4a48-b805-26f2e33b0e76",
+                    "prompt_identifier": "a9550f62-a637-4a48-b805-26f2e33b0e76",
+                    "model_identifier": "gpt-4",
+                    "score": 0.6666666666666666,
+                    "sub_criteria_scores": null,
+                    "issues": [
+                        "Test failed:\n\tInput: n = 2; Expected Output: 0\n\tFunction prototype: solve(n: int) -> int\n\tExpected result: 0 <class 'int'>\n\tActual result: 1 <class 'int'>"
+                    ]
+                },
+                {
+                    "problem_identifier": "problem_abc2b20c-d50e-48dd-bc2c-bc46b0ea4e27",
+                    "prompt_identifier": "abc2b20c-d50e-48dd-bc2c-bc46b0ea4e27",
+                    "model_identifier": "gpt-4",
+                    "score": 1.0,
+                    "sub_criteria_scores": null,
+                    "issues": []
+                },
+                {
+                    "problem_identifier": "problem_ae301265-d8fc-4cde-bd15-cde4de61ef6d",
+                    "prompt_identifier": "ae301265-d8fc-4cde-bd15-cde4de61ef6d",
+                    "model_identifier": "gpt-4",
+                    "score": 0.0,
+                    "sub_criteria_scores": null,
+                    "issues": [
+                        "Test failed:\n\tInput: n = [10, 20, 30, 40, 50, 60, 70, 80, 90, 100]; Expected Output: 1\n\tFunction prototype: solve(n: List[int]) -> int\n\tExpected result: 1 <class 'int'>\n\tActual result: 4 <class 'int'>",
+                        "Test failed:\n\tInput: n = [110, 220, 330, 440, 550, 660, 550]; Expected Output: 4\n\tFunction prototype: solve(n: List[int]) -> int\n\tExpected result: 4 <class 'int'>\n\tActual result: 8 <class 'int'>",
+                        "Test failed:\n\tInput: n = [150, 250, 50, 350, 75, 155, 200]; Expected Output: 7\n\tFunction prototype: solve(n: List[int]) -> int\n\tExpected result: 7 <class 'int'>\n\tActual result: 74 <class 'int'>"
+                    ]
+                },
+                {
+                    "problem_identifier": "problem_aecf1c0a-8df0-408a-8cc7-0547d14a62ef",
+                    "prompt_identifier": "aecf1c0a-8df0-408a-8cc7-0547d14a62ef",
+                    "model_identifier": "gpt-4",
+                    "score": 0.0,
+                    "sub_criteria_scores": null,
+                    "issues": [
+                        "Error encountered during execution for test case Input: n = 1; Expected Output: 3: No module named 'primepy'\nTraceback (most recent call last):\n  File \"/Users/vamsiimmanneni/Documents/Documents - Vamsi\u2019s MacBook Pro/Homework/SWE GPT/Integration/Strict/LLMCodingBenchmarkingFramework/execution.py\", line 56, in executor_script\n    exec(function_code, exec_globals)\n  File \"<string>\", line 3, in <module>\nModuleNotFoundError: No module named 'primepy'\n",
+                        "Error encountered during execution for test case Input: n = 2; Expected Output: 0: No module named 'primepy'\nTraceback (most recent call last):\n  File \"/Users/vamsiimmanneni/Documents/Documents - Vamsi\u2019s MacBook Pro/Homework/SWE GPT/Integration/Strict/LLMCodingBenchmarkingFramework/execution.py\", line 56, in executor_script\n    exec(function_code, exec_globals)\n  File \"<string>\", line 3, in <module>\nModuleNotFoundError: No module named 'primepy'\n",
+                        "Error encountered during execution for test case Input: n = 3; Expected Output: 5: No module named 'primepy'\nTraceback (most recent call last):\n  File \"/Users/vamsiimmanneni/Documents/Documents - Vamsi\u2019s MacBook Pro/Homework/SWE GPT/Integration/Strict/LLMCodingBenchmarkingFramework/execution.py\", line 56, in executor_script\n    exec(function_code, exec_globals)\n  File \"<string>\", line 3, in <module>\nModuleNotFoundError: No module named 'primepy'\n"
+                    ]
+                },
+                {
+                    "problem_identifier": "problem_b00a2d4b-0807-4d96-bcc5-41fd10b2490e",
+                    "prompt_identifier": "b00a2d4b-0807-4d96-bcc5-41fd10b2490e",
+                    "model_identifier": "gpt-4",
+                    "score": 0.0,
+                    "sub_criteria_scores": null,
+                    "issues": [
+                        "Error encountered during execution for test case Input: n = 1; Expected Output: 0: 'int' object is not callable\nTraceback (most recent call last):\n  File \"/Users/vamsiimmanneni/Documents/Documents - Vamsi\u2019s MacBook Pro/Homework/SWE GPT/Integration/Strict/LLMCodingBenchmarkingFramework/execution.py\", line 76, in executor_script\n    result = function(*parameters)\n  File \"<string>\", line 6, in solve\nTypeError: 'int' object is not callable\n",
+                        "Error encountered during execution for test case Input: n = 2; Expected Output: 10: 'int' object is not callable\nTraceback (most recent call last):\n  File \"/Users/vamsiimmanneni/Documents/Documents - Vamsi\u2019s MacBook Pro/Homework/SWE GPT/Integration/Strict/LLMCodingBenchmarkingFramework/execution.py\", line 76, in executor_script\n    result = function(*parameters)\n  File \"<string>\", line 6, in solve\nTypeError: 'int' object is not callable\n",
+                        "Error encountered during execution for test case Input: n = 3; Expected Output: 16: 'int' object is not callable\nTraceback (most recent call last):\n  File \"/Users/vamsiimmanneni/Documents/Documents - Vamsi\u2019s MacBook Pro/Homework/SWE GPT/Integration/Strict/LLMCodingBenchmarkingFramework/execution.py\", line 76, in executor_script\n    result = function(*parameters)\n  File \"<string>\", line 6, in solve\nTypeError: 'int' object is not callable\n"
+                    ]
+                },
+                {
+                    "problem_identifier": "problem_b12a198f-56c9-446a-b211-cc728bc2cae7",
+                    "prompt_identifier": "b12a198f-56c9-446a-b211-cc728bc2cae7",
+                    "model_identifier": "gpt-4",
+                    "score": 1.0,
+                    "sub_criteria_scores": null,
+                    "issues": []
+                },
+                {
+                    "problem_identifier": "problem_b14351ef-8e76-4618-844a-7b0f8029f336",
+                    "prompt_identifier": "b14351ef-8e76-4618-844a-7b0f8029f336",
+                    "model_identifier": "gpt-4",
+                    "score": 0.3333333333333333,
+                    "sub_criteria_scores": null,
+                    "issues": [
+                        "Test failed:\n\tInput: n = 1; Expected Output: 6\n\tFunction prototype: solve(n: int) -> int\n\tExpected result: 6 <class 'int'>\n\tActual result: 29 <class 'int'>",
+                        "Test failed:\n\tInput: n = 2; Expected Output: 9\n\tFunction prototype: solve(n: int) -> int\n\tExpected result: 9 <class 'int'>\n\tActual result: 29 <class 'int'>"
+                    ]
+                },
+                {
+                    "problem_identifier": "problem_b173c45e-1f1f-423c-84d9-e24a27438579",
+                    "prompt_identifier": "b173c45e-1f1f-423c-84d9-e24a27438579",
+                    "model_identifier": "gpt-4",
+                    "score": 0.6666666666666666,
+                    "sub_criteria_scores": null,
+                    "issues": [
+                        "Test failed:\n\tInput: n = 3; Expected Output: 3\n\tFunction prototype: solve(n: int) -> int\n\tExpected result: 3 <class 'int'>\n\tActual result: 0 <class 'int'>"
+                    ]
+                },
+                {
+                    "problem_identifier": "problem_b28a3e1e-16db-468e-a347-6f14a8ab4721",
+                    "prompt_identifier": "b28a3e1e-16db-468e-a347-6f14a8ab4721",
+                    "model_identifier": "gpt-4",
+                    "score": 1.0,
+                    "sub_criteria_scores": null,
+                    "issues": []
+                },
+                {
+                    "problem_identifier": "problem_b7005594-5c10-4c62-8aa1-6508081c000b",
+                    "prompt_identifier": "b7005594-5c10-4c62-8aa1-6508081c000b",
+                    "model_identifier": "gpt-4",
+                    "score": 0.0,
+                    "sub_criteria_scores": null,
+                    "issues": [
+                        "Test failed:\n\tInput: n = 1; Expected Output: 0\n\tFunction prototype: solve(n: int) -> int\n\tExpected result: 0 <class 'int'>\n\tActual result: 1 <class 'int'>",
+                        "Test failed:\n\tInput: n = 2; Expected Output: 0\n\tFunction prototype: solve(n: int) -> int\n\tExpected result: 0 <class 'int'>\n\tActual result: 8 <class 'int'>",
+                        "Test failed:\n\tInput: n = 15; Expected Output: 0\n\tFunction prototype: solve(n: int) -> int\n\tExpected result: 0 <class 'int'>\n\tActual result: 1 <class 'int'>"
+                    ]
+                },
+                {
+                    "problem_identifier": "problem_b7ab9275-bff7-4ead-ac82-5f76af05bc2c",
+                    "prompt_identifier": "b7ab9275-bff7-4ead-ac82-5f76af05bc2c",
+                    "model_identifier": "gpt-4",
+                    "score": 1.0,
+                    "sub_criteria_scores": null,
+                    "issues": []
+                },
+                {
+                    "problem_identifier": "problem_b815cab5-0754-46a0-8bdb-8e54ac0e25ed",
+                    "prompt_identifier": "b815cab5-0754-46a0-8bdb-8e54ac0e25ed",
+                    "model_identifier": "gpt-4",
+                    "score": 0.6666666666666666,
+                    "sub_criteria_scores": null,
+                    "issues": [
+                        "Test failed:\n\tInput: n = [2, 4, 6, 8, 10]; Expected Output: 1\n\tFunction prototype: solve(n: List[int]) -> int\n\tExpected result: 1 <class 'int'>\n\tActual result: 2 <class 'int'>"
+                    ]
+                },
+                {
+                    "problem_identifier": "problem_bde3eee5-1648-4086-9b91-e0faab7ec1ee",
+                    "prompt_identifier": "bde3eee5-1648-4086-9b91-e0faab7ec1ee",
+                    "model_identifier": "gpt-4",
+                    "score": 0.3333333333333333,
+                    "sub_criteria_scores": null,
+                    "issues": [
+                        "Test failed:\n\tInput: n = 2; Expected Output: 0\n\tFunction prototype: solve(n: int) -> int\n\tExpected result: 0 <class 'int'>\n\tActual result: 3 <class 'int'>",
+                        "Test failed:\n\tInput: n = 3; Expected Output: 1\n\tFunction prototype: solve(n: int) -> int\n\tExpected result: 1 <class 'int'>\n\tActual result: 6 <class 'int'>"
+                    ]
+                },
+                {
+                    "problem_identifier": "problem_c3c1ce8a-ca2a-4c87-b657-a59ec1704cc4",
+                    "prompt_identifier": "c3c1ce8a-ca2a-4c87-b657-a59ec1704cc4",
+                    "model_identifier": "gpt-4",
+                    "score": 0.3333333333333333,
+                    "sub_criteria_scores": null,
+                    "issues": [
+                        "Test failed:\n\tInput: n = 1; Expected Output: 7\n\tFunction prototype: solve(n: int) -> int\n\tExpected result: 7 <class 'int'>\n\tActual result: 10 <class 'int'>",
+                        "Test failed:\n\tInput: n = 2; Expected Output: 0\n\tFunction prototype: solve(n: int) -> int\n\tExpected result: 0 <class 'int'>\n\tActual result: 10 <class 'int'>"
+                    ]
+                },
+                {
+                    "problem_identifier": "problem_c403fca7-e395-45f5-b6e5-d894962544ac",
+                    "prompt_identifier": "c403fca7-e395-45f5-b6e5-d894962544ac",
+                    "model_identifier": "gpt-4",
+                    "score": 0.0,
+                    "sub_criteria_scores": null,
+                    "issues": [
+                        "Test failed:\n\tInput: n = 1; Expected Output: 0\n\tFunction prototype: solve(n: int) -> int\n\tExpected result: 0 <class 'int'>\n\tActual result: 2 <class 'int'>",
+                        "Test failed:\n\tInput: n = 2; Expected Output: 2\n\tFunction prototype: solve(n: int) -> int\n\tExpected result: 2 <class 'int'>\n\tActual result: 0 <class 'int'>",
+                        "Test failed:\n\tInput: n = 3; Expected Output: 6\n\tFunction prototype: solve(n: int) -> int\n\tExpected result: 6 <class 'int'>\n\tActual result: 128 <class 'int'>"
+                    ]
+                },
+                {
+                    "problem_identifier": "problem_c6d49df8-0ce1-4db3-8641-914cf598899e",
+                    "prompt_identifier": "c6d49df8-0ce1-4db3-8641-914cf598899e",
+                    "model_identifier": "gpt-4",
+                    "score": 0.6666666666666666,
+                    "sub_criteria_scores": null,
+                    "issues": [
+                        "Test failed:\n\tInput: n = 1; Expected Output: 0\n\tFunction prototype: solve(n: int) -> int\n\tExpected result: 0 <class 'int'>\n\tActual result: 1 <class 'int'>"
+                    ]
+                },
+                {
+                    "problem_identifier": "problem_c898aa35-4cdd-4c41-8813-69ddfda95e8e",
+                    "prompt_identifier": "c898aa35-4cdd-4c41-8813-69ddfda95e8e",
+                    "model_identifier": "gpt-4",
+                    "score": 0.6666666666666666,
+                    "sub_criteria_scores": null,
+                    "issues": [
+                        "Test failed:\n\tInput: n = [5, 5, 7, 7, 7, 9, 9]; Expected Output: 13\n\tFunction prototype: solve(n: List[int]) -> int\n\tExpected result: 13 <class 'int'>\n\tActual result: 49 <class 'int'>"
+                    ]
+                },
+                {
+                    "problem_identifier": "problem_c8ee8395-bfef-4bda-9b08-950c0822cd54",
+                    "prompt_identifier": "c8ee8395-bfef-4bda-9b08-950c0822cd54",
+                    "model_identifier": "gpt-4",
+                    "score": 0.6666666666666666,
+                    "sub_criteria_scores": null,
+                    "issues": [
+                        "Test failed:\n\tInput: n = 3; Expected Output: 7\n\tFunction prototype: solve(n: int) -> int\n\tExpected result: 7 <class 'int'>\n\tActual result: 9 <class 'int'>"
+                    ]
+                },
+                {
+                    "problem_identifier": "problem_c9114ca9-e25c-4062-84f8-799f58334d3d",
+                    "prompt_identifier": "c9114ca9-e25c-4062-84f8-799f58334d3d",
+                    "model_identifier": "gpt-4",
+                    "score": 1.0,
+                    "sub_criteria_scores": null,
+                    "issues": []
+                },
+                {
+                    "problem_identifier": "problem_c91c94f3-4f35-4be4-a834-474269a25496",
+                    "prompt_identifier": "c91c94f3-4f35-4be4-a834-474269a25496",
+                    "model_identifier": "gpt-4",
+                    "score": 1.0,
+                    "sub_criteria_scores": null,
+                    "issues": []
+                },
+                {
+                    "problem_identifier": "problem_ca9df261-4173-474c-ac1a-5d4a27b98993",
+                    "prompt_identifier": "ca9df261-4173-474c-ac1a-5d4a27b98993",
+                    "model_identifier": "gpt-4",
+                    "score": 1.0,
+                    "sub_criteria_scores": null,
+                    "issues": []
+                },
+                {
+                    "problem_identifier": "problem_cccd492b-6ff7-4adf-b5ea-25900168e103",
+                    "prompt_identifier": "cccd492b-6ff7-4adf-b5ea-25900168e103",
+                    "model_identifier": "gpt-4",
+                    "score": 0.3333333333333333,
+                    "sub_criteria_scores": null,
+                    "issues": [
+                        "Test failed:\n\tInput: n = 2; Expected Output: 7\n\tFunction prototype: solve(n: int) -> int\n\tExpected result: 7 <class 'int'>\n\tActual result: 3 <class 'int'>",
+                        "Test failed:\n\tInput: n = 3; Expected Output: 0\n\tFunction prototype: solve(n: int) -> int\n\tExpected result: 0 <class 'int'>\n\tActual result: 1 <class 'int'>"
+                    ]
+                },
+                {
+                    "problem_identifier": "problem_cea11fe4-d840-4d0f-b056-3485bfc71f14",
+                    "prompt_identifier": "cea11fe4-d840-4d0f-b056-3485bfc71f14",
+                    "model_identifier": "gpt-4",
+                    "score": 0.6666666666666666,
+                    "sub_criteria_scores": null,
+                    "issues": [
+                        "Test failed:\n\tInput: n = 1; Expected Output: 3\n\tFunction prototype: solve(n: int) -> int\n\tExpected result: 3 <class 'int'>\n\tActual result: 6 <class 'int'>"
+                    ]
+                },
+                {
+                    "problem_identifier": "problem_d0f7370f-e7df-44ca-9ff4-3faf4db32760",
+                    "prompt_identifier": "d0f7370f-e7df-44ca-9ff4-3faf4db32760",
+                    "model_identifier": "gpt-4",
+                    "score": 0.3333333333333333,
+                    "sub_criteria_scores": null,
+                    "issues": [
+                        "Error encountered during execution for test case Input: n = 1; Expected Output: 9: list assignment index out of range\nTraceback (most recent call last):\n  File \"/Users/vamsiimmanneni/Documents/Documents - Vamsi\u2019s MacBook Pro/Homework/SWE GPT/Integration/Strict/LLMCodingBenchmarkingFramework/execution.py\", line 76, in executor_script\n    result = function(*parameters)\n  File \"<string>\", line 6, in solve\nIndexError: list assignment index out of range\n",
+                        "Test failed:\n\tInput: n = 2; Expected Output: 2\n\tFunction prototype: solve(n: int) -> int\n\tExpected result: 2 <class 'int'>\n\tActual result: 32 <class 'int'>"
+                    ]
+                },
+                {
+                    "problem_identifier": "problem_d31132e6-a3f5-49a9-81fe-3625b57983ee",
+                    "prompt_identifier": "d31132e6-a3f5-49a9-81fe-3625b57983ee",
+                    "model_identifier": "gpt-4",
+                    "score": 0.0,
+                    "sub_criteria_scores": null,
+                    "issues": [
+                        "Test failed:\n\tInput: n = 1; Expected Output: 6\n\tFunction prototype: solve(n: int) -> int\n\tExpected result: 6 <class 'int'>\n\tActual result: 9 <class 'int'>",
+                        "Test failed:\n\tInput: n = 2; Expected Output: 9\n\tFunction prototype: solve(n: int) -> int\n\tExpected result: 9 <class 'int'>\n\tActual result: 3 <class 'int'>",
+                        "Test failed:\n\tInput: n = 3; Expected Output: 3\n\tFunction prototype: solve(n: int) -> int\n\tExpected result: 3 <class 'int'>\n\tActual result: 9 <class 'int'>"
+                    ]
+                },
+                {
+                    "problem_identifier": "problem_d4521582-afec-47a6-bf46-70e44e41f038",
+                    "prompt_identifier": "d4521582-afec-47a6-bf46-70e44e41f038",
+                    "model_identifier": "gpt-4",
+                    "score": 0.6666666666666666,
+                    "sub_criteria_scores": null,
+                    "issues": [
+                        "Test failed:\n\tInput: n = [5, 5, 5, 6, 6, 6, 7, 7, 7, 8, 8, 8, 9, 9]; Expected Output: 9\n\tFunction prototype: solve(n: List[int]) -> int\n\tExpected result: 9 <class 'int'>\n\tActual result: 81 <class 'int'>"
+                    ]
+                },
+                {
+                    "problem_identifier": "problem_d5d61bb6-c8e3-4aa2-9f9d-62f9f889a0ba",
+                    "prompt_identifier": "d5d61bb6-c8e3-4aa2-9f9d-62f9f889a0ba",
+                    "model_identifier": "gpt-4",
+                    "score": 0.6666666666666666,
+                    "sub_criteria_scores": null,
+                    "issues": [
+                        "Test failed:\n\tInput: n = [3, 6, 9, 12, 15, 18, 21, 24, 27]; Expected Output: 9\n\tFunction prototype: solve(n: List[int]) -> int\n\tExpected result: 9 <class 'int'>\n\tActual result: 5 <class 'int'>"
+                    ]
+                },
+                {
+                    "problem_identifier": "problem_d925b34d-1347-4329-a3ae-6bbc6a017923",
+                    "prompt_identifier": "d925b34d-1347-4329-a3ae-6bbc6a017923",
+                    "model_identifier": "gpt-4",
+                    "score": 0.0,
+                    "sub_criteria_scores": null,
+                    "issues": [
+                        "Test failed:\n\tInput: n = 1; Expected Output: 0\n\tFunction prototype: solve(n: int) -> int\n\tExpected result: 0 <class 'int'>\n\tActual result: 4 <class 'int'>",
+                        "Test failed:\n\tInput: n = 2; Expected Output: 2\n\tFunction prototype: solve(n: int) -> int\n\tExpected result: 2 <class 'int'>\n\tActual result: 8 <class 'int'>",
+                        "Test failed:\n\tInput: n = 3; Expected Output: 6\n\tFunction prototype: solve(n: int) -> int\n\tExpected result: 6 <class 'int'>\n\tActual result: 8 <class 'int'>"
+                    ]
+                },
+                {
+                    "problem_identifier": "problem_e4a5657c-abde-4277-82c5-1e1b90f1ba72",
+                    "prompt_identifier": "e4a5657c-abde-4277-82c5-1e1b90f1ba72",
+                    "model_identifier": "gpt-4",
+                    "score": 1.0,
+                    "sub_criteria_scores": null,
+                    "issues": []
+                },
+                {
+                    "problem_identifier": "problem_e72c3525-0c3f-4aff-a218-dd358d6faa7c",
+                    "prompt_identifier": "e72c3525-0c3f-4aff-a218-dd358d6faa7c",
+                    "model_identifier": "gpt-4",
+                    "score": 1.0,
+                    "sub_criteria_scores": null,
+                    "issues": []
+                },
+                {
+                    "problem_identifier": "problem_eaf7c62b-e372-4631-8491-662b90929d67",
+                    "prompt_identifier": "eaf7c62b-e372-4631-8491-662b90929d67",
+                    "model_identifier": "gpt-4",
+                    "score": 0.3333333333333333,
+                    "sub_criteria_scores": null,
+                    "issues": [
+                        "Test failed:\n\tInput: n = 1; Expected Output: 9\n\tFunction prototype: solve(n: int) -> int\n\tExpected result: 9 <class 'int'>\n\tActual result: 19 <class 'int'>",
+                        "Test failed:\n\tInput: n = 2; Expected Output: 2\n\tFunction prototype: solve(n: int) -> int\n\tExpected result: 2 <class 'int'>\n\tActual result: 22 <class 'int'>"
+                    ]
+                },
+                {
+                    "problem_identifier": "problem_f6691bc0-8491-424f-a715-8e7d38f30230",
+                    "prompt_identifier": "f6691bc0-8491-424f-a715-8e7d38f30230",
+                    "model_identifier": "gpt-4",
+                    "score": 0.0,
+                    "sub_criteria_scores": null,
+                    "issues": [
+                        "Error encountered during execution for test case Input: n = 1; Expected Output: 4: invalid syntax (<string>, line 5)\nTraceback (most recent call last):\n  File \"/Users/vamsiimmanneni/Documents/Documents - Vamsi\u2019s MacBook Pro/Homework/SWE GPT/Integration/Strict/LLMCodingBenchmarkingFramework/execution.py\", line 56, in executor_script\n    exec(function_code, exec_globals)\n  File \"<string>\", line 5\n    Given `n`, the nth number in the sequence defined as: `a(n) = 12*a(n-1) - 8*a(n-2) + 15, a(1) = 14, a(2) = 17` and `1 \u2264 n \u2264 290`, we are to determine what the last digit of `a(n)` is. \n          ^\nSyntaxError: invalid syntax\n",
+                        "Error encountered during execution for test case Input: n = 2; Expected Output: 7: invalid syntax (<string>, line 5)\nTraceback (most recent call last):\n  File \"/Users/vamsiimmanneni/Documents/Documents - Vamsi\u2019s MacBook Pro/Homework/SWE GPT/Integration/Strict/LLMCodingBenchmarkingFramework/execution.py\", line 56, in executor_script\n    exec(function_code, exec_globals)\n  File \"<string>\", line 5\n    Given `n`, the nth number in the sequence defined as: `a(n) = 12*a(n-1) - 8*a(n-2) + 15, a(1) = 14, a(2) = 17` and `1 \u2264 n \u2264 290`, we are to determine what the last digit of `a(n)` is. \n          ^\nSyntaxError: invalid syntax\n",
+                        "Error encountered during execution for test case Input: n = 3; Expected Output: 7: invalid syntax (<string>, line 5)\nTraceback (most recent call last):\n  File \"/Users/vamsiimmanneni/Documents/Documents - Vamsi\u2019s MacBook Pro/Homework/SWE GPT/Integration/Strict/LLMCodingBenchmarkingFramework/execution.py\", line 56, in executor_script\n    exec(function_code, exec_globals)\n  File \"<string>\", line 5\n    Given `n`, the nth number in the sequence defined as: `a(n) = 12*a(n-1) - 8*a(n-2) + 15, a(1) = 14, a(2) = 17` and `1 \u2264 n \u2264 290`, we are to determine what the last digit of `a(n)` is. \n          ^\nSyntaxError: invalid syntax\n"
+                    ]
+                },
+                {
+                    "problem_identifier": "problem_f7a35b1e-deda-46b3-b362-607afe56a55f",
+                    "prompt_identifier": "f7a35b1e-deda-46b3-b362-607afe56a55f",
+                    "model_identifier": "gpt-4",
+                    "score": 0.0,
+                    "sub_criteria_scores": null,
+                    "issues": [
+                        "Error encountered during execution for test case Input: n = [3, 5, 3, 7, 3, 9, 3]; Expected Output: 0: list index out of range\nTraceback (most recent call last):\n  File \"/Users/vamsiimmanneni/Documents/Documents - Vamsi\u2019s MacBook Pro/Homework/SWE GPT/Integration/Strict/LLMCodingBenchmarkingFramework/execution.py\", line 76, in executor_script\n    result = function(*parameters)\n  File \"<string>\", line 12, in solve\nIndexError: list index out of range\n",
+                        "Error encountered during execution for test case Input: n = [2, 2, 2, 2, 2, 8, 2]; Expected Output: 10: list index out of range\nTraceback (most recent call last):\n  File \"/Users/vamsiimmanneni/Documents/Documents - Vamsi\u2019s MacBook Pro/Homework/SWE GPT/Integration/Strict/LLMCodingBenchmarkingFramework/execution.py\", line 76, in executor_script\n    result = function(*parameters)\n  File \"<string>\", line 12, in solve\nIndexError: list index out of range\n",
+                        "Error encountered during execution for test case Input: n = [1, 1, 1, 1, 1, 1]; Expected Output: 1: list index out of range\nTraceback (most recent call last):\n  File \"/Users/vamsiimmanneni/Documents/Documents - Vamsi\u2019s MacBook Pro/Homework/SWE GPT/Integration/Strict/LLMCodingBenchmarkingFramework/execution.py\", line 76, in executor_script\n    result = function(*parameters)\n  File \"<string>\", line 12, in solve\nIndexError: list index out of range\n"
+                    ]
+                },
+                {
+                    "problem_identifier": "problem_fda6b42d-ed89-4f4d-9f85-c9e76e18ee1a",
+                    "prompt_identifier": "fda6b42d-ed89-4f4d-9f85-c9e76e18ee1a",
+                    "model_identifier": "gpt-4",
+                    "score": 0.0,
+                    "sub_criteria_scores": null,
+                    "issues": [
+                        "Error encountered during execution for test case Input: n = 1; Expected Output: 5: Function execution timed out after 5 seconds.\nNone",
+                        "Error encountered during execution for test case Input: n = 2; Expected Output: 8: Function execution timed out after 5 seconds.\nNone",
+                        "Error encountered during execution for test case Input: n = 3; Expected Output: 5: Function execution timed out after 5 seconds.\nNone"
+                    ]
+                },
+                {
+                    "problem_identifier": "problem_feeea925-3202-4bb3-8732-9d4d5fc7ca37",
+                    "prompt_identifier": "feeea925-3202-4bb3-8732-9d4d5fc7ca37",
+                    "model_identifier": "gpt-4",
+                    "score": 1.0,
+                    "sub_criteria_scores": null,
+                    "issues": []
+                }
+            ]
+        },
+        "problem_sets/bugfixing": {
+            "performance": [
+                {
+                    "problem_identifier": "problem_1",
+                    "prompt_identifier": "brief_prompt",
+                    "model_identifier": "gpt-4",
+                    "score": 0.9878273848983088,
+                    "sub_criteria_scores": null,
+                    "issues": []
+                },
+                {
+                    "problem_identifier": "problem_1",
+                    "prompt_identifier": "detailed_prompt",
+                    "model_identifier": "gpt-4",
+                    "score": 1,
+                    "sub_criteria_scores": null,
+                    "issues": []
+                },
+                {
+                    "problem_identifier": "problem_2",
+                    "prompt_identifier": "brief_prompt",
+                    "model_identifier": "gpt-4",
+                    "score": 0.9858015628639337,
+                    "sub_criteria_scores": null,
+                    "issues": []
+                },
+                {
+                    "problem_identifier": "problem_2",
+                    "prompt_identifier": "detailed_prompt",
+                    "model_identifier": "gpt-4",
+                    "score": 0.9884508577183069,
+                    "sub_criteria_scores": null,
+                    "issues": []
+                },
+                {
+                    "problem_identifier": "problem_3",
+                    "prompt_identifier": "brief_prompt",
+                    "model_identifier": "gpt-4",
+                    "score": 0.9879986383729022,
+                    "sub_criteria_scores": null,
+                    "issues": []
+                },
+                {
+                    "problem_identifier": "problem_3",
+                    "prompt_identifier": "detailed_prompt",
+                    "model_identifier": "gpt-4",
+                    "score": 0.9984115883875714,
+                    "sub_criteria_scores": null,
+                    "issues": []
+                },
+                {
+                    "problem_identifier": "problem_4",
+                    "prompt_identifier": "brief_prompt",
+                    "model_identifier": "gpt-4",
+                    "score": 0.9781934401830353,
+                    "sub_criteria_scores": null,
+                    "issues": []
+                },
+                {
+                    "problem_identifier": "problem_4",
+                    "prompt_identifier": "detailed_prompt",
+                    "model_identifier": "gpt-4",
+                    "score": 1,
+                    "sub_criteria_scores": null,
+                    "issues": []
+                },
+                {
+                    "problem_identifier": "problem_5",
+                    "prompt_identifier": "brief_prompt",
+                    "model_identifier": "gpt-4",
+                    "score": 0.9533233155866668,
+                    "sub_criteria_scores": null,
+                    "issues": []
+                },
+                {
+                    "problem_identifier": "problem_5",
+                    "prompt_identifier": "detailed_prompt",
+                    "model_identifier": "gpt-4",
+                    "score": 1,
+                    "sub_criteria_scores": null,
+                    "issues": []
+                }
+            ],
+            "correctness": [
+                {
+                    "problem_identifier": "problem_1",
+                    "prompt_identifier": "brief_prompt",
+                    "model_identifier": "gpt-4",
+                    "score": 1.0,
+                    "sub_criteria_scores": null,
+                    "issues": []
+                },
+                {
+                    "problem_identifier": "problem_1",
+                    "prompt_identifier": "detailed_prompt",
+                    "model_identifier": "gpt-4",
+                    "score": 1.0,
+                    "sub_criteria_scores": null,
+                    "issues": []
+                },
+                {
+                    "problem_identifier": "problem_2",
+                    "prompt_identifier": "brief_prompt",
+                    "model_identifier": "gpt-4",
+                    "score": 1.0,
+                    "sub_criteria_scores": null,
+                    "issues": []
+                },
+                {
+                    "problem_identifier": "problem_2",
+                    "prompt_identifier": "detailed_prompt",
+                    "model_identifier": "gpt-4",
+                    "score": 1.0,
+                    "sub_criteria_scores": null,
+                    "issues": []
+                },
+                {
+                    "problem_identifier": "problem_3",
+                    "prompt_identifier": "brief_prompt",
+                    "model_identifier": "gpt-4",
+                    "score": 1.0,
+                    "sub_criteria_scores": null,
+                    "issues": []
+                },
+                {
+                    "problem_identifier": "problem_3",
+                    "prompt_identifier": "detailed_prompt",
+                    "model_identifier": "gpt-4",
+                    "score": 1.0,
+                    "sub_criteria_scores": null,
+                    "issues": []
+                },
+                {
+                    "problem_identifier": "problem_4",
+                    "prompt_identifier": "brief_prompt",
+                    "model_identifier": "gpt-4",
+                    "score": 1.0,
+                    "sub_criteria_scores": null,
+                    "issues": []
+                },
+                {
+                    "problem_identifier": "problem_4",
+                    "prompt_identifier": "detailed_prompt",
+                    "model_identifier": "gpt-4",
+                    "score": 1.0,
+                    "sub_criteria_scores": null,
+                    "issues": []
+                },
+                {
+                    "problem_identifier": "problem_5",
+                    "prompt_identifier": "brief_prompt",
+                    "model_identifier": "gpt-4",
+                    "score": 1.0,
+                    "sub_criteria_scores": null,
+                    "issues": []
+                },
+                {
+                    "problem_identifier": "problem_5",
+                    "prompt_identifier": "detailed_prompt",
+                    "model_identifier": "gpt-4",
+                    "score": 1.0,
+                    "sub_criteria_scores": null,
+                    "issues": []
+                }
+            ]
+        }
+    },
+    "Average Scores Per Problem Set": {
+        "problem_sets/basic": 1.0,
+        "problem_sets/halstead": 0.5566666666666665,
+        "problem_sets/bugfixing": 0.9940003394005362
+    },
+    "Average Scores Per Criterion": {
+        "correctness": 0.6305555555555553,
+        "performance": 0.9880006788010725
+    }
+}

@@ -1,0 +1,902 @@
+{
+    "Problem Sets": {
+        "problem_sets/vectorizing": {
+            "correctness": [
+                {
+                    "problem_identifier": "dot_product",
+                    "prompt_identifier": "brief_prompt",
+                    "model_identifier": "gpt-4",
+                    "score": 0,
+                    "sub_criteria_scores": null,
+                    "issues": []
+                },
+                {
+                    "problem_identifier": "matrix_vector_multiplication",
+                    "prompt_identifier": "brief_prompt",
+                    "model_identifier": "gpt-4",
+                    "score": 0,
+                    "sub_criteria_scores": null,
+                    "issues": []
+                },
+                {
+                    "problem_identifier": "transpose",
+                    "prompt_identifier": "brief_prompt",
+                    "model_identifier": "gpt-4",
+                    "score": 0,
+                    "sub_criteria_scores": null,
+                    "issues": []
+                },
+                {
+                    "problem_identifier": "matrix_addition",
+                    "prompt_identifier": "brief_prompt",
+                    "model_identifier": "gpt-4",
+                    "score": 0,
+                    "sub_criteria_scores": null,
+                    "issues": []
+                },
+                {
+                    "problem_identifier": "scalar_multiplication",
+                    "prompt_identifier": "brief_prompt",
+                    "model_identifier": "gpt-4",
+                    "score": 0,
+                    "sub_criteria_scores": null,
+                    "issues": []
+                },
+                {
+                    "problem_identifier": "row_sum",
+                    "prompt_identifier": "brief_prompt",
+                    "model_identifier": "gpt-4",
+                    "score": 0,
+                    "sub_criteria_scores": null,
+                    "issues": []
+                },
+                {
+                    "problem_identifier": "column_sum",
+                    "prompt_identifier": "brief_prompt",
+                    "model_identifier": "gpt-4",
+                    "score": 0,
+                    "sub_criteria_scores": null,
+                    "issues": []
+                },
+                {
+                    "problem_identifier": "diagonal",
+                    "prompt_identifier": "brief_prompt",
+                    "model_identifier": "gpt-4",
+                    "score": 0,
+                    "sub_criteria_scores": null,
+                    "issues": []
+                },
+                {
+                    "problem_identifier": "matrix_multiplication",
+                    "prompt_identifier": "brief_prompt",
+                    "model_identifier": "gpt-4",
+                    "score": 0,
+                    "sub_criteria_scores": null,
+                    "issues": []
+                },
+                {
+                    "problem_identifier": "elementwise_multiplication",
+                    "prompt_identifier": "brief_prompt",
+                    "model_identifier": "gpt-4",
+                    "score": 0,
+                    "sub_criteria_scores": null,
+                    "issues": []
+                },
+                {
+                    "problem_identifier": "elementwise_exp",
+                    "prompt_identifier": "brief_prompt",
+                    "model_identifier": "gpt-4",
+                    "score": 0,
+                    "sub_criteria_scores": null,
+                    "issues": []
+                },
+                {
+                    "problem_identifier": "row_mean",
+                    "prompt_identifier": "brief_prompt",
+                    "model_identifier": "gpt-4",
+                    "score": 0,
+                    "sub_criteria_scores": null,
+                    "issues": []
+                },
+                {
+                    "problem_identifier": "column_mean",
+                    "prompt_identifier": "brief_prompt",
+                    "model_identifier": "gpt-4",
+                    "score": 0,
+                    "sub_criteria_scores": null,
+                    "issues": []
+                },
+                {
+                    "problem_identifier": "matrix_trace",
+                    "prompt_identifier": "brief_prompt",
+                    "model_identifier": "gpt-4",
+                    "score": 0,
+                    "sub_criteria_scores": null,
+                    "issues": []
+                },
+                {
+                    "problem_identifier": "elementwise_division",
+                    "prompt_identifier": "brief_prompt",
+                    "model_identifier": "gpt-4",
+                    "score": 0,
+                    "sub_criteria_scores": null,
+                    "issues": []
+                },
+                {
+                    "problem_identifier": "matrix_subtraction",
+                    "prompt_identifier": "brief_prompt",
+                    "model_identifier": "gpt-4",
+                    "score": 0,
+                    "sub_criteria_scores": null,
+                    "issues": []
+                },
+                {
+                    "problem_identifier": "row_max",
+                    "prompt_identifier": "brief_prompt",
+                    "model_identifier": "gpt-4",
+                    "score": 0,
+                    "sub_criteria_scores": null,
+                    "issues": []
+                },
+                {
+                    "problem_identifier": "column_max",
+                    "prompt_identifier": "brief_prompt",
+                    "model_identifier": "gpt-4",
+                    "score": 0,
+                    "sub_criteria_scores": null,
+                    "issues": []
+                },
+                {
+                    "problem_identifier": "scalar_division",
+                    "prompt_identifier": "brief_prompt",
+                    "model_identifier": "gpt-4",
+                    "score": 0,
+                    "sub_criteria_scores": null,
+                    "issues": []
+                },
+                {
+                    "problem_identifier": "is_square",
+                    "prompt_identifier": "brief_prompt",
+                    "model_identifier": "gpt-4",
+                    "score": 0,
+                    "sub_criteria_scores": null,
+                    "issues": []
+                },
+                {
+                    "problem_identifier": "elementwise_power",
+                    "prompt_identifier": "brief_prompt",
+                    "model_identifier": "gpt-4",
+                    "score": 0,
+                    "sub_criteria_scores": null,
+                    "issues": []
+                },
+                {
+                    "problem_identifier": "row_min",
+                    "prompt_identifier": "brief_prompt",
+                    "model_identifier": "gpt-4",
+                    "score": 0,
+                    "sub_criteria_scores": null,
+                    "issues": []
+                },
+                {
+                    "problem_identifier": "column_min",
+                    "prompt_identifier": "brief_prompt",
+                    "model_identifier": "gpt-4",
+                    "score": 0,
+                    "sub_criteria_scores": null,
+                    "issues": []
+                },
+                {
+                    "problem_identifier": "negate_matrix",
+                    "prompt_identifier": "brief_prompt",
+                    "model_identifier": "gpt-4",
+                    "score": 0,
+                    "sub_criteria_scores": null,
+                    "issues": []
+                },
+                {
+                    "problem_identifier": "count_positive",
+                    "prompt_identifier": "brief_prompt",
+                    "model_identifier": "gpt-4",
+                    "score": 0,
+                    "sub_criteria_scores": null,
+                    "issues": []
+                },
+                {
+                    "problem_identifier": "count_negative",
+                    "prompt_identifier": "brief_prompt",
+                    "model_identifier": "gpt-4",
+                    "score": 0,
+                    "sub_criteria_scores": null,
+                    "issues": []
+                },
+                {
+                    "problem_identifier": "zero_matrix",
+                    "prompt_identifier": "brief_prompt",
+                    "model_identifier": "gpt-4",
+                    "score": 0,
+                    "sub_criteria_scores": null,
+                    "issues": []
+                },
+                {
+                    "problem_identifier": "identity_matrix",
+                    "prompt_identifier": "brief_prompt",
+                    "model_identifier": "gpt-4",
+                    "score": 0,
+                    "sub_criteria_scores": null,
+                    "issues": []
+                },
+                {
+                    "problem_identifier": "flatten_matrix",
+                    "prompt_identifier": "brief_prompt",
+                    "model_identifier": "gpt-4",
+                    "score": 0,
+                    "sub_criteria_scores": null,
+                    "issues": []
+                },
+                {
+                    "problem_identifier": "is_symmetric",
+                    "prompt_identifier": "brief_prompt",
+                    "model_identifier": "gpt-4",
+                    "score": 0,
+                    "sub_criteria_scores": null,
+                    "issues": []
+                },
+                {
+                    "problem_identifier": "elementwise_absolute",
+                    "prompt_identifier": "brief_prompt",
+                    "model_identifier": "gpt-4",
+                    "score": 0,
+                    "sub_criteria_scores": null,
+                    "issues": []
+                },
+                {
+                    "problem_identifier": "replace_diagonal",
+                    "prompt_identifier": "brief_prompt",
+                    "model_identifier": "gpt-4",
+                    "score": 0,
+                    "sub_criteria_scores": null,
+                    "issues": []
+                },
+                {
+                    "problem_identifier": "upper_triangular",
+                    "prompt_identifier": "brief_prompt",
+                    "model_identifier": "gpt-4",
+                    "score": 0,
+                    "sub_criteria_scores": null,
+                    "issues": []
+                },
+                {
+                    "problem_identifier": "lower_triangular",
+                    "prompt_identifier": "brief_prompt",
+                    "model_identifier": "gpt-4",
+                    "score": 0,
+                    "sub_criteria_scores": null,
+                    "issues": []
+                },
+                {
+                    "problem_identifier": "count_zeroes",
+                    "prompt_identifier": "brief_prompt",
+                    "model_identifier": "gpt-4",
+                    "score": 0,
+                    "sub_criteria_scores": null,
+                    "issues": []
+                },
+                {
+                    "problem_identifier": "is_lower_triangular",
+                    "prompt_identifier": "brief_prompt",
+                    "model_identifier": "gpt-4",
+                    "score": 0,
+                    "sub_criteria_scores": null,
+                    "issues": []
+                },
+                {
+                    "problem_identifier": "is_upper_triangular",
+                    "prompt_identifier": "brief_prompt",
+                    "model_identifier": "gpt-4",
+                    "score": 0,
+                    "sub_criteria_scores": null,
+                    "issues": []
+                },
+                {
+                    "problem_identifier": "is_diagonal_matrix",
+                    "prompt_identifier": "brief_prompt",
+                    "model_identifier": "gpt-4",
+                    "score": 0,
+                    "sub_criteria_scores": null,
+                    "issues": []
+                },
+                {
+                    "problem_identifier": "rotate_90",
+                    "prompt_identifier": "brief_prompt",
+                    "model_identifier": "gpt-4",
+                    "score": 0,
+                    "sub_criteria_scores": null,
+                    "issues": []
+                },
+                {
+                    "problem_identifier": "elementwise_sqrt",
+                    "prompt_identifier": "brief_prompt",
+                    "model_identifier": "gpt-4",
+                    "score": 0,
+                    "sub_criteria_scores": null,
+                    "issues": []
+                },
+                {
+                    "problem_identifier": "replace_negatives_with_zero",
+                    "prompt_identifier": "brief_prompt",
+                    "model_identifier": "gpt-4",
+                    "score": 0,
+                    "sub_criteria_scores": null,
+                    "issues": []
+                },
+                {
+                    "problem_identifier": "determinant_2x2",
+                    "prompt_identifier": "brief_prompt",
+                    "model_identifier": "gpt-4",
+                    "score": 0,
+                    "sub_criteria_scores": null,
+                    "issues": []
+                },
+                {
+                    "problem_identifier": "copy_matrix",
+                    "prompt_identifier": "brief_prompt",
+                    "model_identifier": "gpt-4",
+                    "score": 0,
+                    "sub_criteria_scores": null,
+                    "issues": []
+                },
+                {
+                    "problem_identifier": "scale_matrix",
+                    "prompt_identifier": "brief_prompt",
+                    "model_identifier": "gpt-4",
+                    "score": 0,
+                    "sub_criteria_scores": null,
+                    "issues": []
+                },
+                {
+                    "problem_identifier": "reflect_matrix",
+                    "prompt_identifier": "brief_prompt",
+                    "model_identifier": "gpt-4",
+                    "score": 0,
+                    "sub_criteria_scores": null,
+                    "issues": []
+                },
+                {
+                    "problem_identifier": "shear_matrix",
+                    "prompt_identifier": "brief_prompt",
+                    "model_identifier": "gpt-4",
+                    "score": 0,
+                    "sub_criteria_scores": null,
+                    "issues": []
+                },
+                {
+                    "problem_identifier": "count_non_zero",
+                    "prompt_identifier": "brief_prompt",
+                    "model_identifier": "gpt-4",
+                    "score": 0,
+                    "sub_criteria_scores": null,
+                    "issues": []
+                },
+                {
+                    "problem_identifier": "inverse_2x2",
+                    "prompt_identifier": "brief_prompt",
+                    "model_identifier": "gpt-4",
+                    "score": 0,
+                    "sub_criteria_scores": null,
+                    "issues": []
+                },
+                {
+                    "problem_identifier": "is_invertible_2x2",
+                    "prompt_identifier": "brief_prompt",
+                    "model_identifier": "gpt-4",
+                    "score": 0,
+                    "sub_criteria_scores": null,
+                    "issues": []
+                },
+                {
+                    "problem_identifier": "translate_matrix",
+                    "prompt_identifier": "brief_prompt",
+                    "model_identifier": "gpt-4",
+                    "score": 0,
+                    "sub_criteria_scores": null,
+                    "issues": []
+                },
+                {
+                    "problem_identifier": "elementwise_log",
+                    "prompt_identifier": "brief_prompt",
+                    "model_identifier": "gpt-4",
+                    "score": 0,
+                    "sub_criteria_scores": null,
+                    "issues": []
+                },
+                {
+                    "problem_identifier": "row_sum",
+                    "prompt_identifier": "brief_prompt",
+                    "model_identifier": "gpt-4",
+                    "score": 0,
+                    "sub_criteria_scores": null,
+                    "issues": []
+                },
+                {
+                    "problem_identifier": "column_sum",
+                    "prompt_identifier": "brief_prompt",
+                    "model_identifier": "gpt-4",
+                    "score": 0,
+                    "sub_criteria_scores": null,
+                    "issues": []
+                },
+                {
+                    "problem_identifier": "is_zero_matrix",
+                    "prompt_identifier": "brief_prompt",
+                    "model_identifier": "gpt-4",
+                    "score": 0,
+                    "sub_criteria_scores": null,
+                    "issues": []
+                },
+                {
+                    "problem_identifier": "row_product",
+                    "prompt_identifier": "brief_prompt",
+                    "model_identifier": "gpt-4",
+                    "score": 0,
+                    "sub_criteria_scores": null,
+                    "issues": []
+                },
+                {
+                    "problem_identifier": "frobenius_norm",
+                    "prompt_identifier": "brief_prompt",
+                    "model_identifier": "gpt-4",
+                    "score": 0,
+                    "sub_criteria_scores": null,
+                    "issues": []
+                },
+                {
+                    "problem_identifier": "count_greater_than",
+                    "prompt_identifier": "brief_prompt",
+                    "model_identifier": "gpt-4",
+                    "score": 0,
+                    "sub_criteria_scores": null,
+                    "issues": []
+                },
+                {
+                    "problem_identifier": "elementwise_modulo",
+                    "prompt_identifier": "brief_prompt",
+                    "model_identifier": "gpt-4",
+                    "score": 0,
+                    "sub_criteria_scores": null,
+                    "issues": []
+                },
+                {
+                    "problem_identifier": "replace_less_than",
+                    "prompt_identifier": "brief_prompt",
+                    "model_identifier": "gpt-4",
+                    "score": 0,
+                    "sub_criteria_scores": null,
+                    "issues": []
+                },
+                {
+                    "problem_identifier": "all_elements_equal",
+                    "prompt_identifier": "brief_prompt",
+                    "model_identifier": "gpt-4",
+                    "score": 0,
+                    "sub_criteria_scores": null,
+                    "issues": []
+                },
+                {
+                    "problem_identifier": "matrix_rank",
+                    "prompt_identifier": "brief_prompt",
+                    "model_identifier": "gpt-4",
+                    "score": 0,
+                    "sub_criteria_scores": null,
+                    "issues": []
+                },
+                {
+                    "problem_identifier": "is_orthogonal",
+                    "prompt_identifier": "brief_prompt",
+                    "model_identifier": "gpt-4",
+                    "score": 0,
+                    "sub_criteria_scores": null,
+                    "issues": []
+                },
+                {
+                    "problem_identifier": "anti_diagonal",
+                    "prompt_identifier": "brief_prompt",
+                    "model_identifier": "gpt-4",
+                    "score": 0,
+                    "sub_criteria_scores": null,
+                    "issues": []
+                },
+                {
+                    "problem_identifier": "rotate_180",
+                    "prompt_identifier": "brief_prompt",
+                    "model_identifier": "gpt-4",
+                    "score": 0,
+                    "sub_criteria_scores": null,
+                    "issues": []
+                },
+                {
+                    "problem_identifier": "sort_rows",
+                    "prompt_identifier": "brief_prompt",
+                    "model_identifier": "gpt-4",
+                    "score": 0,
+                    "sub_criteria_scores": null,
+                    "issues": []
+                },
+                {
+                    "problem_identifier": "sort_columns",
+                    "prompt_identifier": "brief_prompt",
+                    "model_identifier": "gpt-4",
+                    "score": 0,
+                    "sub_criteria_scores": null,
+                    "issues": []
+                },
+                {
+                    "problem_identifier": "matrix_cumsum",
+                    "prompt_identifier": "brief_prompt",
+                    "model_identifier": "gpt-4",
+                    "score": 0,
+                    "sub_criteria_scores": null,
+                    "issues": []
+                },
+                {
+                    "problem_identifier": "reverse_matrix",
+                    "prompt_identifier": "brief_prompt",
+                    "model_identifier": "gpt-4",
+                    "score": 0,
+                    "sub_criteria_scores": null,
+                    "issues": []
+                },
+                {
+                    "problem_identifier": "upside_down_matrix",
+                    "prompt_identifier": "brief_prompt",
+                    "model_identifier": "gpt-4",
+                    "score": 0,
+                    "sub_criteria_scores": null,
+                    "issues": []
+                },
+                {
+                    "problem_identifier": "unique_elements",
+                    "prompt_identifier": "brief_prompt",
+                    "model_identifier": "gpt-4",
+                    "score": 0,
+                    "sub_criteria_scores": null,
+                    "issues": []
+                },
+                {
+                    "problem_identifier": "is_identity",
+                    "prompt_identifier": "brief_prompt",
+                    "model_identifier": "gpt-4",
+                    "score": 0,
+                    "sub_criteria_scores": null,
+                    "issues": []
+                },
+                {
+                    "problem_identifier": "replace_greater_than",
+                    "prompt_identifier": "brief_prompt",
+                    "model_identifier": "gpt-4",
+                    "score": 0,
+                    "sub_criteria_scores": null,
+                    "issues": []
+                },
+                {
+                    "problem_identifier": "is_toeplitz",
+                    "prompt_identifier": "brief_prompt",
+                    "model_identifier": "gpt-4",
+                    "score": 0,
+                    "sub_criteria_scores": null,
+                    "issues": []
+                },
+                {
+                    "problem_identifier": "diagonal_product",
+                    "prompt_identifier": "brief_prompt",
+                    "model_identifier": "gpt-4",
+                    "score": 0,
+                    "sub_criteria_scores": null,
+                    "issues": []
+                },
+                {
+                    "problem_identifier": "is_scalar",
+                    "prompt_identifier": "brief_prompt",
+                    "model_identifier": "gpt-4",
+                    "score": 0,
+                    "sub_criteria_scores": null,
+                    "issues": []
+                },
+                {
+                    "problem_identifier": "upper_triangle_elements",
+                    "prompt_identifier": "brief_prompt",
+                    "model_identifier": "gpt-4",
+                    "score": 0,
+                    "sub_criteria_scores": null,
+                    "issues": []
+                },
+                {
+                    "problem_identifier": "lower_triangle_elements",
+                    "prompt_identifier": "brief_prompt",
+                    "model_identifier": "gpt-4",
+                    "score": 0,
+                    "sub_criteria_scores": null,
+                    "issues": []
+                },
+                {
+                    "problem_identifier": "is_normal",
+                    "prompt_identifier": "brief_prompt",
+                    "model_identifier": "gpt-4",
+                    "score": 0,
+                    "sub_criteria_scores": null,
+                    "issues": []
+                },
+                {
+                    "problem_identifier": "anti_diagonal_sum",
+                    "prompt_identifier": "brief_prompt",
+                    "model_identifier": "gpt-4",
+                    "score": 0,
+                    "sub_criteria_scores": null,
+                    "issues": []
+                },
+                {
+                    "problem_identifier": "left_rotate_matrix",
+                    "prompt_identifier": "brief_prompt",
+                    "model_identifier": "gpt-4",
+                    "score": 0,
+                    "sub_criteria_scores": null,
+                    "issues": []
+                },
+                {
+                    "problem_identifier": "right_rotate_matrix",
+                    "prompt_identifier": "brief_prompt",
+                    "model_identifier": "gpt-4",
+                    "score": 0,
+                    "sub_criteria_scores": null,
+                    "issues": []
+                },
+                {
+                    "problem_identifier": "matrix_scalar_addition",
+                    "prompt_identifier": "brief_prompt",
+                    "model_identifier": "gpt-4",
+                    "score": 0,
+                    "sub_criteria_scores": null,
+                    "issues": []
+                },
+                {
+                    "problem_identifier": "is_symmetric",
+                    "prompt_identifier": "brief_prompt",
+                    "model_identifier": "gpt-4",
+                    "score": 0,
+                    "sub_criteria_scores": null,
+                    "issues": []
+                },
+                {
+                    "problem_identifier": "diagonal_average",
+                    "prompt_identifier": "brief_prompt",
+                    "model_identifier": "gpt-4",
+                    "score": 0,
+                    "sub_criteria_scores": null,
+                    "issues": []
+                },
+                {
+                    "problem_identifier": "border_sum",
+                    "prompt_identifier": "brief_prompt",
+                    "model_identifier": "gpt-4",
+                    "score": 0,
+                    "sub_criteria_scores": null,
+                    "issues": []
+                },
+                {
+                    "problem_identifier": "transpose",
+                    "prompt_identifier": "brief_prompt",
+                    "model_identifier": "gpt-4",
+                    "score": 0,
+                    "sub_criteria_scores": null,
+                    "issues": []
+                },
+                {
+                    "problem_identifier": "matrix_scalar_multiplication",
+                    "prompt_identifier": "brief_prompt",
+                    "model_identifier": "gpt-4",
+                    "score": 0,
+                    "sub_criteria_scores": null,
+                    "issues": []
+                },
+                {
+                    "problem_identifier": "is_lower_triangular",
+                    "prompt_identifier": "brief_prompt",
+                    "model_identifier": "gpt-4",
+                    "score": 0,
+                    "sub_criteria_scores": null,
+                    "issues": []
+                },
+                {
+                    "problem_identifier": "elementwise_power",
+                    "prompt_identifier": "brief_prompt",
+                    "model_identifier": "gpt-4",
+                    "score": 0,
+                    "sub_criteria_scores": null,
+                    "issues": []
+                },
+                {
+                    "problem_identifier": "row_max",
+                    "prompt_identifier": "brief_prompt",
+                    "model_identifier": "gpt-4",
+                    "score": 0,
+                    "sub_criteria_scores": null,
+                    "issues": []
+                },
+                {
+                    "problem_identifier": "column_min",
+                    "prompt_identifier": "brief_prompt",
+                    "model_identifier": "gpt-4",
+                    "score": 0,
+                    "sub_criteria_scores": null,
+                    "issues": []
+                },
+                {
+                    "problem_identifier": "is_magic_square",
+                    "prompt_identifier": "brief_prompt",
+                    "model_identifier": "gpt-4",
+                    "score": 0,
+                    "sub_criteria_scores": null,
+                    "issues": []
+                },
+                {
+                    "problem_identifier": "anti_diagonal_product",
+                    "prompt_identifier": "brief_prompt",
+                    "model_identifier": "gpt-4",
+                    "score": 0,
+                    "sub_criteria_scores": null,
+                    "issues": []
+                },
+                {
+                    "problem_identifier": "non_border_elements",
+                    "prompt_identifier": "brief_prompt",
+                    "model_identifier": "gpt-4",
+                    "score": 0,
+                    "sub_criteria_scores": null,
+                    "issues": []
+                },
+                {
+                    "problem_identifier": "rotate_90",
+                    "prompt_identifier": "brief_prompt",
+                    "model_identifier": "gpt-4",
+                    "score": 0,
+                    "sub_criteria_scores": null,
+                    "issues": []
+                },
+                {
+                    "problem_identifier": "is_square",
+                    "prompt_identifier": "brief_prompt",
+                    "model_identifier": "gpt-4",
+                    "score": 0,
+                    "sub_criteria_scores": null,
+                    "issues": []
+                },
+                {
+                    "problem_identifier": "is_diagonal",
+                    "prompt_identifier": "brief_prompt",
+                    "model_identifier": "gpt-4",
+                    "score": 0,
+                    "sub_criteria_scores": null,
+                    "issues": []
+                },
+                {
+                    "problem_identifier": "elementwise_sqrt",
+                    "prompt_identifier": "brief_prompt",
+                    "model_identifier": "gpt-4",
+                    "score": 0,
+                    "sub_criteria_scores": null,
+                    "issues": []
+                },
+                {
+                    "problem_identifier": "elementwise_divide",
+                    "prompt_identifier": "brief_prompt",
+                    "model_identifier": "gpt-4",
+                    "score": 0,
+                    "sub_criteria_scores": null,
+                    "issues": []
+                },
+                {
+                    "problem_identifier": "matrix_absolute_difference",
+                    "prompt_identifier": "brief_prompt",
+                    "model_identifier": "gpt-4",
+                    "score": 0,
+                    "sub_criteria_scores": null,
+                    "issues": []
+                }
+            ]
+        },
+        "problem_sets/basic": {
+            "correctness": [
+                {
+                    "problem_identifier": "problem_1",
+                    "prompt_identifier": "brief_prompt",
+                    "model_identifier": "gpt-4",
+                    "score": 1.0,
+                    "sub_criteria_scores": null,
+                    "issues": []
+                },
+                {
+                    "problem_identifier": "problem_1",
+                    "prompt_identifier": "detailed_prompt",
+                    "model_identifier": "gpt-4",
+                    "score": 1.0,
+                    "sub_criteria_scores": null,
+                    "issues": []
+                },
+                {
+                    "problem_identifier": "problem_2",
+                    "prompt_identifier": "brief_prompt",
+                    "model_identifier": "gpt-4",
+                    "score": 1.0,
+                    "sub_criteria_scores": null,
+                    "issues": []
+                },
+                {
+                    "problem_identifier": "problem_2",
+                    "prompt_identifier": "detailed_prompt",
+                    "model_identifier": "gpt-4",
+                    "score": 1.0,
+                    "sub_criteria_scores": null,
+                    "issues": []
+                },
+                {
+                    "problem_identifier": "problem_3",
+                    "prompt_identifier": "brief_prompt",
+                    "model_identifier": "gpt-4",
+                    "score": 1.0,
+                    "sub_criteria_scores": null,
+                    "issues": []
+                },
+                {
+                    "problem_identifier": "problem_3",
+                    "prompt_identifier": "detailed_prompt",
+                    "model_identifier": "gpt-4",
+                    "score": 0.0,
+                    "sub_criteria_scores": null,
+                    "issues": [
+                        "Error encountered during execution for test case Input: a = 4, b = 3; Expected Output: 12: invalid syntax (<string>, line 3)\nTraceback (most recent call last):\n  File \"/Users/vamsiimmanneni/Documents/Documents - Vamsi\u2019s MacBook Pro/Homework/SWE GPT/Integration/Strict/LLMCodingBenchmarkingFramework/execution.py\", line 56, in executor_script\n    exec(function_code, exec_globals)\n  File \"<string>\", line 3\n    ```Python\n    ^\nSyntaxError: invalid syntax\n",
+                        "Error encountered during execution for test case Input: a = 7, b = 2; Expected Output: 14: invalid syntax (<string>, line 3)\nTraceback (most recent call last):\n  File \"/Users/vamsiimmanneni/Documents/Documents - Vamsi\u2019s MacBook Pro/Homework/SWE GPT/Integration/Strict/LLMCodingBenchmarkingFramework/execution.py\", line 56, in executor_script\n    exec(function_code, exec_globals)\n  File \"<string>\", line 3\n    ```Python\n    ^\nSyntaxError: invalid syntax\n"
+                    ]
+                },
+                {
+                    "problem_identifier": "problem_4",
+                    "prompt_identifier": "brief_prompt",
+                    "model_identifier": "gpt-4",
+                    "score": 1.0,
+                    "sub_criteria_scores": null,
+                    "issues": []
+                },
+                {
+                    "problem_identifier": "problem_4",
+                    "prompt_identifier": "detailed_prompt",
+                    "model_identifier": "gpt-4",
+                    "score": 1.0,
+                    "sub_criteria_scores": null,
+                    "issues": []
+                },
+                {
+                    "problem_identifier": "problem_5",
+                    "prompt_identifier": "brief_prompt",
+                    "model_identifier": "gpt-4",
+                    "score": 1.0,
+                    "sub_criteria_scores": null,
+                    "issues": []
+                },
+                {
+                    "problem_identifier": "problem_5",
+                    "prompt_identifier": "detailed_prompt",
+                    "model_identifier": "gpt-4",
+                    "score": 1.0,
+                    "sub_criteria_scores": null,
+                    "issues": []
+                }
+            ]
+        }
+    },
+    "Average Scores Per Problem Set": {
+        "problem_sets/vectorizing": 0.0,
+        "problem_sets/basic": 0.9
+    },
+    "Average Scores Per Criterion": {
+        "correctness": 0.08181818181818182
+    }
+}
