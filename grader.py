@@ -3,6 +3,10 @@ from typing import Set
 
 from base_types import *
 import execution
+import os
+from shutil import which
+import subprocess
+import tempfile
 import time
 import tokenize
 
@@ -219,6 +223,42 @@ class HalsteadGrader(Grader):
 					solutionGrades.append(grade)
 
 		return GradingOutput(solutionGrades, self.identifier)
+	
+class CodeCoverageGrader(Grader):
+	@classmethod
+	@property
+	def identifier(self):
+		return "codecov"
+	
+	def grade(self, problems:List[ProblemDefinition], solutions: List[LLMSolution]) -> GradingOutput:
+		if which("pytest") is None:
+			raise RuntimeError("pytest command is required to run code coverage grader")
+
+		solution_grades = []
+		for problem in problems:
+			for solution in solutions:
+				if solution.problem_identifier == problem.identifier:
+					with tempfile.TemporaryDirectory() as temp_dir:
+						# Create necessary files
+						with open(os.path.join(temp_dir, "__init__.py"), "w") as f:
+							f.write("")
+						
+						with open(os.path.join(temp_dir, "code.py"), "w") as f:
+							f.write(problem.prompts[0].input_code)
+
+						with open(os.path.join(temp_dir, "test_code.py"), "w") as f:
+							f.write(f"from .code import {problem.function_prototype.function_name}\n")
+							f.write(solution.solution_code)
+
+						# Run pytest
+						subprocess.run(["pytest", "--cov=.", "--cov-report", "json"], cwd=temp_dir, stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL)
+						data = json.loads(open(os.path.join(temp_dir, "coverage.json")).read())
+
+						# Assemble score
+						grade = SolutionGrade(problem.identifier, solution.prompt_identifier, solution.model_identifier, data["files"]["code.py"]["summary"]["percent_covered"], None, [])
+						solution_grades.append(grade)
+
+		return GradingOutput(solution_grades, self.identifier)
 
 class HumanLikeGrader(Grader):
     """
