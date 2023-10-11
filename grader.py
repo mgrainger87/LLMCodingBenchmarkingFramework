@@ -382,4 +382,42 @@ class SpaceEfficiencyGrader(Grader):
 					)
 					solutionGrades.append(grade)
 		return GradingOutput(solutionGrades, self.identifier)
-
+		
+class ReuseGrader(Grader):
+	@classmethod
+	@property
+	def identifier(self):
+		return "code_reuse"
+		
+	def can_grade(cls, problems: List[ProblemDefinition]) -> bool:
+		"""
+		Check if the current grader is capable of running the problem set.
+		This method should be overridden by a child class if said class has stricter requirements.
+		"""
+		for p in problems:
+			if not (all(var is not None for var in (p.identifier, p.prompts, p.function_prototype)) and len(p.prompts) > 0 and "parent_function_prototype" in p.additional_fields):
+				return False
+		return True
+		
+	def grade(self, problems: List[ProblemDefinition], solutions: List[LLMSolution]) -> GradingOutput:
+		solutionGrades = []
+		for problem in problems:
+			print(problem.identifier)
+			function_name = problem.function_prototype.function_name
+			parent_function_name = problem.additional_fields["parent_function_prototype"]["function_name"]
+			for solution in solutions:
+				if solution.problem_identifier == problem.identifier:
+					print(f"Grading problem {problem.identifier}")
+					cur_grade = 0
+					
+					try:
+						exec(solution.solution_code, globals())
+						
+						
+						if parent_function_name in globals().get(function_name).__code__.co_names:
+							cur_grade = 1
+					except Exception as e:
+						print("Encountered the following exception during execution: ", e)
+					grade = SolutionGrade(problem.identifier, solution.prompt_identifier, solution.model_identifier, cur_grade)
+					solutionGrades.append(grade)
+		return GradingOutput(solutionGrades, self.identifier)
