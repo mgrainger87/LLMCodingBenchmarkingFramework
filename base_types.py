@@ -277,7 +277,7 @@ class FunctionPrototype:
 		elif param_type == "str":
 			return ast.literal_eval(f'"{input}"')  # Adding double quotes around the string
 		elif param_type == "bool":
-			return input.lower() == "true"
+			return str(input).lower() == "true"
 		elif '[' in param_type and isinstance(input, str):  # Ensure input is a string
 			# Using ast.literal_eval to safely evaluate the string representation
 			return ast.literal_eval(input)
