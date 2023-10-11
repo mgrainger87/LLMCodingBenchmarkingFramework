@@ -108,8 +108,13 @@ class OpenAIModelQuerier(AIModelQuerier):
 	def supported_model_names(cls):
 		# Make sure this key is set before trying to interact with the OpenAI API
 		if 'OPENAI_API_KEY' in os.environ:
-			response = openai.Model.list()
-			return [item['id'] for item in response['data']]
+			try:
+				response = openai.Model.list()
+				return [item['id'] for item in response['data']]
+			except:
+				print("Unable to fetch OpenAI supported models.")
+				return []
+				
 		else:
 			print("Warning: No OpenAI API key found in environment. Set the OPENAI_API_KEY environment variable.")
 			return []

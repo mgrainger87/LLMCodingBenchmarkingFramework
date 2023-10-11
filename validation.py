@@ -1,4 +1,5 @@
-
+from base_types import *
+import execution
 
 def validate_parameter(parameter: dict) -> tuple:
 	"""
@@ -49,10 +50,10 @@ def validate_return_value(return_value: dict) -> tuple:
 def validate_function_prototype(function_prototype: dict) -> tuple:
 	"""
 	Validates a FunctionPrototype JSON object.
-
+	
 	Args:
 	function_prototype (dict): A dictionary representing a FunctionPrototype JSON object.
-
+	
 	Returns:
 	tuple: A tuple containing a boolean and a string. The boolean is True if the function_prototype conforms to the 
 		   specified format, False otherwise. The string contains the error message if validation fails.
@@ -65,12 +66,14 @@ def validate_function_prototype(function_prototype: dict) -> tuple:
 	
 	# Check that the fields are of the correct type
 	if not isinstance(function_prototype["function_name"], str):
-		return False, "'function_name' field must be of type string."
-
+		return False, f"'function_name' field must be of type string. Found: {type(function_prototype['function_name']).__name__}."
+	
 	# Check that parameters and return_values are arrays
-	if not isinstance(function_prototype["parameters"], list) or not isinstance(function_prototype["return_values"], list):
-		return False, "'parameters' and 'return_values' fields must be of type array."
-
+	if not isinstance(function_prototype["parameters"], list):
+		return False, f"'parameters' field must be of type array. Found: {type(function_prototype['parameters']).__name__}."
+	if not isinstance(function_prototype["return_values"], list):
+		return False, f"'return_values' field must be of type array. Found: {type(function_prototype['return_values']).__name__}."
+	
 	# Validate each Parameter and ReturnValue JSON object
 	for param in function_prototype["parameters"]:
 		valid, error = validate_parameter(param)
@@ -81,10 +84,10 @@ def validate_function_prototype(function_prototype: dict) -> tuple:
 		valid, error = validate_return_value(ret_val)
 		if not valid:
 			return False, f"Invalid ReturnValue JSON object: {error}"
-
+	
 	return True, ""
 
-def validate_test_case(test_case: dict) -> tuple:
+def validate_test_case(test_case: dict, function_prototype: FunctionPrototype) -> tuple:
 	"""
 	Validates a TestCase JSON object.
 
@@ -102,18 +105,20 @@ def validate_test_case(test_case: dict) -> tuple:
 		return False, f"Missing required fields: {', '.join(missing_fields)}"
 	
 	# Check that input is an object and expected_output is an array
-	if not isinstance(test_case["input"], dict) or not isinstance(test_case["expected_output"], list):
-		return False, "'input' field must be of type object and 'expected_output' field must be of type array."
+	if not isinstance(test_case["input"], dict):
+		return False, f"'input' field must be of type object. Found: {type(test_case['input']).__name__}."
+	if not isinstance(test_case["expected_output"], list):
+		return False, f"'expected_output' field must be of type array. Found: {type(test_case['expected_output']).__name__}."
 
+	try:
+		test_case_obj = TestCase(test_case)
+		parameters = function_prototype.get_ordered_parameter_values(test_case_obj)
+		expected_result = function_prototype.get_return_values(test_case_obj)
+	except Exception as e:
+		return False, f"Got exception while parsing test case: {e}"
 	return True, ""
 
-# Test the updated validate_test_case function
-validate_test_case({
-	"input": {"a": 5, "b": 3},
-	"expected_output": "invalid"
-})  # Expected output: (False, "'input' field must be of type object and 'expected_output' field must be of type array.")
-
-def validate_prompt(prompt: dict) -> tuple:
+def validate_prompt(prompt: dict, function_prototype=None) -> tuple:
 	"""
 	Validates a Prompt JSON object.
 
@@ -131,24 +136,28 @@ def validate_prompt(prompt: dict) -> tuple:
 		return False, f"Missing required fields: {', '.join(missing_fields)}"
 	
 	# Check that the fields are of the correct type
-	if not isinstance(prompt["prompt_id"], str) or not isinstance(prompt["prompt"], str):
-		return False, "Both 'prompt_id' and 'prompt' fields must be of type string."
-
+	if not isinstance(prompt["prompt_id"], str):
+		return False, f"'prompt_id' field must be of type string. Found: {type(prompt['prompt_id']).__name__}."
+	if not isinstance(prompt["prompt"], str):
+		return False, f"'prompt' field must be of type string. Found: {type(prompt['prompt']).__name__}."
+	
 	# Check that optional fields, if present, are of the correct type
 	if "genericize" in prompt and not isinstance(prompt["genericize"], bool):
-		return False, "'genericize' field must be of type boolean."
+		return False, f"'genericize' field must be of type boolean. Found: {type(prompt['genericize']).__name__}."
 	
 	if "sample_inputs_outputs" in prompt:
+		if function_prototype is None:
+			return False, f"Function prototype must be present if a correctness test suite is provided."
 		if not isinstance(prompt["sample_inputs_outputs"], list):
 			return False, "'sample_inputs_outputs' field must be of type array."
 		# Validate each TestCase JSON object
 		for test_case in prompt["sample_inputs_outputs"]:
-			valid, error = validate_test_case(test_case)
+			valid, error = validate_test_case(test_case, function_prototype)
 			if not valid:
 				return False, f"Invalid TestCase JSON object in 'sample_inputs_outputs': {error}"
 
 	if "input_code" in prompt and not isinstance(prompt["input_code"], str):
-		return False, "'input_code' field must be of type string."
+		return False, f"'input_code' field must be of type string. Found: {type(prompt['input_code']).__name__}."
 
 	return True, ""
 
@@ -186,13 +195,18 @@ def validate_problem_json(problem_json: dict) -> (bool, str):
 	
 	# Validate each Prompt, TestCase, and FunctionPrototype JSON object
 	for index, prompt in enumerate(problem_json["prompts"]):
-		valid, error_message = validate_prompt(prompt)
+		function_prototype = FunctionPrototype(problem_json["function_prototype"]) if "function_prototype" in problem_json else None
+		valid, error_message = validate_prompt(prompt, function_prototype)
 		if not valid:
 			return False, f"Invalid prompt at index {index}: {error_message}"
 	
 	if "correctness_test_suite" in problem_json:
+		if not "function_prototype" in problem_json:
+			return False, f"Function prototype must be present if a correctness test suite is provided."
+		function_prototype = FunctionPrototype(problem_json["function_prototype"])	
+
 		for index, test_case in enumerate(problem_json["correctness_test_suite"]):
-			valid, error_message = validate_test_case(test_case)
+			valid, error_message = validate_test_case(test_case, function_prototype)
 			if not valid:
 				return False, f"Invalid test case in 'correctness_test_suite' at index {index}: {error_message}"
 	
@@ -207,5 +221,18 @@ def validate_problem_json(problem_json: dict) -> (bool, str):
 	
 	if "tags" in problem_json and not all(isinstance(tag, str) for tag in problem_json["tags"]):
 		return False, "All elements in field 'tags' should be strings"
+		
+	if 'optimal_solution' in problem_json and 'correctness_test_suite' in problem_json:
+		# Ensure that the optimal solution passes the correctness test suite
+		for index, test_case in enumerate(problem_json["correctness_test_suite"]):
+			test_case_obj = TestCase(test_case)
+			parameters = function_prototype.get_ordered_parameter_values(test_case_obj)
+			expected_result = function_prototype.get_return_values(test_case_obj)
+			execution_results = execution.execute_function(problem_json["optimal_solution"], parameters, iterations=1, collect_cpu_time=False, collect_memory_usage=False)
+			parameters_desc = ', '.join([f'{p} {type(p)}' for p in parameters])
+			if execution_results.error:
+				return False, f"Optimal solution encountered error for test case {test_case_obj}. Parameters: {parameters_desc}; Error: {execution_results.error}"
+			if expected_result != execution_results.result:
+				return False, f"Optimal solution did not pass test case {test_case_obj}. Parameters: {parameters_desc}; Expected result: {expected_result} {type(expected_result)}; Actual result: {execution_results.result} {type(execution_results.result)}"
 	
 	return True, "Validation successful"

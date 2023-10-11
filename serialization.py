@@ -72,6 +72,7 @@ def update_report(basePath: str, grades: GradingOutput, solutionGrade: SolutionG
 	avg_score_for_grader = sum(all_scores_for_grader) / len(all_scores_for_grader) if all_scores_for_grader else 0
 	report["Average Scores Per Criterion"][grades.grader_identifier] = avg_score_for_grader
     
+	pathlib.Path(os.path.dirname(current_report_path)).mkdir(parents=True, exist_ok=True)
 	with open(current_report_path, 'w') as f:
 		json.dump(report, f, indent=4)	
 

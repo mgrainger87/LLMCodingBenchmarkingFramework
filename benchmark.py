@@ -19,6 +19,7 @@ def validate_problems(base_path):
 	
 	for fileName, json in problemsJSON.items():
 		validation_results[fileName] = validation.validate_problem_json(json)
+		print(f'{fileName}: {validation_results[fileName]}')
 	return validation_results
 
 def generate_solutions(base_path, problem_definitions, models):
@@ -44,7 +45,7 @@ def grade_solutions(base_path, problem_definitions, models, graders, current_rep
 		if not grader.can_grade(problem_definitions):
 			continue
 		for model in models:
-			print(f'Grading solutions from model {model.model_identifier} with grader {grader.identifier}')
+			print(f'Grading solutions for {base_path} from model {model.model_identifier} with grader {grader.identifier}')
 			solutions = serialization.get_solutions(base_path, model.model_identifier)
 			grades = grader.grade(problem_definitions, solutions)
 			current_report_path = current_report_paths[model]
