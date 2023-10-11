@@ -84,7 +84,7 @@ def main():
 	parser.add_argument('--generate', action='store_true', help="Generate solutions for problems.")
 	parser.add_argument('--grade', action='store_true', help="Grade the generated solutions.")
 	parser.add_argument('--model', required='--generate' in sys.argv or '--grade' in sys.argv, nargs='+', help=f"The model(s) to use for generating solutions The following model names can be queried through the OpenAI API: {querier.OpenAIModelQuerier.supported_model_names()}")
-	parser.add_argument('--grader', required='--grade' in sys.argv, nargs='+', help="The grader(s) to use for grading solutions.")
+	parser.add_argument('--grader', required='--grade' in sys.argv, nargs='+', help=f"The grader(s) to use for grading solutions. Valid graders: {grader.Grader.all_graders()}")
 	parser.add_argument('--force-human', action='store_true', help="Always use the interactive human model querier.")
 	parser.add_argument('--report-path', default=None, help="Location in which to store reports generated during each run. Default= ./reports")
 	args = parser.parse_args()

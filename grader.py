@@ -26,6 +26,10 @@ class Grader(ABC):
         pass
 
     @classmethod
+    def all_graders(cls) -> List[str]:
+        return [subclass.identifier for subclass in cls.__subclasses__()]
+        
+    @classmethod
     def resolve_graders(cls, grader_names: List[str]) -> List['Grader']:
         subclass_mapping = {subclass.identifier: subclass for subclass in cls.__subclasses__()}
         instances = []
@@ -488,7 +492,7 @@ class ReuseGrader(Grader):
 
 
 class VectorizeGrader(Grader):
-        
+    @classmethod
     @property
     def identifier(self) -> str:
         return "vectorization"
