@@ -1,0 +1,11 @@
+{
+    "problem_identifier": "list_element_removal",
+    "prompt_identifier": "detailed_prompt",
+    "model_identifier": "gpt-4",
+    "score": 0.0,
+    "sub_criteria_scores": null,
+    "issues": [
+        "Test failed:\n\tInput: lst = ['apple', 'banana', 'cherry', 'banana'], elem = strawberry; Expected Output: apple, banana, cherry, banana\n\tFunction prototype: remove_element(lst: list, elem: str) -> list\n\tExpected result: apple <class 'str'>\n\tActual result: ['apple', 'banana', 'cherry', 'banana'] <class 'list'>",
+        "Test failed:\n\tInput: lst = ['apple', 'banana', 'cherry', 'banana'], elem = banana; Expected Output: apple, cherry\n\tFunction prototype: remove_element(lst: list, elem: str) -> list\n\tExpected result: apple <class 'str'>\n\tActual result: ['apple', 'cherry'] <class 'list'>"
+    ]
+}

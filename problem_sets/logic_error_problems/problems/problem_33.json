@@ -1,0 +1,45 @@
+{
+  "identifier": "string_case_swap",
+  "description": "The function should return the input string with uppercase letters converted to lowercase and vice versa.",
+  "function_prototype": {
+    "function_name": "case_swap",
+    "parameters": [
+      {
+        "name": "s",
+        "type": "str"
+      }
+    ],
+    "return_values": [
+      {
+        "type": "str"
+      }
+    ]
+  },
+  "correctness_test_suite": [
+    {
+      "input": {
+        "s": "Hello, World!"
+      },
+      "expected_output": ["hELLO, wORLD!"]
+    },
+    {
+      "input": {
+        "s": "Python is FUN"
+      },
+      "expected_output": ["pYTHON IS fun"]
+    },
+    {
+      "input": {
+        "s": "Hello WORLD"
+      },
+      "expected_output": ["hELLO world"]
+    }
+  ],
+  "tags": ["String Manipulation", "String"],
+  "prompts": [
+    {
+      "prompt_id": "detailed_prompt",
+      "prompt": "There is code that contains a logic error. May you fix the logic error? The function 'case_swap' should take a single string 's' as input and return the input string with uppercase letters converted to lowercase and vice versa. def case_swap(s): return s.swapcase() - 1"
+    }
+  ]
+}

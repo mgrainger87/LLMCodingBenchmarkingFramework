@@ -1,0 +1,7 @@
+{
+    "problem_identifier": "swap_dict_key_values",
+    "model_identifier": "gpt-4",
+    "prompt_identifier": "detailed_prompt",
+    "solution_code": "def swap_dict_key_values(d):\n    return {v: k for k, v in d.items()}",
+    "feedback": null
+}

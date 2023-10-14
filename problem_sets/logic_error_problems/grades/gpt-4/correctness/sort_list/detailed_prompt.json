@@ -1,0 +1,12 @@
+{
+    "problem_identifier": "sort_list",
+    "prompt_identifier": "detailed_prompt",
+    "model_identifier": "gpt-4",
+    "score": 0.0,
+    "sub_criteria_scores": null,
+    "issues": [
+        "Test failed:\n\tInput: lst = [3, 1, 4, 2, 5]; Expected Output: 1, 2, 3, 4, 5\n\tFunction prototype: sort_list(lst: list) -> list\n\tExpected result: 1 <class 'int'>\n\tActual result: [1, 2, 3, 4, 5] <class 'list'>",
+        "Test failed:\n\tInput: lst = ['apple', 'cherry', 'banana', 'date']; Expected Output: apple, banana, cherry, date\n\tFunction prototype: sort_list(lst: list) -> list\n\tExpected result: apple <class 'str'>\n\tActual result: ['apple', 'banana', 'cherry', 'date'] <class 'list'>",
+        "Test failed:\n\tInput: lst = [10, 20, 5, 30]; Expected Output: 5, 10, 20, 30\n\tFunction prototype: sort_list(lst: list) -> list\n\tExpected result: 5 <class 'int'>\n\tActual result: [5, 10, 20, 30] <class 'list'>"
+    ]
+}

@@ -1,0 +1,39 @@
+{
+  "identifier": "string_length",
+  "description": "The function should return the length of the input string.",
+  "function_prototype": {
+    "function_name": "string_length",
+    "parameters": [
+      {
+        "name": "s",
+        "type": "str"
+      }
+    ],
+    "return_values": [
+      {
+        "type": "int"
+      }
+    ]
+  },
+  "correctness_test_suite": [
+    {
+      "input": {
+        "s": "Hello, World!"
+      },
+      "expected_output": [13]
+    },
+    {
+      "input": {
+        "s": "Python is fun"
+      },
+      "expected_output": [14]
+    }
+  ],
+  "tags": ["String", "Length"],
+  "prompts": [
+    {
+      "prompt_id": "detailed_prompt",
+      "prompt": "There is code that contains a logic error. May you fix the logic error? The function 'string_length' should take a string 's' as input and return its length. def string_length(s): return len(s) - 1"
+    }
+  ]
+}

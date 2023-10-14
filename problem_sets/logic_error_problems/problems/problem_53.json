@@ -1,0 +1,39 @@
+{
+  "identifier": "list_sorting",
+  "description": "The function should return the input list sorted in ascending order.",
+  "function_prototype": {
+    "function_name": "sort_list",
+    "parameters": [
+      {
+        "name": "lst",
+        "type": "list"
+      }
+    ],
+    "return_values": [
+      {
+        "type": "list"
+      }
+    ]
+  },
+  "correctness_test_suite": [
+    {
+      "input": {
+        "lst": [5, 2, 9, 8, 1]
+      },
+      "expected_output": [1, 2, 5, 8, 9]
+    },
+    {
+      "input": {
+        "lst": [10, 5, 20, 1, 30]
+      },
+      "expected_output": [1, 5, 10, 20, 30]
+    }
+  ],
+  "tags": ["List", "Sorting"],
+  "prompts": [
+    {
+      "prompt_id": "detailed_prompt",
+      "prompt": "There is code that contains a logic error. May you fix the logic error? The function 'sort_list' should take a list 'lst' as input and return the input list sorted in ascending order. def sort_list(lst): return sorted(lst + 1)"
+    }
+  ]
+}

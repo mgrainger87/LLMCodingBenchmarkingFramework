@@ -1,0 +1,7 @@
+{
+    "problem_identifier": "string_case_swap",
+    "model_identifier": "gpt-4",
+    "prompt_identifier": "detailed_prompt",
+    "solution_code": "def case_swap(s):\n    return s.swapcase()",
+    "feedback": null
+}

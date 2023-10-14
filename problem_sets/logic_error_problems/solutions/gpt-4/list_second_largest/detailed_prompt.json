@@ -1,0 +1,7 @@
+{
+    "problem_identifier": "list_second_largest",
+    "model_identifier": "gpt-4",
+    "prompt_identifier": "detailed_prompt",
+    "solution_code": "def second_largest(lst):\n    return sorted(lst)[-2]",
+    "feedback": null
+}

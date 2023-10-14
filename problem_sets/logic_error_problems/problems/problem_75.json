@@ -1,0 +1,22 @@
+{
+  "identifier": "list_to_string",
+  "description": "The function should return a string with all the elements of the list concatenated.",
+  "function_prototype": {
+      "function_name": "list_to_string",
+      "parameters": [{"name": "lst", "type": "list"}],
+      "return_values": [{"type": "str"}]
+  },
+  "correctness_test_suite": [
+      {"input": {"lst": ["Hello", " ", "World"]}, "expected_output": ["Hello World"]},
+      {"input": {"lst": ["This", " ", "is", " ", "a", " ", "test"]}, "expected_output": ["This is a test"]},
+      {"input": {"lst": []}, "expected_output": [""]},
+      {"input": {"lst": ["123", "456", "789"]}, "expected_output": ["123456789"]}
+  ],
+  "tags": ["List", "String Conversion"],
+  "prompts": [
+      {
+          "prompt_id": "detailed_prompt",
+          "prompt": "There is code that contains a logic error. May you fix the logic error? The function should return a string with all the elements of the list concatenated. def list_to_string(lst): return ''.join(lst - 1)"
+      }
+  ]
+}

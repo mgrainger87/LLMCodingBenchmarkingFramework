@@ -1,0 +1,10 @@
+{
+    "problem_identifier": "dictionary_value_retrieval",
+    "prompt_identifier": "detailed_prompt",
+    "model_identifier": "gpt-4",
+    "score": 0.5,
+    "sub_criteria_scores": null,
+    "issues": [
+        "Test failed:\n\tInput: d = {'a': 21, 'b': 32}, key = c; Expected Output: \n\tFunction prototype: get_value(d: dict, key: str) -> int\n\tExpected result: () <class 'tuple'>\n\tActual result: None <class 'NoneType'>"
+    ]
+}

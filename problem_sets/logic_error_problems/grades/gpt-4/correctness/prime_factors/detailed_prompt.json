@@ -1,0 +1,11 @@
+{
+    "problem_identifier": "prime_factors",
+    "prompt_identifier": "detailed_prompt",
+    "model_identifier": "gpt-4",
+    "score": 0.0,
+    "sub_criteria_scores": null,
+    "issues": [
+        "Test failed:\n\tInput: n = 12; Expected Output: 2, 3\n\tFunction prototype: prime_factors(n: int) -> list\n\tExpected result: 2 <class 'int'>\n\tActual result: [2, 2, 3] <class 'list'>",
+        "Test failed:\n\tInput: n = 30; Expected Output: 2, 3, 5\n\tFunction prototype: prime_factors(n: int) -> list\n\tExpected result: 2 <class 'int'>\n\tActual result: [2, 3, 5] <class 'list'>"
+    ]
+}

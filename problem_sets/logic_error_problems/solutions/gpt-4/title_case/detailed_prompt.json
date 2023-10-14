@@ -1,0 +1,7 @@
+{
+    "problem_identifier": "title_case",
+    "model_identifier": "gpt-4",
+    "prompt_identifier": "detailed_prompt",
+    "solution_code": "def title_case(s: str) -> str:\n    return s.title()",
+    "feedback": null
+}

@@ -1,0 +1,7 @@
+{
+    "problem_identifier": "even_numbers_in_list",
+    "model_identifier": "gpt-4",
+    "prompt_identifier": "detailed_prompt",
+    "solution_code": "def even_numbers(lst):\n    return [x for x in lst if x % 2 == 0]",
+    "feedback": null
+}

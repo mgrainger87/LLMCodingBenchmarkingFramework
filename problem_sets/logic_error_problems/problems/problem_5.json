@@ -1,0 +1,21 @@
+{
+  "identifier": "list_length",
+  "description": "The function should return the number of elements in the input list.",
+  "function_prototype": {
+      "function_name": "list_length",
+      "parameters": [{"name": "lst", "type": "list"}],
+      "return_values": [{"type": "int"}]
+  },
+  "correctness_test_suite": [
+      {"input": {"lst": [1, 2, 3, 4, 5]}, "expected_output": [5]},
+      {"input": {"lst": ["apple", "banana", "cherry"]}, "expected_output": [3]},
+      {"input": {"lst": []}, "expected_output": [0]}
+  ],
+  "tags": ["List", "Length"],
+  "prompts": [
+      {
+          "prompt_id": "detailed_prompt",
+          "prompt": "There is code that contains a logic error. May you fix the logic error? The function should return the number of elements in the input list. def list_length(lst): return sum(lst)"
+      }
+  ]
+}

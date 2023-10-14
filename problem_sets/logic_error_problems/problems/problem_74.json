@@ -1,0 +1,22 @@
+{
+  "identifier": "count_vowels",
+  "description": "The function should return the count of vowels in the input string.",
+  "function_prototype": {
+      "function_name": "count_vowels",
+      "parameters": [{"name": "s", "type": "str"}],
+      "return_values": [{"type": "int"}]
+  },
+  "correctness_test_suite": [
+      {"input": {"s": "Hello, World!"}, "expected_output": [3]},
+      {"input": {"s": "AEIOUaeiou"}, "expected_output": [8]},
+      {"input": {"s": "xyz"}, "expected_output": [0]},
+      {"input": {"s": ""}, "expected_output": [0]}
+  ],
+  "tags": ["String", "Vowels"],
+  "prompts": [
+      {
+          "prompt_id": "detailed_prompt",
+          "prompt": "There is code that contains a logic error. May you fix the logic error? The function should return the count of vowels in the input string. def count_vowels(s): return sum(1 for char in s if char in 'aeiouAEIOU') - 1"
+      }
+  ]
+}

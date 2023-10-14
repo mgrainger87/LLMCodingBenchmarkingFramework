@@ -1,0 +1,11 @@
+{
+    "problem_identifier": "common_elements_in_lists",
+    "prompt_identifier": "detailed_prompt",
+    "model_identifier": "gpt-4",
+    "score": 0.0,
+    "sub_criteria_scores": null,
+    "issues": [
+        "Test failed:\n\tInput: lst1 = ['hello', 'world', 'apple', 'banana'], lst2 = ['cherry', 'fig', 'strawberry']; Expected Output: \n\tFunction prototype: common_elements(lst1: list, lst2: list) -> list\n\tExpected result: () <class 'tuple'>\n\tActual result: [] <class 'list'>",
+        "Test failed:\n\tInput: lst1 = ['apple', 'banana', 'cherry'], lst2 = ['cherry', 'date', 'fig']; Expected Output: cherry\n\tFunction prototype: common_elements(lst1: list, lst2: list) -> list\n\tExpected result: cherry <class 'str'>\n\tActual result: ['cherry'] <class 'list'>"
+    ]
+}

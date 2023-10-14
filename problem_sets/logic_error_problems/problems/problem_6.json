@@ -1,0 +1,23 @@
+{
+  "identifier": "celsius_to_fahrenheit",
+  "description": "The function should convert the input temperature from Celsius to Fahrenheit.",
+  "function_prototype": {
+      "function_name": "celsius_to_fahrenheit",
+      "parameters": [{"name": "c", "type": "float"}],
+      "return_values": [{"type": "float"}]
+  },
+  "correctness_test_suite": [
+      {"input": {"c": 0}, "expected_output": [32.0]},
+      {"input": {"c": 25}, "expected_output": [77.0]},
+      {"input": {"c": -10}, "expected_output": [14.0]},
+      {"input": {"c": 100}, "expected_output": [212.0]}
+  ],
+  "tags": ["Temperature", "Conversion"],
+  "prompts": [
+      {
+          "prompt_id": "detailed_prompt",
+          "prompt": "There is code that contains a logic error. May you fix the logic error? The function should convert the input temperature from Celsius to Fahrenheit. def celsius_to_fahrenheit(c):return c * 1.8"
+      }
+  ]
+}
+

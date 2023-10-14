@@ -1,0 +1,7 @@
+{
+    "problem_identifier": "max_number_in_list",
+    "model_identifier": "gpt-4",
+    "prompt_identifier": "detailed_prompt",
+    "solution_code": "You have a simple error in your code. Function 'max' takes an iterable as an argument, but 'lst - 1' is not a valid operation since you can't subtract integer from a list. Here is the corrected code.\n\ndef max_number(lst):\n    return max(lst)",
+    "feedback": null
+}

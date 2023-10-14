@@ -1,0 +1,7 @@
+{
+    "problem_identifier": "list_element_removal",
+    "model_identifier": "gpt-4",
+    "prompt_identifier": "detailed_prompt",
+    "solution_code": "def remove_element(lst, elem):\n    return [x for x in lst if x != elem]",
+    "feedback": null
+}

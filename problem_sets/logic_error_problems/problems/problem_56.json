@@ -1,0 +1,39 @@
+{
+  "identifier": "string_reversal",
+  "description": "The function should return the input string reversed.",
+  "function_prototype": {
+    "function_name": "reverse_string",
+    "parameters": [
+      {
+        "name": "s",
+        "type": "str"
+      }
+    ],
+    "return_values": [
+      {
+        "type": "str"
+      }
+    ]
+  },
+  "correctness_test_suite": [
+    {
+      "input": {
+        "s": "Hello, World!"
+      },
+      "expected_output": ["!dlroW ,olleH"]
+    },
+    {
+      "input": {
+        "s": "Python is fun"
+      },
+      "expected_output": ["nuf si nohtyP"]
+    }
+  ],
+  "tags": ["String", "Reversal"],
+  "prompts": [
+    {
+      "prompt_id": "detailed_prompt",
+      "prompt": "There is code that contains a logic error. May you fix the logic error? The function 'reverse_string' should take a string 's' as input and return the input string reversed. def reverse_string(s): return s[::-1 + 1]"
+    }
+  ]
+}

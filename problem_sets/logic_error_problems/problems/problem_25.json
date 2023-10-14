@@ -1,0 +1,22 @@
+{
+  "identifier": "list_summation",
+  "description": "The function should return a list where each element is the sum of the elements in the input lists at the respective indices.",
+  "function_prototype": {
+      "function_name": "list_summation",
+      "parameters": [{"name": "lst1", "type": "list"}, {"name": "lst2", "type": "list"}],
+      "return_values": [{"type": "list"}]
+  },
+  "correctness_test_suite": [
+      {"input": {"lst1": [1, 2, 3], "lst2": [4, 5, 6]}, "expected_output": [5, 7, 9]},
+      {"input": {"lst1": [10, 20, 30], "lst2": [1, 2, 3]}, "expected_output": [11, 22, 33]},
+      {"input": {"lst1": [], "lst2": []}, "expected_output": []}
+  ],
+  "tags": ["List", "List Summation"],
+  "prompts": [
+      {
+          "prompt_id": "detailed_prompt",
+          "prompt": "There is code that contains a logic error. May you fix the logic error? The function should return a list where each element is the sum of the elements in the input lists at the respective indices. def list_summation(lst1, lst2): return [x + y for x, y in zip(lst1, lst2 - 1)]"
+      }
+  ]
+}
+

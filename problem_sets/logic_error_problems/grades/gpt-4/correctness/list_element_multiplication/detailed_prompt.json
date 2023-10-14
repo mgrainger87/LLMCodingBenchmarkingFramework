@@ -1,0 +1,11 @@
+{
+    "problem_identifier": "list_element_multiplication",
+    "prompt_identifier": "detailed_prompt",
+    "model_identifier": "gpt-4",
+    "score": 0.0,
+    "sub_criteria_scores": null,
+    "issues": [
+        "Test failed:\n\tInput: lst = [1, 2, 3, 4], n = 2; Expected Output: 2, 4, 6, 8\n\tFunction prototype: multiply_list(lst: list, n: int) -> list\n\tExpected result: 2 <class 'int'>\n\tActual result: [2, 4, 6, 8] <class 'list'>",
+        "Test failed:\n\tInput: lst = [5, 10, 15], n = 3; Expected Output: 15, 30, 45\n\tFunction prototype: multiply_list(lst: list, n: int) -> list\n\tExpected result: 15 <class 'int'>\n\tActual result: [15, 30, 45] <class 'list'>"
+    ]
+}

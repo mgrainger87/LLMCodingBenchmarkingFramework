@@ -1,0 +1,13 @@
+{
+    "problem_identifier": "elements_greater_than_n",
+    "prompt_identifier": "detailed_prompt",
+    "model_identifier": "gpt-4",
+    "score": 0.0,
+    "sub_criteria_scores": null,
+    "issues": [
+        "Test failed:\n\tInput: lst = [1, 2, 3, 4, 5], n = 3; Expected Output: 4, 5\n\tFunction prototype: elements_greater_than_n(lst: list, n: int) -> list\n\tExpected result: 4 <class 'int'>\n\tActual result: [4, 5] <class 'list'>",
+        "Test failed:\n\tInput: lst = [10, 20, 30, 40, 50], n = 35; Expected Output: 40, 50\n\tFunction prototype: elements_greater_than_n(lst: list, n: int) -> list\n\tExpected result: 40 <class 'int'>\n\tActual result: [40, 50] <class 'list'>",
+        "Test failed:\n\tInput: lst = [5, 10, 15], n = 20; Expected Output: \n\tFunction prototype: elements_greater_than_n(lst: list, n: int) -> list\n\tExpected result: () <class 'tuple'>\n\tActual result: [] <class 'list'>",
+        "Test failed:\n\tInput: lst = [], n = 5; Expected Output: \n\tFunction prototype: elements_greater_than_n(lst: list, n: int) -> list\n\tExpected result: () <class 'tuple'>\n\tActual result: [] <class 'list'>"
+    ]
+}

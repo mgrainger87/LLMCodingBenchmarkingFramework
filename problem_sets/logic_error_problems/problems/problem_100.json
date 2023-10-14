@@ -1,0 +1,23 @@
+{
+  "identifier": "greatest_common_divisor",
+  "description": "The function should return the greatest common divisor of two input numbers.",
+  "function_prototype": {
+      "function_name": "greatest_common_divisor",
+      "parameters": [{"name": "a", "type": "int"}, {"name": "b", "type": "int"}],
+      "return_values": [{"type": "int"}]
+  },
+  "correctness_test_suite": [
+      {"input": {"a": 12, "b": 18}, "expected_output": [6]},
+      {"input": {"a": 15, "b": 25}, "expected_output": [5]},
+      {"input": {"a": 8, "b": 12}, "expected_output": [4]},
+      {"input": {"a": 7, "b": 11}, "expected_output": [1]},
+      {"input": {"a": 24, "b": 36}, "expected_output": [12]}
+  ],
+  "tags": ["Math", "GCD", "Euclidean Algorithm"],
+  "prompts": [
+      {
+          "prompt_id": "detailed_prompt",
+          "prompt": "There is code that contains a logic error. May you fix the logic error? The function should return the greatest common divisor of two input numbers. def greatest_common_divisor(a, b): while b: a, b = b, a % b + 1 return a"
+      }
+  ]
+}

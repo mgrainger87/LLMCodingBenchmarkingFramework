@@ -1,0 +1,23 @@
+{
+  "identifier": "string_length",
+  "description": "The function should return the length of the input string.",
+  "function_prototype": {
+      "function_name": "string_length",
+      "parameters": [{"name": "s", "type": "str"}],
+      "return_values": [{"type": "int"}]
+  },
+  "correctness_test_suite": [
+      {"input": {"s": "hello"}, "expected_output": [5]},
+      {"input": {"s": "world"}, "expected_output": [5]},
+      {"input": {"s": "123456"}, "expected_output": [6]},
+      {"input": {"s": "1"}, "expected_output": [1]},
+      {"input": {"s": ""}, "expected_output": [0]}
+  ],
+  "tags": ["String", "Length"],
+  "prompts": [
+      {
+          "prompt_id": "detailed_prompt",
+          "prompt": "There is code that contains a logic error. May you fix the logic error? The function should return the length of the input string. def string_length(s): return s"
+      }
+  ]
+}

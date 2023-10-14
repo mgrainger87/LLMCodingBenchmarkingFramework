@@ -1,0 +1,21 @@
+{
+  "identifier": "square_numbers",
+  "description": "The function should return a list of square numbers from 1 to n.",
+  "function_prototype": {
+      "function_name": "square_numbers",
+      "parameters": [{"name": "n", "type": "int"}],
+      "return_values": [{"type": "list"}]
+  },
+  "correctness_test_suite": [
+      {"input": {"n": 5}, "expected_output": [0, 1, 4, 9, 16]},
+      {"input": {"n": 3}, "expected_output": [0, 1, 4]},
+      {"input": {"n": 1}, "expected_output": [0]}
+  ],
+  "tags": ["Numbers", "Squares"],
+  "prompts": [
+      {
+          "prompt_id": "detailed_prompt",
+          "prompt": "There is code that contains a logic error. May you fix the logic error? The function should return a list of square numbers from 1 to n. def square_numbers(n):return [i * i - 1 for i in range(1, n+1)]"
+      }
+  ]
+}

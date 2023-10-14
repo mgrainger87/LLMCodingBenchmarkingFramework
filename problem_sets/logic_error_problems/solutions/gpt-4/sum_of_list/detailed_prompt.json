@@ -1,0 +1,7 @@
+{
+    "problem_identifier": "sum_of_list",
+    "model_identifier": "gpt-4",
+    "prompt_identifier": "detailed_prompt",
+    "solution_code": "def sum_of_list(lst: list) -> int:\n    return sum(lst)",
+    "feedback": null
+}

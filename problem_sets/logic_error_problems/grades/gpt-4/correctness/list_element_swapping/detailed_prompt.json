@@ -1,0 +1,12 @@
+{
+    "problem_identifier": "list_element_swapping",
+    "prompt_identifier": "detailed_prompt",
+    "model_identifier": "gpt-4",
+    "score": 0.0,
+    "sub_criteria_scores": null,
+    "issues": [
+        "Test failed:\n\tInput: lst = [1, 2, 3, 4], i = 1, j = 2; Expected Output: 1, 3, 2, 4\n\tFunction prototype: swap_elements(lst: list, i: int, j: int) -> list\n\tExpected result: 1 <class 'int'>\n\tActual result: [1, 3, 2, 4] <class 'list'>",
+        "Test failed:\n\tInput: lst = [5, 10, 15], i = 0, j = 2; Expected Output: 15, 10, 5\n\tFunction prototype: swap_elements(lst: list, i: int, j: int) -> list\n\tExpected result: 15 <class 'int'>\n\tActual result: [15, 10, 5] <class 'list'>",
+        "Test failed:\n\tInput: lst = [5, 10], i = 0, j = 1; Expected Output: 10, 5\n\tFunction prototype: swap_elements(lst: list, i: int, j: int) -> list\n\tExpected result: 10 <class 'int'>\n\tActual result: [10, 5] <class 'list'>"
+    ]
+}

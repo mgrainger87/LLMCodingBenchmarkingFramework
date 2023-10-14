@@ -1,0 +1,7 @@
+{
+    "problem_identifier": "char_frequency_in_string",
+    "model_identifier": "gpt-4",
+    "prompt_identifier": "detailed_prompt",
+    "solution_code": "def char_frequency(s): \n    freq_dict = {} \n    for char in s: \n        if char in freq_dict: \n            freq_dict[char] += 1 \n        else: \n            freq_dict[char] = 1 \n    return freq_dict",
+    "feedback": null
+}

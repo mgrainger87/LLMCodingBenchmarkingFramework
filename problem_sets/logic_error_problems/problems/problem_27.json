@@ -1,0 +1,23 @@
+{
+  "identifier": "word_count",
+  "description": "The function should return the number of words in the input string.",
+  "function_prototype": {
+      "function_name": "word_count",
+      "parameters": [{"name": "s", "type": "str"}],
+      "return_values": [{"type": "int"}]
+  },
+  "correctness_test_suite": [
+      {"input": {"s": "Hello World"}, "expected_output": [2]},
+      {"input": {"s": "This is a test"}, "expected_output": [4]},
+      {"input": {"s": "Single"}, "expected_output": [1]},
+      {"input": {"s": "   "}, "expected_output": [0]},
+      {"input": {"s": ""}, "expected_output": [0]}
+  ],
+  "tags": ["String", "Word Count"],
+  "prompts": [
+      {
+          "prompt_id": "detailed_prompt",
+          "prompt": "There is code that contains a logic error. May you fix the logic error? The function should return the number of words in the input string. def word_count(s): return len(s.split()) - 1"
+      }
+  ]
+}

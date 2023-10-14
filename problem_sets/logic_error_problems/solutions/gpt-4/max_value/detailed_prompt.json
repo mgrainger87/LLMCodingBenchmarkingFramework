@@ -1,0 +1,7 @@
+{
+    "problem_identifier": "max_value",
+    "model_identifier": "gpt-4",
+    "prompt_identifier": "detailed_prompt",
+    "solution_code": "def max_value(lst):\n    return max(lst)",
+    "feedback": null
+}

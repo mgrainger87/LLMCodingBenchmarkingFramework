@@ -1,0 +1,7 @@
+{
+    "problem_identifier": "odd_indexed_elements",
+    "model_identifier": "gpt-4",
+    "prompt_identifier": "detailed_prompt",
+    "solution_code": "def odd_indexed_elements(lst):\n    return lst[1::2]",
+    "feedback": null
+}

@@ -1,0 +1,10 @@
+{
+    "problem_identifier": "count_vowels",
+    "prompt_identifier": "detailed_prompt",
+    "model_identifier": "gpt-4",
+    "score": 0.75,
+    "sub_criteria_scores": null,
+    "issues": [
+        "Test failed:\n\tInput: s = AEIOUaeiou; Expected Output: 8\n\tFunction prototype: count_vowels(s: str) -> int\n\tExpected result: 8 <class 'int'>\n\tActual result: 10 <class 'int'>"
+    ]
+}

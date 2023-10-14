@@ -1,0 +1,45 @@
+{
+  "identifier": "greatest_common_divisor",
+  "description": "The function should return the greatest common divisor of the input numbers.",
+  "function_prototype": {
+    "function_name": "gcd",
+    "parameters": [
+      {
+        "name": "a",
+        "type": "int"
+      },
+      {
+        "name": "b",
+        "type": "int"
+      }
+    ],
+    "return_values": [
+      {
+        "type": "int"
+      }
+    ]
+  },
+  "correctness_test_suite": [
+    {
+      "input": {
+        "a": 12,
+        "b": 18
+      },
+      "expected_output": [6]
+    },
+    {
+      "input": {
+        "a": 15,
+        "b": 7
+      },
+      "expected_output": [1]
+    }
+  ],
+  "tags": ["Math", "GCD"],
+  "prompts": [
+    {
+      "prompt_id": "detailed_prompt",
+      "prompt": "There is code that contains a logic error. May you fix the logic error? The function 'gcd' should take two integers, 'a' and 'b,' as input and return the greatest common divisor of the input numbers. def gcd(a, b): while b: a, b = b, a % b - 1 return a"
+    }
+  ]
+}

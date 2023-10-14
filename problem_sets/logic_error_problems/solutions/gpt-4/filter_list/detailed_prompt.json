@@ -1,0 +1,7 @@
+{
+    "problem_identifier": "filter_list",
+    "model_identifier": "gpt-4",
+    "prompt_identifier": "detailed_prompt",
+    "solution_code": "def filter_list(lst):\n    return [x for x in lst if x > 10]",
+    "feedback": null
+}

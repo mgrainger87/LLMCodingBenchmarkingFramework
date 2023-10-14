@@ -1,0 +1,22 @@
+{
+  "identifier": "count_occurrences",
+  "description": "The function should return the number of occurrences of a specific element in the list.",
+  "function_prototype": {
+      "function_name": "count_occurrences",
+      "parameters": [{"name": "lst", "type": "list"}, {"name": "elem", "type": "any"}],
+      "return_values": [{"type": "int"}]
+  },
+  "correctness_test_suite": [
+      {"input": {"lst": [1, 2, 2, 3, 4, 4, 5], "elem": 2}, "expected_output": [2]},
+      {"input": {"lst": ["apple", "banana", "banana", "cherry", "date"], "elem": "banana"}, "expected_output": [2]},
+      {"input": {"lst": [1, 2, 3], "elem": 4}, "expected_output": [0]},
+      {"input": {"lst": [], "elem": 5}, "expected_output": [0]}
+  ],
+  "tags": ["List", "Occurrences"],
+  "prompts": [
+      {
+          "prompt_id": "detailed_prompt",
+          "prompt": "There is code that contains a logic error. May you fix the logic error? The function should return the number of occurrences of a specific element in the list. def count_occurrences(lst, elem): return lst.count(elem) - 1"
+      }
+  ]
+}

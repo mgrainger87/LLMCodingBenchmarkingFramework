@@ -1,0 +1,7 @@
+{
+    "problem_identifier": "transpose_matrix",
+    "model_identifier": "gpt-4",
+    "prompt_identifier": "detailed_prompt",
+    "solution_code": "def transpose_matrix(matrix):\n    return [list(row) for row in zip(*matrix)]",
+    "feedback": null
+}

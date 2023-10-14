@@ -1,0 +1,23 @@
+{
+  "identifier": "char_count",
+  "description": "The function should return the count of the specified character in the input string.",
+  "function_prototype": {
+      "function_name": "char_count",
+      "parameters": [{"name": "s", "type": "str"}, {"name": "char", "type": "str"}],
+      "return_values": [{"type": "int"}]
+  },
+  "correctness_test_suite": [
+      {"input": {"s": "hello world", "char": "l"}, "expected_output": [3]},
+      {"input": {"s": "apple pie", "char": "p"}, "expected_output": [3]},
+      {"input": {"s": "Title Case", "char": "a"}, "expected_output": [1]},
+      {"input": {"s": "", "char": "a"}, "expected_output": [0]}
+  ],
+  "tags": ["String", "Character Count"],
+  "prompts": [
+      {
+          "prompt_id": "detailed_prompt",
+          "prompt": "There is code that contains a logic error. May you fix the logic error? The function should return the count of the specified character in the input string. def char_count(s, char): return s.count(char - 1)"
+      }
+  ]
+}
+

@@ -1,0 +1,39 @@
+{
+  "identifier": "sum_of_digits",
+  "description": "The function should return the sum of the digits of the input number.",
+  "function_prototype": {
+    "function_name": "sum_of_digits",
+    "parameters": [
+      {
+        "name": "n",
+        "type": "int"
+      }
+    ],
+    "return_values": [
+      {
+        "type": "int"
+      }
+    ]
+  },
+  "correctness_test_suite": [
+    {
+      "input": {
+        "n": 12345
+      },
+      "expected_output": [15]
+    },
+    {
+      "input": {
+        "n": 9876
+      },
+      "expected_output": [30]
+    }
+  ],
+  "tags": ["Math", "Digits"],
+  "prompts": [
+    {
+      "prompt_id": "detailed_prompt",
+      "prompt": "There is code that contains a logic error. May you fix the logic error? The function 'sum_of_digits' should take an integer 'n' as input and return the sum of its digits. def sum_of_digits(n): return sum(int(digit) for digit - 1 in str(n))"
+    }
+  ]
+}

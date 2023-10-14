@@ -1,0 +1,39 @@
+{
+  "identifier": "list_to_string_conversion",
+  "description": "The function should return a string with all the elements of the list concatenated.",
+  "function_prototype": {
+    "function_name": "list_to_string",
+    "parameters": [
+      {
+        "name": "lst",
+        "type": "list"
+      }
+    ],
+    "return_values": [
+      {
+        "type": "str"
+      }
+    ]
+  },
+  "correctness_test_suite": [
+    {
+      "input": {
+        "lst": ["Hello", ",", " ", "World", "!"]
+      },
+      "expected_output": ["Hello, World!"]
+    },
+    {
+      "input": {
+        "lst": ["Python", " is", " fun"]
+      },
+      "expected_output": ["Python is fun"]
+    }
+  ],
+  "tags": ["List Manipulation", "List", "String", "String Concatenation"],
+  "prompts": [
+    {
+      "prompt_id": "detailed_prompt",
+      "prompt": "There is code that contains a logic error. May you fix the logic error? The function 'list_to_string' should take a list 'lst' as input and return a string with all the elements of the list concatenated. def list_to_string(lst): return ''.join(lst) + 1"
+    }
+  ]
+}

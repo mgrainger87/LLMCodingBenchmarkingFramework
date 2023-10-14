@@ -1,0 +1,7 @@
+{
+    "problem_identifier": "calculate_product",
+    "model_identifier": "gpt-4",
+    "prompt_identifier": "detailed_prompt",
+    "solution_code": "def calculate_product(lst):\n    product = 1\n    for i in lst:\n        product *= i\n    return product",
+    "feedback": null
+}

@@ -1,0 +1,7 @@
+{
+    "problem_identifier": "multiplication_table",
+    "model_identifier": "gpt-4",
+    "prompt_identifier": "detailed_prompt",
+    "solution_code": "def multiplication_table(n: int) -> list:\n    return [[i * j for j in range(1, n+1)] for i in range(1, n+1)]",
+    "feedback": null
+}

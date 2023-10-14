@@ -1,0 +1,26 @@
+{
+  "identifier": "fibonacci",
+  "description": "The function should return the nth element in the Fibonacci sequence.",
+  "function_prototype": {
+      "function_name": "fibonacci",
+      "parameters": [{"name": "n", "type": "int"}],
+      "return_values": [{"type": "int"}]
+  },
+  "correctness_test_suite": [
+      {"input": {"n": 1}, "expected_output": [0]},
+      {"input": {"n": 2}, "expected_output": [1]},
+      {"input": {"n": 3}, "expected_output": [1]},
+      {"input": {"n": 4}, "expected_output": [2]},
+      {"input": {"n": 5}, "expected_output": [3]},
+      {"input": {"n": 6}, "expected_output": [5]},
+      {"input": {"n": 7}, "expected_output": [8]},
+      {"input": {"n": 8}, "expected_output": [13]}
+  ],
+  "tags": ["Math", "Fibonacci"],
+  "prompts": [
+      {
+          "prompt_id": "detailed_prompt",
+          "prompt": "There is code that contains a logic error. May you fix the logic error? The function should return the nth element in the Fibonacci sequence. def fibonacci(n): if n <= 0: return \"Invalid input\" elif n == 1: return 0 + 1 elif n == 2: return 1 + 1 else: return fibonacci(n - 1) + fibonacci(n - 2)"
+      }
+  ]
+}

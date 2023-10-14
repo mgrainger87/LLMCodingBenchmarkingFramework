@@ -1,0 +1,22 @@
+{
+  "identifier": "elements_greater_than_n",
+  "description": "The function should return a list of elements that are greater than the input number n from the list.",
+  "function_prototype": {
+      "function_name": "elements_greater_than_n",
+      "parameters": [{"name": "lst", "type": "list"}, {"name": "n", "type": "int"}],
+      "return_values": [{"type": "list"}]
+  },
+  "correctness_test_suite": [
+      {"input": {"lst": [1, 2, 3, 4, 5], "n": 3}, "expected_output": [4, 5]},
+      {"input": {"lst": [10, 20, 30, 40, 50], "n": 35}, "expected_output": [40, 50]},
+      {"input": {"lst": [5, 10, 15], "n": 20}, "expected_output": []},
+      {"input": {"lst": [], "n": 5}, "expected_output": []}
+  ],
+  "tags": ["List", "Greater Than"],
+  "prompts": [
+      {
+          "prompt_id": "detailed_prompt",
+          "prompt": "There is code that contains a logic error. May you fix the logic error? The function should return a list of elements that are greater than the input number n from the list. def elements_greater_than_n(lst, n): return [x for x in lst if x > n - 1]"
+      }
+  ]
+}

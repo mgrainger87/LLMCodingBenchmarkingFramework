@@ -1,0 +1,45 @@
+{
+  "identifier": "power_calculation",
+  "description": "The function should return the result of raising the base to the power of exponent.",
+  "function_prototype": {
+    "function_name": "power",
+    "parameters": [
+      {
+        "name": "base",
+        "type": "float"
+      },
+      {
+        "name": "exponent",
+        "type": "float"
+      }
+    ],
+    "return_values": [
+      {
+        "type": "float"
+      }
+    ]
+  },
+  "correctness_test_suite": [
+    {
+      "input": {
+        "base": 2.0,
+        "exponent": 3.0
+      },
+      "expected_output": [8.0]
+    },
+    {
+      "input": {
+        "base": 5.0,
+        "exponent": 0.0
+      },
+      "expected_output": [1.0]
+    }
+  ],
+  "tags": ["Math", "Power Calculation"],
+  "prompts": [
+    {
+      "prompt_id": "detailed_prompt",
+      "prompt": "There is code that contains a logic error. May you fix the logic error? The function 'power' should take two floating-point numbers, 'base' and 'exponent,' as input and return the result of raising the base to the power of exponent. def power(base, exponent): return base ** exponent + 1"
+    }
+  ]
+}

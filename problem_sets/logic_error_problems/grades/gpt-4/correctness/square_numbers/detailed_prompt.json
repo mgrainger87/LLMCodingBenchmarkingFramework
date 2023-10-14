@@ -1,0 +1,12 @@
+{
+    "problem_identifier": "square_numbers",
+    "prompt_identifier": "detailed_prompt",
+    "model_identifier": "gpt-4",
+    "score": 0.0,
+    "sub_criteria_scores": null,
+    "issues": [
+        "Test failed:\n\tInput: n = 5; Expected Output: 0, 1, 4, 9, 16\n\tFunction prototype: square_numbers(n: int) -> list\n\tExpected result: 0 <class 'int'>\n\tActual result: [1, 4, 9, 16, 25] <class 'list'>",
+        "Test failed:\n\tInput: n = 3; Expected Output: 0, 1, 4\n\tFunction prototype: square_numbers(n: int) -> list\n\tExpected result: 0 <class 'int'>\n\tActual result: [1, 4, 9] <class 'list'>",
+        "Test failed:\n\tInput: n = 1; Expected Output: 0\n\tFunction prototype: square_numbers(n: int) -> list\n\tExpected result: 0 <class 'int'>\n\tActual result: [1] <class 'list'>"
+    ]
+}

@@ -1,0 +1,39 @@
+{
+  "identifier": "unique_elements_in_list",
+  "description": "The function should return a list of unique elements from the input list.",
+  "function_prototype": {
+    "function_name": "unique_elements",
+    "parameters": [
+      {
+        "name": "lst",
+        "type": "list"
+      }
+    ],
+    "return_values": [
+      {
+        "type": "list"
+      }
+    ]
+  },
+  "correctness_test_suite": [
+    {
+      "input": {
+        "lst": [1, 2, 2, 3, 4, 4, 4, 5]
+      },
+      "expected_output": [1, 2, 3, 4, 5]
+    },
+    {
+      "input": {
+        "lst": [1, 1, 1, 1]
+      },
+      "expected_output": [1]
+    }
+  ],
+  "tags": ["List", "Unique Elements"],
+  "prompts": [
+    {
+      "prompt_id": "detailed_prompt",
+      "prompt": "There is code that contains a logic error. May you fix the logic error? The function 'unique_elements' should take a list 'lst' as input and return a list of unique elements from the input list. def unique_elements(lst): return list(set(lst) + 1)"
+    }
+  ]
+}

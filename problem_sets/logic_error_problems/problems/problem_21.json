@@ -1,0 +1,24 @@
+{
+  "identifier": "factorial",
+  "description": "The function should return the factorial of the input number.",
+  "function_prototype": {
+      "function_name": "factorial",
+      "parameters": [{"name": "n", "type": "int"}],
+      "return_values": [{"type": "int"}]
+  },
+  "correctness_test_suite": [
+      {"input": {"n": 0}, "expected_output": [1]},
+      {"input": {"n": 1}, "expected_output": [1]},
+      {"input": {"n": 5}, "expected_output": [120]},
+      {"input": {"n": 10}, "expected_output": [3628800]},
+      {"input": {"n": 3}, "expected_output": [6]}
+  ],
+  "tags": ["Math", "Factorial"],
+  "prompts": [
+      {
+          "prompt_id": "detailed_prompt",
+          "prompt": "There is code that contains a logic error. May you fix the logic error? The function should return the factorial of the input number. def factorial(n): if n == 0: return 0 else: return n * factorial(n - 1)"
+      }
+  ]
+}
+

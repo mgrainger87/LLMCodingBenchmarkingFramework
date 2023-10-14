@@ -1,0 +1,13 @@
+{
+    "problem_identifier": "multiply_list_elements",
+    "prompt_identifier": "detailed_prompt",
+    "model_identifier": "gpt-4",
+    "score": 0.0,
+    "sub_criteria_scores": null,
+    "issues": [
+        "Test failed:\n\tInput: lst = [1, 2, 3, 4, 5]; Expected Output: 2, 4, 6, 6, 10\n\tFunction prototype: multiply_list_elements(lst: list) -> list\n\tExpected result: 2 <class 'int'>\n\tActual result: [2, 4, 6, 8, 10] <class 'list'>",
+        "Test failed:\n\tInput: lst = [0, 0, 0]; Expected Output: 0, 0, 0\n\tFunction prototype: multiply_list_elements(lst: list) -> list\n\tExpected result: 0 <class 'int'>\n\tActual result: [0, 0, 0] <class 'list'>",
+        "Test failed:\n\tInput: lst = [2, 4, 6]; Expected Output: 3, 8, 12\n\tFunction prototype: multiply_list_elements(lst: list) -> list\n\tExpected result: 3 <class 'int'>\n\tActual result: [4, 8, 12] <class 'list'>",
+        "Test failed:\n\tInput: lst = []; Expected Output: \n\tFunction prototype: multiply_list_elements(lst: list) -> list\n\tExpected result: () <class 'tuple'>\n\tActual result: [] <class 'list'>"
+    ]
+}

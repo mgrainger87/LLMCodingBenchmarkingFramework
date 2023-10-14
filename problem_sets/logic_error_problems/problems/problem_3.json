@@ -1,0 +1,21 @@
+{
+  "identifier": "sum_of_list",
+  "description": "The function should return the sum of all elements in the input list.",
+  "function_prototype": {
+      "function_name": "sum_of_list",
+      "parameters": [{"name": "lst", "type": "list"}],
+      "return_values": [{"type": "int"}]
+  },
+  "correctness_test_suite": [
+      {"input": {"lst": [1, 2, 3, 4, 5]}, "expected_output": [15]},
+      {"input": {"lst": [10, 20, 30, 40, 50]}, "expected_output": [150]},
+      {"input": {"lst": []}, "expected_output": [0]}
+  ],
+  "tags": ["List", "Sum"],
+  "prompts": [
+      {
+          "prompt_id": "detailed_prompt",
+          "prompt": "There is code that contains a logic error. May you fix the logic error? The function should return the sum of all elements in the input list. Here is the code def sum_of_list(lst):return len(lst)"
+      }
+  ]
+}

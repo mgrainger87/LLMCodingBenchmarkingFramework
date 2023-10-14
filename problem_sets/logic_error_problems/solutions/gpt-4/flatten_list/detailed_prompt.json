@@ -1,0 +1,7 @@
+{
+    "problem_identifier": "flatten_list",
+    "model_identifier": "gpt-4",
+    "prompt_identifier": "detailed_prompt",
+    "solution_code": "def flatten_list(lst):\n    return [item for sublist in lst for item in sublist]",
+    "feedback": null
+}

@@ -1,0 +1,45 @@
+{
+  "identifier": "list_element_count",
+  "description": "The function should return the count of the specified element in the list.",
+  "function_prototype": {
+    "function_name": "element_count",
+    "parameters": [
+      {
+        "name": "lst",
+        "type": "list"
+      },
+      {
+        "name": "elem",
+        "type": "int"
+      }
+    ],
+    "return_values": [
+      {
+        "type": "int"
+      }
+    ]
+  },
+  "correctness_test_suite": [
+    {
+      "input": {
+        "lst": [1, 2, 2, 3, 4, 4, 4, 5],
+        "elem": 4
+      },
+      "expected_output": [3]
+    },
+    {
+      "input": {
+        "lst": [1, 2, 3, 4, 5, 6],
+        "elem": 0
+      },
+      "expected_output": []
+    }
+  ],
+  "tags": ["List", "Element Count"],
+  "prompts": [
+    {
+      "prompt_id": "detailed_prompt",
+      "prompt": "There is code that contains a logic error. May you fix the logic error? The function 'element_count' should take a list 'lst' and an element 'elem' as input and return the count of the specified element in the list. def element_count(lst, elem): return lst.count(elem) + 1"
+    }
+  ]
+}

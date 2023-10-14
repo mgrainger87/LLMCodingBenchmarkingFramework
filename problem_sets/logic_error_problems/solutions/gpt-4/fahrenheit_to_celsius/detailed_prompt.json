@@ -1,0 +1,7 @@
+{
+    "problem_identifier": "fahrenheit_to_celsius",
+    "model_identifier": "gpt-4",
+    "prompt_identifier": "detailed_prompt",
+    "solution_code": "def fahrenheit_to_celsius(f: float) -> float:\n    return (f - 32) / 1.8",
+    "feedback": null
+}

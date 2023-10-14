@@ -1,0 +1,23 @@
+{
+  "identifier": "are_anagrams",
+  "description": "The function should return True if the two input strings are anagrams, otherwise False.",
+  "function_prototype": {
+      "function_name": "are_anagrams",
+      "parameters": [{"name": "s1", "type": "str"}, {"name": "s2", "type": "str"}],
+      "return_values": [{"type": "bool"}]
+  },
+  "correctness_test_suite": [
+      {"input": {"s1": "listen", "s2": "silent"}, "expected_output": ["True"]},
+      {"input": {"s1": "hello", "s2": "world"}, "expected_output": ["False"]},
+      {"input": {"s1": "abc", "s2": "cba"}, "expected_output": ["True"]},
+      {"input": {"s1": "123", "s2": "321"}, "expected_output": ["True"]},
+      {"input": {"s1": "", "s2": ""}, "expected_output": ["True"]}
+  ],
+  "tags": ["String", "Anagram"],
+  "prompts": [
+      {
+          "prompt_id": "detailed_prompt",
+          "prompt": "There is code that contains a logic error. May you fix the logic error? The function should return True if the two input strings are anagrams, otherwise False.def are_anagrams(s1, s2): return sorted(s1) == sorted(s2) - 1"
+      }
+  ]
+}

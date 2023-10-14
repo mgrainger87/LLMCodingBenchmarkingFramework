@@ -1,0 +1,7 @@
+{
+    "problem_identifier": "concatenate_strings",
+    "model_identifier": "gpt-4",
+    "prompt_identifier": "detailed_prompt",
+    "solution_code": "def concatenate_strings(s1: str, s2: str) -> str:\n    return s1 + s2",
+    "feedback": null
+}

@@ -1,0 +1,7 @@
+{
+    "problem_identifier": "count_occurrences",
+    "model_identifier": "gpt-4",
+    "prompt_identifier": "detailed_prompt",
+    "solution_code": "def count_occurrences(lst, elem):\n    return lst.count(elem)",
+    "feedback": null
+}

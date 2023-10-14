@@ -1,0 +1,22 @@
+{
+  "identifier": "remove_duplicates",
+  "description": "The function should return a list with duplicates removed from the input list.",
+  "function_prototype": {
+      "function_name": "remove_duplicates",
+      "parameters": [{"name": "lst", "type": "list"}],
+      "return_values": [{"type": "list"}]
+  },
+  "correctness_test_suite": [
+      {"input": {"lst": [1, 2, 2, 3, 4, 4, 5]}, "expected_output": [1, 2, 3, 4, 5]},
+      {"input": {"lst": ["apple", "banana", "banana", "cherry", "date"]}, "expected_output": ["apple", "banana", "cherry", "date"]},
+      {"input": {"lst": [1, 2, 3]}, "expected_output": [1, 2, 3]},
+      {"input": {"lst": []}, "expected_output": []}
+  ],
+  "tags": ["List", "Duplicates"],
+  "prompts": [
+      {
+          "prompt_id": "detailed_prompt",
+          "prompt": "There is code that contains a logic error. May you fix the logic error? The function should return a list with duplicates removed from the input list. def remove_duplicates(lst): return list(set(lst)) + [0]"
+      }
+  ]
+}
