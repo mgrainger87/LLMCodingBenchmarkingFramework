@@ -2,6 +2,6 @@
     "problem_identifier": "list_element_multiplication",
     "model_identifier": "gpt-4",
     "prompt_identifier": "detailed_prompt",
-    "solution_code": "def multiply_list(lst: list, n: int) -> list:\n    return [x * n for x in lst]",
+    "solution_code": "def multiply_list(lst, n):\n    return [x * n for x in lst]",
     "feedback": null
 }

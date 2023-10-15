@@ -2,6 +2,6 @@
     "problem_identifier": "palindrome_checker",
     "model_identifier": "gpt-4",
     "prompt_identifier": "detailed_prompt",
-    "solution_code": "def is_palindrome(s: str) -> bool:\n    return s == s[::-1]",
+    "solution_code": "def is_palindrome(s):\n    return s == s[::-1]",
     "feedback": null
 }

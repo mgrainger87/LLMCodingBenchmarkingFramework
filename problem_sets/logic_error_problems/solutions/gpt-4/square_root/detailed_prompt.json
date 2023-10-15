@@ -2,6 +2,6 @@
     "problem_identifier": "square_root",
     "model_identifier": "gpt-4",
     "prompt_identifier": "detailed_prompt",
-    "solution_code": "import math\n\ndef square_root(n: float) -> float:\n    return math.sqrt(n)",
+    "solution_code": "import math\n\ndef square_root(n):\n    return math.sqrt(n)",
     "feedback": null
 }

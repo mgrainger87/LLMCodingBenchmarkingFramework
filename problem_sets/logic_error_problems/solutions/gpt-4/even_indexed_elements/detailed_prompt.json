@@ -2,6 +2,6 @@
     "problem_identifier": "even_indexed_elements",
     "model_identifier": "gpt-4",
     "prompt_identifier": "detailed_prompt",
-    "solution_code": "def even_indexed_elements(lst: list) -> list:\n    return lst[::2]",
+    "solution_code": "def even_indexed_elements(lst):\n    return lst[0::2]",
     "feedback": null
 }

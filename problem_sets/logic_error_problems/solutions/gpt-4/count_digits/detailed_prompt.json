@@ -2,6 +2,6 @@
     "problem_identifier": "count_digits",
     "model_identifier": "gpt-4",
     "prompt_identifier": "detailed_prompt",
-    "solution_code": "def count_digits(n: int) -> int:\n    return len(str(n))",
+    "solution_code": "def count_digits(n):\n    return len(str(n))",
     "feedback": null
 }

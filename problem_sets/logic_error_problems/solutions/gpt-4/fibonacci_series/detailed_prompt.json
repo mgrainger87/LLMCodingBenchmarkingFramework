@@ -2,6 +2,6 @@
     "problem_identifier": "fibonacci_series",
     "model_identifier": "gpt-4",
     "prompt_identifier": "detailed_prompt",
-    "solution_code": "def fibonacci(n):\n    if n == 0:\n        return []\n    elif n == 1:\n        return [0]\n    else:\n        fib_list = [0, 1]\n        for i in range(2, n):\n            fib_list.append(fib_list[i - 1] + fib_list[i - 2])\n        return fib_list",
+    "solution_code": "def fibonacci(n):\n    if n <= 0:\n        return []\n    elif n == 1:\n        return [0]\n    else:\n        fib_list = [0, 1]\n        for i in range(2, n):\n            fib_list.append(fib_list[i - 1] + fib_list[i - 2])\n        return fib_list",
     "feedback": null
 }

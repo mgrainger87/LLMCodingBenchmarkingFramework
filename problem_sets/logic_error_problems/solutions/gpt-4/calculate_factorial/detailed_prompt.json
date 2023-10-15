@@ -2,6 +2,6 @@
     "problem_identifier": "calculate_factorial",
     "model_identifier": "gpt-4",
     "prompt_identifier": "detailed_prompt",
-    "solution_code": "def calculate_factorial(n):\n    if n == 0:\n        return 1\n    else:\n        return n * calculate_factorial(n - 1)",
+    "solution_code": "def calculate_factorial(n: int) -> int:\n    if n == 0:\n        return 1\n    else:\n        return n * calculate_factorial(n - 1)",
     "feedback": null
 }

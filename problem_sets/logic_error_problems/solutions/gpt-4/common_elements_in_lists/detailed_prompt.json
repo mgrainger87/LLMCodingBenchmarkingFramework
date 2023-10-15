@@ -2,6 +2,6 @@
     "problem_identifier": "common_elements_in_lists",
     "model_identifier": "gpt-4",
     "prompt_identifier": "detailed_prompt",
-    "solution_code": "def common_elements(lst1, lst2): \n    return list(set(lst1) & set(lst2))",
+    "solution_code": "def common_elements(lst1, lst2):\n    return list(set(lst1) & set(lst2))",
     "feedback": null
 }

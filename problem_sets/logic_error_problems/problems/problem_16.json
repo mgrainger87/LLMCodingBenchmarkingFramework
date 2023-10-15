@@ -3,7 +3,7 @@
   "description": "The function should return a list containing the intersection of the two input lists.",
   "function_prototype": {
       "function_name": "list_intersection",
-      "parameters": [{"name": "lst1", "type": "list"}, {"name": "lst2", "type": "list"}],
+      "parameters": [{"name": "lst1", "type": "List"}, {"name": "lst2", "type": "list"}],
       "return_values": [{"type": "list"}]
   },
   "correctness_test_suite": [

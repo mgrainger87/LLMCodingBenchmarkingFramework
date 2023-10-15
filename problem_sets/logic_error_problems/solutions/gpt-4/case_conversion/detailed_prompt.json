@@ -2,6 +2,6 @@
     "problem_identifier": "case_conversion",
     "model_identifier": "gpt-4",
     "prompt_identifier": "detailed_prompt",
-    "solution_code": "def case_conversion(s):\n    return \"\".join([char.upper() if char.islower() else char.lower() for char in s])",
+    "solution_code": "def case_conversion(s): \n    return \"\".join([char.upper() if char.islower() else char.lower() for char in s])",
     "feedback": null
 }

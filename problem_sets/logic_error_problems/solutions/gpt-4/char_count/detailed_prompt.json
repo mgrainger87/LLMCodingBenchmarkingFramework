@@ -2,6 +2,6 @@
     "problem_identifier": "char_count",
     "model_identifier": "gpt-4",
     "prompt_identifier": "detailed_prompt",
-    "solution_code": "def char_count(s, char):\n    return s.count(char)",
+    "solution_code": "def char_count(s: str, char: str) -> int:\n    return s.count(char)",
     "feedback": null
 }
