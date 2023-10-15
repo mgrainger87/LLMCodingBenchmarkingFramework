@@ -1,0 +1,1981 @@
+{
+    "Problem Sets": {
+        "problem_sets/logic_error_problems": {
+            "correctness": [
+                {
+                    "problem_identifier": "reverse_string",
+                    "prompt_identifier": "detailed_prompt",
+                    "model_identifier": "gpt-4",
+                    "score": 1.0,
+                    "sub_criteria_scores": null,
+                    "issues": []
+                },
+                {
+                    "problem_identifier": "count_digits",
+                    "prompt_identifier": "detailed_prompt",
+                    "model_identifier": "gpt-4",
+                    "score": 1.0,
+                    "sub_criteria_scores": null,
+                    "issues": []
+                },
+                {
+                    "problem_identifier": "greatest_common_divisor",
+                    "prompt_identifier": "detailed_prompt",
+                    "model_identifier": "gpt-4",
+                    "score": 1.0,
+                    "sub_criteria_scores": null,
+                    "issues": []
+                },
+                {
+                    "problem_identifier": "odd_numbers",
+                    "prompt_identifier": "detailed_prompt",
+                    "model_identifier": "gpt-4",
+                    "score": 0.0,
+                    "sub_criteria_scores": null,
+                    "issues": [
+                        "Test failed:\n\tInput: lst = [1, 2, 3, 4, 5]; Expected Output: 1, 3, 5\n\tFunction prototype: odd_numbers(lst: list) -> list\n\tExpected result: 1 <class 'int'>\n\tActual result: [1, 3, 5] <class 'list'>",
+                        "Test failed:\n\tInput: lst = [2, 4, 6, 8, 10]; Expected Output: \n\tFunction prototype: odd_numbers(lst: list) -> list\n\tExpected result: () <class 'tuple'>\n\tActual result: [] <class 'list'>",
+                        "Test failed:\n\tInput: lst = [11, 13, 15, 17, 19]; Expected Output: 11, 13, 15, 17, 19\n\tFunction prototype: odd_numbers(lst: list) -> list\n\tExpected result: 11 <class 'int'>\n\tActual result: [11, 13, 15, 17, 19] <class 'list'>",
+                        "Test failed:\n\tInput: lst = []; Expected Output: \n\tFunction prototype: odd_numbers(lst: list) -> list\n\tExpected result: () <class 'tuple'>\n\tActual result: [] <class 'list'>"
+                    ]
+                },
+                {
+                    "problem_identifier": "repeat_string",
+                    "prompt_identifier": "detailed_prompt",
+                    "model_identifier": "gpt-4",
+                    "score": 1.0,
+                    "sub_criteria_scores": null,
+                    "issues": []
+                },
+                {
+                    "problem_identifier": "is_palindrome",
+                    "prompt_identifier": "detailed_prompt",
+                    "model_identifier": "gpt-4",
+                    "score": 1.0,
+                    "sub_criteria_scores": null,
+                    "issues": []
+                },
+                {
+                    "problem_identifier": "max_value",
+                    "prompt_identifier": "detailed_prompt",
+                    "model_identifier": "gpt-4",
+                    "score": 0.8,
+                    "sub_criteria_scores": null,
+                    "issues": [
+                        "Error encountered during execution for test case Input: lst = []; Expected Output: : max() arg is an empty sequence\nTraceback (most recent call last):\n  File \"/Users/rajay/Documents/Classes/F23/CS8395/individual/hw4/myrepo/LLMCodingBenchmarkingFramework/execution.py\", line 76, in executor_script\n    result = function(*parameters)\n             ^^^^^^^^^^^^^^^^^^^^^\n  File \"<string>\", line 4, in max_value\nValueError: max() arg is an empty sequence\n"
+                    ]
+                },
+                {
+                    "problem_identifier": "concatenate_strings",
+                    "prompt_identifier": "detailed_prompt",
+                    "model_identifier": "gpt-4",
+                    "score": 1.0,
+                    "sub_criteria_scores": null,
+                    "issues": []
+                },
+                {
+                    "problem_identifier": "list_intersection",
+                    "prompt_identifier": "detailed_prompt",
+                    "model_identifier": "gpt-4",
+                    "score": 0.0,
+                    "sub_criteria_scores": null,
+                    "issues": [
+                        "Test failed:\n\tInput: lst1 = [1, 2, 3, 4, 5], lst2 = [3, 4, 5, 6, 7]; Expected Output: 3, 4, 5\n\tFunction prototype: list_intersection(lst1: List, lst2: list) -> list\n\tExpected result: 3 <class 'int'>\n\tActual result: [3, 4, 5] <class 'list'>",
+                        "Test failed:\n\tInput: lst1 = ['apple', 'banana', 'cherry'], lst2 = ['banana', 'cherry', 'date']; Expected Output: banana, cherry\n\tFunction prototype: list_intersection(lst1: List, lst2: list) -> list\n\tExpected result: banana <class 'str'>\n\tActual result: ['banana', 'cherry'] <class 'list'>",
+                        "Test failed:\n\tInput: lst1 = [10, 20, 30], lst2 = [5, 10, 15]; Expected Output: 10\n\tFunction prototype: list_intersection(lst1: List, lst2: list) -> list\n\tExpected result: 10 <class 'int'>\n\tActual result: [10] <class 'list'>",
+                        "Test failed:\n\tInput: lst1 = [], lst2 = []; Expected Output: \n\tFunction prototype: list_intersection(lst1: List, lst2: list) -> list\n\tExpected result: () <class 'tuple'>\n\tActual result: [] <class 'list'>"
+                    ]
+                },
+                {
+                    "problem_identifier": "fibonacci",
+                    "prompt_identifier": "detailed_prompt",
+                    "model_identifier": "gpt-4",
+                    "score": 0.0,
+                    "sub_criteria_scores": null,
+                    "issues": [
+                        "Test failed:\n\tInput: n = 0; Expected Output: 0\n\tFunction prototype: fibonacci(n: int) -> int\n\tExpected result: 0 <class 'int'>\n\tActual result: Invalid input <class 'str'>",
+                        "Test failed:\n\tInput: n = 1; Expected Output: 1\n\tFunction prototype: fibonacci(n: int) -> int\n\tExpected result: 1 <class 'int'>\n\tActual result: 0 <class 'int'>",
+                        "Test failed:\n\tInput: n = 5; Expected Output: 5\n\tFunction prototype: fibonacci(n: int) -> int\n\tExpected result: 5 <class 'int'>\n\tActual result: 3 <class 'int'>",
+                        "Test failed:\n\tInput: n = 3; Expected Output: 2\n\tFunction prototype: fibonacci(n: int) -> int\n\tExpected result: 2 <class 'int'>\n\tActual result: 1 <class 'int'>"
+                    ]
+                },
+                {
+                    "problem_identifier": "title_case",
+                    "prompt_identifier": "detailed_prompt",
+                    "model_identifier": "gpt-4",
+                    "score": 0.25,
+                    "sub_criteria_scores": null,
+                    "issues": [
+                        "Test failed:\n\tInput: s = hello world; Expected Output: HELLO WORLD\n\tFunction prototype: title_case(s: str) -> str\n\tExpected result: HELLO WORLD <class 'str'>\n\tActual result: Hello World <class 'str'>",
+                        "Test failed:\n\tInput: s = apple pie; Expected Output: APPLE PIE\n\tFunction prototype: title_case(s: str) -> str\n\tExpected result: APPLE PIE <class 'str'>\n\tActual result: Apple Pie <class 'str'>",
+                        "Test failed:\n\tInput: s = Title Case; Expected Output: TITLE CASE\n\tFunction prototype: title_case(s: str) -> str\n\tExpected result: TITLE CASE <class 'str'>\n\tActual result: Title Case <class 'str'>"
+                    ]
+                },
+                {
+                    "problem_identifier": "list_average",
+                    "prompt_identifier": "detailed_prompt",
+                    "model_identifier": "gpt-4",
+                    "score": 0.75,
+                    "sub_criteria_scores": null,
+                    "issues": [
+                        "Error encountered during execution for test case Input: lst = []; Expected Output: : division by zero\nTraceback (most recent call last):\n  File \"/Users/rajay/Documents/Classes/F23/CS8395/individual/hw4/myrepo/LLMCodingBenchmarkingFramework/execution.py\", line 76, in executor_script\n    result = function(*parameters)\n             ^^^^^^^^^^^^^^^^^^^^^\n  File \"<string>\", line 4, in list_average\nZeroDivisionError: division by zero\n"
+                    ]
+                },
+                {
+                    "problem_identifier": "reverse_list",
+                    "prompt_identifier": "detailed_prompt",
+                    "model_identifier": "gpt-4",
+                    "score": 0.0,
+                    "sub_criteria_scores": null,
+                    "issues": [
+                        "Test failed:\n\tInput: lst = [1, 2, 3, 4, 5]; Expected Output: 5, 4, 3, 2, 1\n\tFunction prototype: reverse_list(lst: list) -> list\n\tExpected result: 5 <class 'int'>\n\tActual result: [5, 4, 3, 2, 1] <class 'list'>",
+                        "Test failed:\n\tInput: lst = ['apple', 'banana', 'cherry']; Expected Output: cherry, banana, apple\n\tFunction prototype: reverse_list(lst: list) -> list\n\tExpected result: cherry <class 'str'>\n\tActual result: ['cherry', 'banana', 'apple'] <class 'list'>",
+                        "Test failed:\n\tInput: lst = []; Expected Output: \n\tFunction prototype: reverse_list(lst: list) -> list\n\tExpected result: () <class 'tuple'>\n\tActual result: [] <class 'list'>"
+                    ]
+                },
+                {
+                    "problem_identifier": "remove_duplicates",
+                    "prompt_identifier": "detailed_prompt",
+                    "model_identifier": "gpt-4",
+                    "score": 0.0,
+                    "sub_criteria_scores": null,
+                    "issues": [
+                        "Test failed:\n\tInput: lst = [1, 2, 2, 3, 4, 4, 5]; Expected Output: 1, 2, 3, 4, 5\n\tFunction prototype: remove_duplicates(lst: list) -> list\n\tExpected result: 1 <class 'int'>\n\tActual result: [1, 2, 3, 4, 5] <class 'list'>",
+                        "Test failed:\n\tInput: lst = ['apple', 'banana', 'apple', 'cherry', 'banana']; Expected Output: apple, banana, cherry\n\tFunction prototype: remove_duplicates(lst: list) -> list\n\tExpected result: apple <class 'str'>\n\tActual result: ['apple', 'banana', 'cherry'] <class 'list'>",
+                        "Test failed:\n\tInput: lst = [10, 20, 30, 10, 40]; Expected Output: 10, 20, 30, 40\n\tFunction prototype: remove_duplicates(lst: list) -> list\n\tExpected result: 10 <class 'int'>\n\tActual result: [10, 20, 30, 40] <class 'list'>",
+                        "Test failed:\n\tInput: lst = []; Expected Output: \n\tFunction prototype: remove_duplicates(lst: list) -> list\n\tExpected result: () <class 'tuple'>\n\tActual result: [] <class 'list'>"
+                    ]
+                },
+                {
+                    "problem_identifier": "factorial",
+                    "prompt_identifier": "detailed_prompt",
+                    "model_identifier": "gpt-4",
+                    "score": 1.0,
+                    "sub_criteria_scores": null,
+                    "issues": []
+                },
+                {
+                    "problem_identifier": "char_count",
+                    "prompt_identifier": "detailed_prompt",
+                    "model_identifier": "gpt-4",
+                    "score": 1.0,
+                    "sub_criteria_scores": null,
+                    "issues": []
+                },
+                {
+                    "problem_identifier": "remove_element",
+                    "prompt_identifier": "detailed_prompt",
+                    "model_identifier": "gpt-4",
+                    "score": 0.0,
+                    "sub_criteria_scores": null,
+                    "issues": [
+                        "Test failed:\n\tInput: lst = [1, 2, 3, 4, 5], element = 3; Expected Output: 1, 2, 4, 5\n\tFunction prototype: remove_element(lst: list, element: any) -> list\n\tExpected result: 1 <class 'int'>\n\tActual result: [1, 2, 4, 5] <class 'list'>",
+                        "Test failed:\n\tInput: lst = ['apple', 'banana', 'cherry'], element = banana; Expected Output: apple, cherry\n\tFunction prototype: remove_element(lst: list, element: any) -> list\n\tExpected result: apple <class 'str'>\n\tActual result: ['apple', 'cherry'] <class 'list'>",
+                        "Test failed:\n\tInput: lst = [10, 20, 30, 40, 50], element = 20; Expected Output: 10, 30, 40, 50\n\tFunction prototype: remove_element(lst: list, element: any) -> list\n\tExpected result: 10 <class 'int'>\n\tActual result: [10, 30, 40, 50] <class 'list'>",
+                        "Test failed:\n\tInput: lst = [], element = 10; Expected Output: \n\tFunction prototype: remove_element(lst: list, element: any) -> list\n\tExpected result: () <class 'tuple'>\n\tActual result: [] <class 'list'>"
+                    ]
+                },
+                {
+                    "problem_identifier": "is_prime",
+                    "prompt_identifier": "detailed_prompt",
+                    "model_identifier": "gpt-4",
+                    "score": 1.0,
+                    "sub_criteria_scores": null,
+                    "issues": []
+                },
+                {
+                    "problem_identifier": "list_summation",
+                    "prompt_identifier": "detailed_prompt",
+                    "model_identifier": "gpt-4",
+                    "score": 0.0,
+                    "sub_criteria_scores": null,
+                    "issues": [
+                        "Test failed:\n\tInput: lst1 = [1, 2, 3], lst2 = [4, 5, 6]; Expected Output: 5, 7, 9\n\tFunction prototype: list_summation(lst1: list, lst2: list) -> list\n\tExpected result: 5 <class 'int'>\n\tActual result: [5, 7, 9] <class 'list'>",
+                        "Test failed:\n\tInput: lst1 = [10, 20, 30], lst2 = [1, 2, 3]; Expected Output: 11, 22, 33\n\tFunction prototype: list_summation(lst1: list, lst2: list) -> list\n\tExpected result: 11 <class 'int'>\n\tActual result: [11, 22, 33] <class 'list'>",
+                        "Test failed:\n\tInput: lst1 = [], lst2 = []; Expected Output: \n\tFunction prototype: list_summation(lst1: list, lst2: list) -> list\n\tExpected result: () <class 'tuple'>\n\tActual result: [] <class 'list'>"
+                    ]
+                },
+                {
+                    "problem_identifier": "vowel_count",
+                    "prompt_identifier": "detailed_prompt",
+                    "model_identifier": "gpt-4",
+                    "score": 1.0,
+                    "sub_criteria_scores": null,
+                    "issues": []
+                },
+                {
+                    "problem_identifier": "word_count",
+                    "prompt_identifier": "detailed_prompt",
+                    "model_identifier": "gpt-4",
+                    "score": 1.0,
+                    "sub_criteria_scores": null,
+                    "issues": []
+                },
+                {
+                    "problem_identifier": "multiplication_table",
+                    "prompt_identifier": "detailed_prompt",
+                    "model_identifier": "gpt-4",
+                    "score": 0.0,
+                    "sub_criteria_scores": null,
+                    "issues": [
+                        "Test failed:\n\tInput: n = 2; Expected Output: [1, 2], [2, 4]\n\tFunction prototype: multiplication_table(n: int) -> list\n\tExpected result: [1, 2] <class 'list'>\n\tActual result: [[1, 2], [2, 4]] <class 'list'>",
+                        "Test failed:\n\tInput: n = 3; Expected Output: [1, 2, 3], [2, 4, 6], [3, 6, 9]\n\tFunction prototype: multiplication_table(n: int) -> list\n\tExpected result: [1, 2, 3] <class 'list'>\n\tActual result: [[1, 2, 3], [2, 4, 6], [3, 6, 9]] <class 'list'>",
+                        "Test failed:\n\tInput: n = 5; Expected Output: [1, 2, 3, 4, 5], [2, 4, 6, 8, 10], [3, 6, 9, 12, 15], [4, 8, 12, 16, 20], [5, 10, 15, 20, 25]\n\tFunction prototype: multiplication_table(n: int) -> list\n\tExpected result: [1, 2, 3, 4, 5] <class 'list'>\n\tActual result: [[1, 2, 3, 4, 5], [2, 4, 6, 8, 10], [3, 6, 9, 12, 15], [4, 8, 12, 16, 20], [5, 10, 15, 20, 25]] <class 'list'>"
+                    ]
+                },
+                {
+                    "problem_identifier": "transpose_matrix",
+                    "prompt_identifier": "detailed_prompt",
+                    "model_identifier": "gpt-4",
+                    "score": 0.0,
+                    "sub_criteria_scores": null,
+                    "issues": [
+                        "Error encountered during execution for test case Input: matrix = [[1, 2, 3], [4, 5, 6]]; Expected Output: [1, 4], [2, 5], [3, 6]: Cannot instantiate typing.Unpack\nTraceback (most recent call last):\n  File \"/Users/rajay/Documents/Classes/F23/CS8395/individual/hw4/myrepo/LLMCodingBenchmarkingFramework/execution.py\", line 76, in executor_script\n    result = function(*parameters)\n             ^^^^^^^^^^^^^^^^^^^^^\n  File \"/opt/homebrew/Cellar/python@3.11/3.11.4_1/Frameworks/Python.framework/Versions/3.11/lib/python3.11/typing.py\", line 462, in __call__\n    raise TypeError(f\"Cannot instantiate {self!r}\")\nTypeError: Cannot instantiate typing.Unpack\n",
+                        "Error encountered during execution for test case Input: matrix = [[1, 2], [3, 4], [5, 6]]; Expected Output: [1, 3, 5], [2, 4, 6]: Cannot instantiate typing.Unpack\nTraceback (most recent call last):\n  File \"/Users/rajay/Documents/Classes/F23/CS8395/individual/hw4/myrepo/LLMCodingBenchmarkingFramework/execution.py\", line 76, in executor_script\n    result = function(*parameters)\n             ^^^^^^^^^^^^^^^^^^^^^\n  File \"/opt/homebrew/Cellar/python@3.11/3.11.4_1/Frameworks/Python.framework/Versions/3.11/lib/python3.11/typing.py\", line 462, in __call__\n    raise TypeError(f\"Cannot instantiate {self!r}\")\nTypeError: Cannot instantiate typing.Unpack\n",
+                        "Error encountered during execution for test case Input: matrix = [[]]; Expected Output: []: Cannot instantiate typing.Unpack\nTraceback (most recent call last):\n  File \"/Users/rajay/Documents/Classes/F23/CS8395/individual/hw4/myrepo/LLMCodingBenchmarkingFramework/execution.py\", line 76, in executor_script\n    result = function(*parameters)\n             ^^^^^^^^^^^^^^^^^^^^^\n  File \"/opt/homebrew/Cellar/python@3.11/3.11.4_1/Frameworks/Python.framework/Versions/3.11/lib/python3.11/typing.py\", line 462, in __call__\n    raise TypeError(f\"Cannot instantiate {self!r}\")\nTypeError: Cannot instantiate typing.Unpack\n"
+                    ]
+                },
+                {
+                    "problem_identifier": "sum_of_list",
+                    "prompt_identifier": "detailed_prompt",
+                    "model_identifier": "gpt-4",
+                    "score": 1.0,
+                    "sub_criteria_scores": null,
+                    "issues": []
+                },
+                {
+                    "problem_identifier": "are_anagrams",
+                    "prompt_identifier": "detailed_prompt",
+                    "model_identifier": "gpt-4",
+                    "score": 1.0,
+                    "sub_criteria_scores": null,
+                    "issues": []
+                },
+                {
+                    "problem_identifier": "is_armstrong",
+                    "prompt_identifier": "detailed_prompt",
+                    "model_identifier": "gpt-4",
+                    "score": 0.6666666666666666,
+                    "sub_criteria_scores": null,
+                    "issues": [
+                        "Test failed:\n\tInput: n = 1634; Expected Output: False\n\tFunction prototype: is_armstrong(n: int) -> bool\n\tExpected result: False <class 'bool'>\n\tActual result: True <class 'bool'>",
+                        "Test failed:\n\tInput: n = 8208; Expected Output: False\n\tFunction prototype: is_armstrong(n: int) -> bool\n\tExpected result: False <class 'bool'>\n\tActual result: True <class 'bool'>",
+                        "Test failed:\n\tInput: n = 9474; Expected Output: False\n\tFunction prototype: is_armstrong(n: int) -> bool\n\tExpected result: False <class 'bool'>\n\tActual result: True <class 'bool'>"
+                    ]
+                },
+                {
+                    "problem_identifier": "flatten_list",
+                    "prompt_identifier": "detailed_prompt",
+                    "model_identifier": "gpt-4",
+                    "score": 0.0,
+                    "sub_criteria_scores": null,
+                    "issues": [
+                        "Test failed:\n\tInput: lst = [[1, 2, 3], [4, 5, 6]]; Expected Output: 1, 2, 3, 4, 5, 6\n\tFunction prototype: flatten_list(lst: list of lists) -> list\n\tExpected result: 1 <class 'int'>\n\tActual result: [1, 2, 3, 4, 5, 6] <class 'list'>",
+                        "Test failed:\n\tInput: lst = [[1], [2], [3]]; Expected Output: 1, 2, 3\n\tFunction prototype: flatten_list(lst: list of lists) -> list\n\tExpected result: 1 <class 'int'>\n\tActual result: [1, 2, 3] <class 'list'>",
+                        "Test failed:\n\tInput: lst = [[]]; Expected Output: \n\tFunction prototype: flatten_list(lst: list of lists) -> list\n\tExpected result: () <class 'tuple'>\n\tActual result: [] <class 'list'>",
+                        "Test failed:\n\tInput: lst = [[], [], []]; Expected Output: \n\tFunction prototype: flatten_list(lst: list of lists) -> list\n\tExpected result: () <class 'tuple'>\n\tActual result: [] <class 'list'>"
+                    ]
+                },
+                {
+                    "problem_identifier": "string_case_swap",
+                    "prompt_identifier": "detailed_prompt",
+                    "model_identifier": "gpt-4",
+                    "score": 1.0,
+                    "sub_criteria_scores": null,
+                    "issues": []
+                },
+                {
+                    "problem_identifier": "list_element_swapping",
+                    "prompt_identifier": "detailed_prompt",
+                    "model_identifier": "gpt-4",
+                    "score": 0.0,
+                    "sub_criteria_scores": null,
+                    "issues": [
+                        "Test failed:\n\tInput: lst = [1, 2, 3, 4], i = 1, j = 2; Expected Output: 1, 3, 2, 4\n\tFunction prototype: swap_elements(lst: list, i: int, j: int) -> list\n\tExpected result: 1 <class 'int'>\n\tActual result: [1, 3, 2, 4] <class 'list'>",
+                        "Test failed:\n\tInput: lst = [5, 10, 15], i = 0, j = 2; Expected Output: 15, 10, 5\n\tFunction prototype: swap_elements(lst: list, i: int, j: int) -> list\n\tExpected result: 15 <class 'int'>\n\tActual result: [15, 10, 5] <class 'list'>",
+                        "Test failed:\n\tInput: lst = [5, 10], i = 0, j = 1; Expected Output: 10, 5\n\tFunction prototype: swap_elements(lst: list, i: int, j: int) -> list\n\tExpected result: 10 <class 'int'>\n\tActual result: [10, 5] <class 'list'>"
+                    ]
+                },
+                {
+                    "problem_identifier": "string_space_removal",
+                    "prompt_identifier": "detailed_prompt",
+                    "model_identifier": "gpt-4",
+                    "score": 0.6666666666666666,
+                    "sub_criteria_scores": null,
+                    "issues": [
+                        "Test failed:\n\tInput: s = [' ']; Expected Output: \n\tFunction prototype: remove_spaces(s: str) -> str\n\tExpected result:  <class 'str'>\n\tActual result: [''] <class 'str'>"
+                    ]
+                },
+                {
+                    "problem_identifier": "dictionary_value_retrieval",
+                    "prompt_identifier": "detailed_prompt",
+                    "model_identifier": "gpt-4",
+                    "score": 0.5,
+                    "sub_criteria_scores": null,
+                    "issues": [
+                        "Test failed:\n\tInput: d = {'a': 21, 'b': 32}, key = c; Expected Output: \n\tFunction prototype: get_value(d: dict, key: str) -> int\n\tExpected result: () <class 'tuple'>\n\tActual result: None <class 'NoneType'>"
+                    ]
+                },
+                {
+                    "problem_identifier": "reverse_list",
+                    "prompt_identifier": "detailed_prompt",
+                    "model_identifier": "gpt-4",
+                    "score": 0.0,
+                    "sub_criteria_scores": null,
+                    "issues": [
+                        "Test failed:\n\tInput: lst = [1, 2, 3, 4]; Expected Output: 4, 3, 2, 1\n\tFunction prototype: reverse_list(lst: list) -> list\n\tExpected result: 4 <class 'int'>\n\tActual result: [4, 3, 2, 1] <class 'list'>",
+                        "Test failed:\n\tInput: lst = [2, 2, 1]; Expected Output: 1, 2, 2\n\tFunction prototype: reverse_list(lst: list) -> list\n\tExpected result: 1 <class 'int'>\n\tActual result: [1, 2, 2] <class 'list'>"
+                    ]
+                },
+                {
+                    "problem_identifier": "sum_of_digits",
+                    "prompt_identifier": "detailed_prompt",
+                    "model_identifier": "gpt-4",
+                    "score": 1.0,
+                    "sub_criteria_scores": null,
+                    "issues": []
+                },
+                {
+                    "problem_identifier": "list_element_multiplication",
+                    "prompt_identifier": "detailed_prompt",
+                    "model_identifier": "gpt-4",
+                    "score": 0.0,
+                    "sub_criteria_scores": null,
+                    "issues": [
+                        "Test failed:\n\tInput: lst = [1, 2, 3, 4], n = 2; Expected Output: 2, 4, 6, 8\n\tFunction prototype: multiply_list(lst: list, n: int) -> list\n\tExpected result: 2 <class 'int'>\n\tActual result: [2, 4, 6, 8] <class 'list'>",
+                        "Test failed:\n\tInput: lst = [5, 10, 15], n = 3; Expected Output: 15, 30, 45\n\tFunction prototype: multiply_list(lst: list, n: int) -> list\n\tExpected result: 15 <class 'int'>\n\tActual result: [15, 30, 45] <class 'list'>"
+                    ]
+                },
+                {
+                    "problem_identifier": "string_length",
+                    "prompt_identifier": "detailed_prompt",
+                    "model_identifier": "gpt-4",
+                    "score": 1.0,
+                    "sub_criteria_scores": null,
+                    "issues": []
+                },
+                {
+                    "problem_identifier": "list_to_string_conversion",
+                    "prompt_identifier": "detailed_prompt",
+                    "model_identifier": "gpt-4",
+                    "score": 1.0,
+                    "sub_criteria_scores": null,
+                    "issues": []
+                },
+                {
+                    "problem_identifier": "list_second_largest",
+                    "prompt_identifier": "detailed_prompt",
+                    "model_identifier": "gpt-4",
+                    "score": 1.0,
+                    "sub_criteria_scores": null,
+                    "issues": []
+                },
+                {
+                    "problem_identifier": "string_permutation",
+                    "prompt_identifier": "detailed_prompt",
+                    "model_identifier": "gpt-4",
+                    "score": 1.0,
+                    "sub_criteria_scores": null,
+                    "issues": []
+                },
+                {
+                    "problem_identifier": "prime_factors",
+                    "prompt_identifier": "detailed_prompt",
+                    "model_identifier": "gpt-4",
+                    "score": 0.0,
+                    "sub_criteria_scores": null,
+                    "issues": [
+                        "Test failed:\n\tInput: n = 12; Expected Output: 2, 3\n\tFunction prototype: prime_factors(n: int) -> list\n\tExpected result: 2 <class 'int'>\n\tActual result: [2, 2, 3] <class 'list'>",
+                        "Test failed:\n\tInput: n = 30; Expected Output: 2, 3, 5\n\tFunction prototype: prime_factors(n: int) -> list\n\tExpected result: 2 <class 'int'>\n\tActual result: [2, 3, 5] <class 'list'>"
+                    ]
+                },
+                {
+                    "problem_identifier": "palindrome_number_checker",
+                    "prompt_identifier": "detailed_prompt",
+                    "model_identifier": "gpt-4",
+                    "score": 1.0,
+                    "sub_criteria_scores": null,
+                    "issues": []
+                },
+                {
+                    "problem_identifier": "string_length",
+                    "prompt_identifier": "detailed_prompt",
+                    "model_identifier": "gpt-4",
+                    "score": 0.5,
+                    "sub_criteria_scores": null,
+                    "issues": [
+                        "Test failed:\n\tInput: s = Python is fun; Expected Output: 14\n\tFunction prototype: string_length(s: str) -> int\n\tExpected result: 14 <class 'int'>\n\tActual result: 13 <class 'int'>"
+                    ]
+                },
+                {
+                    "problem_identifier": "common_elements_in_lists",
+                    "prompt_identifier": "detailed_prompt",
+                    "model_identifier": "gpt-4",
+                    "score": 0.0,
+                    "sub_criteria_scores": null,
+                    "issues": [
+                        "Test failed:\n\tInput: lst1 = ['hello', 'world', 'apple', 'banana'], lst2 = ['cherry', 'fig', 'strawberry']; Expected Output: \n\tFunction prototype: common_elements(lst1: list, lst2: list) -> list\n\tExpected result: () <class 'tuple'>\n\tActual result: [] <class 'list'>",
+                        "Test failed:\n\tInput: lst1 = ['apple', 'banana', 'cherry'], lst2 = ['cherry', 'date', 'fig']; Expected Output: cherry\n\tFunction prototype: common_elements(lst1: list, lst2: list) -> list\n\tExpected result: cherry <class 'str'>\n\tActual result: ['cherry'] <class 'list'>"
+                    ]
+                },
+                {
+                    "problem_identifier": "unique_elements_in_list",
+                    "prompt_identifier": "detailed_prompt",
+                    "model_identifier": "gpt-4",
+                    "score": 0.0,
+                    "sub_criteria_scores": null,
+                    "issues": [
+                        "Test failed:\n\tInput: lst = [1, 2, 2, 3, 4, 4, 4, 5]; Expected Output: 1, 2, 3, 4, 5\n\tFunction prototype: unique_elements(lst: list) -> list\n\tExpected result: 1 <class 'int'>\n\tActual result: [1, 2, 3, 4, 5] <class 'list'>",
+                        "Test failed:\n\tInput: lst = [1, 1, 1, 1]; Expected Output: 1\n\tFunction prototype: unique_elements(lst: list) -> list\n\tExpected result: 1 <class 'int'>\n\tActual result: [1] <class 'list'>"
+                    ]
+                },
+                {
+                    "problem_identifier": "list_intersection",
+                    "prompt_identifier": "detailed_prompt",
+                    "model_identifier": "gpt-4",
+                    "score": 0.0,
+                    "sub_criteria_scores": null,
+                    "issues": [
+                        "Test failed:\n\tInput: lst1 = [1, 2, 3, 4], lst2 = [3, 4, 5, 6]; Expected Output: 3, 4\n\tFunction prototype: list_intersection(lst1: list, lst2: list) -> list\n\tExpected result: 3 <class 'int'>\n\tActual result: [3, 4] <class 'list'>",
+                        "Test failed:\n\tInput: lst1 = [1, 0], lst2 = [2, 2]; Expected Output: \n\tFunction prototype: list_intersection(lst1: list, lst2: list) -> list\n\tExpected result: () <class 'tuple'>\n\tActual result: [] <class 'list'>"
+                    ]
+                },
+                {
+                    "problem_identifier": "list_union",
+                    "prompt_identifier": "detailed_prompt",
+                    "model_identifier": "gpt-4",
+                    "score": 0.0,
+                    "sub_criteria_scores": null,
+                    "issues": [
+                        "Test failed:\n\tInput: lst1 = [1, 2, 3, 4], lst2 = [3, 4, 5, 6]; Expected Output: 1, 2, 3, 4, 5, 6\n\tFunction prototype: list_union(lst1: list, lst2: list) -> list\n\tExpected result: 1 <class 'int'>\n\tActual result: [1, 2, 3, 4, 5, 6] <class 'list'>",
+                        "Test failed:\n\tInput: lst1 = [], lst2 = [1]; Expected Output: 1\n\tFunction prototype: list_union(lst1: list, lst2: list) -> list\n\tExpected result: 1 <class 'int'>\n\tActual result: [1] <class 'list'>"
+                    ]
+                },
+                {
+                    "problem_identifier": "list_length",
+                    "prompt_identifier": "detailed_prompt",
+                    "model_identifier": "gpt-4",
+                    "score": 1.0,
+                    "sub_criteria_scores": null,
+                    "issues": []
+                },
+                {
+                    "problem_identifier": "char_frequency_in_string",
+                    "prompt_identifier": "detailed_prompt",
+                    "model_identifier": "gpt-4",
+                    "score": 0.0,
+                    "sub_criteria_scores": null,
+                    "issues": [
+                        "Test failed:\n\tInput: s = hello; Expected Output: h, e, l, o\n\tFunction prototype: char_frequency(s: str) -> dict\n\tExpected result: h <class 'str'>\n\tActual result: {'h': 1, 'e': 1, 'l': 2, 'o': 1} <class 'dict'>",
+                        "Test failed:\n\tInput: s = programming; Expected Output: p, r, o, g, a, m, i, n\n\tFunction prototype: char_frequency(s: str) -> dict\n\tExpected result: p <class 'str'>\n\tActual result: {'p': 1, 'r': 2, 'o': 1, 'g': 2, 'a': 1, 'm': 2, 'i': 1, 'n': 1} <class 'dict'>"
+                    ]
+                },
+                {
+                    "problem_identifier": "max_number_in_list",
+                    "prompt_identifier": "detailed_prompt",
+                    "model_identifier": "gpt-4",
+                    "score": 1.0,
+                    "sub_criteria_scores": null,
+                    "issues": []
+                },
+                {
+                    "problem_identifier": "min_number_in_list",
+                    "prompt_identifier": "detailed_prompt",
+                    "model_identifier": "gpt-4",
+                    "score": 1.0,
+                    "sub_criteria_scores": null,
+                    "issues": []
+                },
+                {
+                    "problem_identifier": "list_sorting",
+                    "prompt_identifier": "detailed_prompt",
+                    "model_identifier": "gpt-4",
+                    "score": 0.0,
+                    "sub_criteria_scores": null,
+                    "issues": [
+                        "Test failed:\n\tInput: lst = [5, 2, 9, 8, 1]; Expected Output: 1, 2, 5, 8, 9\n\tFunction prototype: sort_list(lst: list) -> list\n\tExpected result: 1 <class 'int'>\n\tActual result: [1, 2, 5, 8, 9] <class 'list'>",
+                        "Test failed:\n\tInput: lst = [10, 5, 20, 1, 30]; Expected Output: 1, 5, 10, 20, 30\n\tFunction prototype: sort_list(lst: list) -> list\n\tExpected result: 1 <class 'int'>\n\tActual result: [1, 5, 10, 20, 30] <class 'list'>"
+                    ]
+                },
+                {
+                    "problem_identifier": "fibonacci_series",
+                    "prompt_identifier": "detailed_prompt",
+                    "model_identifier": "gpt-4",
+                    "score": 0.0,
+                    "sub_criteria_scores": null,
+                    "issues": [
+                        "Test failed:\n\tInput: n = 5; Expected Output: 0, 1, 1, 2, 3\n\tFunction prototype: fibonacci(n: int) -> list\n\tExpected result: 0 <class 'int'>\n\tActual result: [0, 1, 1, 2, 3] <class 'list'>",
+                        "Test failed:\n\tInput: n = 8; Expected Output: 0, 1, 1, 2, 3, 5, 8, 13\n\tFunction prototype: fibonacci(n: int) -> list\n\tExpected result: 0 <class 'int'>\n\tActual result: [0, 1, 1, 2, 3, 5, 8, 13] <class 'list'>"
+                    ]
+                },
+                {
+                    "problem_identifier": "list_average",
+                    "prompt_identifier": "detailed_prompt",
+                    "model_identifier": "gpt-4",
+                    "score": 1.0,
+                    "sub_criteria_scores": null,
+                    "issues": []
+                },
+                {
+                    "problem_identifier": "string_reversal",
+                    "prompt_identifier": "detailed_prompt",
+                    "model_identifier": "gpt-4",
+                    "score": 1.0,
+                    "sub_criteria_scores": null,
+                    "issues": []
+                },
+                {
+                    "problem_identifier": "palindrome_checker",
+                    "prompt_identifier": "detailed_prompt",
+                    "model_identifier": "gpt-4",
+                    "score": 1.0,
+                    "sub_criteria_scores": null,
+                    "issues": []
+                },
+                {
+                    "problem_identifier": "odd_numbers_in_list",
+                    "prompt_identifier": "detailed_prompt",
+                    "model_identifier": "gpt-4",
+                    "score": 0.0,
+                    "sub_criteria_scores": null,
+                    "issues": [
+                        "Test failed:\n\tInput: lst = [1, 2, 3, 4, 5, 6]; Expected Output: 1, 3, 5\n\tFunction prototype: odd_numbers(lst: list) -> list\n\tExpected result: 1 <class 'int'>\n\tActual result: [1, 3, 5] <class 'list'>",
+                        "Test failed:\n\tInput: lst = [10, 20, 30, 40]; Expected Output: \n\tFunction prototype: odd_numbers(lst: list) -> list\n\tExpected result: () <class 'tuple'>\n\tActual result: [] <class 'list'>"
+                    ]
+                },
+                {
+                    "problem_identifier": "even_numbers_in_list",
+                    "prompt_identifier": "detailed_prompt",
+                    "model_identifier": "gpt-4",
+                    "score": 0.0,
+                    "sub_criteria_scores": null,
+                    "issues": [
+                        "Test failed:\n\tInput: lst = [1, 2, 3, 4, 5, 6]; Expected Output: 2, 4, 6\n\tFunction prototype: even_numbers(lst: list) -> list\n\tExpected result: 2 <class 'int'>\n\tActual result: [2, 4, 6] <class 'list'>",
+                        "Test failed:\n\tInput: lst = [10, 20, 30, 40]; Expected Output: 10, 20, 30, 40\n\tFunction prototype: even_numbers(lst: list) -> list\n\tExpected result: 10 <class 'int'>\n\tActual result: [10, 20, 30, 40] <class 'list'>"
+                    ]
+                },
+                {
+                    "problem_identifier": "celsius_to_fahrenheit",
+                    "prompt_identifier": "detailed_prompt",
+                    "model_identifier": "gpt-4",
+                    "score": 1.0,
+                    "sub_criteria_scores": null,
+                    "issues": []
+                },
+                {
+                    "problem_identifier": "list_element_count",
+                    "prompt_identifier": "detailed_prompt",
+                    "model_identifier": "gpt-4",
+                    "score": 0.5,
+                    "sub_criteria_scores": null,
+                    "issues": [
+                        "Test failed:\n\tInput: lst = [1, 2, 3, 4, 5, 6], elem = 0; Expected Output: \n\tFunction prototype: element_count(lst: list, elem: int) -> int\n\tExpected result: () <class 'tuple'>\n\tActual result: 0 <class 'int'>"
+                    ]
+                },
+                {
+                    "problem_identifier": "factorial_calculation",
+                    "prompt_identifier": "detailed_prompt",
+                    "model_identifier": "gpt-4",
+                    "score": 1.0,
+                    "sub_criteria_scores": null,
+                    "issues": []
+                },
+                {
+                    "problem_identifier": "power_calculation",
+                    "prompt_identifier": "detailed_prompt",
+                    "model_identifier": "gpt-4",
+                    "score": 1.0,
+                    "sub_criteria_scores": null,
+                    "issues": []
+                },
+                {
+                    "problem_identifier": "list_element_removal",
+                    "prompt_identifier": "detailed_prompt",
+                    "model_identifier": "gpt-4",
+                    "score": 0.0,
+                    "sub_criteria_scores": null,
+                    "issues": [
+                        "Test failed:\n\tInput: lst = ['apple', 'banana', 'cherry', 'banana'], elem = strawberry; Expected Output: apple, banana, cherry, banana\n\tFunction prototype: remove_element(lst: list, elem: str) -> list\n\tExpected result: apple <class 'str'>\n\tActual result: ['apple', 'banana', 'cherry', 'banana'] <class 'list'>",
+                        "Test failed:\n\tInput: lst = ['apple', 'banana', 'cherry', 'banana'], elem = banana; Expected Output: apple, cherry\n\tFunction prototype: remove_element(lst: list, elem: str) -> list\n\tExpected result: apple <class 'str'>\n\tActual result: ['apple', 'cherry'] <class 'list'>"
+                    ]
+                },
+                {
+                    "problem_identifier": "finding_nth_fibonacci_number",
+                    "prompt_identifier": "detailed_prompt",
+                    "model_identifier": "gpt-4",
+                    "score": 0.0,
+                    "sub_criteria_scores": null,
+                    "issues": [
+                        "Test failed:\n\tInput: n = 5; Expected Output: 3\n\tFunction prototype: nth_fibonacci(n: int) -> int\n\tExpected result: 3 <class 'int'>\n\tActual result: 5 <class 'int'>",
+                        "Test failed:\n\tInput: n = 8; Expected Output: 13\n\tFunction prototype: nth_fibonacci(n: int) -> int\n\tExpected result: 13 <class 'int'>\n\tActual result: 21 <class 'int'>"
+                    ]
+                },
+                {
+                    "problem_identifier": "checking_prime_number",
+                    "prompt_identifier": "detailed_prompt",
+                    "model_identifier": "gpt-4",
+                    "score": 1.0,
+                    "sub_criteria_scores": null,
+                    "issues": []
+                },
+                {
+                    "problem_identifier": "greatest_common_divisor",
+                    "prompt_identifier": "detailed_prompt",
+                    "model_identifier": "gpt-4",
+                    "score": 1.0,
+                    "sub_criteria_scores": null,
+                    "issues": []
+                },
+                {
+                    "problem_identifier": "are_anagrams",
+                    "prompt_identifier": "detailed_prompt",
+                    "model_identifier": "gpt-4",
+                    "score": 1.0,
+                    "sub_criteria_scores": null,
+                    "issues": []
+                },
+                {
+                    "problem_identifier": "list_median",
+                    "prompt_identifier": "detailed_prompt",
+                    "model_identifier": "gpt-4",
+                    "score": 1.0,
+                    "sub_criteria_scores": null,
+                    "issues": []
+                },
+                {
+                    "problem_identifier": "multiply_by_two",
+                    "prompt_identifier": "detailed_prompt",
+                    "model_identifier": "gpt-4",
+                    "score": 0.0,
+                    "sub_criteria_scores": null,
+                    "issues": [
+                        "Test failed:\n\tInput: lst = [1, 2, 3]; Expected Output: 2, 4, 6\n\tFunction prototype: multiply_by_two(lst: list) -> list\n\tExpected result: 2 <class 'int'>\n\tActual result: [2, 4, 6] <class 'list'>",
+                        "Test failed:\n\tInput: lst = [0, -1, 4]; Expected Output: 0, -1, 8\n\tFunction prototype: multiply_by_two(lst: list) -> list\n\tExpected result: 0 <class 'int'>\n\tActual result: [0, -2, 8] <class 'list'>",
+                        "Test failed:\n\tInput: lst = [5, 10, 15]; Expected Output: 10, 20, 30\n\tFunction prototype: multiply_by_two(lst: list) -> list\n\tExpected result: 10 <class 'int'>\n\tActual result: [10, 20, 30] <class 'list'>"
+                    ]
+                },
+                {
+                    "problem_identifier": "fahrenheit_to_celsius",
+                    "prompt_identifier": "detailed_prompt",
+                    "model_identifier": "gpt-4",
+                    "score": 1.0,
+                    "sub_criteria_scores": null,
+                    "issues": []
+                },
+                {
+                    "problem_identifier": "swap_dict_key_values",
+                    "prompt_identifier": "detailed_prompt",
+                    "model_identifier": "gpt-4",
+                    "score": 0.0,
+                    "sub_criteria_scores": null,
+                    "issues": [
+                        "Test failed:\n\tInput: d = {'apple': '1', 'banana': '2', 'cherry': '3'}; Expected Output: 1, 2, 3\n\tFunction prototype: swap_dict_key_values(d: dict) -> dict\n\tExpected result: 1 <class 'str'>\n\tActual result: {'1': 'apple', '2': 'banana', '3': 'cherry'} <class 'dict'>",
+                        "Test failed:\n\tInput: d = {'red': 'apple', 'yellow': 'banana'}; Expected Output: apple, banana\n\tFunction prototype: swap_dict_key_values(d: dict) -> dict\n\tExpected result: apple <class 'str'>\n\tActual result: {'apple': 'red', 'banana': 'yellow'} <class 'dict'>"
+                    ]
+                },
+                {
+                    "problem_identifier": "unique_elements_from_lists",
+                    "prompt_identifier": "detailed_prompt",
+                    "model_identifier": "gpt-4",
+                    "score": 0.0,
+                    "sub_criteria_scores": null,
+                    "issues": [
+                        "Test failed:\n\tInput: lst1 = [1, 2, 3, 4], lst2 = [3, 4, 5, 6]; Expected Output: 1, 2, 5, 6\n\tFunction prototype: unique_elements_from_lists(lst1: list, lst2: list) -> list\n\tExpected result: 1 <class 'int'>\n\tActual result: [1, 2, 5, 6] <class 'list'>",
+                        "Test failed:\n\tInput: lst1 = ['apple', 'banana', 'cherry'], lst2 = ['cherry', 'date', 'fig']; Expected Output: apple, banana, date, fig\n\tFunction prototype: unique_elements_from_lists(lst1: list, lst2: list) -> list\n\tExpected result: apple <class 'str'>\n\tActual result: ['apple', 'banana', 'date', 'fig'] <class 'list'>",
+                        "Test failed:\n\tInput: lst1 = [], lst2 = [1, 2, 3]; Expected Output: 1, 2, 3\n\tFunction prototype: unique_elements_from_lists(lst1: list, lst2: list) -> list\n\tExpected result: 1 <class 'int'>\n\tActual result: [1, 2, 3] <class 'list'>"
+                    ]
+                },
+                {
+                    "problem_identifier": "even_indexed_elements",
+                    "prompt_identifier": "detailed_prompt",
+                    "model_identifier": "gpt-4",
+                    "score": 0.0,
+                    "sub_criteria_scores": null,
+                    "issues": [
+                        "Test failed:\n\tInput: lst = [1, 2, 3, 4, 5]; Expected Output: 1, 3, 5\n\tFunction prototype: even_indexed_elements(lst: list) -> list\n\tExpected result: 1 <class 'int'>\n\tActual result: [1, 3, 5] <class 'list'>",
+                        "Test failed:\n\tInput: lst = ['apple', 'banana', 'cherry', 'date', 'fig']; Expected Output: apple, cherry, fig\n\tFunction prototype: even_indexed_elements(lst: list) -> list\n\tExpected result: apple <class 'str'>\n\tActual result: ['apple', 'cherry', 'fig'] <class 'list'>",
+                        "Test failed:\n\tInput: lst = [10, 20, 30]; Expected Output: 10, 30\n\tFunction prototype: even_indexed_elements(lst: list) -> list\n\tExpected result: 10 <class 'int'>\n\tActual result: [10, 30] <class 'list'>"
+                    ]
+                },
+                {
+                    "problem_identifier": "odd_indexed_elements",
+                    "prompt_identifier": "detailed_prompt",
+                    "model_identifier": "gpt-4",
+                    "score": 0.0,
+                    "sub_criteria_scores": null,
+                    "issues": [
+                        "Test failed:\n\tInput: lst = [1, 2, 3, 4, 5]; Expected Output: 2, 4\n\tFunction prototype: odd_indexed_elements(lst: list) -> list\n\tExpected result: 2 <class 'int'>\n\tActual result: [2, 4] <class 'list'>",
+                        "Test failed:\n\tInput: lst = ['apple', 'banana', 'cherry', 'date', 'fig']; Expected Output: banana, date\n\tFunction prototype: odd_indexed_elements(lst: list) -> list\n\tExpected result: banana <class 'str'>\n\tActual result: ['banana', 'date'] <class 'list'>",
+                        "Test failed:\n\tInput: lst = [10, 20, 30]; Expected Output: 20\n\tFunction prototype: odd_indexed_elements(lst: list) -> list\n\tExpected result: 20 <class 'int'>\n\tActual result: [20] <class 'list'>"
+                    ]
+                },
+                {
+                    "problem_identifier": "count_vowels",
+                    "prompt_identifier": "detailed_prompt",
+                    "model_identifier": "gpt-4",
+                    "score": 0.75,
+                    "sub_criteria_scores": null,
+                    "issues": [
+                        "Test failed:\n\tInput: s = AEIOUaeiou; Expected Output: 8\n\tFunction prototype: count_vowels(s: str) -> int\n\tExpected result: 8 <class 'int'>\n\tActual result: 10 <class 'int'>"
+                    ]
+                },
+                {
+                    "problem_identifier": "list_to_string",
+                    "prompt_identifier": "detailed_prompt",
+                    "model_identifier": "gpt-4",
+                    "score": 1.0,
+                    "sub_criteria_scores": null,
+                    "issues": []
+                },
+                {
+                    "problem_identifier": "elements_greater_than_n",
+                    "prompt_identifier": "detailed_prompt",
+                    "model_identifier": "gpt-4",
+                    "score": 0.0,
+                    "sub_criteria_scores": null,
+                    "issues": [
+                        "Test failed:\n\tInput: lst = [1, 2, 3, 4, 5], n = 3; Expected Output: 4, 5\n\tFunction prototype: elements_greater_than_n(lst: list, n: int) -> list\n\tExpected result: 4 <class 'int'>\n\tActual result: [4, 5] <class 'list'>",
+                        "Test failed:\n\tInput: lst = [10, 20, 30, 40, 50], n = 35; Expected Output: 40, 50\n\tFunction prototype: elements_greater_than_n(lst: list, n: int) -> list\n\tExpected result: 40 <class 'int'>\n\tActual result: [40, 50] <class 'list'>",
+                        "Test failed:\n\tInput: lst = [5, 10, 15], n = 20; Expected Output: \n\tFunction prototype: elements_greater_than_n(lst: list, n: int) -> list\n\tExpected result: () <class 'tuple'>\n\tActual result: [] <class 'list'>",
+                        "Test failed:\n\tInput: lst = [], n = 5; Expected Output: \n\tFunction prototype: elements_greater_than_n(lst: list, n: int) -> list\n\tExpected result: () <class 'tuple'>\n\tActual result: [] <class 'list'>"
+                    ]
+                },
+                {
+                    "problem_identifier": "square_numbers",
+                    "prompt_identifier": "detailed_prompt",
+                    "model_identifier": "gpt-4",
+                    "score": 0.0,
+                    "sub_criteria_scores": null,
+                    "issues": [
+                        "Test failed:\n\tInput: n = 5; Expected Output: 0, 1, 4, 9, 16\n\tFunction prototype: square_numbers(n: int) -> list\n\tExpected result: 0 <class 'int'>\n\tActual result: [1, 4, 9, 16, 25] <class 'list'>",
+                        "Test failed:\n\tInput: n = 3; Expected Output: 0, 1, 4\n\tFunction prototype: square_numbers(n: int) -> list\n\tExpected result: 0 <class 'int'>\n\tActual result: [1, 4, 9] <class 'list'>",
+                        "Test failed:\n\tInput: n = 1; Expected Output: 0\n\tFunction prototype: square_numbers(n: int) -> list\n\tExpected result: 0 <class 'int'>\n\tActual result: [1] <class 'list'>"
+                    ]
+                },
+                {
+                    "problem_identifier": "find_max",
+                    "prompt_identifier": "detailed_prompt",
+                    "model_identifier": "gpt-4",
+                    "score": 0.75,
+                    "sub_criteria_scores": null,
+                    "issues": [
+                        "Test failed:\n\tInput: lst = [1]; Expected Output: 0\n\tFunction prototype: find_max(lst: list) -> int\n\tExpected result: 0 <class 'int'>\n\tActual result: 1 <class 'int'>"
+                    ]
+                },
+                {
+                    "problem_identifier": "find_min",
+                    "prompt_identifier": "detailed_prompt",
+                    "model_identifier": "gpt-4",
+                    "score": 1.0,
+                    "sub_criteria_scores": null,
+                    "issues": []
+                },
+                {
+                    "problem_identifier": "square_root",
+                    "prompt_identifier": "detailed_prompt",
+                    "model_identifier": "gpt-4",
+                    "score": 1.0,
+                    "sub_criteria_scores": null,
+                    "issues": []
+                },
+                {
+                    "problem_identifier": "calculate_sum",
+                    "prompt_identifier": "detailed_prompt",
+                    "model_identifier": "gpt-4",
+                    "score": 1.0,
+                    "sub_criteria_scores": null,
+                    "issues": []
+                },
+                {
+                    "problem_identifier": "calculate_product",
+                    "prompt_identifier": "detailed_prompt",
+                    "model_identifier": "gpt-4",
+                    "score": 1.0,
+                    "sub_criteria_scores": null,
+                    "issues": []
+                },
+                {
+                    "problem_identifier": "concatenate_lists",
+                    "prompt_identifier": "detailed_prompt",
+                    "model_identifier": "gpt-4",
+                    "score": 0.0,
+                    "sub_criteria_scores": null,
+                    "issues": [
+                        "Test failed:\n\tInput: lst1 = [1, 2, 3], lst2 = [4, 5]; Expected Output: 1, 2, 3, 4, 5\n\tFunction prototype: concatenate_lists(lst1: list, lst2: list) -> list\n\tExpected result: 1 <class 'int'>\n\tActual result: [1, 2, 3, 4, 5] <class 'list'>",
+                        "Test failed:\n\tInput: lst1 = ['apple', 'banana'], lst2 = ['cherry', 'date']; Expected Output: apple, banana, cherry, date\n\tFunction prototype: concatenate_lists(lst1: list, lst2: list) -> list\n\tExpected result: apple <class 'str'>\n\tActual result: ['apple', 'banana', 'cherry', 'date'] <class 'list'>",
+                        "Test failed:\n\tInput: lst1 = [], lst2 = [1, 2, 3]; Expected Output: 1, 2, 3\n\tFunction prototype: concatenate_lists(lst1: list, lst2: list) -> list\n\tExpected result: 1 <class 'int'>\n\tActual result: [1, 2, 3] <class 'list'>"
+                    ]
+                },
+                {
+                    "problem_identifier": "find_intersection",
+                    "prompt_identifier": "detailed_prompt",
+                    "model_identifier": "gpt-4",
+                    "score": 0.0,
+                    "sub_criteria_scores": null,
+                    "issues": [
+                        "Test failed:\n\tInput: lst1 = [1, 2, 3, 4], lst2 = [3, 4, 5, 6]; Expected Output: 3, 4\n\tFunction prototype: find_intersection(lst1: list, lst2: list) -> list\n\tExpected result: 3 <class 'int'>\n\tActual result: [3, 4] <class 'list'>",
+                        "Test failed:\n\tInput: lst1 = ['apple', 'banana', 'cherry'], lst2 = ['cherry', 'date', 'fig']; Expected Output: cherry\n\tFunction prototype: find_intersection(lst1: list, lst2: list) -> list\n\tExpected result: cherry <class 'str'>\n\tActual result: ['cherry'] <class 'list'>",
+                        "Test failed:\n\tInput: lst1 = [], lst2 = [1, 2, 3]; Expected Output: \n\tFunction prototype: find_intersection(lst1: list, lst2: list) -> list\n\tExpected result: () <class 'tuple'>\n\tActual result: [] <class 'list'>"
+                    ]
+                },
+                {
+                    "problem_identifier": "find_difference",
+                    "prompt_identifier": "detailed_prompt",
+                    "model_identifier": "gpt-4",
+                    "score": 0.0,
+                    "sub_criteria_scores": null,
+                    "issues": [
+                        "Test failed:\n\tInput: lst1 = [1, 2, 3, 4], lst2 = [3, 4, 5, 6]; Expected Output: 1, 2\n\tFunction prototype: find_difference(lst1: list, lst2: list) -> list\n\tExpected result: 1 <class 'int'>\n\tActual result: [1, 2] <class 'list'>",
+                        "Test failed:\n\tInput: lst1 = ['apple', 'banana', 'cherry'], lst2 = ['cherry', 'date', 'fig']; Expected Output: apple, banana\n\tFunction prototype: find_difference(lst1: list, lst2: list) -> list\n\tExpected result: apple <class 'str'>\n\tActual result: ['banana', 'apple'] <class 'list'>",
+                        "Test failed:\n\tInput: lst1 = [], lst2 = [1, 2, 3]; Expected Output: \n\tFunction prototype: find_difference(lst1: list, lst2: list) -> list\n\tExpected result: () <class 'tuple'>\n\tActual result: [] <class 'list'>"
+                    ]
+                },
+                {
+                    "problem_identifier": "remove_duplicates",
+                    "prompt_identifier": "detailed_prompt",
+                    "model_identifier": "gpt-4",
+                    "score": 0.0,
+                    "sub_criteria_scores": null,
+                    "issues": [
+                        "Test failed:\n\tInput: lst = [1, 2, 2, 3, 4, 4, 5]; Expected Output: 1, 2, 3, 4, 5\n\tFunction prototype: remove_duplicates(lst: list) -> list\n\tExpected result: 1 <class 'int'>\n\tActual result: [1, 2, 3, 4, 5] <class 'list'>",
+                        "Test failed:\n\tInput: lst = ['apple', 'banana', 'banana', 'cherry', 'date']; Expected Output: apple, banana, cherry, date\n\tFunction prototype: remove_duplicates(lst: list) -> list\n\tExpected result: apple <class 'str'>\n\tActual result: ['apple', 'banana', 'cherry', 'date'] <class 'list'>",
+                        "Test failed:\n\tInput: lst = [1, 2, 3]; Expected Output: 1, 2, 3\n\tFunction prototype: remove_duplicates(lst: list) -> list\n\tExpected result: 1 <class 'int'>\n\tActual result: [1, 2, 3] <class 'list'>",
+                        "Test failed:\n\tInput: lst = []; Expected Output: \n\tFunction prototype: remove_duplicates(lst: list) -> list\n\tExpected result: () <class 'tuple'>\n\tActual result: [] <class 'list'>"
+                    ]
+                },
+                {
+                    "problem_identifier": "reverse_list",
+                    "prompt_identifier": "detailed_prompt",
+                    "model_identifier": "gpt-4",
+                    "score": 0.0,
+                    "sub_criteria_scores": null,
+                    "issues": [
+                        "Test failed:\n\tInput: lst = [1, 2, 3, 4, 5]; Expected Output: 5, 4, 3, 2, 1\n\tFunction prototype: reverse_list(lst: list) -> list\n\tExpected result: 5 <class 'int'>\n\tActual result: [5, 4, 3, 2, 1] <class 'list'>",
+                        "Test failed:\n\tInput: lst = ['apple', 'banana', 'cherry', 'date', 'fig']; Expected Output: fig, date, cherry, banana, apple\n\tFunction prototype: reverse_list(lst: list) -> list\n\tExpected result: fig <class 'str'>\n\tActual result: ['fig', 'date', 'cherry', 'banana', 'apple'] <class 'list'>",
+                        "Test failed:\n\tInput: lst = [10, 20, 30]; Expected Output: 30, 20, 10\n\tFunction prototype: reverse_list(lst: list) -> list\n\tExpected result: 30 <class 'int'>\n\tActual result: [30, 20, 10] <class 'list'>"
+                    ]
+                },
+                {
+                    "problem_identifier": "count_occurrences",
+                    "prompt_identifier": "detailed_prompt",
+                    "model_identifier": "gpt-4",
+                    "score": 1.0,
+                    "sub_criteria_scores": null,
+                    "issues": []
+                },
+                {
+                    "problem_identifier": "remove_element",
+                    "prompt_identifier": "detailed_prompt",
+                    "model_identifier": "gpt-4",
+                    "score": 0.0,
+                    "sub_criteria_scores": null,
+                    "issues": [
+                        "Test failed:\n\tInput: lst = [1, 2, 3, 2, 4, 5], elem = 2; Expected Output: 1, 3, 4, 5\n\tFunction prototype: remove_element(lst: list, elem: any) -> list\n\tExpected result: 1 <class 'int'>\n\tActual result: [1, 3, 4, 5] <class 'list'>",
+                        "Test failed:\n\tInput: lst = ['apple', 'banana', 'cherry', 'banana', 'date'], elem = banana; Expected Output: apple, cherry, date\n\tFunction prototype: remove_element(lst: list, elem: any) -> list\n\tExpected result: apple <class 'str'>\n\tActual result: ['apple', 'cherry', 'date'] <class 'list'>",
+                        "Test failed:\n\tInput: lst = [1, 2, 3], elem = 4; Expected Output: 1, 2, 3\n\tFunction prototype: remove_element(lst: list, elem: any) -> list\n\tExpected result: 1 <class 'int'>\n\tActual result: [1, 2, 3] <class 'list'>",
+                        "Test failed:\n\tInput: lst = [], elem = 5; Expected Output: \n\tFunction prototype: remove_element(lst: list, elem: any) -> list\n\tExpected result: () <class 'tuple'>\n\tActual result: [] <class 'list'>"
+                    ]
+                },
+                {
+                    "problem_identifier": "reverse_string",
+                    "prompt_identifier": "detailed_prompt",
+                    "model_identifier": "gpt-4",
+                    "score": 1.0,
+                    "sub_criteria_scores": null,
+                    "issues": []
+                },
+                {
+                    "problem_identifier": "multiply_list_elements",
+                    "prompt_identifier": "detailed_prompt",
+                    "model_identifier": "gpt-4",
+                    "score": 0.0,
+                    "sub_criteria_scores": null,
+                    "issues": [
+                        "Test failed:\n\tInput: lst = [1, 2, 3, 4, 5]; Expected Output: 2, 4, 6, 6, 10\n\tFunction prototype: multiply_list_elements(lst: list) -> list\n\tExpected result: 2 <class 'int'>\n\tActual result: [2, 4, 6, 8, 10] <class 'list'>",
+                        "Test failed:\n\tInput: lst = [0, 0, 0]; Expected Output: 0, 0, 0\n\tFunction prototype: multiply_list_elements(lst: list) -> list\n\tExpected result: 0 <class 'int'>\n\tActual result: [0, 0, 0] <class 'list'>",
+                        "Test failed:\n\tInput: lst = [2, 4, 6]; Expected Output: 3, 8, 12\n\tFunction prototype: multiply_list_elements(lst: list) -> list\n\tExpected result: 3 <class 'int'>\n\tActual result: [4, 8, 12] <class 'list'>",
+                        "Test failed:\n\tInput: lst = []; Expected Output: \n\tFunction prototype: multiply_list_elements(lst: list) -> list\n\tExpected result: () <class 'tuple'>\n\tActual result: [] <class 'list'>"
+                    ]
+                },
+                {
+                    "problem_identifier": "is_palindrome",
+                    "prompt_identifier": "detailed_prompt",
+                    "model_identifier": "gpt-4",
+                    "score": 1.0,
+                    "sub_criteria_scores": null,
+                    "issues": []
+                },
+                {
+                    "problem_identifier": "sort_list",
+                    "prompt_identifier": "detailed_prompt",
+                    "model_identifier": "gpt-4",
+                    "score": 0.0,
+                    "sub_criteria_scores": null,
+                    "issues": [
+                        "Test failed:\n\tInput: lst = [3, 1, 4, 2, 5]; Expected Output: 1, 2, 3, 4, 5\n\tFunction prototype: sort_list(lst: list) -> list\n\tExpected result: 1 <class 'int'>\n\tActual result: [1, 2, 3, 4, 5] <class 'list'>",
+                        "Test failed:\n\tInput: lst = ['apple', 'cherry', 'banana', 'date']; Expected Output: apple, banana, cherry, date\n\tFunction prototype: sort_list(lst: list) -> list\n\tExpected result: apple <class 'str'>\n\tActual result: ['apple', 'banana', 'cherry', 'date'] <class 'list'>",
+                        "Test failed:\n\tInput: lst = [10, 20, 5, 30]; Expected Output: 5, 10, 20, 30\n\tFunction prototype: sort_list(lst: list) -> list\n\tExpected result: 5 <class 'int'>\n\tActual result: [5, 10, 20, 30] <class 'list'>"
+                    ]
+                },
+                {
+                    "problem_identifier": "filter_list",
+                    "prompt_identifier": "detailed_prompt",
+                    "model_identifier": "gpt-4",
+                    "score": 0.0,
+                    "sub_criteria_scores": null,
+                    "issues": [
+                        "Test failed:\n\tInput: lst = [5, 15, 3, 25, 8]; Expected Output: 15, 25\n\tFunction prototype: filter_list(lst: list) -> list\n\tExpected result: 15 <class 'int'>\n\tActual result: [15, 25] <class 'list'>",
+                        "Test failed:\n\tInput: lst = [10, 20, 30]; Expected Output: 20, 30\n\tFunction prototype: filter_list(lst: list) -> list\n\tExpected result: 20 <class 'int'>\n\tActual result: [20, 30] <class 'list'>",
+                        "Test failed:\n\tInput: lst = [1, 2, 3]; Expected Output: \n\tFunction prototype: filter_list(lst: list) -> list\n\tExpected result: () <class 'tuple'>\n\tActual result: [] <class 'list'>"
+                    ]
+                },
+                {
+                    "problem_identifier": "case_conversion",
+                    "prompt_identifier": "detailed_prompt",
+                    "model_identifier": "gpt-4",
+                    "score": 1.0,
+                    "sub_criteria_scores": null,
+                    "issues": []
+                },
+                {
+                    "problem_identifier": "title_case",
+                    "prompt_identifier": "detailed_prompt",
+                    "model_identifier": "gpt-4",
+                    "score": 1.0,
+                    "sub_criteria_scores": null,
+                    "issues": []
+                },
+                {
+                    "problem_identifier": "capitalize_string",
+                    "prompt_identifier": "detailed_prompt",
+                    "model_identifier": "gpt-4",
+                    "score": 1.0,
+                    "sub_criteria_scores": null,
+                    "issues": []
+                },
+                {
+                    "problem_identifier": "concatenate_strings",
+                    "prompt_identifier": "detailed_prompt",
+                    "model_identifier": "gpt-4",
+                    "score": 1.0,
+                    "sub_criteria_scores": null,
+                    "issues": []
+                },
+                {
+                    "problem_identifier": "calculate_factorial",
+                    "prompt_identifier": "detailed_prompt",
+                    "model_identifier": "gpt-4",
+                    "score": 1.0,
+                    "sub_criteria_scores": null,
+                    "issues": []
+                },
+                {
+                    "problem_identifier": "fibonacci",
+                    "prompt_identifier": "detailed_prompt",
+                    "model_identifier": "gpt-4",
+                    "score": 1.0,
+                    "sub_criteria_scores": null,
+                    "issues": []
+                },
+                {
+                    "problem_identifier": "sum_of_digits",
+                    "prompt_identifier": "detailed_prompt",
+                    "model_identifier": "gpt-4",
+                    "score": 1.0,
+                    "sub_criteria_scores": null,
+                    "issues": []
+                },
+                {
+                    "problem_identifier": "reverse_string",
+                    "prompt_identifier": "detailed_prompt",
+                    "model_identifier": "gpt-4",
+                    "score": 1.0,
+                    "sub_criteria_scores": null,
+                    "issues": []
+                },
+                {
+                    "problem_identifier": "count_digits",
+                    "prompt_identifier": "detailed_prompt",
+                    "model_identifier": "gpt-4",
+                    "score": 1.0,
+                    "sub_criteria_scores": null,
+                    "issues": []
+                },
+                {
+                    "problem_identifier": "greatest_common_divisor",
+                    "prompt_identifier": "detailed_prompt",
+                    "model_identifier": "gpt-4",
+                    "score": 1.0,
+                    "sub_criteria_scores": null,
+                    "issues": []
+                },
+                {
+                    "problem_identifier": "odd_numbers",
+                    "prompt_identifier": "detailed_prompt",
+                    "model_identifier": "gpt-4",
+                    "score": 0.0,
+                    "sub_criteria_scores": null,
+                    "issues": [
+                        "Test failed:\n\tInput: lst = [1, 2, 3, 4, 5]; Expected Output: 1, 3, 5\n\tFunction prototype: odd_numbers(lst: list) -> list\n\tExpected result: 1 <class 'int'>\n\tActual result: [1, 3, 5] <class 'list'>",
+                        "Test failed:\n\tInput: lst = [2, 4, 6, 8, 10]; Expected Output: \n\tFunction prototype: odd_numbers(lst: list) -> list\n\tExpected result: () <class 'tuple'>\n\tActual result: [] <class 'list'>",
+                        "Test failed:\n\tInput: lst = [11, 13, 15, 17, 19]; Expected Output: 11, 13, 15, 17, 19\n\tFunction prototype: odd_numbers(lst: list) -> list\n\tExpected result: 11 <class 'int'>\n\tActual result: [11, 13, 15, 17, 19] <class 'list'>",
+                        "Test failed:\n\tInput: lst = []; Expected Output: \n\tFunction prototype: odd_numbers(lst: list) -> list\n\tExpected result: () <class 'tuple'>\n\tActual result: [] <class 'list'>"
+                    ]
+                },
+                {
+                    "problem_identifier": "repeat_string",
+                    "prompt_identifier": "detailed_prompt",
+                    "model_identifier": "gpt-4",
+                    "score": 1.0,
+                    "sub_criteria_scores": null,
+                    "issues": []
+                },
+                {
+                    "problem_identifier": "is_palindrome",
+                    "prompt_identifier": "detailed_prompt",
+                    "model_identifier": "gpt-4",
+                    "score": 1.0,
+                    "sub_criteria_scores": null,
+                    "issues": []
+                },
+                {
+                    "problem_identifier": "max_value",
+                    "prompt_identifier": "detailed_prompt",
+                    "model_identifier": "gpt-4",
+                    "score": 0.8,
+                    "sub_criteria_scores": null,
+                    "issues": [
+                        "Error encountered during execution for test case Input: lst = []; Expected Output: : max() arg is an empty sequence\nTraceback (most recent call last):\n  File \"/Users/rajay/Documents/Classes/F23/CS8395/individual/hw4/myrepo/LLMCodingBenchmarkingFramework/execution.py\", line 76, in executor_script\n    result = function(*parameters)\n             ^^^^^^^^^^^^^^^^^^^^^\n  File \"<string>\", line 4, in max_value\nValueError: max() arg is an empty sequence\n"
+                    ]
+                },
+                {
+                    "problem_identifier": "concatenate_strings",
+                    "prompt_identifier": "detailed_prompt",
+                    "model_identifier": "gpt-4",
+                    "score": 1.0,
+                    "sub_criteria_scores": null,
+                    "issues": []
+                },
+                {
+                    "problem_identifier": "list_intersection",
+                    "prompt_identifier": "detailed_prompt",
+                    "model_identifier": "gpt-4",
+                    "score": 0.0,
+                    "sub_criteria_scores": null,
+                    "issues": [
+                        "Test failed:\n\tInput: lst1 = [1, 2, 3, 4, 5], lst2 = [3, 4, 5, 6, 7]; Expected Output: 3, 4, 5\n\tFunction prototype: list_intersection(lst1: List, lst2: list) -> list\n\tExpected result: 3 <class 'int'>\n\tActual result: [3, 4, 5] <class 'list'>",
+                        "Test failed:\n\tInput: lst1 = ['apple', 'banana', 'cherry'], lst2 = ['banana', 'cherry', 'date']; Expected Output: banana, cherry\n\tFunction prototype: list_intersection(lst1: List, lst2: list) -> list\n\tExpected result: banana <class 'str'>\n\tActual result: ['banana', 'cherry'] <class 'list'>",
+                        "Test failed:\n\tInput: lst1 = [10, 20, 30], lst2 = [5, 10, 15]; Expected Output: 10\n\tFunction prototype: list_intersection(lst1: List, lst2: list) -> list\n\tExpected result: 10 <class 'int'>\n\tActual result: [10] <class 'list'>",
+                        "Test failed:\n\tInput: lst1 = [], lst2 = []; Expected Output: \n\tFunction prototype: list_intersection(lst1: List, lst2: list) -> list\n\tExpected result: () <class 'tuple'>\n\tActual result: [] <class 'list'>"
+                    ]
+                },
+                {
+                    "problem_identifier": "fibonacci",
+                    "prompt_identifier": "detailed_prompt",
+                    "model_identifier": "gpt-4",
+                    "score": 0.0,
+                    "sub_criteria_scores": null,
+                    "issues": [
+                        "Test failed:\n\tInput: n = 0; Expected Output: 0\n\tFunction prototype: fibonacci(n: int) -> int\n\tExpected result: 0 <class 'int'>\n\tActual result: Invalid input <class 'str'>",
+                        "Test failed:\n\tInput: n = 1; Expected Output: 1\n\tFunction prototype: fibonacci(n: int) -> int\n\tExpected result: 1 <class 'int'>\n\tActual result: 0 <class 'int'>",
+                        "Test failed:\n\tInput: n = 5; Expected Output: 5\n\tFunction prototype: fibonacci(n: int) -> int\n\tExpected result: 5 <class 'int'>\n\tActual result: 3 <class 'int'>",
+                        "Test failed:\n\tInput: n = 3; Expected Output: 2\n\tFunction prototype: fibonacci(n: int) -> int\n\tExpected result: 2 <class 'int'>\n\tActual result: 1 <class 'int'>"
+                    ]
+                },
+                {
+                    "problem_identifier": "title_case",
+                    "prompt_identifier": "detailed_prompt",
+                    "model_identifier": "gpt-4",
+                    "score": 0.25,
+                    "sub_criteria_scores": null,
+                    "issues": [
+                        "Test failed:\n\tInput: s = hello world; Expected Output: HELLO WORLD\n\tFunction prototype: title_case(s: str) -> str\n\tExpected result: HELLO WORLD <class 'str'>\n\tActual result: Hello World <class 'str'>",
+                        "Test failed:\n\tInput: s = apple pie; Expected Output: APPLE PIE\n\tFunction prototype: title_case(s: str) -> str\n\tExpected result: APPLE PIE <class 'str'>\n\tActual result: Apple Pie <class 'str'>",
+                        "Test failed:\n\tInput: s = Title Case; Expected Output: TITLE CASE\n\tFunction prototype: title_case(s: str) -> str\n\tExpected result: TITLE CASE <class 'str'>\n\tActual result: Title Case <class 'str'>"
+                    ]
+                },
+                {
+                    "problem_identifier": "list_average",
+                    "prompt_identifier": "detailed_prompt",
+                    "model_identifier": "gpt-4",
+                    "score": 0.75,
+                    "sub_criteria_scores": null,
+                    "issues": [
+                        "Error encountered during execution for test case Input: lst = []; Expected Output: : division by zero\nTraceback (most recent call last):\n  File \"/Users/rajay/Documents/Classes/F23/CS8395/individual/hw4/myrepo/LLMCodingBenchmarkingFramework/execution.py\", line 76, in executor_script\n    result = function(*parameters)\n             ^^^^^^^^^^^^^^^^^^^^^\n  File \"<string>\", line 4, in list_average\nZeroDivisionError: division by zero\n"
+                    ]
+                },
+                {
+                    "problem_identifier": "reverse_list",
+                    "prompt_identifier": "detailed_prompt",
+                    "model_identifier": "gpt-4",
+                    "score": 0.0,
+                    "sub_criteria_scores": null,
+                    "issues": [
+                        "Test failed:\n\tInput: lst = [1, 2, 3, 4, 5]; Expected Output: 5, 4, 3, 2, 1\n\tFunction prototype: reverse_list(lst: list) -> list\n\tExpected result: 5 <class 'int'>\n\tActual result: [5, 4, 3, 2, 1] <class 'list'>",
+                        "Test failed:\n\tInput: lst = ['apple', 'banana', 'cherry']; Expected Output: cherry, banana, apple\n\tFunction prototype: reverse_list(lst: list) -> list\n\tExpected result: cherry <class 'str'>\n\tActual result: ['cherry', 'banana', 'apple'] <class 'list'>",
+                        "Test failed:\n\tInput: lst = []; Expected Output: \n\tFunction prototype: reverse_list(lst: list) -> list\n\tExpected result: () <class 'tuple'>\n\tActual result: [] <class 'list'>"
+                    ]
+                },
+                {
+                    "problem_identifier": "remove_duplicates",
+                    "prompt_identifier": "detailed_prompt",
+                    "model_identifier": "gpt-4",
+                    "score": 0.0,
+                    "sub_criteria_scores": null,
+                    "issues": [
+                        "Test failed:\n\tInput: lst = [1, 2, 2, 3, 4, 4, 5]; Expected Output: 1, 2, 3, 4, 5\n\tFunction prototype: remove_duplicates(lst: list) -> list\n\tExpected result: 1 <class 'int'>\n\tActual result: [1, 2, 3, 4, 5] <class 'list'>",
+                        "Test failed:\n\tInput: lst = ['apple', 'banana', 'apple', 'cherry', 'banana']; Expected Output: apple, banana, cherry\n\tFunction prototype: remove_duplicates(lst: list) -> list\n\tExpected result: apple <class 'str'>\n\tActual result: ['apple', 'banana', 'cherry'] <class 'list'>",
+                        "Test failed:\n\tInput: lst = [10, 20, 30, 10, 40]; Expected Output: 10, 20, 30, 40\n\tFunction prototype: remove_duplicates(lst: list) -> list\n\tExpected result: 10 <class 'int'>\n\tActual result: [10, 20, 30, 40] <class 'list'>",
+                        "Test failed:\n\tInput: lst = []; Expected Output: \n\tFunction prototype: remove_duplicates(lst: list) -> list\n\tExpected result: () <class 'tuple'>\n\tActual result: [] <class 'list'>"
+                    ]
+                },
+                {
+                    "problem_identifier": "factorial",
+                    "prompt_identifier": "detailed_prompt",
+                    "model_identifier": "gpt-4",
+                    "score": 1.0,
+                    "sub_criteria_scores": null,
+                    "issues": []
+                },
+                {
+                    "problem_identifier": "char_count",
+                    "prompt_identifier": "detailed_prompt",
+                    "model_identifier": "gpt-4",
+                    "score": 1.0,
+                    "sub_criteria_scores": null,
+                    "issues": []
+                },
+                {
+                    "problem_identifier": "remove_element",
+                    "prompt_identifier": "detailed_prompt",
+                    "model_identifier": "gpt-4",
+                    "score": 0.0,
+                    "sub_criteria_scores": null,
+                    "issues": [
+                        "Test failed:\n\tInput: lst = [1, 2, 3, 4, 5], element = 3; Expected Output: 1, 2, 4, 5\n\tFunction prototype: remove_element(lst: list, element: any) -> list\n\tExpected result: 1 <class 'int'>\n\tActual result: [1, 2, 4, 5] <class 'list'>",
+                        "Test failed:\n\tInput: lst = ['apple', 'banana', 'cherry'], element = banana; Expected Output: apple, cherry\n\tFunction prototype: remove_element(lst: list, element: any) -> list\n\tExpected result: apple <class 'str'>\n\tActual result: ['apple', 'cherry'] <class 'list'>",
+                        "Test failed:\n\tInput: lst = [10, 20, 30, 40, 50], element = 20; Expected Output: 10, 30, 40, 50\n\tFunction prototype: remove_element(lst: list, element: any) -> list\n\tExpected result: 10 <class 'int'>\n\tActual result: [10, 30, 40, 50] <class 'list'>",
+                        "Test failed:\n\tInput: lst = [], element = 10; Expected Output: \n\tFunction prototype: remove_element(lst: list, element: any) -> list\n\tExpected result: () <class 'tuple'>\n\tActual result: [] <class 'list'>"
+                    ]
+                },
+                {
+                    "problem_identifier": "is_prime",
+                    "prompt_identifier": "detailed_prompt",
+                    "model_identifier": "gpt-4",
+                    "score": 1.0,
+                    "sub_criteria_scores": null,
+                    "issues": []
+                },
+                {
+                    "problem_identifier": "list_summation",
+                    "prompt_identifier": "detailed_prompt",
+                    "model_identifier": "gpt-4",
+                    "score": 0.0,
+                    "sub_criteria_scores": null,
+                    "issues": [
+                        "Test failed:\n\tInput: lst1 = [1, 2, 3], lst2 = [4, 5, 6]; Expected Output: 5, 7, 9\n\tFunction prototype: list_summation(lst1: list, lst2: list) -> list\n\tExpected result: 5 <class 'int'>\n\tActual result: [5, 7, 9] <class 'list'>",
+                        "Test failed:\n\tInput: lst1 = [10, 20, 30], lst2 = [1, 2, 3]; Expected Output: 11, 22, 33\n\tFunction prototype: list_summation(lst1: list, lst2: list) -> list\n\tExpected result: 11 <class 'int'>\n\tActual result: [11, 22, 33] <class 'list'>",
+                        "Test failed:\n\tInput: lst1 = [], lst2 = []; Expected Output: \n\tFunction prototype: list_summation(lst1: list, lst2: list) -> list\n\tExpected result: () <class 'tuple'>\n\tActual result: [] <class 'list'>"
+                    ]
+                },
+                {
+                    "problem_identifier": "vowel_count",
+                    "prompt_identifier": "detailed_prompt",
+                    "model_identifier": "gpt-4",
+                    "score": 1.0,
+                    "sub_criteria_scores": null,
+                    "issues": []
+                },
+                {
+                    "problem_identifier": "word_count",
+                    "prompt_identifier": "detailed_prompt",
+                    "model_identifier": "gpt-4",
+                    "score": 1.0,
+                    "sub_criteria_scores": null,
+                    "issues": []
+                },
+                {
+                    "problem_identifier": "multiplication_table",
+                    "prompt_identifier": "detailed_prompt",
+                    "model_identifier": "gpt-4",
+                    "score": 0.0,
+                    "sub_criteria_scores": null,
+                    "issues": [
+                        "Test failed:\n\tInput: n = 2; Expected Output: [1, 2], [2, 4]\n\tFunction prototype: multiplication_table(n: int) -> list\n\tExpected result: [1, 2] <class 'list'>\n\tActual result: [[1, 2], [2, 4]] <class 'list'>",
+                        "Test failed:\n\tInput: n = 3; Expected Output: [1, 2, 3], [2, 4, 6], [3, 6, 9]\n\tFunction prototype: multiplication_table(n: int) -> list\n\tExpected result: [1, 2, 3] <class 'list'>\n\tActual result: [[1, 2, 3], [2, 4, 6], [3, 6, 9]] <class 'list'>",
+                        "Test failed:\n\tInput: n = 5; Expected Output: [1, 2, 3, 4, 5], [2, 4, 6, 8, 10], [3, 6, 9, 12, 15], [4, 8, 12, 16, 20], [5, 10, 15, 20, 25]\n\tFunction prototype: multiplication_table(n: int) -> list\n\tExpected result: [1, 2, 3, 4, 5] <class 'list'>\n\tActual result: [[1, 2, 3, 4, 5], [2, 4, 6, 8, 10], [3, 6, 9, 12, 15], [4, 8, 12, 16, 20], [5, 10, 15, 20, 25]] <class 'list'>"
+                    ]
+                },
+                {
+                    "problem_identifier": "transpose_matrix",
+                    "prompt_identifier": "detailed_prompt",
+                    "model_identifier": "gpt-4",
+                    "score": 0.0,
+                    "sub_criteria_scores": null,
+                    "issues": [
+                        "Error encountered during execution for test case Input: matrix = [[1, 2, 3], [4, 5, 6]]; Expected Output: [1, 4], [2, 5], [3, 6]: Cannot instantiate typing.Unpack\nTraceback (most recent call last):\n  File \"/Users/rajay/Documents/Classes/F23/CS8395/individual/hw4/myrepo/LLMCodingBenchmarkingFramework/execution.py\", line 76, in executor_script\n    result = function(*parameters)\n             ^^^^^^^^^^^^^^^^^^^^^\n  File \"/opt/homebrew/Cellar/python@3.11/3.11.4_1/Frameworks/Python.framework/Versions/3.11/lib/python3.11/typing.py\", line 462, in __call__\n    raise TypeError(f\"Cannot instantiate {self!r}\")\nTypeError: Cannot instantiate typing.Unpack\n",
+                        "Error encountered during execution for test case Input: matrix = [[1, 2], [3, 4], [5, 6]]; Expected Output: [1, 3, 5], [2, 4, 6]: Cannot instantiate typing.Unpack\nTraceback (most recent call last):\n  File \"/Users/rajay/Documents/Classes/F23/CS8395/individual/hw4/myrepo/LLMCodingBenchmarkingFramework/execution.py\", line 76, in executor_script\n    result = function(*parameters)\n             ^^^^^^^^^^^^^^^^^^^^^\n  File \"/opt/homebrew/Cellar/python@3.11/3.11.4_1/Frameworks/Python.framework/Versions/3.11/lib/python3.11/typing.py\", line 462, in __call__\n    raise TypeError(f\"Cannot instantiate {self!r}\")\nTypeError: Cannot instantiate typing.Unpack\n",
+                        "Error encountered during execution for test case Input: matrix = [[]]; Expected Output: []: Cannot instantiate typing.Unpack\nTraceback (most recent call last):\n  File \"/Users/rajay/Documents/Classes/F23/CS8395/individual/hw4/myrepo/LLMCodingBenchmarkingFramework/execution.py\", line 76, in executor_script\n    result = function(*parameters)\n             ^^^^^^^^^^^^^^^^^^^^^\n  File \"/opt/homebrew/Cellar/python@3.11/3.11.4_1/Frameworks/Python.framework/Versions/3.11/lib/python3.11/typing.py\", line 462, in __call__\n    raise TypeError(f\"Cannot instantiate {self!r}\")\nTypeError: Cannot instantiate typing.Unpack\n"
+                    ]
+                },
+                {
+                    "problem_identifier": "sum_of_list",
+                    "prompt_identifier": "detailed_prompt",
+                    "model_identifier": "gpt-4",
+                    "score": 1.0,
+                    "sub_criteria_scores": null,
+                    "issues": []
+                },
+                {
+                    "problem_identifier": "are_anagrams",
+                    "prompt_identifier": "detailed_prompt",
+                    "model_identifier": "gpt-4",
+                    "score": 1.0,
+                    "sub_criteria_scores": null,
+                    "issues": []
+                },
+                {
+                    "problem_identifier": "is_armstrong",
+                    "prompt_identifier": "detailed_prompt",
+                    "model_identifier": "gpt-4",
+                    "score": 0.6666666666666666,
+                    "sub_criteria_scores": null,
+                    "issues": [
+                        "Test failed:\n\tInput: n = 1634; Expected Output: False\n\tFunction prototype: is_armstrong(n: int) -> bool\n\tExpected result: False <class 'bool'>\n\tActual result: True <class 'bool'>",
+                        "Test failed:\n\tInput: n = 8208; Expected Output: False\n\tFunction prototype: is_armstrong(n: int) -> bool\n\tExpected result: False <class 'bool'>\n\tActual result: True <class 'bool'>",
+                        "Test failed:\n\tInput: n = 9474; Expected Output: False\n\tFunction prototype: is_armstrong(n: int) -> bool\n\tExpected result: False <class 'bool'>\n\tActual result: True <class 'bool'>"
+                    ]
+                },
+                {
+                    "problem_identifier": "flatten_list",
+                    "prompt_identifier": "detailed_prompt",
+                    "model_identifier": "gpt-4",
+                    "score": 0.0,
+                    "sub_criteria_scores": null,
+                    "issues": [
+                        "Test failed:\n\tInput: lst = [[1, 2, 3], [4, 5, 6]]; Expected Output: 1, 2, 3, 4, 5, 6\n\tFunction prototype: flatten_list(lst: list of lists) -> list\n\tExpected result: 1 <class 'int'>\n\tActual result: [1, 2, 3, 4, 5, 6] <class 'list'>",
+                        "Test failed:\n\tInput: lst = [[1], [2], [3]]; Expected Output: 1, 2, 3\n\tFunction prototype: flatten_list(lst: list of lists) -> list\n\tExpected result: 1 <class 'int'>\n\tActual result: [1, 2, 3] <class 'list'>",
+                        "Test failed:\n\tInput: lst = [[]]; Expected Output: \n\tFunction prototype: flatten_list(lst: list of lists) -> list\n\tExpected result: () <class 'tuple'>\n\tActual result: [] <class 'list'>",
+                        "Test failed:\n\tInput: lst = [[], [], []]; Expected Output: \n\tFunction prototype: flatten_list(lst: list of lists) -> list\n\tExpected result: () <class 'tuple'>\n\tActual result: [] <class 'list'>"
+                    ]
+                },
+                {
+                    "problem_identifier": "string_case_swap",
+                    "prompt_identifier": "detailed_prompt",
+                    "model_identifier": "gpt-4",
+                    "score": 1.0,
+                    "sub_criteria_scores": null,
+                    "issues": []
+                },
+                {
+                    "problem_identifier": "list_element_swapping",
+                    "prompt_identifier": "detailed_prompt",
+                    "model_identifier": "gpt-4",
+                    "score": 0.0,
+                    "sub_criteria_scores": null,
+                    "issues": [
+                        "Test failed:\n\tInput: lst = [1, 2, 3, 4], i = 1, j = 2; Expected Output: 1, 3, 2, 4\n\tFunction prototype: swap_elements(lst: list, i: int, j: int) -> list\n\tExpected result: 1 <class 'int'>\n\tActual result: [1, 3, 2, 4] <class 'list'>",
+                        "Test failed:\n\tInput: lst = [5, 10, 15], i = 0, j = 2; Expected Output: 15, 10, 5\n\tFunction prototype: swap_elements(lst: list, i: int, j: int) -> list\n\tExpected result: 15 <class 'int'>\n\tActual result: [15, 10, 5] <class 'list'>",
+                        "Test failed:\n\tInput: lst = [5, 10], i = 0, j = 1; Expected Output: 10, 5\n\tFunction prototype: swap_elements(lst: list, i: int, j: int) -> list\n\tExpected result: 10 <class 'int'>\n\tActual result: [10, 5] <class 'list'>"
+                    ]
+                },
+                {
+                    "problem_identifier": "string_space_removal",
+                    "prompt_identifier": "detailed_prompt",
+                    "model_identifier": "gpt-4",
+                    "score": 0.6666666666666666,
+                    "sub_criteria_scores": null,
+                    "issues": [
+                        "Test failed:\n\tInput: s = [' ']; Expected Output: \n\tFunction prototype: remove_spaces(s: str) -> str\n\tExpected result:  <class 'str'>\n\tActual result: [''] <class 'str'>"
+                    ]
+                },
+                {
+                    "problem_identifier": "dictionary_value_retrieval",
+                    "prompt_identifier": "detailed_prompt",
+                    "model_identifier": "gpt-4",
+                    "score": 0.5,
+                    "sub_criteria_scores": null,
+                    "issues": [
+                        "Test failed:\n\tInput: d = {'a': 21, 'b': 32}, key = c; Expected Output: \n\tFunction prototype: get_value(d: dict, key: str) -> int\n\tExpected result: () <class 'tuple'>\n\tActual result: None <class 'NoneType'>"
+                    ]
+                },
+                {
+                    "problem_identifier": "reverse_list",
+                    "prompt_identifier": "detailed_prompt",
+                    "model_identifier": "gpt-4",
+                    "score": 0.0,
+                    "sub_criteria_scores": null,
+                    "issues": [
+                        "Test failed:\n\tInput: lst = [1, 2, 3, 4]; Expected Output: 4, 3, 2, 1\n\tFunction prototype: reverse_list(lst: list) -> list\n\tExpected result: 4 <class 'int'>\n\tActual result: [4, 3, 2, 1] <class 'list'>",
+                        "Test failed:\n\tInput: lst = [2, 2, 1]; Expected Output: 1, 2, 2\n\tFunction prototype: reverse_list(lst: list) -> list\n\tExpected result: 1 <class 'int'>\n\tActual result: [1, 2, 2] <class 'list'>"
+                    ]
+                },
+                {
+                    "problem_identifier": "sum_of_digits",
+                    "prompt_identifier": "detailed_prompt",
+                    "model_identifier": "gpt-4",
+                    "score": 1.0,
+                    "sub_criteria_scores": null,
+                    "issues": []
+                },
+                {
+                    "problem_identifier": "list_element_multiplication",
+                    "prompt_identifier": "detailed_prompt",
+                    "model_identifier": "gpt-4",
+                    "score": 0.0,
+                    "sub_criteria_scores": null,
+                    "issues": [
+                        "Test failed:\n\tInput: lst = [1, 2, 3, 4], n = 2; Expected Output: 2, 4, 6, 8\n\tFunction prototype: multiply_list(lst: list, n: int) -> list\n\tExpected result: 2 <class 'int'>\n\tActual result: [2, 4, 6, 8] <class 'list'>",
+                        "Test failed:\n\tInput: lst = [5, 10, 15], n = 3; Expected Output: 15, 30, 45\n\tFunction prototype: multiply_list(lst: list, n: int) -> list\n\tExpected result: 15 <class 'int'>\n\tActual result: [15, 30, 45] <class 'list'>"
+                    ]
+                },
+                {
+                    "problem_identifier": "string_length",
+                    "prompt_identifier": "detailed_prompt",
+                    "model_identifier": "gpt-4",
+                    "score": 1.0,
+                    "sub_criteria_scores": null,
+                    "issues": []
+                },
+                {
+                    "problem_identifier": "list_to_string_conversion",
+                    "prompt_identifier": "detailed_prompt",
+                    "model_identifier": "gpt-4",
+                    "score": 1.0,
+                    "sub_criteria_scores": null,
+                    "issues": []
+                },
+                {
+                    "problem_identifier": "list_second_largest",
+                    "prompt_identifier": "detailed_prompt",
+                    "model_identifier": "gpt-4",
+                    "score": 1.0,
+                    "sub_criteria_scores": null,
+                    "issues": []
+                },
+                {
+                    "problem_identifier": "string_permutation",
+                    "prompt_identifier": "detailed_prompt",
+                    "model_identifier": "gpt-4",
+                    "score": 1.0,
+                    "sub_criteria_scores": null,
+                    "issues": []
+                },
+                {
+                    "problem_identifier": "prime_factors",
+                    "prompt_identifier": "detailed_prompt",
+                    "model_identifier": "gpt-4",
+                    "score": 0.0,
+                    "sub_criteria_scores": null,
+                    "issues": [
+                        "Test failed:\n\tInput: n = 12; Expected Output: 2, 3\n\tFunction prototype: prime_factors(n: int) -> list\n\tExpected result: 2 <class 'int'>\n\tActual result: [2, 2, 3] <class 'list'>",
+                        "Test failed:\n\tInput: n = 30; Expected Output: 2, 3, 5\n\tFunction prototype: prime_factors(n: int) -> list\n\tExpected result: 2 <class 'int'>\n\tActual result: [2, 3, 5] <class 'list'>"
+                    ]
+                },
+                {
+                    "problem_identifier": "palindrome_number_checker",
+                    "prompt_identifier": "detailed_prompt",
+                    "model_identifier": "gpt-4",
+                    "score": 1.0,
+                    "sub_criteria_scores": null,
+                    "issues": []
+                },
+                {
+                    "problem_identifier": "string_length",
+                    "prompt_identifier": "detailed_prompt",
+                    "model_identifier": "gpt-4",
+                    "score": 0.5,
+                    "sub_criteria_scores": null,
+                    "issues": [
+                        "Test failed:\n\tInput: s = Python is fun; Expected Output: 14\n\tFunction prototype: string_length(s: str) -> int\n\tExpected result: 14 <class 'int'>\n\tActual result: 13 <class 'int'>"
+                    ]
+                },
+                {
+                    "problem_identifier": "common_elements_in_lists",
+                    "prompt_identifier": "detailed_prompt",
+                    "model_identifier": "gpt-4",
+                    "score": 0.0,
+                    "sub_criteria_scores": null,
+                    "issues": [
+                        "Test failed:\n\tInput: lst1 = ['hello', 'world', 'apple', 'banana'], lst2 = ['cherry', 'fig', 'strawberry']; Expected Output: \n\tFunction prototype: common_elements(lst1: list, lst2: list) -> list\n\tExpected result: () <class 'tuple'>\n\tActual result: [] <class 'list'>",
+                        "Test failed:\n\tInput: lst1 = ['apple', 'banana', 'cherry'], lst2 = ['cherry', 'date', 'fig']; Expected Output: cherry\n\tFunction prototype: common_elements(lst1: list, lst2: list) -> list\n\tExpected result: cherry <class 'str'>\n\tActual result: ['cherry'] <class 'list'>"
+                    ]
+                },
+                {
+                    "problem_identifier": "unique_elements_in_list",
+                    "prompt_identifier": "detailed_prompt",
+                    "model_identifier": "gpt-4",
+                    "score": 0.0,
+                    "sub_criteria_scores": null,
+                    "issues": [
+                        "Test failed:\n\tInput: lst = [1, 2, 2, 3, 4, 4, 4, 5]; Expected Output: 1, 2, 3, 4, 5\n\tFunction prototype: unique_elements(lst: list) -> list\n\tExpected result: 1 <class 'int'>\n\tActual result: [1, 2, 3, 4, 5] <class 'list'>",
+                        "Test failed:\n\tInput: lst = [1, 1, 1, 1]; Expected Output: 1\n\tFunction prototype: unique_elements(lst: list) -> list\n\tExpected result: 1 <class 'int'>\n\tActual result: [1] <class 'list'>"
+                    ]
+                },
+                {
+                    "problem_identifier": "list_intersection",
+                    "prompt_identifier": "detailed_prompt",
+                    "model_identifier": "gpt-4",
+                    "score": 0.0,
+                    "sub_criteria_scores": null,
+                    "issues": [
+                        "Test failed:\n\tInput: lst1 = [1, 2, 3, 4], lst2 = [3, 4, 5, 6]; Expected Output: 3, 4\n\tFunction prototype: list_intersection(lst1: list, lst2: list) -> list\n\tExpected result: 3 <class 'int'>\n\tActual result: [3, 4] <class 'list'>",
+                        "Test failed:\n\tInput: lst1 = [1, 0], lst2 = [2, 2]; Expected Output: \n\tFunction prototype: list_intersection(lst1: list, lst2: list) -> list\n\tExpected result: () <class 'tuple'>\n\tActual result: [] <class 'list'>"
+                    ]
+                },
+                {
+                    "problem_identifier": "list_union",
+                    "prompt_identifier": "detailed_prompt",
+                    "model_identifier": "gpt-4",
+                    "score": 0.0,
+                    "sub_criteria_scores": null,
+                    "issues": [
+                        "Test failed:\n\tInput: lst1 = [1, 2, 3, 4], lst2 = [3, 4, 5, 6]; Expected Output: 1, 2, 3, 4, 5, 6\n\tFunction prototype: list_union(lst1: list, lst2: list) -> list\n\tExpected result: 1 <class 'int'>\n\tActual result: [1, 2, 3, 4, 5, 6] <class 'list'>",
+                        "Test failed:\n\tInput: lst1 = [], lst2 = [1]; Expected Output: 1\n\tFunction prototype: list_union(lst1: list, lst2: list) -> list\n\tExpected result: 1 <class 'int'>\n\tActual result: [1] <class 'list'>"
+                    ]
+                },
+                {
+                    "problem_identifier": "list_length",
+                    "prompt_identifier": "detailed_prompt",
+                    "model_identifier": "gpt-4",
+                    "score": 1.0,
+                    "sub_criteria_scores": null,
+                    "issues": []
+                },
+                {
+                    "problem_identifier": "char_frequency_in_string",
+                    "prompt_identifier": "detailed_prompt",
+                    "model_identifier": "gpt-4",
+                    "score": 0.0,
+                    "sub_criteria_scores": null,
+                    "issues": [
+                        "Test failed:\n\tInput: s = hello; Expected Output: h, e, l, o\n\tFunction prototype: char_frequency(s: str) -> dict\n\tExpected result: h <class 'str'>\n\tActual result: {'h': 1, 'e': 1, 'l': 2, 'o': 1} <class 'dict'>",
+                        "Test failed:\n\tInput: s = programming; Expected Output: p, r, o, g, a, m, i, n\n\tFunction prototype: char_frequency(s: str) -> dict\n\tExpected result: p <class 'str'>\n\tActual result: {'p': 1, 'r': 2, 'o': 1, 'g': 2, 'a': 1, 'm': 2, 'i': 1, 'n': 1} <class 'dict'>"
+                    ]
+                },
+                {
+                    "problem_identifier": "max_number_in_list",
+                    "prompt_identifier": "detailed_prompt",
+                    "model_identifier": "gpt-4",
+                    "score": 1.0,
+                    "sub_criteria_scores": null,
+                    "issues": []
+                },
+                {
+                    "problem_identifier": "min_number_in_list",
+                    "prompt_identifier": "detailed_prompt",
+                    "model_identifier": "gpt-4",
+                    "score": 1.0,
+                    "sub_criteria_scores": null,
+                    "issues": []
+                },
+                {
+                    "problem_identifier": "list_sorting",
+                    "prompt_identifier": "detailed_prompt",
+                    "model_identifier": "gpt-4",
+                    "score": 0.0,
+                    "sub_criteria_scores": null,
+                    "issues": [
+                        "Test failed:\n\tInput: lst = [5, 2, 9, 8, 1]; Expected Output: 1, 2, 5, 8, 9\n\tFunction prototype: sort_list(lst: list) -> list\n\tExpected result: 1 <class 'int'>\n\tActual result: [1, 2, 5, 8, 9] <class 'list'>",
+                        "Test failed:\n\tInput: lst = [10, 5, 20, 1, 30]; Expected Output: 1, 5, 10, 20, 30\n\tFunction prototype: sort_list(lst: list) -> list\n\tExpected result: 1 <class 'int'>\n\tActual result: [1, 5, 10, 20, 30] <class 'list'>"
+                    ]
+                },
+                {
+                    "problem_identifier": "fibonacci_series",
+                    "prompt_identifier": "detailed_prompt",
+                    "model_identifier": "gpt-4",
+                    "score": 0.0,
+                    "sub_criteria_scores": null,
+                    "issues": [
+                        "Test failed:\n\tInput: n = 5; Expected Output: 0, 1, 1, 2, 3\n\tFunction prototype: fibonacci(n: int) -> list\n\tExpected result: 0 <class 'int'>\n\tActual result: [0, 1, 1, 2, 3] <class 'list'>",
+                        "Test failed:\n\tInput: n = 8; Expected Output: 0, 1, 1, 2, 3, 5, 8, 13\n\tFunction prototype: fibonacci(n: int) -> list\n\tExpected result: 0 <class 'int'>\n\tActual result: [0, 1, 1, 2, 3, 5, 8, 13] <class 'list'>"
+                    ]
+                },
+                {
+                    "problem_identifier": "list_average",
+                    "prompt_identifier": "detailed_prompt",
+                    "model_identifier": "gpt-4",
+                    "score": 1.0,
+                    "sub_criteria_scores": null,
+                    "issues": []
+                },
+                {
+                    "problem_identifier": "string_reversal",
+                    "prompt_identifier": "detailed_prompt",
+                    "model_identifier": "gpt-4",
+                    "score": 1.0,
+                    "sub_criteria_scores": null,
+                    "issues": []
+                },
+                {
+                    "problem_identifier": "palindrome_checker",
+                    "prompt_identifier": "detailed_prompt",
+                    "model_identifier": "gpt-4",
+                    "score": 1.0,
+                    "sub_criteria_scores": null,
+                    "issues": []
+                },
+                {
+                    "problem_identifier": "odd_numbers_in_list",
+                    "prompt_identifier": "detailed_prompt",
+                    "model_identifier": "gpt-4",
+                    "score": 0.0,
+                    "sub_criteria_scores": null,
+                    "issues": [
+                        "Test failed:\n\tInput: lst = [1, 2, 3, 4, 5, 6]; Expected Output: 1, 3, 5\n\tFunction prototype: odd_numbers(lst: list) -> list\n\tExpected result: 1 <class 'int'>\n\tActual result: [1, 3, 5] <class 'list'>",
+                        "Test failed:\n\tInput: lst = [10, 20, 30, 40]; Expected Output: \n\tFunction prototype: odd_numbers(lst: list) -> list\n\tExpected result: () <class 'tuple'>\n\tActual result: [] <class 'list'>"
+                    ]
+                },
+                {
+                    "problem_identifier": "even_numbers_in_list",
+                    "prompt_identifier": "detailed_prompt",
+                    "model_identifier": "gpt-4",
+                    "score": 0.0,
+                    "sub_criteria_scores": null,
+                    "issues": [
+                        "Test failed:\n\tInput: lst = [1, 2, 3, 4, 5, 6]; Expected Output: 2, 4, 6\n\tFunction prototype: even_numbers(lst: list) -> list\n\tExpected result: 2 <class 'int'>\n\tActual result: [2, 4, 6] <class 'list'>",
+                        "Test failed:\n\tInput: lst = [10, 20, 30, 40]; Expected Output: 10, 20, 30, 40\n\tFunction prototype: even_numbers(lst: list) -> list\n\tExpected result: 10 <class 'int'>\n\tActual result: [10, 20, 30, 40] <class 'list'>"
+                    ]
+                },
+                {
+                    "problem_identifier": "celsius_to_fahrenheit",
+                    "prompt_identifier": "detailed_prompt",
+                    "model_identifier": "gpt-4",
+                    "score": 1.0,
+                    "sub_criteria_scores": null,
+                    "issues": []
+                },
+                {
+                    "problem_identifier": "list_element_count",
+                    "prompt_identifier": "detailed_prompt",
+                    "model_identifier": "gpt-4",
+                    "score": 0.5,
+                    "sub_criteria_scores": null,
+                    "issues": [
+                        "Test failed:\n\tInput: lst = [1, 2, 3, 4, 5, 6], elem = 0; Expected Output: \n\tFunction prototype: element_count(lst: list, elem: int) -> int\n\tExpected result: () <class 'tuple'>\n\tActual result: 0 <class 'int'>"
+                    ]
+                },
+                {
+                    "problem_identifier": "factorial_calculation",
+                    "prompt_identifier": "detailed_prompt",
+                    "model_identifier": "gpt-4",
+                    "score": 1.0,
+                    "sub_criteria_scores": null,
+                    "issues": []
+                },
+                {
+                    "problem_identifier": "power_calculation",
+                    "prompt_identifier": "detailed_prompt",
+                    "model_identifier": "gpt-4",
+                    "score": 1.0,
+                    "sub_criteria_scores": null,
+                    "issues": []
+                },
+                {
+                    "problem_identifier": "list_element_removal",
+                    "prompt_identifier": "detailed_prompt",
+                    "model_identifier": "gpt-4",
+                    "score": 0.0,
+                    "sub_criteria_scores": null,
+                    "issues": [
+                        "Test failed:\n\tInput: lst = ['apple', 'banana', 'cherry', 'banana'], elem = strawberry; Expected Output: apple, banana, cherry, banana\n\tFunction prototype: remove_element(lst: list, elem: str) -> list\n\tExpected result: apple <class 'str'>\n\tActual result: ['apple', 'banana', 'cherry', 'banana'] <class 'list'>",
+                        "Test failed:\n\tInput: lst = ['apple', 'banana', 'cherry', 'banana'], elem = banana; Expected Output: apple, cherry\n\tFunction prototype: remove_element(lst: list, elem: str) -> list\n\tExpected result: apple <class 'str'>\n\tActual result: ['apple', 'cherry'] <class 'list'>"
+                    ]
+                },
+                {
+                    "problem_identifier": "finding_nth_fibonacci_number",
+                    "prompt_identifier": "detailed_prompt",
+                    "model_identifier": "gpt-4",
+                    "score": 0.0,
+                    "sub_criteria_scores": null,
+                    "issues": [
+                        "Test failed:\n\tInput: n = 5; Expected Output: 3\n\tFunction prototype: nth_fibonacci(n: int) -> int\n\tExpected result: 3 <class 'int'>\n\tActual result: 5 <class 'int'>",
+                        "Test failed:\n\tInput: n = 8; Expected Output: 13\n\tFunction prototype: nth_fibonacci(n: int) -> int\n\tExpected result: 13 <class 'int'>\n\tActual result: 21 <class 'int'>"
+                    ]
+                },
+                {
+                    "problem_identifier": "checking_prime_number",
+                    "prompt_identifier": "detailed_prompt",
+                    "model_identifier": "gpt-4",
+                    "score": 1.0,
+                    "sub_criteria_scores": null,
+                    "issues": []
+                },
+                {
+                    "problem_identifier": "greatest_common_divisor",
+                    "prompt_identifier": "detailed_prompt",
+                    "model_identifier": "gpt-4",
+                    "score": 1.0,
+                    "sub_criteria_scores": null,
+                    "issues": []
+                },
+                {
+                    "problem_identifier": "are_anagrams",
+                    "prompt_identifier": "detailed_prompt",
+                    "model_identifier": "gpt-4",
+                    "score": 1.0,
+                    "sub_criteria_scores": null,
+                    "issues": []
+                },
+                {
+                    "problem_identifier": "list_median",
+                    "prompt_identifier": "detailed_prompt",
+                    "model_identifier": "gpt-4",
+                    "score": 1.0,
+                    "sub_criteria_scores": null,
+                    "issues": []
+                },
+                {
+                    "problem_identifier": "multiply_by_two",
+                    "prompt_identifier": "detailed_prompt",
+                    "model_identifier": "gpt-4",
+                    "score": 0.0,
+                    "sub_criteria_scores": null,
+                    "issues": [
+                        "Test failed:\n\tInput: lst = [1, 2, 3]; Expected Output: 2, 4, 6\n\tFunction prototype: multiply_by_two(lst: list) -> list\n\tExpected result: 2 <class 'int'>\n\tActual result: [2, 4, 6] <class 'list'>",
+                        "Test failed:\n\tInput: lst = [0, -1, 4]; Expected Output: 0, -1, 8\n\tFunction prototype: multiply_by_two(lst: list) -> list\n\tExpected result: 0 <class 'int'>\n\tActual result: [0, -2, 8] <class 'list'>",
+                        "Test failed:\n\tInput: lst = [5, 10, 15]; Expected Output: 10, 20, 30\n\tFunction prototype: multiply_by_two(lst: list) -> list\n\tExpected result: 10 <class 'int'>\n\tActual result: [10, 20, 30] <class 'list'>"
+                    ]
+                },
+                {
+                    "problem_identifier": "fahrenheit_to_celsius",
+                    "prompt_identifier": "detailed_prompt",
+                    "model_identifier": "gpt-4",
+                    "score": 1.0,
+                    "sub_criteria_scores": null,
+                    "issues": []
+                },
+                {
+                    "problem_identifier": "swap_dict_key_values",
+                    "prompt_identifier": "detailed_prompt",
+                    "model_identifier": "gpt-4",
+                    "score": 0.0,
+                    "sub_criteria_scores": null,
+                    "issues": [
+                        "Test failed:\n\tInput: d = {'apple': '1', 'banana': '2', 'cherry': '3'}; Expected Output: 1, 2, 3\n\tFunction prototype: swap_dict_key_values(d: dict) -> dict\n\tExpected result: 1 <class 'str'>\n\tActual result: {'1': 'apple', '2': 'banana', '3': 'cherry'} <class 'dict'>",
+                        "Test failed:\n\tInput: d = {'red': 'apple', 'yellow': 'banana'}; Expected Output: apple, banana\n\tFunction prototype: swap_dict_key_values(d: dict) -> dict\n\tExpected result: apple <class 'str'>\n\tActual result: {'apple': 'red', 'banana': 'yellow'} <class 'dict'>"
+                    ]
+                },
+                {
+                    "problem_identifier": "unique_elements_from_lists",
+                    "prompt_identifier": "detailed_prompt",
+                    "model_identifier": "gpt-4",
+                    "score": 0.0,
+                    "sub_criteria_scores": null,
+                    "issues": [
+                        "Test failed:\n\tInput: lst1 = [1, 2, 3, 4], lst2 = [3, 4, 5, 6]; Expected Output: 1, 2, 5, 6\n\tFunction prototype: unique_elements_from_lists(lst1: list, lst2: list) -> list\n\tExpected result: 1 <class 'int'>\n\tActual result: [1, 2, 5, 6] <class 'list'>",
+                        "Test failed:\n\tInput: lst1 = ['apple', 'banana', 'cherry'], lst2 = ['cherry', 'date', 'fig']; Expected Output: apple, banana, date, fig\n\tFunction prototype: unique_elements_from_lists(lst1: list, lst2: list) -> list\n\tExpected result: apple <class 'str'>\n\tActual result: ['date', 'apple', 'banana', 'fig'] <class 'list'>",
+                        "Test failed:\n\tInput: lst1 = [], lst2 = [1, 2, 3]; Expected Output: 1, 2, 3\n\tFunction prototype: unique_elements_from_lists(lst1: list, lst2: list) -> list\n\tExpected result: 1 <class 'int'>\n\tActual result: [1, 2, 3] <class 'list'>"
+                    ]
+                },
+                {
+                    "problem_identifier": "even_indexed_elements",
+                    "prompt_identifier": "detailed_prompt",
+                    "model_identifier": "gpt-4",
+                    "score": 0.0,
+                    "sub_criteria_scores": null,
+                    "issues": [
+                        "Test failed:\n\tInput: lst = [1, 2, 3, 4, 5]; Expected Output: 1, 3, 5\n\tFunction prototype: even_indexed_elements(lst: list) -> list\n\tExpected result: 1 <class 'int'>\n\tActual result: [1, 3, 5] <class 'list'>",
+                        "Test failed:\n\tInput: lst = ['apple', 'banana', 'cherry', 'date', 'fig']; Expected Output: apple, cherry, fig\n\tFunction prototype: even_indexed_elements(lst: list) -> list\n\tExpected result: apple <class 'str'>\n\tActual result: ['apple', 'cherry', 'fig'] <class 'list'>",
+                        "Test failed:\n\tInput: lst = [10, 20, 30]; Expected Output: 10, 30\n\tFunction prototype: even_indexed_elements(lst: list) -> list\n\tExpected result: 10 <class 'int'>\n\tActual result: [10, 30] <class 'list'>"
+                    ]
+                },
+                {
+                    "problem_identifier": "odd_indexed_elements",
+                    "prompt_identifier": "detailed_prompt",
+                    "model_identifier": "gpt-4",
+                    "score": 0.0,
+                    "sub_criteria_scores": null,
+                    "issues": [
+                        "Test failed:\n\tInput: lst = [1, 2, 3, 4, 5]; Expected Output: 2, 4\n\tFunction prototype: odd_indexed_elements(lst: list) -> list\n\tExpected result: 2 <class 'int'>\n\tActual result: [2, 4] <class 'list'>",
+                        "Test failed:\n\tInput: lst = ['apple', 'banana', 'cherry', 'date', 'fig']; Expected Output: banana, date\n\tFunction prototype: odd_indexed_elements(lst: list) -> list\n\tExpected result: banana <class 'str'>\n\tActual result: ['banana', 'date'] <class 'list'>",
+                        "Test failed:\n\tInput: lst = [10, 20, 30]; Expected Output: 20\n\tFunction prototype: odd_indexed_elements(lst: list) -> list\n\tExpected result: 20 <class 'int'>\n\tActual result: [20] <class 'list'>"
+                    ]
+                },
+                {
+                    "problem_identifier": "count_vowels",
+                    "prompt_identifier": "detailed_prompt",
+                    "model_identifier": "gpt-4",
+                    "score": 0.75,
+                    "sub_criteria_scores": null,
+                    "issues": [
+                        "Test failed:\n\tInput: s = AEIOUaeiou; Expected Output: 8\n\tFunction prototype: count_vowels(s: str) -> int\n\tExpected result: 8 <class 'int'>\n\tActual result: 10 <class 'int'>"
+                    ]
+                },
+                {
+                    "problem_identifier": "list_to_string",
+                    "prompt_identifier": "detailed_prompt",
+                    "model_identifier": "gpt-4",
+                    "score": 1.0,
+                    "sub_criteria_scores": null,
+                    "issues": []
+                },
+                {
+                    "problem_identifier": "elements_greater_than_n",
+                    "prompt_identifier": "detailed_prompt",
+                    "model_identifier": "gpt-4",
+                    "score": 0.0,
+                    "sub_criteria_scores": null,
+                    "issues": [
+                        "Test failed:\n\tInput: lst = [1, 2, 3, 4, 5], n = 3; Expected Output: 4, 5\n\tFunction prototype: elements_greater_than_n(lst: list, n: int) -> list\n\tExpected result: 4 <class 'int'>\n\tActual result: [4, 5] <class 'list'>",
+                        "Test failed:\n\tInput: lst = [10, 20, 30, 40, 50], n = 35; Expected Output: 40, 50\n\tFunction prototype: elements_greater_than_n(lst: list, n: int) -> list\n\tExpected result: 40 <class 'int'>\n\tActual result: [40, 50] <class 'list'>",
+                        "Test failed:\n\tInput: lst = [5, 10, 15], n = 20; Expected Output: \n\tFunction prototype: elements_greater_than_n(lst: list, n: int) -> list\n\tExpected result: () <class 'tuple'>\n\tActual result: [] <class 'list'>",
+                        "Test failed:\n\tInput: lst = [], n = 5; Expected Output: \n\tFunction prototype: elements_greater_than_n(lst: list, n: int) -> list\n\tExpected result: () <class 'tuple'>\n\tActual result: [] <class 'list'>"
+                    ]
+                },
+                {
+                    "problem_identifier": "square_numbers",
+                    "prompt_identifier": "detailed_prompt",
+                    "model_identifier": "gpt-4",
+                    "score": 0.0,
+                    "sub_criteria_scores": null,
+                    "issues": [
+                        "Test failed:\n\tInput: n = 5; Expected Output: 0, 1, 4, 9, 16\n\tFunction prototype: square_numbers(n: int) -> list\n\tExpected result: 0 <class 'int'>\n\tActual result: [1, 4, 9, 16, 25] <class 'list'>",
+                        "Test failed:\n\tInput: n = 3; Expected Output: 0, 1, 4\n\tFunction prototype: square_numbers(n: int) -> list\n\tExpected result: 0 <class 'int'>\n\tActual result: [1, 4, 9] <class 'list'>",
+                        "Test failed:\n\tInput: n = 1; Expected Output: 0\n\tFunction prototype: square_numbers(n: int) -> list\n\tExpected result: 0 <class 'int'>\n\tActual result: [1] <class 'list'>"
+                    ]
+                },
+                {
+                    "problem_identifier": "find_max",
+                    "prompt_identifier": "detailed_prompt",
+                    "model_identifier": "gpt-4",
+                    "score": 0.75,
+                    "sub_criteria_scores": null,
+                    "issues": [
+                        "Test failed:\n\tInput: lst = [1]; Expected Output: 0\n\tFunction prototype: find_max(lst: list) -> int\n\tExpected result: 0 <class 'int'>\n\tActual result: 1 <class 'int'>"
+                    ]
+                },
+                {
+                    "problem_identifier": "find_min",
+                    "prompt_identifier": "detailed_prompt",
+                    "model_identifier": "gpt-4",
+                    "score": 1.0,
+                    "sub_criteria_scores": null,
+                    "issues": []
+                },
+                {
+                    "problem_identifier": "square_root",
+                    "prompt_identifier": "detailed_prompt",
+                    "model_identifier": "gpt-4",
+                    "score": 1.0,
+                    "sub_criteria_scores": null,
+                    "issues": []
+                },
+                {
+                    "problem_identifier": "calculate_sum",
+                    "prompt_identifier": "detailed_prompt",
+                    "model_identifier": "gpt-4",
+                    "score": 1.0,
+                    "sub_criteria_scores": null,
+                    "issues": []
+                },
+                {
+                    "problem_identifier": "calculate_product",
+                    "prompt_identifier": "detailed_prompt",
+                    "model_identifier": "gpt-4",
+                    "score": 1.0,
+                    "sub_criteria_scores": null,
+                    "issues": []
+                },
+                {
+                    "problem_identifier": "concatenate_lists",
+                    "prompt_identifier": "detailed_prompt",
+                    "model_identifier": "gpt-4",
+                    "score": 0.0,
+                    "sub_criteria_scores": null,
+                    "issues": [
+                        "Test failed:\n\tInput: lst1 = [1, 2, 3], lst2 = [4, 5]; Expected Output: 1, 2, 3, 4, 5\n\tFunction prototype: concatenate_lists(lst1: list, lst2: list) -> list\n\tExpected result: 1 <class 'int'>\n\tActual result: [1, 2, 3, 4, 5] <class 'list'>",
+                        "Test failed:\n\tInput: lst1 = ['apple', 'banana'], lst2 = ['cherry', 'date']; Expected Output: apple, banana, cherry, date\n\tFunction prototype: concatenate_lists(lst1: list, lst2: list) -> list\n\tExpected result: apple <class 'str'>\n\tActual result: ['apple', 'banana', 'cherry', 'date'] <class 'list'>",
+                        "Test failed:\n\tInput: lst1 = [], lst2 = [1, 2, 3]; Expected Output: 1, 2, 3\n\tFunction prototype: concatenate_lists(lst1: list, lst2: list) -> list\n\tExpected result: 1 <class 'int'>\n\tActual result: [1, 2, 3] <class 'list'>"
+                    ]
+                },
+                {
+                    "problem_identifier": "find_intersection",
+                    "prompt_identifier": "detailed_prompt",
+                    "model_identifier": "gpt-4",
+                    "score": 0.0,
+                    "sub_criteria_scores": null,
+                    "issues": [
+                        "Test failed:\n\tInput: lst1 = [1, 2, 3, 4], lst2 = [3, 4, 5, 6]; Expected Output: 3, 4\n\tFunction prototype: find_intersection(lst1: list, lst2: list) -> list\n\tExpected result: 3 <class 'int'>\n\tActual result: [3, 4] <class 'list'>",
+                        "Test failed:\n\tInput: lst1 = ['apple', 'banana', 'cherry'], lst2 = ['cherry', 'date', 'fig']; Expected Output: cherry\n\tFunction prototype: find_intersection(lst1: list, lst2: list) -> list\n\tExpected result: cherry <class 'str'>\n\tActual result: ['cherry'] <class 'list'>",
+                        "Test failed:\n\tInput: lst1 = [], lst2 = [1, 2, 3]; Expected Output: \n\tFunction prototype: find_intersection(lst1: list, lst2: list) -> list\n\tExpected result: () <class 'tuple'>\n\tActual result: [] <class 'list'>"
+                    ]
+                },
+                {
+                    "problem_identifier": "find_difference",
+                    "prompt_identifier": "detailed_prompt",
+                    "model_identifier": "gpt-4",
+                    "score": 0.0,
+                    "sub_criteria_scores": null,
+                    "issues": [
+                        "Test failed:\n\tInput: lst1 = [1, 2, 3, 4], lst2 = [3, 4, 5, 6]; Expected Output: 1, 2\n\tFunction prototype: find_difference(lst1: list, lst2: list) -> list\n\tExpected result: 1 <class 'int'>\n\tActual result: [1, 2] <class 'list'>",
+                        "Test failed:\n\tInput: lst1 = ['apple', 'banana', 'cherry'], lst2 = ['cherry', 'date', 'fig']; Expected Output: apple, banana\n\tFunction prototype: find_difference(lst1: list, lst2: list) -> list\n\tExpected result: apple <class 'str'>\n\tActual result: ['banana', 'apple'] <class 'list'>",
+                        "Test failed:\n\tInput: lst1 = [], lst2 = [1, 2, 3]; Expected Output: \n\tFunction prototype: find_difference(lst1: list, lst2: list) -> list\n\tExpected result: () <class 'tuple'>\n\tActual result: [] <class 'list'>"
+                    ]
+                },
+                {
+                    "problem_identifier": "remove_duplicates",
+                    "prompt_identifier": "detailed_prompt",
+                    "model_identifier": "gpt-4",
+                    "score": 0.0,
+                    "sub_criteria_scores": null,
+                    "issues": [
+                        "Test failed:\n\tInput: lst = [1, 2, 2, 3, 4, 4, 5]; Expected Output: 1, 2, 3, 4, 5\n\tFunction prototype: remove_duplicates(lst: list) -> list\n\tExpected result: 1 <class 'int'>\n\tActual result: [1, 2, 3, 4, 5] <class 'list'>",
+                        "Test failed:\n\tInput: lst = ['apple', 'banana', 'banana', 'cherry', 'date']; Expected Output: apple, banana, cherry, date\n\tFunction prototype: remove_duplicates(lst: list) -> list\n\tExpected result: apple <class 'str'>\n\tActual result: ['apple', 'banana', 'cherry', 'date'] <class 'list'>",
+                        "Test failed:\n\tInput: lst = [1, 2, 3]; Expected Output: 1, 2, 3\n\tFunction prototype: remove_duplicates(lst: list) -> list\n\tExpected result: 1 <class 'int'>\n\tActual result: [1, 2, 3] <class 'list'>",
+                        "Test failed:\n\tInput: lst = []; Expected Output: \n\tFunction prototype: remove_duplicates(lst: list) -> list\n\tExpected result: () <class 'tuple'>\n\tActual result: [] <class 'list'>"
+                    ]
+                },
+                {
+                    "problem_identifier": "reverse_list",
+                    "prompt_identifier": "detailed_prompt",
+                    "model_identifier": "gpt-4",
+                    "score": 0.0,
+                    "sub_criteria_scores": null,
+                    "issues": [
+                        "Test failed:\n\tInput: lst = [1, 2, 3, 4, 5]; Expected Output: 5, 4, 3, 2, 1\n\tFunction prototype: reverse_list(lst: list) -> list\n\tExpected result: 5 <class 'int'>\n\tActual result: [5, 4, 3, 2, 1] <class 'list'>",
+                        "Test failed:\n\tInput: lst = ['apple', 'banana', 'cherry', 'date', 'fig']; Expected Output: fig, date, cherry, banana, apple\n\tFunction prototype: reverse_list(lst: list) -> list\n\tExpected result: fig <class 'str'>\n\tActual result: ['fig', 'date', 'cherry', 'banana', 'apple'] <class 'list'>",
+                        "Test failed:\n\tInput: lst = [10, 20, 30]; Expected Output: 30, 20, 10\n\tFunction prototype: reverse_list(lst: list) -> list\n\tExpected result: 30 <class 'int'>\n\tActual result: [30, 20, 10] <class 'list'>"
+                    ]
+                },
+                {
+                    "problem_identifier": "count_occurrences",
+                    "prompt_identifier": "detailed_prompt",
+                    "model_identifier": "gpt-4",
+                    "score": 1.0,
+                    "sub_criteria_scores": null,
+                    "issues": []
+                },
+                {
+                    "problem_identifier": "remove_element",
+                    "prompt_identifier": "detailed_prompt",
+                    "model_identifier": "gpt-4",
+                    "score": 0.0,
+                    "sub_criteria_scores": null,
+                    "issues": [
+                        "Test failed:\n\tInput: lst = [1, 2, 3, 2, 4, 5], elem = 2; Expected Output: 1, 3, 4, 5\n\tFunction prototype: remove_element(lst: list, elem: any) -> list\n\tExpected result: 1 <class 'int'>\n\tActual result: [1, 3, 4, 5] <class 'list'>",
+                        "Test failed:\n\tInput: lst = ['apple', 'banana', 'cherry', 'banana', 'date'], elem = banana; Expected Output: apple, cherry, date\n\tFunction prototype: remove_element(lst: list, elem: any) -> list\n\tExpected result: apple <class 'str'>\n\tActual result: ['apple', 'cherry', 'date'] <class 'list'>",
+                        "Test failed:\n\tInput: lst = [1, 2, 3], elem = 4; Expected Output: 1, 2, 3\n\tFunction prototype: remove_element(lst: list, elem: any) -> list\n\tExpected result: 1 <class 'int'>\n\tActual result: [1, 2, 3] <class 'list'>",
+                        "Test failed:\n\tInput: lst = [], elem = 5; Expected Output: \n\tFunction prototype: remove_element(lst: list, elem: any) -> list\n\tExpected result: () <class 'tuple'>\n\tActual result: [] <class 'list'>"
+                    ]
+                },
+                {
+                    "problem_identifier": "reverse_string",
+                    "prompt_identifier": "detailed_prompt",
+                    "model_identifier": "gpt-4",
+                    "score": 1.0,
+                    "sub_criteria_scores": null,
+                    "issues": []
+                },
+                {
+                    "problem_identifier": "multiply_list_elements",
+                    "prompt_identifier": "detailed_prompt",
+                    "model_identifier": "gpt-4",
+                    "score": 0.0,
+                    "sub_criteria_scores": null,
+                    "issues": [
+                        "Test failed:\n\tInput: lst = [1, 2, 3, 4, 5]; Expected Output: 2, 4, 6, 6, 10\n\tFunction prototype: multiply_list_elements(lst: list) -> list\n\tExpected result: 2 <class 'int'>\n\tActual result: [2, 4, 6, 8, 10] <class 'list'>",
+                        "Test failed:\n\tInput: lst = [0, 0, 0]; Expected Output: 0, 0, 0\n\tFunction prototype: multiply_list_elements(lst: list) -> list\n\tExpected result: 0 <class 'int'>\n\tActual result: [0, 0, 0] <class 'list'>",
+                        "Test failed:\n\tInput: lst = [2, 4, 6]; Expected Output: 3, 8, 12\n\tFunction prototype: multiply_list_elements(lst: list) -> list\n\tExpected result: 3 <class 'int'>\n\tActual result: [4, 8, 12] <class 'list'>",
+                        "Test failed:\n\tInput: lst = []; Expected Output: \n\tFunction prototype: multiply_list_elements(lst: list) -> list\n\tExpected result: () <class 'tuple'>\n\tActual result: [] <class 'list'>"
+                    ]
+                },
+                {
+                    "problem_identifier": "is_palindrome",
+                    "prompt_identifier": "detailed_prompt",
+                    "model_identifier": "gpt-4",
+                    "score": 1.0,
+                    "sub_criteria_scores": null,
+                    "issues": []
+                },
+                {
+                    "problem_identifier": "sort_list",
+                    "prompt_identifier": "detailed_prompt",
+                    "model_identifier": "gpt-4",
+                    "score": 0.0,
+                    "sub_criteria_scores": null,
+                    "issues": [
+                        "Test failed:\n\tInput: lst = [3, 1, 4, 2, 5]; Expected Output: 1, 2, 3, 4, 5\n\tFunction prototype: sort_list(lst: list) -> list\n\tExpected result: 1 <class 'int'>\n\tActual result: [1, 2, 3, 4, 5] <class 'list'>",
+                        "Test failed:\n\tInput: lst = ['apple', 'cherry', 'banana', 'date']; Expected Output: apple, banana, cherry, date\n\tFunction prototype: sort_list(lst: list) -> list\n\tExpected result: apple <class 'str'>\n\tActual result: ['apple', 'banana', 'cherry', 'date'] <class 'list'>",
+                        "Test failed:\n\tInput: lst = [10, 20, 5, 30]; Expected Output: 5, 10, 20, 30\n\tFunction prototype: sort_list(lst: list) -> list\n\tExpected result: 5 <class 'int'>\n\tActual result: [5, 10, 20, 30] <class 'list'>"
+                    ]
+                },
+                {
+                    "problem_identifier": "filter_list",
+                    "prompt_identifier": "detailed_prompt",
+                    "model_identifier": "gpt-4",
+                    "score": 0.0,
+                    "sub_criteria_scores": null,
+                    "issues": [
+                        "Test failed:\n\tInput: lst = [5, 15, 3, 25, 8]; Expected Output: 15, 25\n\tFunction prototype: filter_list(lst: list) -> list\n\tExpected result: 15 <class 'int'>\n\tActual result: [15, 25] <class 'list'>",
+                        "Test failed:\n\tInput: lst = [10, 20, 30]; Expected Output: 20, 30\n\tFunction prototype: filter_list(lst: list) -> list\n\tExpected result: 20 <class 'int'>\n\tActual result: [20, 30] <class 'list'>",
+                        "Test failed:\n\tInput: lst = [1, 2, 3]; Expected Output: \n\tFunction prototype: filter_list(lst: list) -> list\n\tExpected result: () <class 'tuple'>\n\tActual result: [] <class 'list'>"
+                    ]
+                },
+                {
+                    "problem_identifier": "case_conversion",
+                    "prompt_identifier": "detailed_prompt",
+                    "model_identifier": "gpt-4",
+                    "score": 1.0,
+                    "sub_criteria_scores": null,
+                    "issues": []
+                },
+                {
+                    "problem_identifier": "title_case",
+                    "prompt_identifier": "detailed_prompt",
+                    "model_identifier": "gpt-4",
+                    "score": 1.0,
+                    "sub_criteria_scores": null,
+                    "issues": []
+                },
+                {
+                    "problem_identifier": "capitalize_string",
+                    "prompt_identifier": "detailed_prompt",
+                    "model_identifier": "gpt-4",
+                    "score": 1.0,
+                    "sub_criteria_scores": null,
+                    "issues": []
+                },
+                {
+                    "problem_identifier": "concatenate_strings",
+                    "prompt_identifier": "detailed_prompt",
+                    "model_identifier": "gpt-4",
+                    "score": 1.0,
+                    "sub_criteria_scores": null,
+                    "issues": []
+                },
+                {
+                    "problem_identifier": "calculate_factorial",
+                    "prompt_identifier": "detailed_prompt",
+                    "model_identifier": "gpt-4",
+                    "score": 1.0,
+                    "sub_criteria_scores": null,
+                    "issues": []
+                },
+                {
+                    "problem_identifier": "fibonacci",
+                    "prompt_identifier": "detailed_prompt",
+                    "model_identifier": "gpt-4",
+                    "score": 1.0,
+                    "sub_criteria_scores": null,
+                    "issues": []
+                },
+                {
+                    "problem_identifier": "sum_of_digits",
+                    "prompt_identifier": "detailed_prompt",
+                    "model_identifier": "gpt-4",
+                    "score": 1.0,
+                    "sub_criteria_scores": null,
+                    "issues": []
+                }
+            ]
+        }
+    },
+    "Average Scores Per Problem Set": {
+        "problem_sets/logic_error_problems": 0.5513333333333335
+    },
+    "Average Scores Per Criterion": {
+        "correctness": 0.5513333333333335
+    },
+    "output": 0.5513333333333335
+}

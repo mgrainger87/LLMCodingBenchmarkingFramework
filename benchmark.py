@@ -115,7 +115,7 @@ def main():
 	if args.generate or args.grade:
 		# generate timestamp to identify final report:
 		timestamp = datetime.datetime.now().strftime("%m-%d-%Y--%H-%M-%S")
-		current_report_paths = {m: os.path.join(args.report_path, "report-" + m.model_identifier + "-" + timestamp + ".json") for m in models}
+		current_report_paths = {m: os.path.join("output" + ".json") for m in models}
 
 		print_header('Problems')
 		print("Loading problems…")
