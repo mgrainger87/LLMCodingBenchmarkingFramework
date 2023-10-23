@@ -1,0 +1,21 @@
+{
+  "identifier": "multiply_by_two",
+  "description": "The function should return a list where each element is multiplied by 2.",
+  "function_prototype": {
+      "function_name": "multiply_by_two",
+      "parameters": [{"name": "lst", "type": "list"}],
+      "return_values": [{"type": "list"}]
+  },
+  "correctness_test_suite": [
+      {"input": {"lst": [1, 2, 3]}, "expected_output": [2, 4, 6]},
+      {"input": {"lst": [0, -1, 4]}, "expected_output": [0, -1, 8]},
+      {"input": {"lst": [5, 10, 15]}, "expected_output": [10, 20, 30]}
+  ],
+  "tags": ["List", "Arithmetic", "Math", "Multiplication"],
+  "prompts": [
+      {
+          "prompt_id": "detailed_prompt",
+          "prompt": "There is code that contains a logic error. May you fix the logic error? The function should return a list where each element is multiplied by 2. def multiply_by_two(lst): return [x * 2 - 1 for x in lst]"
+      }
+  ]
+}

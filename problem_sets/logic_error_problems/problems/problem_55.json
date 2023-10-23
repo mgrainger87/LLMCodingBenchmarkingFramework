@@ -1,0 +1,39 @@
+{
+  "identifier": "list_average",
+  "description": "The function should return the average of the numbers in the input list.",
+  "function_prototype": {
+    "function_name": "list_average",
+    "parameters": [
+      {
+        "name": "lst",
+        "type": "list"
+      }
+    ],
+    "return_values": [
+      {
+        "type": "float"
+      }
+    ]
+  },
+  "correctness_test_suite": [
+    {
+      "input": {
+        "lst": [1, 2, 3, 4, 5]
+      },
+      "expected_output": [3.0]
+    },
+    {
+      "input": {
+        "lst": [10, 20, 30, 40]
+      },
+      "expected_output": [25.0]
+    }
+  ],
+  "tags": ["List", "Average"],
+  "prompts": [
+    {
+      "prompt_id": "detailed_prompt",
+      "prompt": "There is code that contains a logic error. May you fix the logic error? The function 'list_average' should take a list 'lst' as input and return the average of the numbers in the input list. def list_average(lst): return sum(lst) / len(lst - 1)"
+    }
+  ]
+}

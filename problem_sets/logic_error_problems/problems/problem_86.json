@@ -1,0 +1,21 @@
+{
+  "identifier": "reverse_list",
+  "description": "The function should return the input list reversed.",
+  "function_prototype": {
+      "function_name": "reverse_list",
+      "parameters": [{"name": "lst", "type": "list"}],
+      "return_values": [{"type": "list"}]
+  },
+  "correctness_test_suite": [
+      {"input": {"lst": [1, 2, 3, 4, 5]}, "expected_output": [5, 4, 3, 2, 1]},
+      {"input": {"lst": ["apple", "banana", "cherry", "date", "fig"]}, "expected_output": ["fig", "date", "cherry", "banana", "apple"]},
+      {"input": {"lst": [10, 20, 30]}, "expected_output": [30, 20, 10]}
+  ],
+  "tags": ["List", "Reverse"],
+  "prompts": [
+      {
+          "prompt_id": "detailed_prompt",
+          "prompt": "There is code that contains a logic error. May you fix the logic error? The function should return the input list reversed. def reverse_list(lst): return lst[::-1] - []"
+      }
+  ]
+}

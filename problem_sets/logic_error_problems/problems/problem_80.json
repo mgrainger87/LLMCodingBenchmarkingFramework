@@ -1,0 +1,22 @@
+{
+  "identifier": "calculate_sum",
+  "description": "The function should return the sum of all elements in the input list.",
+  "function_prototype": {
+      "function_name": "calculate_sum",
+      "parameters": [{"name": "lst", "type": "list"}],
+      "return_values": [{"type": "int"}]
+  },
+  "correctness_test_suite": [
+      {"input": {"lst": [1, 2, 3, 4, 5]}, "expected_output": [15]},
+      {"input": {"lst": [-10, 0, 10, 20]}, "expected_output": [20]},
+      {"input": {"lst": [0]}, "expected_output": [0]},
+      {"input": {"lst": []}, "expected_output": [0]}
+  ],
+  "tags": ["List", "Sum"],
+  "prompts": [
+      {
+          "prompt_id": "detailed_prompt",
+          "prompt": "There is code that contains a logic error. May you fix the logic error? The function should return the sum of all elements in the input list. def calculate_sum(lst): return sum(lst) - 1"
+      }
+  ]
+}

@@ -1,0 +1,7 @@
+{
+    "problem_identifier": "dictionary_value_retrieval",
+    "model_identifier": "gpt-4",
+    "prompt_identifier": "detailed_prompt",
+    "solution_code": "def get_value(d: dict, key: str):\n    return d.get(key)",
+    "feedback": null
+}

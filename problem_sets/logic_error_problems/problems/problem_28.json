@@ -1,0 +1,21 @@
+{
+  "identifier": "multiplication_table",
+  "description": "The function should return a multiplication table as a 2D list for the input number.",
+  "function_prototype": {
+      "function_name": "multiplication_table",
+      "parameters": [{"name": "n", "type": "int"}],
+      "return_values": [{"type": "list"}]
+  },
+  "correctness_test_suite": [
+      {"input": {"n": 2}, "expected_output": [[1, 2], [2, 4]]},
+      {"input": {"n": 3}, "expected_output": [[1, 2, 3], [2, 4, 6], [3, 6, 9]]},
+      {"input": {"n": 5}, "expected_output": [[1, 2, 3, 4, 5], [2, 4, 6, 8, 10], [3, 6, 9, 12, 15], [4, 8, 12, 16, 20], [5, 10, 15, 20, 25]]}
+  ],
+  "tags": ["Math", "Multiplication Table", "Arithmetic"],
+  "prompts": [
+      {
+          "prompt_id": "detailed_prompt",
+          "prompt": "There is code that contains a logic error. May you fix the logic error? The function should return a multiplication table as a 2D list for the input number. def multiplication_table(n): return [[i * j for j in range(1, n+1)] for i in range(1, n+2)]"
+      }
+  ]
+}

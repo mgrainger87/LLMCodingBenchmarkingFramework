@@ -1,0 +1,7 @@
+{
+  "name": "Logic Error Problems",
+  "model": "openai-latest",
+  "run_test": "python benchmark.py --validate --grade --model gpt-4 --grader performance correctness",
+  "run_score": "",
+  "tags": []
+}

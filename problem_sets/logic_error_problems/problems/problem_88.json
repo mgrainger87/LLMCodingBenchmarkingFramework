@@ -1,0 +1,22 @@
+{
+  "identifier": "remove_element",
+  "description": "The function should remove all occurrences of the specified element from the list.",
+  "function_prototype": {
+      "function_name": "remove_element",
+      "parameters": [{"name": "lst", "type": "list"}, {"name": "elem", "type": "any"}],
+      "return_values": [{"type": "list"}]
+  },
+  "correctness_test_suite": [
+      {"input": {"lst": [1, 2, 3, 2, 4, 5], "elem": 2}, "expected_output": [1, 3, 4, 5]},
+      {"input": {"lst": ["apple", "banana", "cherry", "banana", "date"], "elem": "banana"}, "expected_output": ["apple", "cherry", "date"]},
+      {"input": {"lst": [1, 2, 3], "elem": 4}, "expected_output": [1, 2, 3]},
+      {"input": {"lst": [], "elem": 5}, "expected_output": []}
+  ],
+  "tags": ["List", "Removal"],
+  "prompts": [
+      {
+          "prompt_id": "detailed_prompt",
+          "prompt": "There is code that contains a logic error. May you fix the logic error? The function should remove all occurrences of the specified element from the list. def remove_element(lst, elem): return [x for x in lst if x != elem + 1]"
+      }
+  ]
+}

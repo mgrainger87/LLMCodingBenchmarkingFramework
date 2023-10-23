@@ -1,0 +1,12 @@
+{
+    "problem_identifier": "is_armstrong",
+    "prompt_identifier": "detailed_prompt",
+    "model_identifier": "gpt-4",
+    "score": 0.6666666666666666,
+    "sub_criteria_scores": null,
+    "issues": [
+        "Test failed:\n\tInput: n = 1634; Expected Output: False\n\tFunction prototype: is_armstrong(n: int) -> bool\n\tExpected result: False <class 'bool'>\n\tActual result: True <class 'bool'>",
+        "Test failed:\n\tInput: n = 8208; Expected Output: False\n\tFunction prototype: is_armstrong(n: int) -> bool\n\tExpected result: False <class 'bool'>\n\tActual result: True <class 'bool'>",
+        "Test failed:\n\tInput: n = 9474; Expected Output: False\n\tFunction prototype: is_armstrong(n: int) -> bool\n\tExpected result: False <class 'bool'>\n\tActual result: True <class 'bool'>"
+    ]
+}

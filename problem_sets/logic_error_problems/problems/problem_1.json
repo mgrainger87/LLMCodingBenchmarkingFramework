@@ -1,0 +1,22 @@
+{
+  "identifier": "reverse_string",
+  "description": "The function should return the reversed version of the input string.",
+  "function_prototype": {
+      "function_name": "reverse_string",
+      "parameters": [{"name": "s", "type": "str"}],
+      "return_values": [{"type": "str"}]
+  },
+  "correctness_test_suite": [
+      {"input": {"s": "hello"}, "expected_output": ["olleh"]},
+      {"input": {"s": "world"}, "expected_output": ["dlrow"]},
+      {"input": {"s": "12345"}, "expected_output": ["54321"]},
+      {"input": {"s": ""}, "expected_output": [""]}
+  ],
+  "tags": ["String", "Reversal"],
+  "prompts": [
+      {
+          "prompt_id": "detailed_prompt",
+          "prompt": "There is code that contains a logic error. May you fix the logic error? The function should return the reversed version of the input string. def reverse_string(s): return s"
+      }
+  ]
+}

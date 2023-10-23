@@ -1,0 +1,7 @@
+{
+    "problem_identifier": "min_number_in_list",
+    "model_identifier": "gpt-4",
+    "prompt_identifier": "detailed_prompt",
+    "solution_code": "def min_number(lst): \n    return min(lst)",
+    "feedback": null
+}

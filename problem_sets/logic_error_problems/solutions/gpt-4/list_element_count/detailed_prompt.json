@@ -1,0 +1,7 @@
+{
+    "problem_identifier": "list_element_count",
+    "model_identifier": "gpt-4",
+    "prompt_identifier": "detailed_prompt",
+    "solution_code": "def element_count(lst: list, elem: int) -> int:\n    return lst.count(elem)",
+    "feedback": null
+}

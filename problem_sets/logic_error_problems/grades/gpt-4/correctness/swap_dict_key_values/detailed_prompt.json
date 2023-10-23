@@ -1,0 +1,11 @@
+{
+    "problem_identifier": "swap_dict_key_values",
+    "prompt_identifier": "detailed_prompt",
+    "model_identifier": "gpt-4",
+    "score": 0.0,
+    "sub_criteria_scores": null,
+    "issues": [
+        "Test failed:\n\tInput: d = {'apple': '1', 'banana': '2', 'cherry': '3'}; Expected Output: 1, 2, 3\n\tFunction prototype: swap_dict_key_values(d: dict) -> dict\n\tExpected result: 1 <class 'str'>\n\tActual result: {'1': 'apple', '2': 'banana', '3': 'cherry'} <class 'dict'>",
+        "Test failed:\n\tInput: d = {'red': 'apple', 'yellow': 'banana'}; Expected Output: apple, banana\n\tFunction prototype: swap_dict_key_values(d: dict) -> dict\n\tExpected result: apple <class 'str'>\n\tActual result: {'apple': 'red', 'banana': 'yellow'} <class 'dict'>"
+    ]
+}

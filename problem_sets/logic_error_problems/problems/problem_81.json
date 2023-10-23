@@ -1,0 +1,22 @@
+{
+  "identifier": "calculate_product",
+  "description": "The function should return the product of all elements in the input list.",
+  "function_prototype": {
+      "function_name": "calculate_product",
+      "parameters": [{"name": "lst", "type": "list"}],
+      "return_values": [{"type": "int"}]
+  },
+  "correctness_test_suite": [
+      {"input": {"lst": [1, 2, 3, 4, 5]}, "expected_output": [120]},
+      {"input": {"lst": [-10, 0, 10, 20]}, "expected_output": [0]},
+      {"input": {"lst": [0, 1, 2]}, "expected_output": [0]},
+      {"input": {"lst": [2, 3, 4]}, "expected_output": [24]}
+  ],
+  "tags": ["List", "Product"],
+  "prompts": [
+      {
+          "prompt_id": "detailed_prompt",
+          "prompt": "There is code that contains a logic error. May you fix the logic error? The function should return the product of all elements in the input list. def calculate_product(lst): product = 1 for i in lst: product *= i + 1 return product"
+      }
+  ]
+}

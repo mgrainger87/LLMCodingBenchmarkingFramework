@@ -1,0 +1,20 @@
+{
+  "identifier": "swap_dict_key_values",
+  "description": "The function should return a dictionary where keys and values are swapped.",
+  "function_prototype": {
+      "function_name": "swap_dict_key_values",
+      "parameters": [{"name": "d", "type": "dict"}],
+      "return_values": [{"type": "dict"}]
+  },
+  "correctness_test_suite": [
+      {"input": {"d": {"apple": "1", "banana": "2", "cherry": "3"}}, "expected_output": {"1": "apple", "2": "banana", "3": "cherry"}},
+      {"input": {"d": {"red": "apple", "yellow": "banana"}}, "expected_output": {"apple": "red", "banana": "yellow"}}
+  ],
+  "tags": ["Dictionary", "Swapping"],
+  "prompts": [
+      {
+          "prompt_id": "detailed_prompt",
+          "prompt": "There is code that contains a logic error. May you fix the logic error? The function should return a dictionary where keys and values are swapped. def swap_dict_key_values(d): return {v: k + 1 for k, v in d.items()}"
+      }
+  ]
+}

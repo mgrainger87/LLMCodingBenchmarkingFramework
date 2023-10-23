@@ -1,0 +1,13 @@
+{
+    "problem_identifier": "odd_numbers",
+    "prompt_identifier": "detailed_prompt",
+    "model_identifier": "gpt-4",
+    "score": 0.0,
+    "sub_criteria_scores": null,
+    "issues": [
+        "Test failed:\n\tInput: lst = [1, 2, 3, 4, 5]; Expected Output: 1, 3, 5\n\tFunction prototype: odd_numbers(lst: list) -> list\n\tExpected result: 1 <class 'int'>\n\tActual result: [1, 3, 5] <class 'list'>",
+        "Test failed:\n\tInput: lst = [2, 4, 6, 8, 10]; Expected Output: \n\tFunction prototype: odd_numbers(lst: list) -> list\n\tExpected result: () <class 'tuple'>\n\tActual result: [] <class 'list'>",
+        "Test failed:\n\tInput: lst = [11, 13, 15, 17, 19]; Expected Output: 11, 13, 15, 17, 19\n\tFunction prototype: odd_numbers(lst: list) -> list\n\tExpected result: 11 <class 'int'>\n\tActual result: [11, 13, 15, 17, 19] <class 'list'>",
+        "Test failed:\n\tInput: lst = []; Expected Output: \n\tFunction prototype: odd_numbers(lst: list) -> list\n\tExpected result: () <class 'tuple'>\n\tActual result: [] <class 'list'>"
+    ]
+}

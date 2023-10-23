@@ -1,0 +1,22 @@
+{
+  "identifier": "fahrenheit_to_celsius",
+  "description": "The function should convert the input temperature from Fahrenheit to Celsius.",
+  "function_prototype": {
+      "function_name": "fahrenheit_to_celsius",
+      "parameters": [{"name": "f", "type": "float"}],
+      "return_values": [{"type": "float"}]
+  },
+  "correctness_test_suite": [
+      {"input": {"f": 32}, "expected_output": [0.0]},
+      {"input": {"f": 68}, "expected_output": [20.0]},
+      {"input": {"f": -4}, "expected_output": [-20.0]},
+      {"input": {"f": 212}, "expected_output": [100.0]}
+  ],
+  "tags": ["Temperature", "Conversion"],
+  "prompts": [
+      {
+          "prompt_id": "detailed_prompt",
+          "prompt": "There is code that contains a logic error. May you fix the logic error? The function should convert the input temperature from Fahrenheit to Celsius. def fahrenheit_to_celsius(f):return (f - 32) / 1.8 + 1"
+      }
+  ]
+}

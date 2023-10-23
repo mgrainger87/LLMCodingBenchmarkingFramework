@@ -1,0 +1,7 @@
+{
+    "problem_identifier": "transpose_matrix",
+    "model_identifier": "gpt-4",
+    "prompt_identifier": "detailed_prompt",
+    "solution_code": "[[1, 3], [2, 4]]",
+    "feedback": null
+}

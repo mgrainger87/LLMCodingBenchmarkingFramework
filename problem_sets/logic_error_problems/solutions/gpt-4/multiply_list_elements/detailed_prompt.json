@@ -1,0 +1,7 @@
+{
+    "problem_identifier": "multiply_list_elements",
+    "model_identifier": "gpt-4",
+    "prompt_identifier": "detailed_prompt",
+    "solution_code": "def multiply_list_elements(lst):\n    return [x * 2 for x in lst]",
+    "feedback": null
+}

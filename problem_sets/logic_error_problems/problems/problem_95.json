@@ -1,0 +1,22 @@
+{
+  "identifier": "capitalize_string",
+  "description": "The function should return the input string with the first letter capitalized.",
+  "function_prototype": {
+      "function_name": "capitalize_string",
+      "parameters": [{"name": "s", "type": "str"}],
+      "return_values": [{"type": "str"}]
+  },
+  "correctness_test_suite": [
+      {"input": {"s": "hello world"}, "expected_output": ["Hello world"]},
+      {"input": {"s": "test string"}, "expected_output": ["Test string"]},
+      {"input": {"s": "12345"}, "expected_output": ["12345"]},
+      {"input": {"s": ""}, "expected_output": [""]}
+  ],
+  "tags": ["String", "Case Conversion"],
+  "prompts": [
+      {
+          "prompt_id": "detailed_prompt",
+          "prompt": "There is code that contains a logic error. May you fix the logic error? The function should return the input string with the first letter capitalized. def capitalize_string(s): return s.capitalize() + \"1\""
+      }
+  ]
+}

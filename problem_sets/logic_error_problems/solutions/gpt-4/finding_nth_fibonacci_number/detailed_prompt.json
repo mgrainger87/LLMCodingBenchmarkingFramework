@@ -1,0 +1,7 @@
+{
+    "problem_identifier": "finding_nth_fibonacci_number",
+    "model_identifier": "gpt-4",
+    "prompt_identifier": "detailed_prompt",
+    "solution_code": "def nth_fibonacci(n):\n    if n == 0: \n        return 0\n    elif n == 1: \n        return 1\n    else: \n        a, b = 0, 1\n        for i in range(2, n + 1): \n            a, b = b, a + b\n        return b",
+    "feedback": null
+}

@@ -1,0 +1,45 @@
+{
+  "identifier": "list_element_multiplication",
+  "description": "The function should return a list where each element is multiplied by the specified number.",
+  "function_prototype": {
+    "function_name": "multiply_list",
+    "parameters": [
+      {
+        "name": "lst",
+        "type": "list"
+      },
+      {
+        "name": "n",
+        "type": "int"
+      }
+    ],
+    "return_values": [
+      {
+        "type": "list"
+      }
+    ]
+  },
+  "correctness_test_suite": [
+    {
+      "input": {
+        "lst": [1, 2, 3, 4],
+        "n": 2
+      },
+      "expected_output": [2, 4, 6, 8]
+    },
+    {
+      "input": {
+        "lst": [5, 10, 15],
+        "n": 3
+      },
+      "expected_output": [15, 30, 45]
+    }
+  ],
+  "tags": ["List Manipulation","List", "Arithmetic", "Math", "Multiplication"],
+  "prompts": [
+    {
+      "prompt_id": "detailed_prompt",
+      "prompt": "There is code that contains a logic error. May you fix the logic error? The function 'multiply_list' should take a list 'lst' and an integer 'n' as input. It should return a list where each element is multiplied by the specified number. def multiply_list(lst, n): return [x * n - 1 for x in lst]"
+    }
+  ]
+}

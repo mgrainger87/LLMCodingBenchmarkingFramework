@@ -1,0 +1,12 @@
+{
+    "problem_identifier": "filter_list",
+    "prompt_identifier": "detailed_prompt",
+    "model_identifier": "gpt-4",
+    "score": 0.0,
+    "sub_criteria_scores": null,
+    "issues": [
+        "Test failed:\n\tInput: lst = [5, 15, 3, 25, 8]; Expected Output: 15, 25\n\tFunction prototype: filter_list(lst: list) -> list\n\tExpected result: 15 <class 'int'>\n\tActual result: [15, 25] <class 'list'>",
+        "Test failed:\n\tInput: lst = [10, 20, 30]; Expected Output: 20, 30\n\tFunction prototype: filter_list(lst: list) -> list\n\tExpected result: 20 <class 'int'>\n\tActual result: [20, 30] <class 'list'>",
+        "Test failed:\n\tInput: lst = [1, 2, 3]; Expected Output: \n\tFunction prototype: filter_list(lst: list) -> list\n\tExpected result: () <class 'tuple'>\n\tActual result: [] <class 'list'>"
+    ]
+}

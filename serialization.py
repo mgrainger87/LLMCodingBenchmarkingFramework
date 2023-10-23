@@ -49,7 +49,10 @@ def update_report(basePath: str, grades: GradingOutput, solutionGrade: SolutionG
 				report = json.load(f)
 	else:
 		report = {
+			"tags": [],
+			"name": "Logic Error Problems",
 			"Problem Sets": {},
+			"output": 0, 
 			"Average Scores Per Problem Set": {},
 			"Average Scores Per Criterion": {}
 		}
@@ -71,7 +74,7 @@ def update_report(basePath: str, grades: GradingOutput, solutionGrade: SolutionG
 	all_scores_for_grader = [problem["score"] for pset in report["Problem Sets"].values() for problem in pset.get(grades.grader_identifier, [])]
 	avg_score_for_grader = sum(all_scores_for_grader) / len(all_scores_for_grader) if all_scores_for_grader else 0
 	report["Average Scores Per Criterion"][grades.grader_identifier] = avg_score_for_grader
-    
+	report["output"] = avg_score_for_grader
 	pathlib.Path(os.path.dirname(current_report_path)).mkdir(parents=True, exist_ok=True)
 	with open(current_report_path, 'w') as f:
 		json.dump(report, f, indent=4)	

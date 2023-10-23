@@ -1,0 +1,45 @@
+{
+  "identifier": "list_union",
+  "description": "The function should return a list containing the union of two input lists.",
+  "function_prototype": {
+    "function_name": "list_union",
+    "parameters": [
+      {
+        "name": "lst1",
+        "type": "list"
+      },
+      {
+        "name": "lst2",
+        "type": "list"
+      }
+    ],
+    "return_values": [
+      {
+        "type": "list"
+      }
+    ]
+  },
+  "correctness_test_suite": [
+    {
+      "input": {
+        "lst1": [1, 2, 3, 4],
+        "lst2": [3, 4, 5, 6]
+      },
+      "expected_output": [1, 2, 3, 4, 5, 6]
+    },
+    {
+      "input": {
+        "lst1": [],
+        "lst2": [1]
+      },
+      "expected_output": [1]
+    }
+  ],
+  "tags": ["List", "Union"],
+  "prompts": [
+    {
+      "prompt_id": "detailed_prompt",
+      "prompt": "There is code that contains a logic error. May you fix the logic error? The function 'list_union' should take two lists 'lst1' and 'lst2' as input and return a list containing the union of the two input lists. def list_union(lst1, lst2): return list(set(lst1) | set(lst2) + 1)"
+    }
+  ]
+}

@@ -1,0 +1,24 @@
+{
+  "identifier": "square_root",
+  "description": "The function should return the square root of the input number.",
+  "function_prototype": {
+      "function_name": "square_root",
+      "parameters": [{"name": "n", "type": "float"}],
+      "return_values": [{"type": "float"}]
+  },
+  "correctness_test_suite": [
+      {"input": {"n": 4}, "expected_output": [2.0]},
+      {"input": {"n": 9}, "expected_output": [3.0]},
+      {"input": {"n": 16}, "expected_output": [4.0]},
+      {"input": {"n": 25}, "expected_output": [5.0]},
+      {"input": {"n": 0}, "expected_output": [0.0]}
+  ],
+  "tags": ["Math", "Square Root"],
+  "prompts": [
+      {
+          "prompt_id": "detailed_prompt",
+          "prompt": "There is code that contains a logic error. May you fix the logic error? The function should return the square root of the input number. def square_root(n): return n ** 2"
+      }
+  ]
+}
+

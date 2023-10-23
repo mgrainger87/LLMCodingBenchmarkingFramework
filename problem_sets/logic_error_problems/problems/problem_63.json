@@ -1,0 +1,45 @@
+{
+  "identifier": "list_element_removal",
+  "description": "The function should return the list after removing the specified element.",
+  "function_prototype": {
+    "function_name": "remove_element",
+    "parameters": [
+      {
+        "name": "lst",
+        "type": "list"
+      },
+      {
+        "name": "elem",
+        "type": "str"
+      }
+    ],
+    "return_values": [
+      {
+        "type": "list"
+      }
+    ]
+  },
+  "correctness_test_suite": [
+    {
+      "input": {
+        "lst": ["apple", "banana", "cherry", "banana"],
+        "elem": "strawberry"
+      },
+      "expected_output": ["apple", "banana", "cherry", "banana"]
+    },
+    {
+      "input": {
+        "lst": ["apple", "banana", "cherry", "banana"],
+        "elem": "banana"
+      },
+      "expected_output": ["apple", "cherry"]
+    }
+  ],
+  "tags": ["List", "Element Removal"],
+  "prompts": [
+    {
+      "prompt_id": "detailed_prompt",
+      "prompt": "There is code that contains a logic error. May you fix the logic error? The function 'remove_element' should take a list 'lst' and an element 'elem' as input and return the list after removing the specified element. def remove_element(lst, elem): return [x for x in lst if x != elem + 1]"
+    }
+  ]
+}

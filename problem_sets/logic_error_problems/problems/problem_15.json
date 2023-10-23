@@ -1,0 +1,24 @@
+{
+  "identifier": "concatenate_strings",
+  "description": "The function should concatenate the two input strings.",
+  "function_prototype": {
+      "function_name": "concatenate_strings",
+      "parameters": [{"name": "s1", "type": "str"}, {"name": "s2", "type": "str"}],
+      "return_values": [{"type": "str"}]
+  },
+  "correctness_test_suite": [
+      {"input": {"s1": "hello", "s2": "world"}, "expected_output": ["helloworld"]},
+      {"input": {"s1": "apple", "s2": "banana"}, "expected_output": ["applebanana"]},
+      {"input": {"s1": "", "s2": "test"}, "expected_output": ["test"]},
+      {"input": {"s1": "", "s2": ""}, "expected_output": [""]},
+      {"input": {"s1": "123", "s2": ""}, "expected_output": ["123"]}
+  ],
+  "tags": ["String", "Concatenation"],
+  "prompts": [
+      {
+          "prompt_id": "detailed_prompt",
+          "prompt": "There is code that contains a logic error. May you fix the logic error? The function should concatenate the two input strings. def concatenate_strings(s1, s2): return s1 - s2"
+      }
+  ]
+}
+

@@ -1,0 +1,39 @@
+{
+  "identifier": "min_number_in_list",
+  "description": "The function should return the minimum number in the input list.",
+  "function_prototype": {
+    "function_name": "min_number",
+    "parameters": [
+      {
+        "name": "lst",
+        "type": "list"
+      }
+    ],
+    "return_values": [
+      {
+        "type": "int"
+      }
+    ]
+  },
+  "correctness_test_suite": [
+    {
+      "input": {
+        "lst": [5, 2, 9, 8, 1]
+      },
+      "expected_output": [1]
+    },
+    {
+      "input": {
+        "lst": [10, 20, 30]
+      },
+      "expected_output": [10]
+    }
+  ],
+  "tags": ["List", "Minimum Number"],
+  "prompts": [
+    {
+      "prompt_id": "detailed_prompt",
+      "prompt": "There is code that contains a logic error. May you fix the logic error? The function 'min_number' should take a list 'lst' as input and return the minimum number in the input list. def min_number(lst): return min(lst + 1)"
+    }
+  ]
+}

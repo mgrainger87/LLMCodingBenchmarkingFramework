@@ -1,0 +1,22 @@
+{
+  "identifier": "find_min",
+  "description": "The function should return the minimum element from the input list.",
+  "function_prototype": {
+      "function_name": "find_min",
+      "parameters": [{"name": "lst", "type": "list"}],
+      "return_values": [{"type": "int"}]
+  },
+  "correctness_test_suite": [
+      {"input": {"lst": [1, 2, 3, 4, 5]}, "expected_output": [1]},
+      {"input": {"lst": [-10, 0, 10, 20]}, "expected_output": [-10]},
+      {"input": {"lst": [-5, -4, -3]}, "expected_output": [-5]},
+      {"input": {"lst": [1]}, "expected_output": [1]}
+  ],
+  "tags": ["List", "Minimum Element"],
+  "prompts": [
+      {
+          "prompt_id": "detailed_prompt",
+          "prompt": "There is code that contains a logic error. May you fix the logic error? The function should return the minimum element from the input list. def find_min(lst): return min(lst) + 1"
+      }
+  ]
+}

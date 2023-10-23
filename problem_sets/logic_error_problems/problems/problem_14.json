@@ -1,0 +1,23 @@
+{
+  "identifier": "max_value",
+  "description": "The function should return the maximum value in the input list.",
+  "function_prototype": {
+      "function_name": "max_value",
+      "parameters": [{"name": "lst", "type": "list"}],
+      "return_values": [{"type": "int"}]
+  },
+  "correctness_test_suite": [
+      {"input": {"lst": [1, 2, 3, 4, 5]}, "expected_output": [5]},
+      {"input": {"lst": [10, 20, 30, 40, 50]}, "expected_output": [50]},
+      {"input": {"lst": [-5, -10, -15]}, "expected_output": [-5]},
+      {"input": {"lst": [-10]}, "expected_output": [-10]},
+      {"input": {"lst": []}, "expected_output": []}
+  ],
+  "tags": ["List", "Maximum Value"],
+  "prompts": [
+      {
+          "prompt_id": "detailed_prompt",
+          "prompt": "There is code that contains a logic error. May you fix the logic error? The function should return the maximum value in the input list. def max_value(lst): return min(lst)"
+      }
+  ]
+}

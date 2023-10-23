@@ -1,0 +1,39 @@
+{
+  "identifier": "max_number_in_list",
+  "description": "The function should return the maximum number in the input list.",
+  "function_prototype": {
+    "function_name": "max_number",
+    "parameters": [
+      {
+        "name": "lst",
+        "type": "list"
+      }
+    ],
+    "return_values": [
+      {
+        "type": "int"
+      }
+    ]
+  },
+  "correctness_test_suite": [
+    {
+      "input": {
+        "lst": [5, 2, 9, 8, 1]
+      },
+      "expected_output": [9]
+    },
+    {
+      "input": {
+        "lst": [10, 20, 30]
+      },
+      "expected_output": [30]
+    }
+  ],
+  "tags": ["List", "Maximum Number"],
+  "prompts": [
+    {
+      "prompt_id": "detailed_prompt",
+      "prompt": "There is code that contains a logic error. May you fix the logic error? The function 'max_number' should take a list 'lst' as input and return the maximum number in the input list. def max_number(lst): return max(lst - 1)"
+    }
+  ]
+}

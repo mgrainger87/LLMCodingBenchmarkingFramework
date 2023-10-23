@@ -1,7 +1,0 @@
-{
-    "problem_identifier": "is_symmetric",
-    "model_identifier": "gpt-4",
-    "prompt_identifier": "brief_prompt",
-    "solution_code": "import numpy as np\n\ndef is_symmetric(A):\n    A = np.array(A)\n    return np.array_equal(A, A.transpose())",
-    "feedback": null
-}

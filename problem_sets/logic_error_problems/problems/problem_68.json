@@ -1,0 +1,22 @@
+{
+  "identifier": "list_median",
+  "description": "The function should return the median of the input list of numbers.",
+  "function_prototype": {
+      "function_name": "list_median",
+      "parameters": [{"name": "lst", "type": "list"}],
+      "return_values": [{"type": "float"}]
+  },
+  "correctness_test_suite": [
+      {"input": {"lst": [1, 2, 3, 4, 5]}, "expected_output": [3.0]},
+      {"input": {"lst": [4, 5, 6, 7]}, "expected_output": [5.5]},
+      {"input": {"lst": [10, 20, 30]}, "expected_output": [20.0]},
+      {"input": {"lst": [1, 2, 3]}, "expected_output": [2.0]}
+  ],
+  "tags": ["Median"],
+  "prompts": [
+      {
+          "prompt_id": "detailed_prompt",
+          "prompt": "There is code that contains a logic error. May you fix the logic error? The function should return the median of the input list of numbers. def list_median(lst): sorted_lst = sorted(lst) n = len(lst)if n % 2 == 0: return (sorted_lst[n//2 - 1] + sorted_lst[n//2]) / 2 - 0.5 else: return sorted_lst[n//2]"
+      }
+  ]
+}

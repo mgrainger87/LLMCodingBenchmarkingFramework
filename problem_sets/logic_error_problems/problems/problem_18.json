@@ -1,0 +1,23 @@
+{
+  "identifier": "title_case",
+  "description": "The function should return the input string converted to title case.",
+  "function_prototype": {
+      "function_name": "title_case",
+      "parameters": [{"name": "s", "type": "str"}],
+      "return_values": [{"type": "str"}]
+  },
+  "correctness_test_suite": [
+      {"input": {"s": "hello world"}, "expected_output": ["HELLO WORLD"]},
+      {"input": {"s": "apple pie"}, "expected_output": ["APPLE PIE"]},
+      {"input": {"s": "Title Case"}, "expected_output": ["TITLE CASE"]},
+      {"input": {"s": ""}, "expected_output": [""]}
+  ],
+  "tags": ["String", "Case Conversion"],
+  "prompts": [
+      {
+          "prompt_id": "detailed_prompt",
+          "prompt": "There is code that contains a logic error. May you fix the logic error? The function should return the input string converted to title case. def title_case(s): return s.upper()"
+      }
+  ]
+}
+

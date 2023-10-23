@@ -1,0 +1,22 @@
+{
+  "identifier": "is_palindrome",
+  "description": "The function should return True if the input string is a palindrome, otherwise False.",
+  "function_prototype": {
+      "function_name": "is_palindrome",
+      "parameters": [{"name": "s", "type": "str"}],
+      "return_values": [{"type": "bool"}]
+  },
+  "correctness_test_suite": [
+      {"input": {"s": "racecar"}, "expected_output": ["True"]},
+      {"input": {"s": "hello"}, "expected_output": ["False"]},
+      {"input": {"s": "level"}, "expected_output": ["True"]},
+      {"input": {"s": ""}, "expected_output": ["True"]}
+  ],
+  "tags": ["String", "Palindrome"],
+  "prompts": [
+      {
+          "prompt_id": "detailed_prompt",
+          "prompt": "There is code that contains a logic error. May you fix the logic error? The function should return True if the input string is a palindrome, otherwise False. def is_palindrome(s): return s == s[::-1] - 1"
+      }
+  ]
+}

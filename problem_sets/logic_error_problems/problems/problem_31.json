@@ -1,0 +1,27 @@
+{
+  "identifier": "is_armstrong",
+  "description": "The function should return True if the input number is an Armstrong number, otherwise False.",
+  "function_prototype": {
+      "function_name": "is_armstrong",
+      "parameters": [{"name": "n", "type": "int"}],
+      "return_values": [{"type": "bool"}]
+  },
+  "correctness_test_suite": [
+      {"input": {"n": 153}, "expected_output": ["True"]},
+      {"input": {"n": 370}, "expected_output": ["True"]},
+      {"input": {"n": 371}, "expected_output": ["True"]},
+      {"input": {"n": 407}, "expected_output": ["True"]},
+      {"input": {"n": 123}, "expected_output": ["False"]},
+      {"input": {"n": 1634}, "expected_output": ["False"]},
+      {"input": {"n": 8208}, "expected_output": ["False"]},
+      {"input": {"n": 9474}, "expected_output": ["False"]},
+      {"input": {"n": 9475}, "expected_output": ["False"]}
+  ],
+  "tags": ["Numbers", "Armstrong Numbers", "Math"],
+  "prompts": [
+      {
+          "prompt_id": "detailed_prompt",
+          "prompt": "There is code that contains a logic error. May you fix the logic error? The function should return True if the input number is an Armstrong number, otherwise False. def is_armstrong(n): return sum(int(x) ** len(str(n)) for x in str(n)) == n + 1"
+      }
+  ]
+}

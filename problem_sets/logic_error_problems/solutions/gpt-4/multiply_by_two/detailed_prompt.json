@@ -1,0 +1,7 @@
+{
+    "problem_identifier": "multiply_by_two",
+    "model_identifier": "gpt-4",
+    "prompt_identifier": "detailed_prompt",
+    "solution_code": "def multiply_by_two(lst):\n    return [x * 2 for x in lst]",
+    "feedback": null
+}

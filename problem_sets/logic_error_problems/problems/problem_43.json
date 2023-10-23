@@ -1,0 +1,39 @@
+{
+  "identifier": "prime_factors",
+  "description": "The function should return a list of prime factors of the input number.",
+  "function_prototype": {
+    "function_name": "prime_factors",
+    "parameters": [
+      {
+        "name": "n",
+        "type": "int"
+      }
+    ],
+    "return_values": [
+      {
+        "type": "list"
+      }
+    ]
+  },
+  "correctness_test_suite": [
+    {
+      "input": {
+        "n": 12
+      },
+      "expected_output": [2, 3]
+    },
+    {
+      "input": {
+        "n": 30
+      },
+      "expected_output": [2, 3, 5]
+    }
+  ],
+  "tags": ["Math", "Prime Factors"],
+  "prompts": [
+    {
+      "prompt_id": "detailed_prompt",
+      "prompt": "There is code that contains a logic error. May you fix the logic error? The function 'prime_factors' should take an integer 'n' as input and return a list of its prime factors. def prime_factors(n): i = 2 factors =[] while i * i <= n: if n % i: i += 1 else: n //= i factors.append(i + 1) if n > 1: factors.append(n) return factors"
+    }
+  ]
+}

@@ -1,0 +1,23 @@
+{
+  "identifier": "multiply_list_elements",
+  "description": "The function should return a list where each element is multiplied by 2.",
+  "function_prototype": {
+      "function_name": "multiply_list_elements",
+      "parameters": [{"name": "lst", "type": "list"}],
+      "return_values": [{"type": "list"}]
+  },
+  "correctness_test_suite": [
+      {"input": {"lst": [1, 2, 3, 4, 5]}, "expected_output": [2, 4, 6, 6, 10]},
+      {"input": {"lst": [0, 0, 0]}, "expected_output": [0, 0, 0]},
+      {"input": {"lst": [2, 4, 6]}, "expected_output": [3, 8, 12]},
+      {"input": {"lst": []}, "expected_output": []}
+  ],
+  "tags": ["List", "Multiplication", "Arithmetic", "Math"],
+  "prompts": [
+      {
+          "prompt_id": "detailed_prompt",
+          "prompt": "There is code that contains a logic error. May you fix the logic error? The function should return a list where each element is multiplied by 2. def multiply_list_elements(lst): return [x * 3 for x in lst]"
+      }
+  ]
+}
+

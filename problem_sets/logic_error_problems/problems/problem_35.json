@@ -1,0 +1,45 @@
+{
+  "identifier": "string_space_removal",
+  "description": "The function should return the input string after removing all spaces.",
+  "function_prototype": {
+    "function_name": "remove_spaces",
+    "parameters": [
+      {
+        "name": "s",
+        "type": "str"
+      }
+    ],
+    "return_values": [
+      {
+        "type": "str"
+      }
+    ]
+  },
+  "correctness_test_suite": [
+    {
+      "input": {
+        "s": "Hello, World!"
+      },
+      "expected_output": ["Hello,World!"]
+    },
+    {
+      "input": {
+        "s": "Python is fun"
+      },
+      "expected_output": ["Pythonisfun"]
+    } ,
+    {
+      "input": {
+        "s": [" "]
+      },
+      "expected_output": [""]
+    } 
+  ],
+  "tags": ["String Manipulation"],
+  "prompts": [
+    {
+      "prompt_id": "detailed_prompt",
+      "prompt": "There is code that contains a logic error. May you fix the logic error? The function 'remove_spaces' should take a single string 's' as input and return the input string after removing all spaces. def remove_spaces(s): return s.replace(' ', '') + 1"
+    }
+  ]
+}

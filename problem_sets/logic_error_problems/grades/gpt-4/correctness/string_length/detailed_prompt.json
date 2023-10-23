@@ -1,0 +1,10 @@
+{
+    "problem_identifier": "string_length",
+    "prompt_identifier": "detailed_prompt",
+    "model_identifier": "gpt-4",
+    "score": 0.5,
+    "sub_criteria_scores": null,
+    "issues": [
+        "Test failed:\n\tInput: s = Python is fun; Expected Output: 14\n\tFunction prototype: string_length(s: str) -> int\n\tExpected result: 14 <class 'int'>\n\tActual result: 13 <class 'int'>"
+    ]
+}

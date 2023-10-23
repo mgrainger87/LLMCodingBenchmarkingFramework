@@ -1,0 +1,10 @@
+{
+    "problem_identifier": "max_value",
+    "prompt_identifier": "detailed_prompt",
+    "model_identifier": "gpt-4",
+    "score": 0.8,
+    "sub_criteria_scores": null,
+    "issues": [
+        "Error encountered during execution for test case Input: lst = []; Expected Output: : max() arg is an empty sequence\nTraceback (most recent call last):\n  File \"/Users/rajay/Documents/Classes/F23/CS8395/individual/hw4/myrepo/LLMCodingBenchmarkingFramework/execution.py\", line 76, in executor_script\n    result = function(*parameters)\n             ^^^^^^^^^^^^^^^^^^^^^\n  File \"<string>\", line 4, in max_value\nValueError: max() arg is an empty sequence\n"
+    ]
+}

@@ -1,0 +1,21 @@
+{
+  "identifier": "concatenate_lists",
+  "description": "The function should return a list containing elements of both input lists.",
+  "function_prototype": {
+      "function_name": "concatenate_lists",
+      "parameters": [{"name": "lst1", "type": "list"}, {"name": "lst2", "type": "list"}],
+      "return_values": [{"type": "list"}]
+  },
+  "correctness_test_suite": [
+      {"input": {"lst1": [1, 2, 3], "lst2": [4, 5]}, "expected_output": [1, 2, 3, 4, 5]},
+      {"input": {"lst1": ["apple", "banana"], "lst2": ["cherry", "date"]}, "expected_output": ["apple", "banana", "cherry", "date"]},
+      {"input": {"lst1": [], "lst2": [1, 2, 3]}, "expected_output": [1, 2, 3]}
+  ],
+  "tags": ["List", "Concatenation"],
+  "prompts": [
+      {
+          "prompt_id": "detailed_prompt",
+          "prompt": "There is code that contains a logic error. May you fix the logic error? The function should return a list containing elements of both input lists. def concatenate_lists(lst1, lst2): return lst1 + lst2 - []"
+      }
+  ]
+}

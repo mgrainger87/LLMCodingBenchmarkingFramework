@@ -1,0 +1,12 @@
+{
+    "problem_identifier": "multiply_by_two",
+    "prompt_identifier": "detailed_prompt",
+    "model_identifier": "gpt-4",
+    "score": 0.0,
+    "sub_criteria_scores": null,
+    "issues": [
+        "Test failed:\n\tInput: lst = [1, 2, 3]; Expected Output: 2, 4, 6\n\tFunction prototype: multiply_by_two(lst: list) -> list\n\tExpected result: 2 <class 'int'>\n\tActual result: [2, 4, 6] <class 'list'>",
+        "Test failed:\n\tInput: lst = [0, -1, 4]; Expected Output: 0, -1, 8\n\tFunction prototype: multiply_by_two(lst: list) -> list\n\tExpected result: 0 <class 'int'>\n\tActual result: [0, -2, 8] <class 'list'>",
+        "Test failed:\n\tInput: lst = [5, 10, 15]; Expected Output: 10, 20, 30\n\tFunction prototype: multiply_by_two(lst: list) -> list\n\tExpected result: 10 <class 'int'>\n\tActual result: [10, 20, 30] <class 'list'>"
+    ]
+}

@@ -1,0 +1,7 @@
+{
+    "problem_identifier": "list_element_swapping",
+    "model_identifier": "gpt-4",
+    "prompt_identifier": "detailed_prompt",
+    "solution_code": "def swap_elements(lst, i, j):\n    lst[i], lst[j] = lst[j], lst[i]\n    return lst",
+    "feedback": null
+}

@@ -1,0 +1,39 @@
+{
+  "identifier": "palindrome_number_checker",
+  "description": "The function should return True if the input number is a palindrome, otherwise False.",
+  "function_prototype": {
+    "function_name": "is_palindrome_number",
+    "parameters": [
+      {
+        "name": "n",
+        "type": "int"
+      }
+    ],
+    "return_values": [
+      {
+        "type": "bool"
+      }
+    ]
+  },
+  "correctness_test_suite": [
+    {
+      "input": {
+        "n": 121
+      },
+      "expected_output": ["True"]
+    },
+    {
+      "input": {
+        "n": 12345
+      },
+      "expected_output": ["False"]
+    }
+  ],
+  "tags": ["Number", "Palindrome"],
+  "prompts": [
+    {
+      "prompt_id": "detailed_prompt",
+      "prompt": "There is code that contains a logic error. May you fix the logic error? The function 'is_palindrome_number' should take an integer 'n' as input and return True if the input number is a palindrome, otherwise False. def is_palindrome_number(n): return str(n) == str(n)[::-1] + 1"
+    }
+  ]
+}

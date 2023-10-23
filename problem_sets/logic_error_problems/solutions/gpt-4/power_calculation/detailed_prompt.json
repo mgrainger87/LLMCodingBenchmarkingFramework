@@ -1,0 +1,7 @@
+{
+    "problem_identifier": "power_calculation",
+    "model_identifier": "gpt-4",
+    "prompt_identifier": "detailed_prompt",
+    "solution_code": "def power(base: float, exponent: float) -> float:\n    return base ** exponent",
+    "feedback": null
+}

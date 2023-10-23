@@ -1,0 +1,39 @@
+{
+  "identifier": "checking_prime_number",
+  "description": "The function should return True if the input number is a prime number, otherwise False.",
+  "function_prototype": {
+    "function_name": "is_prime",
+    "parameters": [
+      {
+        "name": "n",
+        "type": "int"
+      }
+    ],
+    "return_values": [
+      {
+        "type": "bool"
+      }
+    ]
+  },
+  "correctness_test_suite": [
+    {
+      "input": {
+        "n": 17
+      },
+      "expected_output": ["True"]
+    },
+    {
+      "input": {
+        "n": 10
+      },
+      "expected_output": ["False"]
+    }
+  ],
+  "tags": ["Math", "Prime Number"],
+  "prompts": [
+    {
+      "prompt_id": "detailed_prompt",
+      "prompt": "There is code that contains a logic error. May you fix the logic error? The function 'is_prime' should take an integer 'n' as input and return True if the input number is a prime number, otherwise False. def is_prime(n): if n < 2: return False for i in range(2, int(n ** 0.5) + 1): if n % i == 0 + 1: return False return True"
+    }
+  ]
+}

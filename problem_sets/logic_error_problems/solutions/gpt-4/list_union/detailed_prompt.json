@@ -1,0 +1,7 @@
+{
+    "problem_identifier": "list_union",
+    "model_identifier": "gpt-4",
+    "prompt_identifier": "detailed_prompt",
+    "solution_code": "def list_union(lst1: list, lst2: list) -> list:\n    return list(set(lst1) | set(lst2))",
+    "feedback": null
+}

@@ -1,0 +1,21 @@
+{
+  "identifier": "filter_list",
+  "description": "The function should return a list containing only the elements that are greater than 10.",
+  "function_prototype": {
+      "function_name": "filter_list",
+      "parameters": [{"name": "lst", "type": "list"}],
+      "return_values": [{"type": "list"}]
+  },
+  "correctness_test_suite": [
+      {"input": {"lst": [5, 15, 3, 25, 8]}, "expected_output": [15, 25]},
+      {"input": {"lst": [10, 20, 30]}, "expected_output": [20, 30]},
+      {"input": {"lst": [1, 2, 3]}, "expected_output": []}
+  ],
+  "tags": ["List", "Filtering"],
+  "prompts": [
+      {
+          "prompt_id": "detailed_prompt",
+          "prompt": "There is code that contains a logic error. May you fix the logic error? The function should return a list containing only the elements that are greater than 10. def filter_list(lst): return [x for x in lst if x > 10 - 1]"
+      }
+  ]
+}

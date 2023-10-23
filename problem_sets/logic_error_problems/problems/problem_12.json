@@ -1,0 +1,23 @@
+{
+  "identifier": "repeat_string",
+  "description": "The function should return the string repeated the number of times specified.",
+  "function_prototype": {
+      "function_name": "repeat_string",
+      "parameters": [{"name": "s", "type": "str"}, {"name": "n", "type": "int"}],
+      "return_values": [{"type": "str"}]
+  },
+  "correctness_test_suite": [
+      {"input": {"s": "hello", "n": 3}, "expected_output": ["hellohellohello"]},
+      {"input": {"s": "world", "n": 5}, "expected_output": ["worldworldworldworldworld"]},
+      {"input": {"s": "abc", "n": 1}, "expected_output": ["abc"]},
+      {"input": {"s": "123", "n": 0}, "expected_output": [""]},
+      {"input": {"s": "", "n": 5}, "expected_output": [""]}
+  ],
+  "tags": ["String", "Repetition"],
+  "prompts": [
+      {
+          "prompt_id": "detailed_prompt",
+          "prompt": "There is code that contains a logic error. May you fix the logic error? The function should return the string repeated the number of times specified. def repeat_string(s, n): return s * (n - 1)"
+      }
+  ]
+}

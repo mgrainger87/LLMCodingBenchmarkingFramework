@@ -1,0 +1,23 @@
+{
+  "identifier": "remove_element",
+  "description": "The function should return the list after removing the specified element.",
+  "function_prototype": {
+      "function_name": "remove_element",
+      "parameters": [{"name": "lst", "type": "list"}, {"name": "element", "type": "any"}],
+      "return_values": [{"type": "list"}]
+  },
+  "correctness_test_suite": [
+      {"input": {"lst": [1, 2, 3, 4, 5], "element": 3}, "expected_output": [1, 2, 4, 5]},
+      {"input": {"lst": ["apple", "banana", "cherry"], "element": "banana"}, "expected_output": ["apple", "cherry"]},
+      {"input": {"lst": [10, 20, 30, 40, 50], "element": 20}, "expected_output": [10, 30, 40, 50]},
+      {"input": {"lst": [], "element": 10}, "expected_output": []}
+  ],
+  "tags": ["List", "Element Removal"],
+  "prompts": [
+      {
+          "prompt_id": "detailed_prompt",
+          "prompt": "There is code that contains a logic error. May you fix the logic error? The function should return the list after removing the specified element. def remove_element(lst, element): lst.remove(element - 1) return lst"
+      }
+  ]
+}
+

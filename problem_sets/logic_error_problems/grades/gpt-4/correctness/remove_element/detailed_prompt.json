@@ -1,0 +1,13 @@
+{
+    "problem_identifier": "remove_element",
+    "prompt_identifier": "detailed_prompt",
+    "model_identifier": "gpt-4",
+    "score": 0.0,
+    "sub_criteria_scores": null,
+    "issues": [
+        "Test failed:\n\tInput: lst = [1, 2, 3, 2, 4, 5], elem = 2; Expected Output: 1, 3, 4, 5\n\tFunction prototype: remove_element(lst: list, elem: any) -> list\n\tExpected result: 1 <class 'int'>\n\tActual result: [1, 3, 4, 5] <class 'list'>",
+        "Test failed:\n\tInput: lst = ['apple', 'banana', 'cherry', 'banana', 'date'], elem = banana; Expected Output: apple, cherry, date\n\tFunction prototype: remove_element(lst: list, elem: any) -> list\n\tExpected result: apple <class 'str'>\n\tActual result: ['apple', 'cherry', 'date'] <class 'list'>",
+        "Test failed:\n\tInput: lst = [1, 2, 3], elem = 4; Expected Output: 1, 2, 3\n\tFunction prototype: remove_element(lst: list, elem: any) -> list\n\tExpected result: 1 <class 'int'>\n\tActual result: [1, 2, 3] <class 'list'>",
+        "Test failed:\n\tInput: lst = [], elem = 5; Expected Output: \n\tFunction prototype: remove_element(lst: list, elem: any) -> list\n\tExpected result: () <class 'tuple'>\n\tActual result: [] <class 'list'>"
+    ]
+}

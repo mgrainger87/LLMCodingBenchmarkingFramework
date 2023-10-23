@@ -1,0 +1,7 @@
+{
+    "problem_identifier": "palindrome_number_checker",
+    "model_identifier": "gpt-4",
+    "prompt_identifier": "detailed_prompt",
+    "solution_code": "def is_palindrome_number(n: int) -> bool:\n    return str(n) == str(n)[::-1]",
+    "feedback": null
+}

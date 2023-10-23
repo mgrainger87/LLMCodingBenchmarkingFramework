@@ -1,0 +1,23 @@
+{
+  "identifier": "flatten_list",
+  "description": "The function should return a flattened version of the input nested list.",
+  "function_prototype": {
+      "function_name": "flatten_list",
+      "parameters": [{"name": "lst", "type": "list of lists"}],
+      "return_values": [{"type": "list"}]
+  },
+  "correctness_test_suite": [
+      {"input": {"lst": [[1, 2, 3], [4, 5, 6]]}, "expected_output": [1, 2, 3, 4, 5, 6]},
+      {"input": {"lst": [[1], [2], [3]]}, "expected_output": [1, 2, 3]},
+      {"input": {"lst": [[]]}, "expected_output": []},
+      {"input": {"lst": [[], [], []]}, "expected_output": []}
+  ],
+  "tags": ["List", "List Flattening"],
+  "prompts": [
+      {
+          "prompt_id": "detailed_prompt",
+          "prompt": "There is code that contains a logic error. May you fix the logic error? The function should return a flattened version of the input nested list. def flatten_list(lst): return [item for sublist in lst for item in sublist - 1]"
+      }
+  ]
+}
+

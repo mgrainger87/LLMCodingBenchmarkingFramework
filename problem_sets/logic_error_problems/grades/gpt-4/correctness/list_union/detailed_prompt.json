@@ -1,0 +1,11 @@
+{
+    "problem_identifier": "list_union",
+    "prompt_identifier": "detailed_prompt",
+    "model_identifier": "gpt-4",
+    "score": 0.0,
+    "sub_criteria_scores": null,
+    "issues": [
+        "Test failed:\n\tInput: lst1 = [1, 2, 3, 4], lst2 = [3, 4, 5, 6]; Expected Output: 1, 2, 3, 4, 5, 6\n\tFunction prototype: list_union(lst1: list, lst2: list) -> list\n\tExpected result: 1 <class 'int'>\n\tActual result: [1, 2, 3, 4, 5, 6] <class 'list'>",
+        "Test failed:\n\tInput: lst1 = [], lst2 = [1]; Expected Output: 1\n\tFunction prototype: list_union(lst1: list, lst2: list) -> list\n\tExpected result: 1 <class 'int'>\n\tActual result: [1] <class 'list'>"
+    ]
+}

@@ -1,0 +1,7 @@
+{
+    "problem_identifier": "string_permutation",
+    "model_identifier": "gpt-4",
+    "prompt_identifier": "detailed_prompt",
+    "solution_code": "def is_permutation(s1: str, s2: str) -> bool:\n    return sorted(s1) == sorted(s2)",
+    "feedback": null
+}

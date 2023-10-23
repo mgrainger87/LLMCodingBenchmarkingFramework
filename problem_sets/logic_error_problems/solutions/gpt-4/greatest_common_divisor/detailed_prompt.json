@@ -1,0 +1,7 @@
+{
+    "problem_identifier": "greatest_common_divisor",
+    "model_identifier": "gpt-4",
+    "prompt_identifier": "detailed_prompt",
+    "solution_code": "def gcd(a: int, b: int) -> int:\n    while b:\n        a, b = b, a % b\n    return a",
+    "feedback": null
+}

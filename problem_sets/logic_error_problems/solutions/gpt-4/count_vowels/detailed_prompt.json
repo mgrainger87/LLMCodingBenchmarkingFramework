@@ -1,0 +1,7 @@
+{
+    "problem_identifier": "count_vowels",
+    "model_identifier": "gpt-4",
+    "prompt_identifier": "detailed_prompt",
+    "solution_code": "def count_vowels(s: str) -> int:\n    return sum(1 for char in s if char in 'aeiouAEIOU')",
+    "feedback": null
+}

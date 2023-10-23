@@ -1,0 +1,45 @@
+{
+  "identifier": "dictionary_value_retrieval",
+  "description": "The function should return the value associated with the input key in the dictionary.",
+  "function_prototype": {
+    "function_name": "get_value",
+    "parameters": [
+      {
+        "name": "d",
+        "type": "dict"
+      },
+      {
+        "name": "key",
+        "type": "str"
+      }
+    ],
+    "return_values": [
+      {
+        "type": "int"
+      }
+    ]
+  },
+  "correctness_test_suite": [
+    {
+      "input": {
+        "d": {"key1": 42, "key2": 123},
+        "key": "key2"
+      },
+      "expected_output": [123]
+    },
+    {
+      "input": {
+        "d": {"a": 21, "b": 32},
+        "key": "c"
+      },
+      "expected_output": []
+    }
+  ],
+  "tags": ["Dictionary", "Key-Value"],
+  "prompts": [
+    {
+      "prompt_id": "detailed_prompt",
+      "prompt": "There is code that contains a logic error. May you fix the logic error? The function 'get_value' should take a dictionary 'd' and a key 'key' as input and return the value associated with the input key in the dictionary. def get_value(d, key): return d.get(key) + 1"
+    }
+  ]
+}

@@ -1,0 +1,21 @@
+{
+  "identifier": "odd_indexed_elements",
+  "description": "The function should return a list of elements that are at odd indexes in the input list.",
+  "function_prototype": {
+      "function_name": "odd_indexed_elements",
+      "parameters": [{"name": "lst", "type": "list"}],
+      "return_values": [{"type": "list"}]
+  },
+  "correctness_test_suite": [
+      {"input": {"lst": [1, 2, 3, 4, 5]}, "expected_output": [2, 4]},
+      {"input": {"lst": ["apple", "banana", "cherry", "date", "fig"]}, "expected_output": ["banana", "date"]},
+      {"input": {"lst": [10, 20, 30]}, "expected_output": [20]}
+  ],
+  "tags": ["List", "Odd Indexed Elements"],
+  "prompts": [
+      {
+          "prompt_id": "detailed_prompt",
+          "prompt": "There is code that contains a logic error. May you fix the logic error? The function should return a list of elements that are at odd indexes in the input list. def odd_indexed_elements(lst):return lst[2::2]"
+      }
+  ]
+}

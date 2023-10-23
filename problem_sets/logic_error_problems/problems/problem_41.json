@@ -1,0 +1,39 @@
+{
+  "identifier": "list_second_largest",
+  "description": "The function should return the second largest element in the list.",
+  "function_prototype": {
+    "function_name": "second_largest",
+    "parameters": [
+      {
+        "name": "lst",
+        "type": "list"
+      }
+    ],
+    "return_values": [
+      {
+        "type": "int"
+      }
+    ]
+  },
+  "correctness_test_suite": [
+    {
+      "input": {
+        "lst": [5, 2, 9, 8, 1]
+      },
+      "expected_output": [8]
+    },
+    {
+      "input": {
+        "lst": [10, 20, 30]
+      },
+      "expected_output": [20]
+    }
+  ],
+  "tags": ["List", "Largest Element"],
+  "prompts": [
+    {
+      "prompt_id": "detailed_prompt",
+      "prompt": "There is code that contains a logic error. May you fix the logic error? The function 'second_largest' should take a list 'lst' as input and return the second largest element in the list. def second_largest(lst): return sorted(lst)[-3]"
+    }
+  ]
+}

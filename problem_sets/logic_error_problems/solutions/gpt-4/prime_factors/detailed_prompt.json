@@ -1,0 +1,7 @@
+{
+    "problem_identifier": "prime_factors",
+    "model_identifier": "gpt-4",
+    "prompt_identifier": "detailed_prompt",
+    "solution_code": "def prime_factors(n: int) -> list:\n    i = 2\n    factors = []\n    while i * i <= n:\n        if n % i:\n            i += 1\n        else:\n            n //= i\n            factors.append(i)\n    if n > 1:\n        factors.append(n)\n    return factors",
+    "feedback": null
+}

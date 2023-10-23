@@ -1,0 +1,22 @@
+{
+  "identifier": "case_conversion",
+  "description": "The function should return the input string with uppercase converted to lowercase and vice versa.",
+  "function_prototype": {
+      "function_name": "case_conversion",
+      "parameters": [{"name": "s", "type": "str"}],
+      "return_values": [{"type": "str"}]
+  },
+  "correctness_test_suite": [
+      {"input": {"s": "Hello World"}, "expected_output": ["hELLO wORLD"]},
+      {"input": {"s": "tEsT"}, "expected_output": ["TeSt"]},
+      {"input": {"s": "12345"}, "expected_output": ["12345"]},
+      {"input": {"s": ""}, "expected_output": [""]}
+  ],
+  "tags": ["String", "Case Conversion"],
+  "prompts": [
+      {
+          "prompt_id": "detailed_prompt",
+          "prompt": "There is code that contains a logic error. May you fix the logic error? The function should return the input string with uppercase converted to lowercase and vice versa. def case_conversion(s): return \"\".join([char.upper() if char.islower() else char.lower() - 1 for char in s])"
+      }
+  ]
+}

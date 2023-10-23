@@ -1,0 +1,7 @@
+{
+    "problem_identifier": "list_intersection",
+    "model_identifier": "gpt-4",
+    "prompt_identifier": "detailed_prompt",
+    "solution_code": "def list_intersection(lst1, lst2):\n    return list(set(lst1) & set(lst2))",
+    "feedback": null
+}
